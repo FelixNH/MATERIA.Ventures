@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fund Landing</title>
+  <title>MATERIA</title>
   <style>
     :root {
-      --bg: #06070a;
+      --bg: #05060a;
       --fg: #f5f5f7;
       --muted: #9a9ca5;
       --accent: #f1c46a;
@@ -28,7 +28,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, -apple-system, "SF Pro Text", sans-serif;
       background: var(--bg);
       color: var(--fg);
       -webkit-font-smoothing: antialiased;
@@ -48,14 +48,16 @@
     }
 
     /* HEADER / NAV */
+
     header {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(16px);
-      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.03), transparent 55%),
-                  rgba(6,7,10,0.94);
-      border-bottom: 1px solid rgba(255,255,255,0.02);
+      background:
+        radial-gradient(circle at 0 0, rgba(255,255,255,0.03), transparent 55%),
+        rgba(5,6,10,0.94);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
     .nav {
@@ -80,16 +82,18 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.08);
       background: radial-gradient(circle at 30% 0, #f8e8b2, #8a6e36 40%, #12131a 78%);
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.55), 0 12px 30px rgba(0,0,0,0.7);
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.55),
+        0 12px 30px rgba(0,0,0,0.7);
     }
 
-    .logo-text-main {
-      font-size: 0.95rem;
+    .logo-line-main {
+      font-size: 0.9rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .logo-text-sub {
+    .logo-line-sub {
       font-size: 0.75rem;
       color: var(--muted);
       margin-top: 2px;
@@ -135,6 +139,7 @@
     }
 
     /* HERO */
+
     .hero {
       padding-top: 56px;
       padding-bottom: 60px;
@@ -145,32 +150,24 @@
       gap: 26px;
     }
 
-    .hero-tag {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
     .hero-eyebrow {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--muted);
-      margin-bottom: 8px;
     }
 
     .hero-headline {
       font-size: clamp(2.2rem, 4vw, 3rem);
       line-height: 1.06;
-      max-width: 24ch;
+      max-width: 22ch;
     }
 
     .hero-sub {
       font-size: 1rem;
       line-height: 1.7;
       color: var(--muted);
-      max-width: 40rem;
+      max-width: 42rem;
     }
 
     .hero-sub span {
@@ -226,30 +223,11 @@
       color: var(--muted);
     }
 
-    /* SECTION GENERIC */
+    /* GENERIC SECTIONS */
+
     section {
       padding: 40px 0;
       border-top: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .section-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 1.7rem;
-      margin-bottom: 14px;
-    }
-
-    .section-intro {
-      font-size: 0.96rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 40rem;
     }
 
     .section-header {
@@ -260,12 +238,33 @@
       gap: 4px;
     }
 
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
     .section-body {
       max-width: var(--max-width);
       margin: 0 auto;
     }
 
     /* WHO WE ARE */
+
     .who-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -319,6 +318,7 @@
     }
 
     /* WHAT WE LOOK FOR */
+
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -330,6 +330,14 @@
       border: 1px solid var(--border-subtle);
       padding: 16px 16px 14px;
       background: radial-gradient(circle at 0 0, rgba(255,255,255,0.02), transparent 65%);
+    }
+
+    .card-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .card h3 {
@@ -345,15 +353,8 @@
       color: var(--muted);
     }
 
-    .card-tag {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
     /* WHAT WE DO */
+
     .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -393,6 +394,7 @@
     }
 
     /* JOIN / CTA */
+
     .join-layout {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -432,6 +434,7 @@
     }
 
     /* FOOTER */
+
     footer {
       border-top: 1px solid rgba(255,255,255,0.04);
       padding: 18px 0 22px;
@@ -467,6 +470,7 @@
     }
 
     /* RESPONSIVE */
+
     @media (max-width: 880px) {
       .who-layout,
       .two-col,
@@ -509,8 +513,8 @@
         <div class="nav-left">
           <div class="logo-mark" aria-hidden="true"></div>
           <div>
-            <div class="logo-text-main">FUND NAME</div>
-            <div class="logo-text-sub">Tagline lorem ipsum</div>
+            <div class="logo-line-main">MATERIA</div>
+            <div class="logo-line-sub">Venture Capital</div>
           </div>
         </div>
         <div class="nav-links">
@@ -528,7 +532,9 @@
         <!-- HERO -->
         <section class="hero">
           <div class="hero-eyebrow">Lorem ipsum</div>
-          <h1 class="hero-headline">We invest in lorem ipsum innovations reshaping what the world does.</h1>
+          <h1 class="hero-headline">
+            We invest in lorem ipsum innovations reshaping how the world is built.
+          </h1>
           <p class="hero-sub">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod, nunc at pretium efficitur,
             velit sem malesuada lorem, vitae tincidunt justo lacus vel enim.
@@ -538,7 +544,9 @@
             <a href="#join" class="btn btn-primary">Submit your deck</a>
             <a href="#who" class="btn btn-secondary">Who we are</a>
           </div>
-          <div class="hero-note">Seed &ndash; Series A &middot; Lorem ipsum &middot; Dolor sit amet</div>
+          <div class="hero-note">
+            Seed – Series A · Lorem ipsum · Dolor sit amet
+          </div>
         </section>
 
         <!-- WHO WE ARE -->
@@ -689,16 +697,16 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend, lorem quis porta dignissim,
                 neque tortor vehicula neque, sit amet dapibus dui nisl et lectus.
               </p>
-              <a href="mailto:hello@example.com?subject=Pitch%20deck" class="btn btn-secondary join-cta">Submit</a>
+              <a href="mailto:hello@materia.vc?subject=Pitch%20deck" class="btn btn-secondary join-cta">Submit</a>
             </article>
             <article class="join-card">
               <div class="join-label">For investors</div>
-              <div class="join-title">Invest with FUND NAME</div>
+              <div class="join-title">Invest with MATERIA</div>
               <p class="join-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel ipsum a mi scelerisque
                 gravida ac et tellus.
               </p>
-              <a href="mailto:hello@example.com?subject=Invest" class="btn btn-secondary join-cta">Request details</a>
+              <a href="mailto:hello@materia.vc?subject=Invest" class="btn btn-secondary join-cta">Request details</a>
             </article>
           </div>
         </section>
@@ -707,7 +715,7 @@
 
     <footer>
       <div class="footer-inner">
-        <span>&copy; <span id="year"></span> FUND NAME.</span>
+        <span>&copy; <span id="year"></span> MATERIA.</span>
         <div class="footer-links">
           <a href="#">Privacy</a>
           <a href="#">Accessibility</a>
@@ -718,7 +726,7 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
