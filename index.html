@@ -6,17 +6,16 @@
   <title>MATERIA</title>
   <style>
     :root {
-      --bg: #05060a;
-      --fg: #f5f5f7;
-      --muted: #9a9ca5;
-      --accent: #f1c46a;
-      --accent-soft: rgba(241, 196, 106, 0.14);
-      --border-subtle: #22242c;
-      --border-strong: #3a3d47;
-      --radius-card: 20px;
-      --max-width: 1040px;
-    }
-
+  --bg: #f2f2f3;          /* helles neutral-grau */
+  --fg: #111111;          /* fast-schwarzer Text */
+  --muted: #555555;       /* graue Sub-Textfarbe */
+  --accent: #b28b30;      /* etwas gedeckter Goldton */
+  --accent-soft: rgba(178, 139, 48, 0.16);
+  --border-subtle: #d2d2d4;
+  --border-strong: #b3b3b5;
+  --radius-card: 20px;
+  --max-width: 1040px;
+}
     * {
       box-sizing: border-box;
       margin: 0;
@@ -55,9 +54,9 @@
       z-index: 20;
       backdrop-filter: blur(16px);
       background:
-        radial-gradient(circle at 0 0, rgba(255,255,255,0.03), transparent 55%),
-        rgba(5,6,10,0.94);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+        radial-gradient(circle at 0 0, rgba(0,0,0,0.03), transparent 55%),
+        rgba(255,255,255,0.9);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .nav {
