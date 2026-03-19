@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+.statement-section {
+        padding: 80px 20px;
+        margin: 0 -20px;
+      }
+
+      .statement-headline {
+        font-size: 1.8rem;
+      }      .join-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }      .problem-columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .problem-blocks {
+        gap: 32px;
+      }
+
+      .problem-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .problem-text-centered {
+        margin: 48px auto;
+      }
+
+      .problem-text-centered p {
+        font-size: 1rem;
+      }<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -206,7 +237,7 @@
       text-transform: uppercase;
     }
 
-    /* TEXT BLOCK AFTER IMAGE */
+          /* TEXT BLOCK AFTER IMAGE */
     .text-block {
       padding: 100px 0;
       text-align: center;
@@ -229,6 +260,54 @@
       font-size: 1.05rem;
       line-height: 1.8;
       color: var(--muted);
+    }
+
+    /* PROBLEM SECTION - Centered text block */
+    .problem-text-centered {
+      max-width: 42rem;
+      margin: 64px auto;
+      padding: 0 24px;
+    }
+
+    .problem-text-centered p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .problem-text-centered p:last-child {
+      margin-bottom: 0;
+    }
+
+    .problem-text-centered strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    /* STATEMENT SECTION */
+    .statement-section {
+      padding: 120px 24px;
+      text-align: center;
+      background: #ffffff;
+      margin: 0 -24px;
+    }
+
+    .statement-headline {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      max-width: 24ch;
+      letter-spacing: -0.02em;
+      font-weight: 500;
+      margin: 0 auto 28px;
+    }
+
+    .statement-text {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto;
     }
 
     /* SECTIONS */
@@ -356,7 +435,7 @@
     /* WHAT WE LOOK FOR */
     .look-section-content {
       display: grid;
-      grid-template-columns: 1fr 240px;
+      grid-template-columns: 240px 1fr;
       gap: 48px;
       align-items: start;
     }
@@ -398,44 +477,82 @@
       color: var(--muted);
     }
 
-    /* WHO WE ARE */
-    .why-section-content {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .why-image {
-      width: 240px;
-      height: 320px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
-      object-fit: cover;
-    }
-
-    .why-text-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .why-intro {
-      margin: 0;
+    /* WHO WE ARE - Make it sticky so JOIN rolls over it */
+    #who {
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
 
     /* JOIN / CTA */
-    .join-content {
-      text-align: center;
-      margin-top: 40px;
+    .join-section-wrapper {
+      background: #ffffff;
+      position: relative;
+      z-index: 10;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
     }
 
-    .join-cta-wrapper {
-      margin-top: 32px;
+    .join-content {
+      text-align: center;
+      padding: 100px 24px 80px;
+    }
+
+    .join-headline {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 24px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .join-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 36rem;
+      margin: 0 auto 48px;
+    }
+
+    .join-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .join-card {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 48px 32px;
+      background: var(--bg);
+      text-decoration: none;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .join-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      border-color: var(--fg);
+    }
+
+    .join-card-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fg);
+    }
+
+    .join-card-text {
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     .btn {
@@ -628,14 +745,14 @@
         <!-- HERO -->
         <section class="hero">
           <h1 class="hero-headline">
-            We invest in materials reshaping how the world is built.
+            We invest in the mandatory molecules and systems reshaping how the world is built.
           </h1>
           <p class="hero-sub">
-            The future of construction. One input at a time.
+            Capital alone doesn't scale. Industrial adoption does. We connect both.
           </p>
           <div class="hero-cta">
-            <a href="mailto:hello@mina.vc?subject=Pitch%20Deck" class="btn btn-primary">Submit your pitch deck</a>
-            <a href="mailto:hello@mina.vc?subject=Invest%20with%20INPUT" class="btn btn-secondary">Invest with us</a>
+            <a href="mailto:hello@input.vc?subject=Join%20Our%20Platform" class="btn btn-primary">Join Our Platform</a>
+            <a href="mailto:hello@input.vc?subject=Submit%20Pitch" class="btn btn-secondary">Submit Pitch</a>
           </div>
         </section>
       </div>
@@ -643,49 +760,67 @@
       <!-- FULL WIDTH IMAGE -->
       <div class="full-image-section" role="img" aria-label="Hero image placeholder"></div>
 
-      <!-- TEXT BLOCK -->
+      <!-- PROBLEM SECTION -->
       <div class="shell">
         <section class="text-block">
-          <div class="text-block-content">
-            <h2 class="text-block-title">
-              We don't fund infrastructure. We fund what infrastructure is made of.
-            </h2>
-            <p class="text-block-text">
-              The future of our infrastructure starts with better inputs, and the systems that scale them.
+          <div class="section-eyebrow">The Problem</div>
+          <h2 class="text-block-title">
+            Innovation is abundant. Adoption is broken.
+          </h2>
+          
+          <div class="problem-text-centered">
+            <p>
+              Europe leads in innovation, yet many critical breakthroughs die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.
+            </p>
+            <p>
+              <strong>And the critical mismatch:</strong> Those who have the power to shape adoption - strategically relevant SMEs, industry experts, and others - don't even have a seat at the table when foundational decisions are made. They remain spectators of a transition they should be leading.
+            </p>
+            <p>
+              This ends now.
             </p>
           </div>
         </section>
 
-        <!-- 1. CORE BELIEFS -->
+        <!-- STATEMENT SECTION -->
+        <section class="statement-section">
+          <h2 class="statement-headline">
+            We don't invest to sell. We invest to partner.
+          </h2>
+          <p class="statement-text">
+            Short-term exits don't build industries. Industrial integration does.
+          </p>
+        </section>
+
+        <!-- 1. THREE FORCES -->
         <section id="beliefs">
           <div class="believe-section-content">
             <div class="believe-text-content">
               <div class="believe-intro">
-                <div class="section-eyebrow">Core Beliefs</div>
+                <div class="section-eyebrow">How We Work</div>
                 <h2 class="section-title">
-                  Our core beliefs guide every decision we make.
+                  Three Forces. One Table. One Mission.
                 </h2>
               </div>
               
               <div class="believe-grid">
                 <div class="believe-item">
-                  <h3>AI accelerates material development</h3>
+                  <h3>Force One: Owner-operators, SMEs, and Industry Veterans.</h3>
                   <p>
-                    AI turns materials from slow experimentation into fast computation - the entire development cycle compresses.
+                    You invest more than money. You provide Validation & Access – the real-world proof that a technology works.
                   </p>
                 </div>
 
                 <div class="believe-item">
-                  <h3>Materials don't scale alone.</h3>
+                  <h3>Force Two: Investors with a long-term capital mandate.</h3>
                   <p>
-                    Faster development is meaningless without access to industrial partners, supply chains, and integration pathways.
+                    You provide additional firepower and know-how. You back the vision with the necessary breath to reach integration & scale.
                   </p>
                 </div>
 
                 <div class="believe-item">
-                  <h3>Europe is the hardest test environment. And that's an advantage.</h3>
+                  <h3>Force Three: The Founders.</h3>
                   <p>
-                    Brutal regulation. Strict norms. High sustainability pressure. If you make it here, you can make it anywhere.
+                    "Architects of Change" with Deep-Tech Teams & Material Scientists. You provide the Mandatory Molecules. And you will receive more than capital to build the essential systems the world can no longer ignore.
                   </p>
                 </div>
               </div>
@@ -694,44 +829,10 @@
           </div>
         </section>
 
-        <!-- 2. WHAT WE INVEST IN -->
-        <section id="invest">
-          <div class="invest-section-content">
-            <div class="invest-image" role="img" aria-label="Placeholder image"></div>
-            <div class="invest-text-content">
-              <div class="invest-intro">
-                <div class="section-eyebrow">What we invest in</div>
-              </div>
-              
-              <div class="invest-grid">
-                <div class="invest-item">
-                  <h3>Input Innovation</h3>
-                  <p>
-                    Novel material inputs at the substance level. We invest in new formulations, binders, additives, and substitutes for primary raw materials - redefining performance, cost, and carbon before products exist.
-                  </p>
-                </div>
-
-                <div class="invest-item">
-                  <h3>Input Infrastructure</h3>
-                  <p>
-                    Technologies that make new inputs industrially viable. Processing, activation, blending, and retrofit-ready systems that integrate with existing production assets and enable scale.
-                  </p>
-                </div>
-
-                <div class="invest-item">
-                  <h3>Input-Led Applications</h3>
-                  <p>
-                    Applications where the input is the advantage. We invest selectively in applications that validate, certify, and accelerate adoption of proprietary material inputs under real-world conditions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 3. WHAT WE LOOK FOR -->
+        <!-- 2. WHAT WE LOOK FOR -->
         <section id="look">
           <div class="look-section-content">
+            <div class="look-image" role="img" aria-label="Placeholder image"></div>
             <div class="look-text-content">
               <div class="look-intro">
                 <div class="section-eyebrow">What we look for</div>
@@ -739,28 +840,27 @@
               
               <div class="look-grid">
                 <div class="look-item">
-                  <h3>Early-stage, research-born teams</h3>
+                  <h3>Early-stage, post-validation</h3>
                   <p>
-                    Smart engineers from universities & labs.
+                    After technical proof, before industrial adoption. Seed to Series A.
                   </p>
                 </div>
 
                 <div class="look-item">
-                  <h3>Real material science, not slides</h3>
+                  <h3>Europe-first, built for sovereignty</h3>
                   <p>
-                    Chemistry, structure, processes — genuine depth.
+                    We back European innovation that strengthens local supply chains and industrial resilience.
                   </p>
                 </div>
 
                 <div class="look-item">
-                  <h3>Built for industry adoption</h3>
+                  <h3>System-relevant, adoption-critical</h3>
                   <p>
-                    Path to certification, validation, pilot plants.
+                    We invest where integration, not invention, is the bottleneck.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="look-image" role="img" aria-label="Placeholder image"></div>
           </div>
         </section>
 
@@ -783,22 +883,31 @@
           </div>
         </section>
 
-        <!-- JOIN / CTA -->
+      <!-- JOIN / CTA -->
+      <div class="join-section-wrapper">
         <section id="join">
           <div class="join-content">
-            <div class="section-eyebrow">Join us</div>
-            <h2 class="section-title">
-              Building the future together
+            <h2 class="join-headline">
+              Join the ecosystem reshaping European construction.
             </h2>
-            <p class="section-text">
-              Whether you're a founder with a breakthrough innovation or an investor looking to join our syndicate, we'd love to hear from you.
+            <p class="join-text">
+              We back founders building the materials of tomorrow and industry leaders who understand that early-stage investing is a license to operate. Let's build what's next.
             </p>
-            <div class="join-cta-wrapper">
-              <a href="mailto:hello@mina.vc?subject=Pitch%20Deck" class="btn btn-primary">Submit your deck</a>
-              <a href="mailto:hello@mina.vc?subject=Invest%20with%20INPUT" class="btn btn-secondary">Invest with us</a>
+            
+            <div class="join-cards">
+              <a href="mailto:hello@input.vc?subject=Submit%20Pitch%20Deck" class="join-card">
+                <div class="join-card-label">Submit</div>
+                <div class="join-card-text">Submit your pitch deck</div>
+              </a>
+              
+              <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="join-card">
+                <div class="join-card-label">Request</div>
+                <div class="join-card-text">Invest with INPUT</div>
+              </a>
             </div>
           </div>
         </section>
+      </div>
       </div>
     </main>
 
