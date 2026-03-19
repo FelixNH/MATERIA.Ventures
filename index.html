@@ -1,35 +1,4 @@
-.statement-section {
-        padding: 80px 20px;
-        margin: 0 -20px;
-      }
-
-      .statement-headline {
-        font-size: 1.8rem;
-      }      .join-cards {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-      }      .problem-columns {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .problem-blocks {
-        gap: 32px;
-      }
-
-      .problem-block {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .problem-text-centered {
-        margin: 48px auto;
-      }
-
-      .problem-text-centered p {
-        font-size: 1rem;
-      }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -221,23 +190,14 @@
       margin-left: calc(-50vw + 50%);
       height: 85vh;
       min-height: 600px;
-      background: linear-gradient(135deg, #c5c5c5 0%, #8a8a8a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
-    .full-image-section::after {
-      content: 'Image Placeholder';
-      position: absolute;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 1.2rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-          /* TEXT BLOCK AFTER IMAGE */
+    /* TEXT BLOCK AFTER IMAGE */
     .text-block {
       padding: 100px 0;
       text-align: center;
@@ -342,49 +302,110 @@
       margin-top: 20px;
     }
 
-    /* CORE BELIEFS */
-    .believe-section-content {
-      display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 48px;
-      align-items: start;
+    /* THREE FORCES */
+    .believe-header {
+      margin-bottom: 56px;
     }
 
-    .believe-text-content {
+    .believe-subline {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 38rem;
+      margin-top: 16px;
+    }
+
+    .forces-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .force-card {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 36px 28px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
+      background: var(--bg);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .believe-intro {
-      margin: 0;
+    .force-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
 
-    .believe-grid {
-      display: grid;
-      gap: 48px;
+    .force-number {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
     }
 
-    .believe-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      font-weight: 500;
+    .force-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
     }
 
-    .believe-item p {
-      font-size: 1.05rem;
-      line-height: 1.8;
+    .force-title-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .force-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .force-role {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
       color: var(--muted);
     }
 
-    .believe-image {
-      width: 240px;
-      height: 100%;
-      min-height: 320px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
-      object-fit: cover;
-      align-self: stretch;
+    .force-bring {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--fg);
+      padding-top: 4px;
+    }
+
+    .force-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .force-impact {
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .force-impact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .force-impact-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--fg);
+      font-weight: 500;
     }
 
     /* WHAT WE INVEST IN */
@@ -432,7 +453,7 @@
       color: var(--muted);
     }
 
-    /* WHAT WE LOOK FOR */
+    /* OUR FOCUS */
     .look-section-content {
       display: grid;
       grid-template-columns: 240px 1fr;
@@ -445,43 +466,111 @@
       height: 100%;
       min-height: 320px;
       border-radius: 8px;
-      background: linear-gradient(135deg, #d5d5d5 0%, #b5b5b5 100%);
       object-fit: cover;
       align-self: stretch;
+      flex-shrink: 0;
     }
 
     .look-text-content {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 36px;
     }
 
     .look-intro {
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .look-subline {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
     }
 
     .look-grid {
       display: grid;
-      gap: 48px;
+      gap: 28px;
     }
 
-    .look-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      font-weight: 500;
+    .look-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 16px;
+      border-left: 2px solid var(--border-subtle);
+    }
+
+    .look-item-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     .look-item p {
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.75;
       color: var(--muted);
     }
 
-    /* WHO WE ARE - Make it sticky so JOIN rolls over it */
+    /* WHO WE ARE */
     #who {
       position: sticky;
       top: 0;
       z-index: 1;
+    }
+
+    .who-section-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .who-text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .who-body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .who-edge {
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .who-edge-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .who-edge-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .who-image {
+      width: 300px;
+      height: 380px;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
     }
 
     /* JOIN / CTA */
@@ -514,12 +603,11 @@
       margin: 0 auto 48px;
     }
 
-    .join-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 700px;
-      margin: 0 auto;
+    .join-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
     }
 
     .join-card {
@@ -684,9 +772,21 @@
       .believe-section-content,
       .invest-section-content,
       .look-section-content,
-      .why-section-content {
+      .who-section-content {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 32px;
+      }
+
+      .forces-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .who-image {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        order: -1;
       }
 
       .believe-image,
@@ -697,6 +797,43 @@
         max-width: 200px;
         height: 250px;
         margin: 0 auto;
+      }
+
+      .statement-section {
+        padding: 80px 20px;
+        margin: 0 -20px;
+      }
+
+      .statement-headline {
+        font-size: 1.8rem;
+      }
+
+      .join-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .problem-columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .problem-blocks {
+        gap: 32px;
+      }
+
+      .problem-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .problem-text-centered {
+        margin: 48px auto;
+      }
+
+      .problem-text-centered p {
+        font-size: 1rem;
       }
     }
 
@@ -732,9 +869,9 @@
         <div class="nav-links">
           <a class="nav-link" href="#">Home</a>
           <a class="nav-link" href="#who">Who we are</a>
-          <a class="nav-link" href="#look">What we look for</a>
-          <a class="nav-link" href="#invest">What we invest in</a>
-          <a class="nav-link" href="#who">Why us</a>
+          <a class="nav-link" href="#look">Our Focus</a>
+          <a class="nav-link" href="#beliefs">How we work</a>
+          <a class="nav-link" href="why-us.html">Why us</a>
         </div>
         <a class="nav-cta" href="#join">Get in touch</a>
       </nav>
@@ -751,14 +888,16 @@
             Capital alone doesn't scale. Industrial adoption does. We connect both.
           </p>
           <div class="hero-cta">
-            <a href="mailto:hello@input.vc?subject=Join%20Our%20Platform" class="btn btn-primary">Join Our Platform</a>
-            <a href="mailto:hello@input.vc?subject=Submit%20Pitch" class="btn btn-secondary">Submit Pitch</a>
+            <a href="/cdn-cgi/l/email-protection#573f323b3b38173e39272223792134682422353d3234236a1d383e39726567182225726567073b36233138253a" class="btn btn-primary">Join Our Platform</a>
+            <a href="/cdn-cgi/l/email-protection#fd9598919192bd94938d8889d38b9ec28e889f97989e89c0ae889f909489d8cfcdad94899e95" class="btn btn-secondary">Submit Pitch</a>
           </div>
         </section>
       </div>
 
       <!-- FULL WIDTH IMAGE -->
-      <div class="full-image-section" role="img" aria-label="Hero image placeholder"></div>
+      <div class="full-image-section" role="img" aria-label="Industrial aerial view">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&auto=format&fit=crop&q=80" alt="Aerial view of industrial manufacturing facility" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
 
       <!-- PROBLEM SECTION -->
       <div class="shell">
@@ -793,71 +932,88 @@
 
         <!-- 1. THREE FORCES -->
         <section id="beliefs">
-          <div class="believe-section-content">
-            <div class="believe-text-content">
-              <div class="believe-intro">
-                <div class="section-eyebrow">How We Work</div>
-                <h2 class="section-title">
-                  Three Forces. One Table. One Mission.
-                </h2>
+          <div class="believe-header">
+            <div class="section-eyebrow">How We Work</div>
+            <h2 class="section-title">Three Forces. One Table.</h2>
+            <p class="believe-subline">We pool capital from those who understand the industry to back those who will redefine it.</p>
+          </div>
+
+          <div class="forces-grid">
+            <div class="force-card">
+              <div class="force-number">01</div>
+              <div class="force-body">
+                <div class="force-title-row">
+                  <h3 class="force-name">The Strategics</h3>
+                  <span class="force-role">Adoption Shapers</span>
+                </div>
+                <p class="force-bring"><strong>You bring</strong> Validation &amp; Access.</p>
+                <p class="force-desc">You invest more than money—you provide the real-world proof that a technology works.</p>
               </div>
-              
-              <div class="believe-grid">
-                <div class="believe-item">
-                  <h3>Force One: Owner-operators, SMEs, and Industry Veterans.</h3>
-                  <p>
-                    You invest more than money. You provide Validation & Access – the real-world proof that a technology works.
-                  </p>
-                </div>
-
-                <div class="believe-item">
-                  <h3>Force Two: Investors with a long-term capital mandate.</h3>
-                  <p>
-                    You provide additional firepower and know-how. You back the vision with the necessary breath to reach integration & scale.
-                  </p>
-                </div>
-
-                <div class="believe-item">
-                  <h3>Force Three: The Founders.</h3>
-                  <p>
-                    "Architects of Change" with Deep-Tech Teams & Material Scientists. You provide the Mandatory Molecules. And you will receive more than capital to build the essential systems the world can no longer ignore.
-                  </p>
-                </div>
+              <div class="force-impact">
+                <span class="force-impact-label">Impact</span>
+                <span class="force-impact-text">You increase the probability of success of each venture.</span>
               </div>
             </div>
-            <div class="believe-image" role="img" aria-label="Placeholder image"></div>
+
+            <div class="force-card">
+              <div class="force-number">02</div>
+              <div class="force-body">
+                <div class="force-title-row">
+                  <h3 class="force-name">The Financials</h3>
+                  <span class="force-role">Growth Multipliers</span>
+                </div>
+                <p class="force-bring"><strong>You bring</strong> Scalable Capital.</p>
+                <p class="force-desc">You back the vision with the necessary firepower to reach global scale.</p>
+              </div>
+              <div class="force-impact">
+                <span class="force-impact-label">Impact</span>
+                <span class="force-impact-text">You invest with maximum de-risking, guided by industrial expertise.</span>
+              </div>
+            </div>
+
+            <div class="force-card">
+              <div class="force-number">03</div>
+              <div class="force-body">
+                <div class="force-title-row">
+                  <h3 class="force-name">The Founders</h3>
+                  <span class="force-role">The Architects</span>
+                </div>
+                <p class="force-bring"><strong>You bring</strong> Mandatory Molecules.</p>
+                <p class="force-desc">You build the essential systems the world can no longer ignore.</p>
+              </div>
+              <div class="force-impact">
+                <span class="force-impact-label">Impact</span>
+                <span class="force-impact-text">You get a cap-table that opens supply chains, not just bank accounts.</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- 2. WHAT WE LOOK FOR -->
+        <!-- 2. OUR FOCUS -->
         <section id="look">
           <div class="look-section-content">
-            <div class="look-image" role="img" aria-label="Placeholder image"></div>
+            <img class="look-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80" alt="European industrial construction" />
             <div class="look-text-content">
               <div class="look-intro">
-                <div class="section-eyebrow">What we look for</div>
+                <div class="section-eyebrow">Our Focus</div>
+                <h2 class="section-title">We invest where innovation meets the physical world.</h2>
+                <p class="look-subline">Our sweet spot is the critical phase between lab success and industrial adoption.</p>
               </div>
-              
+
               <div class="look-grid">
                 <div class="look-item">
-                  <h3>Early-stage, post-validation</h3>
-                  <p>
-                    After technical proof, before industrial adoption. Seed to Series A.
-                  </p>
+                  <div class="look-item-label">The Sectors</div>
+                  <p>We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure.</p>
                 </div>
 
                 <div class="look-item">
-                  <h3>Europe-first, built for sovereignty</h3>
-                  <p>
-                    We back European innovation that strengthens local supply chains and industrial resilience.
-                  </p>
+                  <div class="look-item-label">The Stage</div>
+                  <p>Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come.</p>
                 </div>
 
                 <div class="look-item">
-                  <h3>System-relevant, adoption-critical</h3>
-                  <p>
-                    We invest where integration, not invention, is the bottleneck.
-                  </p>
+                  <div class="look-item-label">The Geography</div>
+                  <p>European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders.</p>
                 </div>
               </div>
             </div>
@@ -866,20 +1022,23 @@
 
         <!-- 4. WHO WE ARE -->
         <section id="who">
-          <div class="why-section-content">
-            <div class="why-image" role="img" aria-label="Placeholder image"></div>
-            <div class="why-text-content">
-              <div class="why-intro">
-                <div class="section-eyebrow">Who we are</div>
-                <h2 class="section-title">
-                  Founded by Philipp & Felix, INPUT Partners is a deal-by-deal investment syndicate bringing together an exclusive circle of executives, entrepreneurs, investors and industry experts.
-                </h2>
-              </div>
-              
-              <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted);">
-                We're united by one goal: building smarter, more resilient materials for generations to come.
+          <div class="who-section-content">
+            <div class="who-text-content">
+              <div class="section-eyebrow">Who we are</div>
+              <h2 class="section-title">
+                Industrial Experience meets Radical Innovation.
+              </h2>
+              <p class="who-body">
+                Input isn't a faceless fund. It's built on decades of experience in Venture Capital, Company Building and Collaboration paired with a deep understanding of how the European Mittelstand breathes.
               </p>
+              <div class="who-edge">
+                <div class="who-edge-label">The Edge</div>
+                <p class="who-edge-text">
+                  I've seen the barriers from the inside. Now, I've built the platform to bypass them. By combining Industrial Trust with the Speed of Venture, we ensure that the most critical technologies of our time actually reach the market.
+                </p>
+              </div>
             </div>
+            <img class="who-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=80" alt="Founders Philipp and Felix" />
           </div>
         </section>
 
@@ -888,43 +1047,19 @@
         <section id="join">
           <div class="join-content">
             <h2 class="join-headline">
-              Join the ecosystem reshaping European construction.
+              Take your seat at the table.
             </h2>
             <p class="join-text">
-              We back founders building the materials of tomorrow and industry leaders who understand that early-stage investing is a license to operate. Let's build what's next.
+              We are currently building our next syndicate of industrial partners and visionary investors.
             </p>
             
-            <div class="join-cards">
-              <a href="mailto:hello@input.vc?subject=Submit%20Pitch%20Deck" class="join-card">
-                <div class="join-card-label">Submit</div>
-                <div class="join-card-text">Submit your pitch deck</div>
-              </a>
-              
-              <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="join-card">
-                <div class="join-card-label">Request</div>
-                <div class="join-card-text">Invest with INPUT</div>
-              </a>
+            <div class="join-buttons">
+              <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08fa6a1bfbabbe1b9acf0bcbaada5aaacbbf286a1b9aabcbbeafdffb8a6bba7eafdff86819f9a9b" class="btn btn-primary">Invest with us</a>
+              <a href="/cdn-cgi/l/email-protection#39515c555556795057494c4d174f5a064a4c5b535c5a4d0469504d5a511c0b0954401c0b097456555c5a4c555c" class="btn btn-secondary">Pitch your Molecule</a>
+              <a href="/cdn-cgi/l/email-protection#6204070e0b1a220b0c1217164c14015d111700080701165f2507164750520b0c475052360d17010a" class="btn btn-secondary">Get in Touch with Felix</a>
             </div>
           </div>
         </section>
       </div>
       </div>
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <span>&copy; <span id="year"></span> INPUT Partners</span>
-        <div class="footer-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#accessibility">Accessibility</a>
-          <a href="#imprint">Imprint</a>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    </
