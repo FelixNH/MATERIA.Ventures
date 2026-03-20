@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Why INPUT Partners - Our approach to early-stage construction materials investing" />
+  <title>Why Us - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --max-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-line-main {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .logo-line-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .nav-cta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--fg);
+      background: transparent;
+      color: var(--fg);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--fg);
+      color: var(--fg);
+    }
+
+    .nav-link.active {
+      border-color: var(--fg);
+      color: var(--fg);
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 100px;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+      line-height: 1.15;
+      max-width: 20ch;
+      letter-spacing: -0.02em;
+      font-weight: 500;
+      margin: 0 auto 28px;
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    /* CONTENT BLOCKS */
+    .content-section {
+      padding: 80px 0;
+    }
+
+    .why-blocks {
+      display: grid;
+      gap: 0;
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    .why-block {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .why-block:first-child {
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .why-block-number {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .why-block-body h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .why-block-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* QUOTE */
+    .quote-section {
+      padding: 80px 0;
+    }
+
+    .quote-block {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 48px;
+      background: #ffffff;
+      border-radius: 20px;
+      border-left: 3px solid var(--accent);
+      text-align: left;
+    }
+
+    .quote-text {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--fg);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .quote-attribution {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+      font-style: normal;
+      border: none;
+      padding: 0;
+    }
+
+    /* IMAGE SECTION */
+    .image-section {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      height: 70vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-section img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* CTA */
+    .cta-wrapper {
+      background: #ffffff;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    }
+
+    .cta-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+
+    .cta-headline {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .cta-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 36rem;
+      margin: 0 auto 48px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--fg);
+    }
+
+    .btn-secondary {
+      border-color: var(--border-strong, #b3b3b5);
+      color: var(--fg);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--fg);
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 24px 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--fg);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .shell {
+        padding-inline: 20px;
+      }
+
+      .nav {
+        padding: 16px 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .content-section {
+        padding: 60px 0;
+      }
+
+      .image-section {
+        height: 50vh;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav" role="navigation">
+        <div class="nav-left">
+          <a href="index.html" class="logo-text">
+            <div class="logo-line-main">INPUT</div>
+            <div class="logo-line-sub">Partners</div>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.html#who">Who we are</a>
+          <a class="nav-link" href="index.html#look">Our Focus</a>
+          <a class="nav-link" href="index.html#beliefs">How we work</a>
+          <a class="nav-link active" href="why-us.html">Why us</a>
+        </div>
+        <a class="nav-cta" href="/cdn-cgi/l/email-protection#b9d1dcd5d5d6f9d0d7c9cccd97cfda86caccdbd3dcdacd84fedccd9c8b89d0d79c8b89edd6ccdad1">Get in touch</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-eyebrow">Why Us</div>
+          <h1 class="hero-headline">
+            Industrial transformation cannot be built from within.
+          </h1>
+          <p class="hero-text">
+            Regulatory pressure and market demand are forcing a transition that internal R&D cannot solve alone. We provide the structural bridge.
+          </p>
+        </section>
+
+        <!-- CONTENT BLOCKS -->
+        <section class="content-section">
+          <div class="why-blocks">
+
+            <div class="why-block">
+              <div class="why-block-number">01</div>
+              <div class="why-block-body">
+                <h3>Patient Capital. Industrial Horizon.</h3>
+                <p>We syndicate capital that understands the cycles of atoms and molecules. We invest with the long-term patience required to build a new industrial standard.</p>
+              </div>
+            </div>
+
+            <div class="why-block">
+              <div class="why-block-number">02</div>
+              <div class="why-block-body">
+                <h3>Strategic Skin in the Game</h3>
+                <p>By bringing strategics to the table with capital, we turn observers into active enablers, unlocking the data and field-access needed to sharpen the product.</p>
+              </div>
+            </div>
+
+            <div class="why-block">
+              <div class="why-block-number">03</div>
+              <div class="why-block-body">
+                <h3>Product-Integration-Fit</h3>
+                <p>By involving industry leaders early, we ensure that the technical, regulatory, and operational interfaces for scaling are already built.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- QUOTE -->
+        <section class="quote-section">
+          <blockquote class="quote-block">
+            <p class="quote-text">"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we fundamentally increase their probability of success."</p>
+            <footer class="quote-attribution">— Felix, Co-Founder, INPUT Partners</footer>
+          </blockquote>
+        </section>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-wrapper">
+        <div class="cta-inner">
+          <h2 class="cta-headline">Take your seat at the table.</h2>
+          <p class="cta-text">We are currently building our next syndicate of industrial partners and visionary investors.</p>
+          <div class="cta-buttons">
+            <a href="/cdn-cgi/l/email-protection#b6ded3dadad9f6dfd8c6c3c298c0d589c5c3d4dcd3d5c28bffd8c0d3c5c2938486c1dfc2de938486fff8e6e3e2" class="btn btn-primary">Invest with us</a>
+            <a href="/cdn-cgi/l/email-protection#b8d0ddd4d4d7f8d1d6c8cdcc96cedb87cbcddad2dddbcc85e8d1ccdbd09d8a88d5c19d8a88f5d7d4dddbcdd4dd" class="btn btn-secondary">Pitch your Molecule</a>
+            <a href="/cdn-cgi/l/email-protection#c3a5a6afaabb83aaadb3b6b7edb5a0fcb0b6a1a9a6a0b7fe84a6b7e6f1f3aaade6f1f397acb6a0ab" class="btn btn-secondary">Get in Touch with Felix</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="#privacy">Privacy</a>
