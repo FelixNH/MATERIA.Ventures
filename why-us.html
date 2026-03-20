@@ -574,4 +574,14 @@
       document.querySelectorAll('[data-en]').forEach(el => {
         el.innerHTML = el.getAttribute('data-' + lang);
       });
-      document.document
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang') || 'en';
+    if (savedLang === 'de') setLang('de');
+  </script>
+</body>
+</html>
