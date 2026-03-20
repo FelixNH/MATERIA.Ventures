@@ -395,6 +395,43 @@
       color: var(--fg);
     }
 
+    /* LANG TOGGLE */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      padding: 6px 10px;
+      background: transparent;
+      color: var(--muted);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .lang-divider {
+      color: var(--border-subtle);
+      font-size: 0.7rem;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .shell {
@@ -435,13 +472,18 @@
           </a>
         </div>
         <div class="nav-links">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="index.html#who">Who we are</a>
-          <a class="nav-link" href="index.html#look">Our Focus</a>
-          <a class="nav-link" href="index.html#beliefs">How we work</a>
-          <a class="nav-link active" href="why-us.html">Why us</a>
+          <a class="nav-link" href="index.html" data-en="Home" data-de="Start">Home</a>
+          <a class="nav-link" href="index.html#who" data-en="Who we are" data-de="Über uns">Who we are</a>
+          <a class="nav-link" href="index.html#look" data-en="Our Focus" data-de="Unser Fokus">Our Focus</a>
+          <a class="nav-link" href="index.html#beliefs" data-en="How we work" data-de="Wie wir arbeiten">How we work</a>
+          <a class="nav-link active" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
-        <a class="nav-cta" href="/cdn-cgi/l/email-protection#b9d1dcd5d5d6f9d0d7c9cccd97cfda86caccdbd3dcdacd84fedccd9c8b89d0d79c8b89edd6ccdad1">Get in touch</a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+        </div>
+        <a class="nav-cta" href="mailto:hello@input.vc?subject=Get%20in%20Touch" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
@@ -449,11 +491,11 @@
       <div class="shell">
         <!-- HERO -->
         <section class="hero">
-          <div class="hero-eyebrow">Why Us</div>
-          <h1 class="hero-headline">
+          <div class="hero-eyebrow" data-en="Why Us" data-de="Warum wir">Why Us</div>
+          <h1 class="hero-headline" data-en="Industrial transformation cannot be built from within." data-de="Industrieller Wandel kann nicht von innen heraus gebaut werden.">
             Industrial transformation cannot be built from within.
           </h1>
-          <p class="hero-text">
+          <p class="hero-text" data-en="Regulatory pressure and market demand are forcing a transition that internal R&D cannot solve alone. We provide the structural bridge." data-de="Regulatorischer Druck und Marktnachfrage erzwingen einen Wandel, den interne F&E alleine nicht lösen kann. Wir liefern die strukturelle Brücke.">
             Regulatory pressure and market demand are forcing a transition that internal R&D cannot solve alone. We provide the structural bridge.
           </p>
         </section>
@@ -465,24 +507,24 @@
             <div class="why-block">
               <div class="why-block-number">01</div>
               <div class="why-block-body">
-                <h3>Patient Capital. Industrial Horizon.</h3>
-                <p>We syndicate capital that understands the cycles of atoms and molecules. We invest with the long-term patience required to build a new industrial standard.</p>
+                <h3 data-en="Patient Capital. Industrial Horizon." data-de="Geduldiges Kapital. Industrieller Horizont.">Patient Capital. Industrial Horizon.</h3>
+                <p data-en="We syndicate capital that understands the cycles of atoms and molecules. We invest with the long-term patience required to build a new industrial standard." data-de="Wir syndizieren Kapital, das die Zyklen von Atomen und Molekülen versteht. Wir investieren mit der langfristigen Geduld, die nötig ist, um einen neuen Industriestandard aufzubauen.">We syndicate capital that understands the cycles of atoms and molecules. We invest with the long-term patience required to build a new industrial standard.</p>
               </div>
             </div>
 
             <div class="why-block">
               <div class="why-block-number">02</div>
               <div class="why-block-body">
-                <h3>Strategic Skin in the Game</h3>
-                <p>By bringing strategics to the table with capital, we turn observers into active enablers, unlocking the data and field-access needed to sharpen the product.</p>
+                <h3 data-en="Strategic Skin in the Game" data-de="Strategisches Skin in the Game">Strategic Skin in the Game</h3>
+                <p data-en="By bringing strategics to the table with capital, we turn observers into active enablers, unlocking the data and field-access needed to sharpen the product." data-de="Indem wir Strategische mit Kapital an den Tisch bringen, verwandeln wir Beobachter in aktive Ermöglicher und erschließen die Daten und den Feldzugang, der nötig ist, um das Produkt zu schärfen.">By bringing strategics to the table with capital, we turn observers into active enablers, unlocking the data and field-access needed to sharpen the product.</p>
               </div>
             </div>
 
             <div class="why-block">
               <div class="why-block-number">03</div>
               <div class="why-block-body">
-                <h3>Product-Integration-Fit</h3>
-                <p>By involving industry leaders early, we ensure that the technical, regulatory, and operational interfaces for scaling are already built.</p>
+                <h3 data-en="Product-Integration-Fit" data-de="Product-Integration-Fit">Product-Integration-Fit</h3>
+                <p data-en="By involving industry leaders early, we ensure that the technical, regulatory, and operational interfaces for scaling are already built." data-de="Durch die frühzeitige Einbindung von Industrieführern stellen wir sicher, dass die technischen, regulatorischen und operativen Schnittstellen für die Skalierung bereits aufgebaut sind.">By involving industry leaders early, we ensure that the technical, regulatory, and operational interfaces for scaling are already built.</p>
               </div>
             </div>
 
@@ -492,7 +534,7 @@
         <!-- QUOTE -->
         <section class="quote-section">
           <blockquote class="quote-block">
-            <p class="quote-text">"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we fundamentally increase their probability of success."</p>
+            <p class="quote-text" data-en='"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we fundamentally increase their probability of success."' data-de='"Die Baubranche ist zu fragmentiert für isolierte Innovation. Erfolg in dieser Industrie erfordert drei Dinge: Geduldiges Kapital, frühe industrielle Ausrichtung und echtes Engagement der etablierten Akteure. Indem wir alle drei liefern, unterstützen wir nicht nur Startups – wir erhöhen ihre Erfolgswahrscheinlichkeit grundlegend."'>"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we fundamentally increase their probability of success."</p>
             <footer class="quote-attribution">— Felix, Co-Founder, INPUT Partners</footer>
           </blockquote>
         </section>
@@ -501,12 +543,12 @@
       <!-- CTA -->
       <div class="cta-wrapper">
         <div class="cta-inner">
-          <h2 class="cta-headline">Take your seat at the table.</h2>
-          <p class="cta-text">We are currently building our next syndicate of industrial partners and visionary investors.</p>
+          <h2 class="cta-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h2>
+          <p class="cta-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">We are currently building our next syndicate of industrial partners and visionary investors.</p>
           <div class="cta-buttons">
-            <a href="/cdn-cgi/l/email-protection#b6ded3dadad9f6dfd8c6c3c298c0d589c5c3d4dcd3d5c28bffd8c0d3c5c2938486c1dfc2de938486fff8e6e3e2" class="btn btn-primary">Invest with us</a>
-            <a href="/cdn-cgi/l/email-protection#b8d0ddd4d4d7f8d1d6c8cdcc96cedb87cbcddad2dddbcc85e8d1ccdbd09d8a88d5c19d8a88f5d7d4dddbcdd4dd" class="btn btn-secondary">Pitch your Molecule</a>
-            <a href="/cdn-cgi/l/email-protection#c3a5a6afaabb83aaadb3b6b7edb5a0fcb0b6a1a9a6a0b7fe84a6b7e6f1f3aaade6f1f397acb6a0ab" class="btn btn-secondary">Get in Touch with Felix</a>
+            <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
+            <a href="mailto:hello@input.vc?subject=Pitch%20my%20Molecule" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
+            <a href="mailto:felix@input.vc?subject=Get%20in%20Touch" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
           </div>
         </div>
       </div>
@@ -517,4 +559,29 @@
       <div class="footer-inner">
         <span>&copy; <span id="year"></span> INPUT Partners</span>
         <div class="footer-links">
-          <a href="#privacy">Privacy</a>
+          <a href="#privacy" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="#accessibility" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
+          <a href="#imprint" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang') || 'en';
+    if (savedLang === 'de') setLang('de');
+  </script>
+</body>
+</html>
