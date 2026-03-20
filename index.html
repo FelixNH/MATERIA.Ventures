@@ -17,882 +17,170 @@
       --radius-card: 20px;
       --max-width: 900px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    html, body {
-      height: 100%;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
     }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px 100px;
-    }
-
-    /* HEADER / NAV */
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(16px);
       background: rgba(242, 242, 243, 0.95);
       border-bottom: 1px solid var(--border-subtle);
     }
-
     .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .logo-line-main {
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .logo-line-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
     .nav-cta {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--fg);
-      background: transparent;
-      color: var(--fg);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: all 0.2s ease;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
+      background: transparent; color: var(--fg); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s ease;
     }
-
-    .nav-cta:hover,
-    .nav-cta:focus {
-      background: var(--fg);
-      color: var(--bg);
-      outline: none;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .nav-cta:hover, .nav-cta:focus { background: var(--fg); color: var(--bg); outline: none; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-link {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
-      background: transparent;
-      color: var(--muted);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      border-color: var(--fg);
-      color: var(--fg);
-      outline: none;
-    }
-
-    /* HERO */
-    .hero {
-      padding-top: 100px;
-      padding-bottom: 80px;
-      text-align: center;
-    }
-
-    .hero-headline {
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      line-height: 1.1;
-      max-width: 18ch;
-      letter-spacing: -0.02em;
-      font-weight: 500;
-      margin: 0 auto 28px;
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 32rem;
-      margin: 0 auto;
-    }
-
-    .hero-cta {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* FULL WIDTH IMAGE */
-    .full-image-section {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      height: 85vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* TEXT BLOCK AFTER IMAGE */
-    .text-block {
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    .text-block-content {
-      max-width: 36rem;
-      margin: 0 auto;
-    }
-
-    .text-block-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      line-height: 1.2;
-      margin-bottom: 24px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    .text-block-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* PROBLEM SECTION - Centered text block */
-    .problem-text-centered {
-      max-width: 42rem;
-      margin: 64px auto;
-      padding: 0 24px;
-    }
-
-    .problem-text-centered p {
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .problem-text-centered p:last-child {
-      margin-bottom: 0;
-    }
-
-    .problem-text-centered strong {
-      color: var(--fg);
-      font-weight: 600;
-    }
-
-    /* STATEMENT SECTION */
-    .statement-section {
-      padding: 120px 24px;
-      text-align: center;
-      background: #ffffff;
-      margin: 0 -24px;
-    }
-
-    .statement-headline {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      max-width: 24ch;
-      letter-spacing: -0.02em;
-      font-weight: 500;
-      margin: 0 auto 28px;
-    }
-
-    .statement-text {
-      font-size: 1.1rem;
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 32rem;
-      margin: 0 auto;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 80px 0;
-    }
-
-    .section-eyebrow {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      line-height: 1.3;
-      margin-bottom: 24px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    .section-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 42rem;
-    }
-
-    .section-text p + p {
-      margin-top: 20px;
-    }
-
-    /* THREE FORCES */
-    .believe-header {
-      margin-bottom: 56px;
-    }
-
-    .believe-subline {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 38rem;
-      margin-top: 16px;
-    }
-
-    .forces-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .force-card {
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-card);
-      padding: 36px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      background: var(--bg);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .force-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-
-    .force-number {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .force-body {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1;
-    }
-
-    .force-title-row {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .force-name {
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    .force-role {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
-    .force-bring {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--fg);
-      padding-top: 4px;
-    }
-
-    .force-desc {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .force-impact {
-      padding-top: 16px;
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .force-impact-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .force-impact-text {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: var(--fg);
-      font-weight: 500;
-    }
-
-    /* WHAT WE INVEST IN */
-    .invest-section-content {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .invest-image {
-      width: 240px;
-      height: 100%;
-      min-height: 320px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
-      object-fit: cover;
-      align-self: stretch;
-    }
-
-    .invest-text-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .invest-intro {
-      margin: 0;
-    }
-
-    .invest-grid {
-      display: grid;
-      gap: 48px;
-    }
-
-    .invest-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .invest-item p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* OUR FOCUS */
-    .look-section-content {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .look-image {
-      width: 240px;
-      height: 100%;
-      min-height: 320px;
-      border-radius: 8px;
-      object-fit: cover;
-      align-self: stretch;
-      flex-shrink: 0;
-    }
-
-    .look-text-content {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-
-    .look-intro {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .look-subline {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .look-grid {
-      display: grid;
-      gap: 28px;
-    }
-
-    .look-item {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding-left: 16px;
-      border-left: 2px solid var(--border-subtle);
-    }
-
-    .look-item-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .look-item p {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    /* WHO WE ARE */
-    #who {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-
-    .who-section-content {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .who-text-content {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .who-body {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: var(--muted);
-    }
-
-    .who-edge {
-      border-left: 2px solid var(--accent);
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .who-edge-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .who-edge-text {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .who-image {
-      width: 300px;
-      height: 380px;
-      border-radius: 12px;
-      object-fit: cover;
-      object-position: top;
-      flex-shrink: 0;
-    }
-
-    /* JOIN / CTA */
-    .join-section-wrapper {
-      background: #ffffff;
-      position: relative;
-      z-index: 10;
-      border-radius: 40px 40px 0 0;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
-    }
-
-    .join-content {
-      text-align: center;
-      padding: 100px 24px 80px;
-    }
-
-    .join-headline {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-      margin-bottom: 24px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-
-    .join-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 36rem;
-      margin: 0 auto 48px;
-    }
-
-    .join-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .join-card {
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-card);
-      padding: 48px 32px;
-      background: var(--bg);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .join-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-      border-color: var(--fg);
-    }
-
-    .join-card-label {
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--fg);
-    }
-
-    .join-card-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 12px 24px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: var(--fg);
-      color: var(--bg);
-      border-color: var(--fg);
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus {
-      background: transparent;
-      color: var(--fg);
-      outline: none;
-    }
-
-    .btn-secondary {
-      border-color: var(--border-strong);
-      color: var(--fg);
-      background: transparent;
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus {
-      border-color: var(--fg);
-      background: var(--fg);
-      color: var(--bg);
-      outline: none;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 24px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover,
-    .footer-links a:focus {
-      color: var(--fg);
-      outline: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .shell {
-        padding-inline: 20px;
-      }
-
-      .nav {
-        padding: 16px 20px;
-      }
-
-      .hero {
-        padding-top: 60px;
-        padding-bottom: 60px;
-      }
-
-      .hero-headline {
-        font-size: 2.2rem;
-      }
-
-      .full-image-section {
-        height: 70vh;
-        min-height: 400px;
-      }
-
-      .text-block {
-        padding: 60px 0;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-
-      .nav-cta {
-        font-size: 0.75rem;
-        padding: 7px 14px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .believe-section-content,
-      .invest-section-content,
-      .look-section-content,
-      .who-section-content {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .forces-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .who-image {
-        width: 100%;
-        max-width: 300px;
-        height: 300px;
-        margin: 0 auto;
-        order: -1;
-      }
-
-      .believe-image,
-      .look-image,
-      .invest-image,
-      .why-image {
-        width: 100%;
-        max-width: 200px;
-        height: 250px;
-        margin: 0 auto;
-      }
-
-      .statement-section {
-        padding: 80px 20px;
-        margin: 0 -20px;
-      }
-
-      .statement-headline {
-        font-size: 1.8rem;
-      }
-
-      .join-cards {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-      }
-
-      .problem-columns {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .problem-blocks {
-        gap: 32px;
-      }
-
-      .problem-block {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .problem-text-centered {
-        margin: 48px auto;
-      }
-
-      .problem-text-centered p {
-        font-size: 1rem;
-      }
-    }
-
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none; white-space: nowrap; transition: all 0.2s ease;
+    }
+    .nav-link:hover, .nav-link:focus { border-color: var(--fg); color: var(--fg); outline: none; }
     .lang-toggle {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      overflow: hidden;
-      flex-shrink: 0;
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; flex-shrink: 0;
     }
-
     .lang-btn {
-      padding: 6px 10px;
-      background: transparent;
-      color: var(--muted);
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
     }
-
-    .lang-btn.active {
-      background: var(--fg);
-      color: var(--bg);
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+    .hero { padding-top: 100px; padding-bottom: 80px; text-align: center; }
+    .hero-headline {
+      font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1.1; max-width: 18ch;
+      letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
-
-    .lang-divider {
-      color: var(--border-subtle);
-      font-size: 0.7rem;
+    .hero-sub { font-size: 1.1rem; line-height: 1.65; color: var(--muted); max-width: 32rem; margin: 0 auto; }
+    .hero-cta { margin-top: 32px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .full-image-section {
+      width: 100vw; margin-left: calc(-50vw + 50%); height: 85vh; min-height: 600px;
+      display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
     }
-
-    /* Skip to content link for accessibility */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--fg);
-      color: var(--bg);
-      padding: 8px 16px;
-      text-decoration: none;
-      z-index: 100;
+    .text-block { padding: 100px 0; text-align: center; }
+    .text-block-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em;
     }
-
-    .skip-link:focus {
-      top: 0;
+    .problem-text-centered { max-width: 42rem; margin: 64px auto; padding: 0 24px; }
+    .problem-text-centered p { font-size: 1.1rem; line-height: 1.9; color: var(--muted); margin-bottom: 24px; }
+    .problem-text-centered p:last-child { margin-bottom: 0; }
+    .problem-text-centered strong { color: var(--fg); font-weight: 600; }
+    .statement-section { padding: 120px 24px; text-align: center; background: #ffffff; margin: 0 -24px; }
+    .statement-headline {
+      font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; max-width: 24ch;
+      letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
+    .statement-text { font-size: 1.1rem; line-height: 1.65; color: var(--muted); max-width: 32rem; margin: 0 auto; }
+    section { padding: 80px 0; }
+    .section-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+    .section-title { font-size: 2rem; line-height: 1.3; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
+    .believe-header { margin-bottom: 56px; }
+    .believe-subline { font-size: 1.05rem; line-height: 1.7; color: var(--muted); max-width: 38rem; margin-top: 16px; }
+    .forces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .force-card {
+      border: 1px solid var(--border-subtle); border-radius: var(--radius-card);
+      padding: 36px 28px; display: flex; flex-direction: column; gap: 20px;
+      background: var(--bg); transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .force-card:hover { border-color: var(--border-strong); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .force-number { font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: -0.02em; line-height: 1; }
+    .force-body { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .force-title-row { display: flex; flex-direction: column; gap: 4px; }
+    .force-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+    .force-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+    .force-bring { font-size: 0.95rem; line-height: 1.6; color: var(--fg); padding-top: 4px; }
+    .force-desc { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    .force-impact { padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 4px; }
+    .force-impact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
+    .force-impact-text { font-size: 0.9rem; line-height: 1.6; color: var(--fg); font-weight: 500; }
+    .look-section-content { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+    .look-image { width: 240px; height: 100%; min-height: 320px; border-radius: 8px; object-fit: cover; align-self: stretch; flex-shrink: 0; }
+    .look-text-content { display: flex; flex-direction: column; gap: 36px; }
+    .look-intro { display: flex; flex-direction: column; gap: 12px; }
+    .look-subline { font-size: 1rem; line-height: 1.7; color: var(--muted); }
+    .look-grid { display: grid; gap: 40px; }
+    .look-item { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 2px solid var(--border-subtle); }
+    .look-item-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
+    .look-item p { font-size: 1rem; line-height: 1.75; color: var(--muted); }
+    #who { position: sticky; top: 0; z-index: 1; }
+    .who-section-content { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+    .who-text-content { display: flex; flex-direction: column; gap: 28px; }
+    .who-body { font-size: 1.05rem; line-height: 1.85; color: var(--muted); }
+    .who-edge { border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .who-edge-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 600; }
+    .who-edge-text { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .who-image { width: 300px; height: 380px; border-radius: 12px; object-fit: cover; object-position: top; flex-shrink: 0; }
+    .join-section-wrapper {
+      background: #ffffff; position: relative; z-index: 10;
+      border-radius: 40px 40px 0 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    }
+    .join-content { text-align: center; padding: 100px 24px 80px; }
+    .join-headline { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
+    .join-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto 48px; }
+    .join-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn {
+      border-radius: 999px; padding: 12px 24px; font-size: 0.9rem; border: 1px solid transparent;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; transition: all 0.2s ease; font-family: inherit;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .btn-primary:hover, .btn-primary:focus { background: transparent; color: var(--fg); outline: none; }
+    .btn-secondary { border-color: var(--border-strong); color: var(--fg); background: transparent; }
+    .btn-secondary:hover, .btn-secondary:focus { border-color: var(--fg); background: var(--fg); color: var(--bg); outline: none; }
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover, .footer-links a:focus { color: var(--fg); outline: none; }
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .nav { padding: 16px 20px; }
+      .hero { padding-top: 60px; padding-bottom: 60px; }
+      .hero-headline { font-size: 2.2rem; }
+      .full-image-section { height: 70vh; min-height: 400px; }
+      .text-block { padding: 60px 0; }
+      section { padding: 60px 0; }
+      .section-title { font-size: 1.6rem; }
+      .nav-cta { font-size: 0.75rem; padding: 7px 14px; }
+      .nav-links { display: none; }
+      .look-section-content, .who-section-content { grid-template-columns: 1fr; gap: 32px; }
+      .forces-grid { grid-template-columns: 1fr; }
+      .who-image { width: 100%; max-width: 300px; height: 300px; margin: 0 auto; order: -1; }
+      .look-image { width: 100%; max-width: 200px; height: 250px; margin: 0 auto; }
+      .statement-section { padding: 80px 20px; margin: 0 -20px; }
+      .statement-headline { font-size: 1.8rem; }
+      .problem-text-centered { margin: 48px auto; }
+      .problem-text-centered p { font-size: 1rem; }
+    }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--fg); color: var(--bg); padding: 8px 16px; text-decoration: none; z-index: 100; }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
   <div class="page">
     <header>
       <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -920,50 +208,43 @@
 
     <main id="main-content">
       <div class="shell">
-        <!-- HERO -->
         <section class="hero">
           <h1 class="hero-headline" data-en="We invest in the molecules and systems reshaping how the world is built." data-de="Wir investieren in die Moleküle und Systeme, die neu definieren, wie die Welt gebaut wird.">
-            We invest in the mandatory molecules and systems reshaping how the world is built.
+            We invest in the molecules and systems reshaping how the world is built.
           </h1>
           <p class="hero-sub" data-en="Capital alone doesn't scale. Industrial adoption does. We connect both." data-de="Kapital allein skaliert nicht. Industrielle Adoption schon. Wir verbinden beides.">
             Capital alone doesn't scale. Industrial adoption does. We connect both.
           </p>
           <div class="hero-cta">
-            <a href="mailto:hello@input.vc?subject=Join%20Our%20Platform" class="btn btn-primary" data-en="Join Our Platform" data-de="Plattform beitreten">Join Our Platform</a>
-            <a href="mailto:hello@input.vc?subject=Submit%20Pitch" class="btn btn-secondary" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</a>
+            <a href="/cdn-cgi/l/email-protection#0d65686161624d64637d7879237b6e327e786f67686e793047626463283f3d42787f283f3d5d616c796b627f60" class="btn btn-primary" data-en="Join Our Platform" data-de="Plattform beitreten">Join Our Platform</a>
+            <a href="/cdn-cgi/l/email-protection#a9c1ccc5c5c6e9c0c7d9dcdd87dfca96dadccbc3cccadd94fadccbc4c0dd8c9b99f9c0ddcac1" class="btn btn-secondary" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</a>
           </div>
         </section>
       </div>
 
-      <!-- FULL WIDTH IMAGE -->
       <div class="full-image-section" role="img" aria-label="Industrial aerial view">
         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&auto=format&fit=crop&q=80" alt="Aerial view of industrial manufacturing facility" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
       </div>
 
-      <!-- PROBLEM SECTION -->
       <div class="shell">
         <section class="text-block">
           <div class="section-eyebrow" data-en="The Problem" data-de="Das Problem">The Problem</div>
           <h2 class="text-block-title" data-en="Innovation is abundant. Adoption is broken." data-de="Innovation ist vorhanden. Aber die Integration funktioniert nicht.">
             Innovation is abundant. Adoption is broken.
           </h2>
-          
           <div class="problem-text-centered">
-            <p data-en='Europe leads in innovation, yet many companies die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.' data-de='Europa führt bei Innovationen, doch viele Unternehmen sterben im „Valles of Death". <strong>Öffentliche Förderung</strong> endet bei der Grundlagenforschung und <strong>Venture Capital</strong> fordert schnelleres Wachstum, als physische Atome erlauben.'>
-              Europe leads in innovation, yet many critical companies die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.
+            <p data-en='Europe leads in innovation, yet many companies die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.' data-de='Europa führt bei Innovationen, doch viele Unternehmen sterben im „Valley of Death". <strong>Öffentliche Förderung</strong> endet bei der Grundlagenforschung und <strong>Venture Capital</strong> fordert schnelleres Wachstum, als physische Atome erlauben.'>
+              Europe leads in innovation, yet many companies die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.
             </p>
-            <p data-en="<strong>And the critical mismatch:</strong> The very players who provide the most intelligent capital - the SMEs and industry experts who hold the keys to integration, technical validation, and market success - don't have a seat at the table when foundational decisions are made. They remain spectators of a transition they should be leading." data-de="<strong>Und das entscheidende Missverhältnis:</strong> Jene, die die Macht haben, die Integration zu gestalten – strategisch relevante Mittelständler, Industrieexperten und andere – haben bei grundlegenden Entscheidungen nicht einmal einen Platz am Tisch. Sie bleiben Zuschauer eines Wandels, den sie anführen sollten.">
-              <strong>And the critical mismatch:</strong> The very players who provide the most intelligent capital - the SMEs and industry experts who hold the keys to integration, technical validation, and market success - don't have a seat at the table when foundational decisions are made. They remain spectators of a transition they should be leading.
+            <p data-en="<strong>And the critical mismatch:</strong> The very players who provide the most intelligent capital - the SMEs and industry experts who hold the keys to integration, technical validation, and market success - don't have a seat at the table when foundational decisions are made." data-de="<strong>Und das entscheidende Missverhältnis:</strong> Jene, die das intelligenteste Kapital bereitstellen – die Mittelständler und Industrieexperten, die die Schlüssel zu Integration, technischer Validierung und Markterfolg halten – haben bei grundlegenden Entscheidungen keinen Platz am Tisch.">
+              <strong>And the critical mismatch:</strong> The very players who provide the most intelligent capital - the SMEs and industry experts who hold the keys to integration, technical validation, and market success - don't have a seat at the table when foundational decisions are made.
             </p>
-            <p data-en="This ends now." data-de="Das ändert sich jetzt.">
-              This ends now.
-            </p>
+            <p data-en="This ends now." data-de="Das ändert sich jetzt.">This ends now.</p>
           </div>
         </section>
 
-        <!-- STATEMENT SECTION -->
         <section class="statement-section">
-          <h2 class="statement-headline" data-en="We don't invest to sell. We invest to partner." data-de="We don't invest to sell. We invest to partner.">
+          <h2 class="statement-headline" data-en="We don't invest to sell. We invest to partner." data-de="Wir investieren nicht um zu verkaufen. Wir investieren um zu partnern.">
             We don't invest to sell. We invest to partner.
           </h2>
           <p class="statement-text" data-en="Short-term exits don't transform industries. Industrial integration does." data-de="Kurzfristige Exits transformieren keine Industrien. Industrielle Integration schon.">
@@ -971,14 +252,12 @@
           </p>
         </section>
 
-        <!-- 1. THREE FORCES -->
         <section id="beliefs">
           <div class="believe-header">
             <div class="section-eyebrow" data-en="How We Work" data-de="Wie wir arbeiten">How We Work</div>
             <h2 class="section-title" data-en="Three Forces. One Table." data-de="Drei Kräfte. Ein Tisch.">Three Forces. One Table.</h2>
             <p class="believe-subline" data-en="We pool capital from those who understand the industry to back those who will redefine it." data-de="Wir bündeln Kapital von denen, die die Industrie verstehen, um jene zu unterstützen, die sie neu definieren werden.">We pool capital from those who understand the industry to back those who will redefine it.</p>
           </div>
-
           <div class="forces-grid">
             <div class="force-card">
               <div class="force-number">01</div>
@@ -988,14 +267,13 @@
                   <span class="force-role" data-en="Adoption Shapers" data-de="Adoptionsgestalter">Adoption Shapers</span>
                 </div>
                 <p class="force-bring" data-en="<strong>You bring</strong> Validation &amp; Access." data-de="<strong>Sie bringen</strong> Validierung &amp; Zugang."><strong>You bring</strong> Validation &amp; Access.</p>
-                <p class="force-desc" data-en="You invest more than money - you put your money where your mouth is and help a solution suceed." data-de="Ihr Investment ist mehr als Geld – Es ist ein Bekenntnis zum gemeinsamen Erfolg.">You invest more than money - you put your money where your mouth is and help a solution suceed.</p>
+                <p class="force-desc" data-en="You invest more than money - you put your money where your mouth is and help a solution succeed." data-de="Ihr Investment ist mehr als Geld – Es ist ein Bekenntnis zum gemeinsamen Erfolg.">You invest more than money - you put your money where your mouth is and help a solution succeed.</p>
               </div>
               <div class="force-impact">
                 <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
                 <span class="force-impact-text" data-en="You increase the probability of success of each venture." data-de="Sie erhöhen die Erfolgswahrscheinlichkeit jedes Ventures.">You increase the probability of success of each venture.</span>
               </div>
             </div>
-
             <div class="force-card">
               <div class="force-number">02</div>
               <div class="force-body">
@@ -1011,7 +289,6 @@
                 <span class="force-impact-text" data-en="You invest with maximum de-risking, guided by industrial expertise." data-de="Sie investieren mit maximaler Risikoreduzierung, geleitet von industrieller Expertise.">You invest with maximum de-risking, guided by industrial expertise.</span>
               </div>
             </div>
-
             <div class="force-card">
               <div class="force-number">03</div>
               <div class="force-body">
@@ -1030,28 +307,22 @@
           </div>
         </section>
 
-        <!-- 2. OUR FOCUS -->
         <section id="look">
           <div class="look-section-content">
             <img class="look-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80" alt="European industrial construction" />
             <div class="look-text-content">
               <div class="look-intro">
-                <div class="section-eyebrow" data-en="Our Focus" data-de="Unser Fokus">Our Focus</div>
-                <h2 class="section-title" data-en="We invest where innovation meets the physical world." data-de="Wir investieren dort, wo Innovation auf die physische Welt trifft.">We invest where innovation meets the physical world.</h2>
-                <p class="look-subline" data-en="Our sweet spot is the critical phase between lab success and industrial adoption." data-de="Unser Sweet Spot ist die kritische Phase zwischen Laborerfolg und industrieller Adoption.">Our sweet spot is the critical phase between lab success and industrial adoption.</p>
+                <h2 class="section-title" data-en="Where we invest." data-de="Wo wir investieren.">Where we invest.</h2>
               </div>
-
               <div class="look-grid">
                 <div class="look-item">
                   <div class="look-item-label" data-en="The Sectors" data-de="Die Sektoren">The Sectors</div>
                   <p data-en="We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure." data-de="Wir unterstützen die Moleküle und Systeme, die Bau, Fertigung und CO₂-neutrale Infrastruktur neu definieren.">We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure.</p>
                 </div>
-
                 <div class="look-item">
                   <div class="look-item-label" data-en="The Stage" data-de="Die Phase">The Stage</div>
                   <p data-en="Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come." data-de="Early-Stage &amp; Pre-Adoption. Wir steigen ein, wenn die Wissenschaft bewiesen ist, der industrielle Durchbruch aber noch aussteht.">Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come.</p>
                 </div>
-
                 <div class="look-item">
                   <div class="look-item-label" data-en="The Geography" data-de="Die Geografie">The Geography</div>
                   <p data-en="European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders." data-de="Europäische DNA. Wir nutzen die weltklasse Forschung des Kontinents, um globale Industrieführer aufzubauen.">European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders.</p>
@@ -1061,7 +332,6 @@
           </div>
         </section>
 
-        <!-- 4. WHO WE ARE -->
         <section id="who">
           <div class="who-section-content">
             <div class="who-text-content">
@@ -1083,27 +353,25 @@
           </div>
         </section>
 
-      <!-- JOIN / CTA -->
-      <div class="join-section-wrapper">
-        <section id="join">
-          <div class="join-content">
-            <h2 class="join-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">
-              Take your seat at the table.
-            </h2>
-            <p class="join-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">
-              We are currently building our next syndicate of industrial partners and visionary investors.
-            </p>
-            
-            <div class="join-buttons">
-              <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
-              <a href="mailto:hello@input.vc?subject=Pitch%20my%20Molecule" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
-              <a href="mailto:felix@input.vc?subject=Get%20in%20Touch" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
+        <div class="join-section-wrapper">
+          <section id="join">
+            <div class="join-content">
+              <h2 class="join-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">
+                Take your seat at the table.
+              </h2>
+              <p class="join-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">
+                We are currently building our next syndicate of industrial partners and visionary investors.
+              </p>
+              <div class="join-buttons">
+                <a href="/cdn-cgi/l/email-protection#3c54595050537c55524c4948124a5f034f495e56595f480175524a594f48190e0c4b554854190e0c75726c6968" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
+                <a href="/cdn-cgi/l/email-protection#48202d242427082126383d3c663e2b773b3d2a222d2b3c7518213c2b206d7a7825316d7a780527242d2b3d242d" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
+                <a href="/cdn-cgi/l/email-protection#f197949d9889b1989f818485df8792ce8284939b949285ccb69485d4c3c1989fd4c3c1a59e849299" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
+
       </div>
-      </div>
-    </
     </main>
 
     <footer>
@@ -1118,7 +386,7 @@
     </footer>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     function setLang(lang) {
