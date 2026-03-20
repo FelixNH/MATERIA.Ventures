@@ -14,450 +14,106 @@
       --border-subtle: #d2d2d4;
       --max-width: 900px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
     }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px 100px;
-    }
-
-    /* HEADER / NAV */
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(16px);
       background: rgba(242, 242, 243, 0.95);
       border-bottom: 1px solid var(--border-subtle);
     }
-
     .nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .logo-line-main {
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .logo-line-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .logo-text { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
     .nav-cta {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--fg);
-      background: transparent;
-      color: var(--fg);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: all 0.2s ease;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
+      background: transparent; color: var(--fg); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s ease;
     }
-
-    .nav-cta:hover {
-      background: var(--fg);
-      color: var(--bg);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
+    .nav-cta:hover { background: var(--fg); color: var(--bg); }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
     .nav-link {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
-      background: transparent;
-      color: var(--muted);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s ease;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none; white-space: nowrap; transition: all 0.2s ease;
     }
-
-    .nav-link:hover {
-      border-color: var(--fg);
-      color: var(--fg);
-    }
-
-    .nav-link.active {
-      border-color: var(--fg);
-      color: var(--fg);
-    }
-
-    /* HERO */
-    .hero {
-      padding-top: 100px;
-      padding-bottom: 60px;
-      text-align: center;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .hero-headline {
-      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
-      line-height: 1.15;
-      max-width: 20ch;
-      letter-spacing: -0.02em;
-      font-weight: 500;
-      margin: 0 auto 28px;
-    }
-
-    .hero-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 36rem;
-      margin: 0 auto;
-    }
-
-    /* CONTENT BLOCKS */
-    .content-section {
-      padding: 80px 0;
-    }
-
-    .why-blocks {
-      display: grid;
-      gap: 0;
-      max-width: 42rem;
-      margin: 0 auto;
-    }
-
-    .why-block {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 24px;
-      padding: 40px 0;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .why-block:first-child {
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .why-block-number {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-      line-height: 1.3;
-    }
-
-    .why-block-body h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-
-    .why-block-body p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* QUOTE */
-    .quote-section {
-      padding: 80px 0;
-    }
-
-    .quote-block {
-      max-width: 38rem;
-      margin: 0 auto;
-      padding: 48px;
-      background: #ffffff;
-      border-radius: 20px;
-      border-left: 3px solid var(--accent);
-      text-align: left;
-    }
-
-    .quote-text {
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: var(--fg);
-      font-weight: 400;
-      font-style: italic;
-      margin-bottom: 24px;
-    }
-
-    .quote-attribution {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      font-weight: 600;
-      font-style: normal;
-      border: none;
-      padding: 0;
-    }
-
-    /* IMAGE SECTION */
-    .image-section {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      height: 70vh;
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .image-section img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* CTA */
-    .cta-wrapper {
-      background: #ffffff;
-      border-radius: 40px 40px 0 0;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
-    }
-
-    .cta-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 100px 24px 80px;
-      text-align: center;
-    }
-
-    .cta-headline {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-
-    .cta-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 36rem;
-      margin: 0 auto 48px;
-    }
-
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 12px 24px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: var(--fg);
-      color: var(--bg);
-      border-color: var(--fg);
-    }
-
-    .btn-primary:hover {
-      background: transparent;
-      color: var(--fg);
-    }
-
-    .btn-secondary {
-      border-color: var(--border-strong, #b3b3b5);
-      color: var(--fg);
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--fg);
-      background: var(--fg);
-      color: var(--bg);
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 24px 0;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--bg);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--fg);
-    }
-
-    /* LANG TOGGLE */
+    .nav-link:hover, .nav-link.active { border-color: var(--fg); color: var(--fg); }
     .lang-toggle {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      overflow: hidden;
-      flex-shrink: 0;
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; flex-shrink: 0;
     }
-
     .lang-btn {
-      padding: 6px 10px;
-      background: transparent;
-      color: var(--muted);
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 0.2s ease;
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
     }
-
-    .lang-btn.active {
-      background: var(--fg);
-      color: var(--bg);
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+    .hero { padding-top: 100px; padding-bottom: 60px; text-align: center; }
+    .hero-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+    .hero-headline {
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem); line-height: 1.15; max-width: 20ch;
+      letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
-
-    .lang-divider {
-      color: var(--border-subtle);
-      font-size: 0.7rem;
+    .hero-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto; }
+    .content-section { padding: 80px 0; }
+    .why-blocks { display: grid; gap: 0; max-width: 42rem; margin: 0 auto; }
+    .why-block {
+      display: grid; grid-template-columns: 64px 1fr; gap: 24px;
+      padding: 40px 0; border-bottom: 1px solid var(--border-subtle);
     }
-
-    /* RESPONSIVE */
+    .why-block:first-child { border-top: 1px solid var(--border-subtle); }
+    .why-block-number { font-size: 1.5rem; font-weight: 600; color: var(--accent); letter-spacing: -0.02em; line-height: 1.3; }
+    .why-block-body h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.01em; }
+    .why-block-body p { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .quote-section { padding: 80px 0; }
+    .quote-block {
+      max-width: 38rem; margin: 0 auto; padding: 48px;
+      background: #ffffff; border-radius: 20px; border-left: 3px solid var(--accent); text-align: left;
+    }
+    .quote-text { font-size: 1.15rem; line-height: 1.85; color: var(--fg); font-weight: 400; font-style: italic; margin-bottom: 24px; }
+    .quote-attribution { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; font-style: normal; border: none; padding: 0; }
+    .cta-wrapper { background: #ffffff; border-radius: 40px 40px 0 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); }
+    .cta-inner { max-width: var(--max-width); margin: 0 auto; padding: 100px 24px 80px; text-align: center; }
+    .cta-headline { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .cta-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto 48px; }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .btn {
+      border-radius: 999px; padding: 12px 24px; font-size: 0.9rem; border: 1px solid transparent;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; transition: all 0.2s ease; font-family: inherit;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .btn-primary:hover { background: transparent; color: var(--fg); }
+    .btn-secondary { border-color: #b3b3b5; color: var(--fg); background: transparent; }
+    .btn-secondary:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); background: var(--bg); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
     @media (max-width: 768px) {
-      .shell {
-        padding-inline: 20px;
-      }
-
-      .nav {
-        padding: 16px 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 60px;
-      }
-
-      .content-section {
-        padding: 60px 0;
-      }
-
-      .image-section {
-        height: 50vh;
-        min-height: 300px;
-      }
+      .shell { padding-inline: 20px; }
+      .nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding-top: 60px; }
+      .content-section { padding: 60px 0; }
     }
   </style>
 </head>
@@ -474,7 +130,7 @@
         <div class="nav-links">
           <a class="nav-link" href="index.html" data-en="Home" data-de="Start">Home</a>
           <a class="nav-link" href="index.html#who" data-en="Who we are" data-de="Über uns">Who we are</a>
-          <a class="nav-link" href="index.html#look" data-en="Our Focus" data-de="Unser Fokus">Our Focus</a>
+          <a class="nav-link" href="index.html#look" data-en="Where we invest" data-de="Wo wir investieren">Where we invest</a>
           <a class="nav-link" href="index.html#beliefs" data-en="How we work" data-de="Wie wir arbeiten">How we work</a>
           <a class="nav-link active" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
@@ -483,76 +139,66 @@
           <span class="lang-divider">|</span>
           <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
-        <a class="nav-cta" href="/cdn-cgi/l/email-protection#3d55585151527d54534d4849134b5e024e485f57585e49007a5849180f0d5453180f0d6952485e55" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
+        <a class="nav-cta" href="mailto:hello@input.vc?subject=Get%20in%20Touch" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
     <main>
       <div class="shell">
-        <!-- HERO -->
         <section class="hero">
-          <div class="hero-eyebrow" data-en="Why Us" data-de="Warum wir">Why Us</div>
-          <h1 class="hero-headline" data-en="Industrial adoption requires the right partners at the table." data-de="Industrielle Integration erfordert die richtigen Partner am Tisch.">
-            Industrial adoption requires the right partners at the table.
+          <h1 class="hero-headline" data-en="Industrial adoption requires the right investors at the table." data-de="Industrielle Integration erfordert die richtigen Investoren am Tisch.">
+            Industrial adoption requires the right investors at the table.
           </h1>
-          <p class="hero-text" data-en="In legacy industries returns are driven by adoption, not just innovation. We bring together industrial SMEs and long-term investors to validate, integrate, and scale new technologies - increasing the probability of successful outcomes." data-de="In etablierten Industrien werden Renditen durch Integration getrieben, nicht nur durch Innovation. Bei uns investieren Mittelständler und langfristige Investoren gemeinsam, um neue Technologien zu validieren, zu integrieren und zu skalieren – und erhöhen so die Erfolgswahrscheinlichkeit.">
-            In legacy industries returns are driven by adoption, not just innovation. Here industrial SMEs invest alongside long-term investors to validate, integrate, and scale new technologies - increasing the probability of successful outcomes.
+          <p class="hero-text" data-en="We let industrial SMEs invest early alongside long-term investors to validate, integrate, and scale new technologies - increasing the probability of successful outcomes." data-de="Bei uns investieren Mittelständler und langfristige Investoren früh gemeinsam, um neue Technologien zu validieren, zu integrieren und zu skalieren – und erhöhen so die Erfolgswahrscheinlichkeit.">
+            We let industrial SMEs invest early alongside long-term investors to validate, integrate, and scale new technologies - increasing the probability of successful outcomes.
           </p>
         </section>
 
-        <!-- CONTENT BLOCKS -->
         <section class="content-section">
           <div class="why-blocks">
-
             <div class="why-block">
               <div class="why-block-number">01</div>
               <div class="why-block-body">
-                <h3 data-en="Patient Capital. Industrial Horizon." data-de="Langfristig denkendes Kapital.">Patient Capital.</h3>
-                <p data-en="Industrial adoption does not follow software timelines. It requires time, validation, and integration. We bring capital that is aligned with how industries actually change." data-de="Industrielle Integration folgt keinen Software-Zeitplänen. Sie erfordert Zeit, Validierung und Integration. Wir bringen Kapital, das darauf ausgerichtet ist, wie sich Industrien tatsächlich verändern.">Industrial adoption does not follow software timelines. It requires time, validation, and integration. We bring capital that is aligned with how industries actually change.</p>
+                <h3 data-en="We invest patiently." data-de="Wir investieren mit Geduld.">We invest patiently.</h3>
+                <p data-en="Industrial adoption does not follow software timelines. It requires time, validation, and integration." data-de="Industrielle Integration folgt keinen Software-Zeitplänen. Sie erfordert Zeit, Validierung und Integration.">Industrial adoption does not follow software timelines. It requires time, validation, and integration.</p>
               </div>
             </div>
-
             <div class="why-block">
               <div class="why-block-number">02</div>
               <div class="why-block-body">
-                <h3 data-en="Strategic Skin in the Game" data-de="Strategisches Skin in the Game">Strategic Skin in the Game</h3>
-                <p data-en="We don't bring passive investors. We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early." data-de="Wir bringen keine passiven Investoren. Wir bringen Industriepartner, die ein direktes Interesse daran haben, dass Technologien erfolgreich sind – und daher frühzeitig beim Testen, Validieren und Integrieren helfen.">We don't bring passive investors. We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early.</p>
+                <h3 data-en="We provide strategic skin in the game." data-de="Wir bringen strategisches Skin in the Game.">We provide strategic skin in the game.</h3>
+                <p data-en="We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early." data-de="Wir bringen Industriepartner, die ein direktes Interesse daran haben, dass Technologien erfolgreich sind – und daher frühzeitig beim Testen, Validieren und Integrieren helfen.">We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early.</p>
               </div>
             </div>
-
             <div class="why-block">
               <div class="why-block-number">03</div>
               <div class="why-block-body">
-                <h3 data-en="Product-Integration-Fit" data-de="Product-Integration-Fit">Product-Integration-Fit</h3>
-                <p data-en="In industrial markets, success is not just product-market fit. Technologies must integrate into existing processes, standards, and systems. The earlier this happens, the more flexible are the interfaces." data-de="In industriellen Märkten geht es nicht nur um Product-Market-Fit. Technologien müssen sich in bestehende Prozesse, Standards und Systeme integrieren. Je früher dies passiert, desto flexibler lassen sich die Schnittstellen gestalten.">In industrial markets, success is not just product-market fit. Technologies must integrate into existing processes, standards, and systems. We ensure this fit is built from day one.</p>
+                <h3 data-en="We support early Product-Integration-Fit." data-de="Wir unterstützen frühen Product-Integration-Fit.">We support early Product-Integration-Fit.</h3>
+                <p data-en="Technologies must integrate into existing processes, standards, and systems. The earlier this happens, the more flexible are the interfaces." data-de="Technologien müssen sich in bestehende Prozesse, Standards und Systeme integrieren. Je früher dies passiert, desto flexibler lassen sich die Schnittstellen gestalten.">Technologies must integrate into existing processes, standards, and systems. The earlier this happens, the more flexible are the interfaces.</p>
               </div>
             </div>
-
           </div>
         </section>
 
-        <!-- QUOTE -->
         <section class="quote-section">
           <blockquote class="quote-block">
-            <p class="quote-text" data-en='"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we want to fundamentally increase their probability of success."' data-de='"Die Baubranche ist zu fragmentiert für isolierte Innovation. Erfolg in dieser Industrie erfordert drei Dinge: Geduldiges Kapital, frühe industrielle Ausrichtung und echtes Engagement der etablierten Akteure. Indem wir alle drei liefern, unterstützen wir nicht nur Startups – wir wollen ihre Erfolgswahrscheinlichkeit grundlegend erhöhen."'>"Construction is too fragmented for isolated innovation. Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we want to fundamentally increase their probability of success."</p>
+            <p class="quote-text" data-en='"Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don&apos;t just back startups, we want to fundamentally increase their probability of success."' data-de='"Erfolg in dieser Industrie erfordert drei Dinge: Geduldiges Kapital, frühe industrielle Ausrichtung und echtes Engagement der etablierten Akteure. Indem wir alle drei liefern, unterstützen wir nicht nur Startups – wir wollen ihre Erfolgswahrscheinlichkeit grundlegend erhöhen."'>"Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we want to fundamentally increase their probability of success."</p>
             <footer class="quote-attribution">— Felix, Co-Founder, INPUT Partners</footer>
           </blockquote>
         </section>
       </div>
 
-      <!-- CTA -->
       <div class="cta-wrapper">
         <div class="cta-inner">
           <h2 class="cta-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h2>
           <p class="cta-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">We are currently building our next syndicate of industrial partners and visionary investors.</p>
           <div class="cta-buttons">
-            <a href="/cdn-cgi/l/email-protection#a6cec3cacac9e6cfc8d6d3d288d0c599d5d3c4ccc3c5d29befc8d0c3d5d2839496d1cfd2ce839496efe8f6f3f2" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
-            <a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798b1b6a8adacf6aebbe7abadbab2bdbbace588b1acbbb0fdeae8b5a1fdeae895b7b4bdbbadb4bd" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
-            <a href="/cdn-cgi/l/email-protection#7016151c190830191e0005045e06134f0305121a1513044d371504554240191e554240241f051318" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
+            <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
+            <a href="mailto:hello@input.vc?subject=Pitch%20my%20Molecule" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
+            <a href="mailto:felix@input.vc?subject=Get%20in%20Touch" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
           </div>
         </div>
       </div>
-
     </main>
 
     <footer>
@@ -567,7 +213,7 @@
     </footer>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     function setLang(lang) {
