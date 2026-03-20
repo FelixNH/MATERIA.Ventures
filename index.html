@@ -837,6 +837,42 @@
       }
     }
 
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      padding: 6px 10px;
+      background: transparent;
+      color: var(--muted);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .lang-divider {
+      color: var(--border-subtle);
+      font-size: 0.7rem;
+    }
+
     /* Skip to content link for accessibility */
     .skip-link {
       position: absolute;
@@ -867,13 +903,18 @@
           </div>
         </div>
         <div class="nav-links">
-          <a class="nav-link" href="#">Home</a>
-          <a class="nav-link" href="#who">Who we are</a>
-          <a class="nav-link" href="#look">Our Focus</a>
-          <a class="nav-link" href="#beliefs">How we work</a>
-          <a class="nav-link" href="why-us.html">Why us</a>
+          <a class="nav-link" href="#" data-en="Home" data-de="Start">Home</a>
+          <a class="nav-link" href="#who" data-en="Who we are" data-de="Über uns">Who we are</a>
+          <a class="nav-link" href="#look" data-en="Our Focus" data-de="Unser Fokus">Our Focus</a>
+          <a class="nav-link" href="#beliefs" data-en="How we work" data-de="Wie wir arbeiten">How we work</a>
+          <a class="nav-link" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
-        <a class="nav-cta" href="#join">Get in touch</a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+        </div>
+        <a class="nav-cta" href="#join" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
@@ -881,15 +922,15 @@
       <div class="shell">
         <!-- HERO -->
         <section class="hero">
-          <h1 class="hero-headline">
+          <h1 class="hero-headline" data-en="We invest in the mandatory molecules and systems reshaping how the world is built." data-de="Wir investieren in die unverzichtbaren Moleküle und Systeme, die neu definieren, wie die Welt gebaut wird.">
             We invest in the mandatory molecules and systems reshaping how the world is built.
           </h1>
-          <p class="hero-sub">
+          <p class="hero-sub" data-en="Capital alone doesn't scale. Industrial adoption does. We connect both." data-de="Kapital allein skaliert nicht. Industrielle Adoption schon. Wir verbinden beides.">
             Capital alone doesn't scale. Industrial adoption does. We connect both.
           </p>
           <div class="hero-cta">
-            <a href="/cdn-cgi/l/email-protection#573f323b3b38173e39272223792134682422353d3234236a1d383e39726567182225726567073b36233138253a" class="btn btn-primary">Join Our Platform</a>
-            <a href="/cdn-cgi/l/email-protection#fd9598919192bd94938d8889d38b9ec28e889f97989e89c0ae889f909489d8cfcdad94899e95" class="btn btn-secondary">Submit Pitch</a>
+            <a href="mailto:hello@input.vc?subject=Join%20Our%20Platform" class="btn btn-primary" data-en="Join Our Platform" data-de="Plattform beitreten">Join Our Platform</a>
+            <a href="mailto:hello@input.vc?subject=Submit%20Pitch" class="btn btn-secondary" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</a>
           </div>
         </section>
       </div>
@@ -902,19 +943,19 @@
       <!-- PROBLEM SECTION -->
       <div class="shell">
         <section class="text-block">
-          <div class="section-eyebrow">The Problem</div>
-          <h2 class="text-block-title">
+          <div class="section-eyebrow" data-en="The Problem" data-de="Das Problem">The Problem</div>
+          <h2 class="text-block-title" data-en="Innovation is abundant. Adoption is broken." data-de="Innovation ist reichlich vorhanden. Adoption ist kaputt.">
             Innovation is abundant. Adoption is broken.
           </h2>
           
           <div class="problem-text-centered">
-            <p>
+            <p data-en='Europe leads in innovation, yet many critical breakthroughs die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.' data-de='Europa führt bei Innovationen, doch viele kritische Durchbrüche sterben im „Tal des Todes". <strong>Öffentliche Förderung</strong> endet bei der Grundlagenforschung und <strong>Venture Capital</strong> fordert schnelleres Wachstum, als physische Atome erlauben.'>
               Europe leads in innovation, yet many critical breakthroughs die in the "Valley of Death." <strong>Public Funding</strong> stops at fundamental science and <strong>Venture Capital</strong> demands faster growth than physical atoms allow.
             </p>
-            <p>
+            <p data-en="<strong>And the critical mismatch:</strong> Those who have the power to shape adoption - strategically relevant SMEs, industry experts, and others - don't even have a seat at the table when foundational decisions are made. They remain spectators of a transition they should be leading." data-de="<strong>Und das entscheidende Missverhältnis:</strong> Jene, die die Macht haben, die Adoption zu gestalten – strategisch relevante Mittelständler, Industrieexperten und andere – haben bei grundlegenden Entscheidungen nicht einmal einen Platz am Tisch. Sie bleiben Zuschauer eines Wandels, den sie anführen sollten.">
               <strong>And the critical mismatch:</strong> Those who have the power to shape adoption - strategically relevant SMEs, industry experts, and others - don't even have a seat at the table when foundational decisions are made. They remain spectators of a transition they should be leading.
             </p>
-            <p>
+            <p data-en="This ends now." data-de="Das ändert sich jetzt.">
               This ends now.
             </p>
           </div>
@@ -922,10 +963,10 @@
 
         <!-- STATEMENT SECTION -->
         <section class="statement-section">
-          <h2 class="statement-headline">
+          <h2 class="statement-headline" data-en="We don't invest to sell. We invest to partner." data-de="Wir investieren nicht um zu verkaufen. Wir investieren um zu partnern.">
             We don't invest to sell. We invest to partner.
           </h2>
-          <p class="statement-text">
+          <p class="statement-text" data-en="Short-term exits don't build industries. Industrial integration does." data-de="Kurzfristige Exits bauen keine Industrien. Industrielle Integration schon.">
             Short-term exits don't build industries. Industrial integration does.
           </p>
         </section>
@@ -933,9 +974,9 @@
         <!-- 1. THREE FORCES -->
         <section id="beliefs">
           <div class="believe-header">
-            <div class="section-eyebrow">How We Work</div>
-            <h2 class="section-title">Three Forces. One Table.</h2>
-            <p class="believe-subline">We pool capital from those who understand the industry to back those who will redefine it.</p>
+            <div class="section-eyebrow" data-en="How We Work" data-de="Wie wir arbeiten">How We Work</div>
+            <h2 class="section-title" data-en="Three Forces. One Table." data-de="Drei Kräfte. Ein Tisch.">Three Forces. One Table.</h2>
+            <p class="believe-subline" data-en="We pool capital from those who understand the industry to back those who will redefine it." data-de="Wir bündeln Kapital von denen, die die Industrie verstehen, um jene zu unterstützen, die sie neu definieren werden.">We pool capital from those who understand the industry to back those who will redefine it.</p>
           </div>
 
           <div class="forces-grid">
@@ -943,15 +984,15 @@
               <div class="force-number">01</div>
               <div class="force-body">
                 <div class="force-title-row">
-                  <h3 class="force-name">The Strategics</h3>
-                  <span class="force-role">Adoption Shapers</span>
+                  <h3 class="force-name" data-en="The Strategics" data-de="Die Strategischen">The Strategics</h3>
+                  <span class="force-role" data-en="Adoption Shapers" data-de="Adoptionsgestalter">Adoption Shapers</span>
                 </div>
-                <p class="force-bring"><strong>You bring</strong> Validation &amp; Access.</p>
-                <p class="force-desc">You invest more than money—you provide the real-world proof that a technology works.</p>
+                <p class="force-bring" data-en="<strong>You bring</strong> Validation &amp; Access." data-de="<strong>Sie bringen</strong> Validierung &amp; Zugang."><strong>You bring</strong> Validation &amp; Access.</p>
+                <p class="force-desc" data-en="You invest more than money—you provide the real-world proof that a technology works." data-de="Sie investieren mehr als Geld – Sie liefern den realen Beweis, dass eine Technologie funktioniert.">You invest more than money—you provide the real-world proof that a technology works.</p>
               </div>
               <div class="force-impact">
-                <span class="force-impact-label">Impact</span>
-                <span class="force-impact-text">You increase the probability of success of each venture.</span>
+                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
+                <span class="force-impact-text" data-en="You increase the probability of success of each venture." data-de="Sie erhöhen die Erfolgswahrscheinlichkeit jedes Ventures.">You increase the probability of success of each venture.</span>
               </div>
             </div>
 
@@ -959,15 +1000,15 @@
               <div class="force-number">02</div>
               <div class="force-body">
                 <div class="force-title-row">
-                  <h3 class="force-name">The Financials</h3>
-                  <span class="force-role">Growth Multipliers</span>
+                  <h3 class="force-name" data-en="The Financials" data-de="Die Finanziellen">The Financials</h3>
+                  <span class="force-role" data-en="Growth Multipliers" data-de="Wachstumsmultiplikatoren">Growth Multipliers</span>
                 </div>
-                <p class="force-bring"><strong>You bring</strong> Scalable Capital.</p>
-                <p class="force-desc">You back the vision with the necessary firepower to reach global scale.</p>
+                <p class="force-bring" data-en="<strong>You bring</strong> Scalable Capital." data-de="<strong>Sie bringen</strong> skalierbares Kapital."><strong>You bring</strong> Scalable Capital.</p>
+                <p class="force-desc" data-en="You back the vision with the necessary firepower to reach global scale." data-de="Sie unterstützen die Vision mit der nötigen Schlagkraft, um globale Skalierung zu erreichen.">You back the vision with the necessary firepower to reach global scale.</p>
               </div>
               <div class="force-impact">
-                <span class="force-impact-label">Impact</span>
-                <span class="force-impact-text">You invest with maximum de-risking, guided by industrial expertise.</span>
+                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
+                <span class="force-impact-text" data-en="You invest with maximum de-risking, guided by industrial expertise." data-de="Sie investieren mit maximaler Risikoreduzierung, geleitet von industrieller Expertise.">You invest with maximum de-risking, guided by industrial expertise.</span>
               </div>
             </div>
 
@@ -975,15 +1016,15 @@
               <div class="force-number">03</div>
               <div class="force-body">
                 <div class="force-title-row">
-                  <h3 class="force-name">The Founders</h3>
-                  <span class="force-role">The Architects</span>
+                  <h3 class="force-name" data-en="The Founders" data-de="Die Gründer">The Founders</h3>
+                  <span class="force-role" data-en="The Architects" data-de="Die Architekten">The Architects</span>
                 </div>
-                <p class="force-bring"><strong>You bring</strong> Mandatory Molecules.</p>
-                <p class="force-desc">You build the essential systems the world can no longer ignore.</p>
+                <p class="force-bring" data-en="<strong>You bring</strong> Mandatory Molecules." data-de="<strong>Sie bringen</strong> unverzichtbare Moleküle."><strong>You bring</strong> Mandatory Molecules.</p>
+                <p class="force-desc" data-en="You build the essential systems the world can no longer ignore." data-de="Sie bauen die essenziellen Systeme, die die Welt nicht länger ignorieren kann.">You build the essential systems the world can no longer ignore.</p>
               </div>
               <div class="force-impact">
-                <span class="force-impact-label">Impact</span>
-                <span class="force-impact-text">You get a cap-table that opens supply chains, not just bank accounts.</span>
+                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
+                <span class="force-impact-text" data-en="You get a cap-table that opens supply chains, not just bank accounts." data-de="Sie erhalten eine Cap-Table, die Lieferketten öffnet – nicht nur Bankkonten.">You get a cap-table that opens supply chains, not just bank accounts.</span>
               </div>
             </div>
           </div>
@@ -995,25 +1036,25 @@
             <img class="look-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80" alt="European industrial construction" />
             <div class="look-text-content">
               <div class="look-intro">
-                <div class="section-eyebrow">Our Focus</div>
-                <h2 class="section-title">We invest where innovation meets the physical world.</h2>
-                <p class="look-subline">Our sweet spot is the critical phase between lab success and industrial adoption.</p>
+                <div class="section-eyebrow" data-en="Our Focus" data-de="Unser Fokus">Our Focus</div>
+                <h2 class="section-title" data-en="We invest where innovation meets the physical world." data-de="Wir investieren dort, wo Innovation auf die physische Welt trifft.">We invest where innovation meets the physical world.</h2>
+                <p class="look-subline" data-en="Our sweet spot is the critical phase between lab success and industrial adoption." data-de="Unser Sweet Spot ist die kritische Phase zwischen Laborerfolg und industrieller Adoption.">Our sweet spot is the critical phase between lab success and industrial adoption.</p>
               </div>
 
               <div class="look-grid">
                 <div class="look-item">
-                  <div class="look-item-label">The Sectors</div>
-                  <p>We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure.</p>
+                  <div class="look-item-label" data-en="The Sectors" data-de="Die Sektoren">The Sectors</div>
+                  <p data-en="We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure." data-de="Wir unterstützen die Moleküle und Systeme, die Bau, Fertigung und CO₂-neutrale Infrastruktur neu definieren.">We back the molecules and systems redefining Construction, Manufacturing, and Carbon-neutral Infrastructure.</p>
                 </div>
 
                 <div class="look-item">
-                  <div class="look-item-label">The Stage</div>
-                  <p>Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come.</p>
+                  <div class="look-item-label" data-en="The Stage" data-de="Die Phase">The Stage</div>
+                  <p data-en="Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come." data-de="Early-Stage &amp; Pre-Adoption. Wir steigen ein, wenn die Wissenschaft bewiesen ist, der industrielle Durchbruch aber noch aussteht.">Early-Stage &amp; Pre-Adoption. We enter when the science is proven, but the industrial breakthrough is yet to come.</p>
                 </div>
 
                 <div class="look-item">
-                  <div class="look-item-label">The Geography</div>
-                  <p>European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders.</p>
+                  <div class="look-item-label" data-en="The Geography" data-de="Die Geografie">The Geography</div>
+                  <p data-en="European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders." data-de="Europäische DNA. Wir nutzen die weltklasse Forschung des Kontinents, um globale Industrieführer aufzubauen.">European DNA. We leverage the continent's world-class R&amp;D to build global industrial leaders.</p>
                 </div>
               </div>
             </div>
@@ -1024,16 +1065,16 @@
         <section id="who">
           <div class="who-section-content">
             <div class="who-text-content">
-              <div class="section-eyebrow">Who we are</div>
-              <h2 class="section-title">
+              <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
+              <h2 class="section-title" data-en="Industrial Experience meets Radical Innovation." data-de="Industrielle Erfahrung trifft radikale Innovation.">
                 Industrial Experience meets Radical Innovation.
               </h2>
-              <p class="who-body">
+              <p class="who-body" data-en="Input isn't a faceless fund. It's built on decades of experience in Venture Capital, Company Building and Collaboration paired with a deep understanding of how the European Mittelstand breathes." data-de="INPUT ist kein gesichtsloser Fonds. Er basiert auf jahrzehntelanger Erfahrung in Venture Capital, Company Building und Zusammenarbeit – gepaart mit einem tiefen Verständnis dafür, wie der europäische Mittelstand atmet.">
                 Input isn't a faceless fund. It's built on decades of experience in Venture Capital, Company Building and Collaboration paired with a deep understanding of how the European Mittelstand breathes.
               </p>
               <div class="who-edge">
-                <div class="who-edge-label">The Edge</div>
-                <p class="who-edge-text">
+                <div class="who-edge-label" data-en="The Edge" data-de="Der Vorteil">The Edge</div>
+                <p class="who-edge-text" data-en="I've seen the barriers from the inside. Now, I've built the platform to bypass them. By combining Industrial Trust with the Speed of Venture, we ensure that the most critical technologies of our time actually reach the market." data-de="Ich kenne die Barrieren von innen. Jetzt habe ich die Plattform gebaut, um sie zu umgehen. Durch die Verbindung von industriellem Vertrauen mit der Geschwindigkeit von Venture stellen wir sicher, dass die kritischsten Technologien unserer Zeit tatsächlich den Markt erreichen.">
                   I've seen the barriers from the inside. Now, I've built the platform to bypass them. By combining Industrial Trust with the Speed of Venture, we ensure that the most critical technologies of our time actually reach the market.
                 </p>
               </div>
@@ -1046,20 +1087,52 @@
       <div class="join-section-wrapper">
         <section id="join">
           <div class="join-content">
-            <h2 class="join-headline">
+            <h2 class="join-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">
               Take your seat at the table.
             </h2>
-            <p class="join-text">
+            <p class="join-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">
               We are currently building our next syndicate of industrial partners and visionary investors.
             </p>
             
             <div class="join-buttons">
-              <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08fa6a1bfbabbe1b9acf0bcbaada5aaacbbf286a1b9aabcbbeafdffb8a6bba7eafdff86819f9a9b" class="btn btn-primary">Invest with us</a>
-              <a href="/cdn-cgi/l/email-protection#39515c555556795057494c4d174f5a064a4c5b535c5a4d0469504d5a511c0b0954401c0b097456555c5a4c555c" class="btn btn-secondary">Pitch your Molecule</a>
-              <a href="/cdn-cgi/l/email-protection#6204070e0b1a220b0c1217164c14015d111700080701165f2507164750520b0c475052360d17010a" class="btn btn-secondary">Get in Touch with Felix</a>
+              <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
+              <a href="mailto:hello@input.vc?subject=Pitch%20my%20Molecule" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
+              <a href="mailto:felix@input.vc?subject=Get%20in%20Touch" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
             </div>
           </div>
         </section>
       </div>
       </div>
     </
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="#privacy" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="#accessibility" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
+          <a href="#imprint" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang') || 'en';
+    if (savedLang === 'de') setLang('de');
+  </script>
+</body>
+</html>
