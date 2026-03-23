@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutz - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --max-width: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .logo-text { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+    .nav-cta {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
+      background: transparent; color: var(--fg); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--fg); color: var(--bg); }
+    .content {
+      padding-top: 80px;
+      max-width: 42rem;
+    }
+    .content h1 {
+      font-size: 2rem; font-weight: 500; letter-spacing: -0.02em;
+      margin-bottom: 48px; line-height: 1.2;
+    }
+    .content h2 {
+      font-size: 1rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--muted); margin: 40px 0 12px;
+    }
+    .content p {
+      font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 8px;
+    }
+    .content a { color: var(--fg); }
+    footer {
+      border-top: 1px solid var(--border-subtle); padding: 24px 0;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav" role="navigation">
+        <div class="nav-left">
+          <a href="index.html" class="logo-text">
+            <div class="logo-line-main">INPUT</div>
+            <div class="logo-line-sub">Partners</div>
+          </a>
+        </div>
+        <a class="nav-cta" href="index.html">← Zurück</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+        <div class="content">
+          <h1>Datenschutzerklärung</h1>
+
+          <h2>1. Verantwortlicher</h2>
+          <p>[Vorname Nachname]</p>
+          <p>INPUT Partners</p>
+          <p>[Straße und Hausnummer]</p>
+          <p>[PLZ] [Stadt]</p>
+          <p>E-Mail: <a href="mailto:hello@input.vc">hello@input.vc</a></p>
+
+          <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+          <p>Beim Besuch dieser Website werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet-Service-Providers und ähnliches. Es handelt sich dabei ausschließlich um Informationen, welche keine Rückschlüsse auf Ihre Person zulassen.</p>
+          <p>Diese Daten werden ausschließlich zu statistischen Zwecken ausgewertet und nach der Sitzung gelöscht. Eine Weitergabe an Dritte erfolgt nicht.</p>
+
+          <h2>3. Kontaktaufnahme per E-Mail</h2>
+          <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zum Zweck der Bearbeitung der Anfrage sowie für mögliche Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+
+          <h2>4. Keine Cookies</h2>
+          <p>Diese Website verwendet keine Cookies und kein Tracking. Es werden keine Daten an Drittanbieter wie Google Analytics oder ähnliche Dienste übermittelt.</p>
+
+          <h2>5. Ihre Rechte</h2>
+          <p>Sie haben das Recht auf Auskunft über die bei uns gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung. Außerdem haben Sie das Recht auf Datenübertragbarkeit und das Recht, eine Einwilligung jederzeit zu widerrufen.</p>
+          <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:hello@input.vc">hello@input.vc</a></p>
+
+          <h2>6. Beschwerderecht</h2>
+          <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Die zuständige Aufsichtsbehörde richtet sich nach Ihrem Wohnort.</p>
+
+          <h2>7. Aktualität dieser Datenschutzerklärung</h2>
+          <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung unserer Website kann eine Anpassung dieser Datenschutzerklärung notwendig werden.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html">Datenschutz</a>
+          <a href="imprint.html">Impressum</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
