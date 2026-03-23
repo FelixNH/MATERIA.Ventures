@@ -131,7 +131,7 @@
           <a class="nav-link" href="index.html" data-en="Home" data-de="Start">Home</a>
           <a class="nav-link" href="index.html#who" data-en="Who we are" data-de="Über uns">Who we are</a>
           <a class="nav-link" href="index.html#look" data-en="Where we invest" data-de="Wo wir investieren">Where we invest</a>
-          <a class="nav-link" href="index.html#beliefs" data-en="How we work" data-de="Wie wir arbeiten">How we work</a>
+          <a class="nav-link" href="index.html#for-whom" data-en="Who it's for" data-de="Für wen">Who it's for</a>
           <a class="nav-link active" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
         <div class="lang-toggle">
@@ -139,7 +139,7 @@
           <span class="lang-divider">|</span>
           <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
-        <a class="nav-cta" href="mailto:hello@input.vc?subject=Get%20in%20Touch" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
+        <a class="nav-cta" href="/cdn-cgi/l/email-protection#6109040d0d0e21080f1114154f17025e1214030b0402155c260415445351080f445351350e140209" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
@@ -193,9 +193,9 @@
           <h2 class="cta-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h2>
           <p class="cta-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">We are currently building our next syndicate of industrial partners and visionary investors.</p>
           <div class="cta-buttons">
-            <a href="mailto:hello@input.vc?subject=Invest%20with%20INPUT" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
-            <a href="mailto:hello@input.vc?subject=Pitch%20my%20Molecule" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
-            <a href="mailto:felix@input.vc?subject=Get%20in%20Touch" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
+            <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efc6c1dfdadb81d9cc90dcdacdc5caccdb92fcdacdc2c6db8a9d9ff6c0dadd8a9d9fffc6dbccc7" class="btn btn-primary" data-en="Submit Your Pitch" data-de="Ihren Pitch einreichen">Submit Your Pitch</a>
+            <a href="/cdn-cgi/l/email-protection#3355565f5a4b735a5d4346471d45500c404651595650470e67525f58160103475c16010375565f5a4b" class="btn btn-secondary" data-en="Talk to Felix" data-de="Mit Felix sprechen">Talk to Felix</a>
+            <a href="/cdn-cgi/l/email-protection#147c7178787b547d7a6461603a62772b6761767e717760295d7a62716760312624637d607c3126245d5a444140" class="btn btn-secondary" data-en="Invest With Us" data-de="Mit uns investieren">Invest With Us</a>
           </div>
         </div>
       </div>
@@ -205,29 +205,30 @@
       <div class="footer-inner">
         <span>&copy; <span id="year"></span> INPUT Partners</span>
         <div class="footer-links">
-          <a href="#privacy" data-en="Privacy" data-de="Datenschutz">Privacy</a>
-          <a href="#accessibility" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
-          <a href="#imprint" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="#" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
         </div>
       </div>
     </footer>
   </div>
-
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
     function setLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
         el.innerHTML = el.getAttribute('data-' + lang);
       });
       document.documentElement.lang = lang;
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-      localStorage.setItem('lang', lang);
+      try { localStorage.setItem('lang', lang); } catch(e) {}
     }
 
-    const savedLang = localStorage.getItem('lang') || 'en';
-    if (savedLang === 'de') setLang('de');
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
   </script>
 </body>
 </html>
