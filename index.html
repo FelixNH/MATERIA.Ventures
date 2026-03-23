@@ -94,6 +94,16 @@
     section { padding: 80px 0; }
     .section-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
     .section-title { font-size: 2rem; line-height: 1.3; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
+    .wif-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 12px; }
+    .wif-headline { font-size: 2rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 40px; line-height: 1.3; }
+    .wif-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+    .wif-card { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column; gap: 16px; }
+    .wif-card .btn { margin-top: auto; }
+    .wif-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--muted); padding: 4px 10px; border: 1px solid var(--border-subtle); border-radius: 4px; display: inline-block; }
+    .wif-card-body { font-size: 1rem; line-height: 1.8; color: var(--muted); min-height: 5.4rem; }
+    .wif-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 0; }
+    .wif-arrow { font-size: 0.95rem; color: var(--fg); font-weight: 500; line-height: 1.6; }
+    .wif-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
     .believe-header { margin-bottom: 56px; }
     .believe-subline { font-size: 1.05rem; line-height: 1.7; color: var(--muted); max-width: 38rem; margin-top: 16px; }
     .forces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
@@ -122,7 +132,8 @@
     .look-item { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 2px solid var(--border-subtle); }
     .look-item-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
     .look-item p { font-size: 1rem; line-height: 1.75; color: var(--muted); }
-    #who { position: sticky; top: 0; z-index: 1; }
+    #look { position: sticky; top: 0; z-index: 1; }
+    #who { z-index: 2; }
     .who-section-content { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
     .who-text-content { display: flex; flex-direction: column; gap: 28px; }
     .who-body { font-size: 1.05rem; line-height: 1.85; color: var(--muted); }
@@ -167,6 +178,7 @@
       .nav-cta { font-size: 0.75rem; padding: 7px 14px; }
       .nav-links { display: none; }
       .look-section-content, .who-section-content { grid-template-columns: 1fr; gap: 32px; }
+      .wif-grid { grid-template-columns: 1fr; }
       .forces-grid { grid-template-columns: 1fr; }
       .who-image { width: 100%; max-width: 300px; height: 300px; margin: 0 auto; order: -1; }
       .look-image { width: 100%; max-width: 200px; height: 250px; margin: 0 auto; }
@@ -193,8 +205,8 @@
         <div class="nav-links">
           <a class="nav-link" href="#" data-en="Home" data-de="Start">Home</a>
           <a class="nav-link" href="#who" data-en="Who we are" data-de="Über uns">Who we are</a>
-          <a class="nav-link" href="#look" data-en="Our Focus" data-de="Unser Fokus">Our Focus</a>
-          <a class="nav-link" href="#beliefs" data-en="How we work" data-de="Wie wir arbeiten">How we work</a>
+          <a class="nav-link" href="#for-whom" data-en="Who it's for" data-de="Für wen">Who it's for</a>
+          <a class="nav-link" href="#look" data-en="Where we invest" data-de="Wo wir investieren">Where we invest</a>
           <a class="nav-link" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
         <div class="lang-toggle">
@@ -209,8 +221,8 @@
     <main id="main-content">
       <div class="shell">
         <section class="hero">
-          <h1 class="hero-headline" data-en="Capital alone doesn't drive industrial transformation. Adoption does." data-de="Kapital allein treibt keinen industriellen Wandel. Adoption schon.">
-            Capital alone doesn't drive industrial transformation. Adoption does.
+          <h1 class="hero-headline" data-en="Capital alone does not change what the world is built off. Adoption does." data-de="Kapital allein verändert nicht, woraus die Welt gebaut wird. Adoption schon.">
+            Capital alone does not change what the world is built off. Adoption does.
           </h1>
           <p class="hero-sub" data-en="We structure early-stage capital to make it happen." data-de="Wir strukturieren Frühphasenkapital, damit es gelingt.">
             We structure early-stage capital to make it happen.
@@ -232,85 +244,76 @@
             Innovation is abundant. Adoption is broken.
           </h2>
           <div class="problem-text-centered">
-            <p data-en="The European Construction Industry is not limited by ideas or capital. It is limited by fragmented systems, slow decision-making, and misaligned incentives." data-de="Die europäische Bauindustrie wird nicht durch fehlende Ideen oder Kapital begrenzt. Sie wird begrenzt durch fragmentierte Systeme, langsame Entscheidungsprozesse und falsch ausgerichtete Anreize.">
-              The European Construction Industry is not limited by ideas or capital. It is limited by fragmented systems, slow decision-making, and misaligned incentives.
+            <p data-en="The European Construction Industry is not limited by innovation. Technologies with real potential fail to scale - because they struggle to integrate into existing industrial systems." data-de="Die europäische Bauindustrie wird nicht durch fehlende Innovation begrenzt. Technologien mit echtem Potenzial scheitern an der Skalierung – weil sie Schwierigkeiten haben, sich in bestehende industrielle Systeme zu integrieren.">
+              The European Construction Industry is not limited by innovation. Technologies with real potential fail to scale - because they struggle to integrate into existing industrial systems.
             </p>
-            <p data-en="Startups face a structural dilemma: Early collaboration is required to succeed — but it increases risk and reduces fundability in traditional VC cycles." data-de="Startups stehen vor einem strukturellen Dilemma: Frühe Zusammenarbeit ist notwendig um erfolgreich zu sein – aber sie erhöht das Risiko und erschwert die Finanzierbarkeit in traditionellen VC-Zyklen.">
-              Startups face a structural dilemma: Early collaboration is required to succeed — but it increases risk and reduces fundability in traditional VC cycles.
+            <p data-en="Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption." data-de="Startups stehen vor einem strukturellen Dilemma: Früh einbinden und das Ausführungsrisiko erhöhen – oder finanzierbar bleiben und die Adoption verzögern.">
+              Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption.
             </p>
-            <p data-en="Capital must solve for this adoption asymmetry. <strong>Public funding</strong> stops at fundamental science, and <strong>venture capital</strong> demands faster growth than the structure of the industry allows." data-de="Kapital muss diese Adoptionsasymmetrie lösen. <strong>Öffentliche Förderung</strong> endet bei der Grundlagenforschung und <strong>Venture Capital</strong> fordert schnelleres Wachstum, als die Struktur der Industrie erlaubt.">
-              Capital must solve for this adoption asymmetry. <strong>Public funding</strong> stops at fundamental science, and <strong>venture capital</strong> demands faster growth than the structure of the industry allows.
+            <p data-en="<strong>The right capital solves for this adoption asymmetry.</strong>" data-de="<strong>Das richtige Kapital löst diese Adoptionsasymmetrie.</strong>">
+              <strong>The right capital solves for this adoption asymmetry.</strong>
             </p>
-            <p data-en="This is where we come in." data-de="Hier kommen wir ins Spiel.">
-              This is where we come in.
+            <p data-en="This is why we are here." data-de="Deshalb sind wir hier.">
+              This is why we are here.
             </p>
           </div>
         </section>
 
         <section class="statement-section">
-          <h2 class="statement-headline" data-en="We don't invest to sell. We invest to partner." data-de="Wir investieren nicht um zu verkaufen. Wir investieren um zu partnern.">
-            We don't invest to sell. We invest to partner.
+          <h2 class="statement-headline" data-en='"We don&apos;t invest to sell. We invest to partner."' data-de='"Wir investieren nicht um zu verkaufen. Wir investieren um zu partnern."'>
+            "We don't invest to sell. We invest to partner."
           </h2>
-          <p class="statement-text" data-en="Short-term exits don't transform industries. Industrial integration does." data-de="Kurzfristige Exits transformieren keine Industrien. Industrielle Integration schon.">
-            Short-term exits don't transform industries. Industrial integration does.
+          <p class="statement-text" data-en="Inspired by Berkshire Hathaway." data-de="Inspiriert von Berkshire Hathaway.">
+            Inspired by Berkshire Hathaway.
           </p>
         </section>
 
-        <section id="beliefs">
-          <div class="believe-header">
-            <div class="section-eyebrow" data-en="How We Work" data-de="Wie wir arbeiten">How We Work</div>
-            <h2 class="section-title" data-en="Three Forces. One Table." data-de="Drei Kräfte. Ein Tisch.">Three Forces. One Table.</h2>
-            <p class="believe-subline" data-en="We pool capital from those who understand the industry to back those who will redefine it." data-de="Wir bündeln Kapital von denen, die die Industrie verstehen, um jene zu unterstützen, die sie neu definieren werden.">We pool capital from those who understand the industry to back those who will redefine it.</p>
-          </div>
-          <div class="forces-grid">
-            <div class="force-card">
-              <div class="force-number">01</div>
-              <div class="force-body">
-                <div class="force-title-row">
-                  <h3 class="force-name" data-en="The Strategics" data-de="Die Strategischen">The Strategics</h3>
-                  <span class="force-role" data-en="Adoption Shapers" data-de="Adoptionsgestalter">Adoption Shapers</span>
-                </div>
-                <p class="force-bring" data-en="<strong>You bring</strong> Validation &amp; Access." data-de="<strong>Sie bringen</strong> Validierung &amp; Zugang."><strong>You bring</strong> Validation &amp; Access.</p>
-                <p class="force-desc" data-en="You invest more than money - you put your money where your mouth is and help a solution succeed." data-de="Ihr Investment ist mehr als Geld – Es ist ein Bekenntnis zum gemeinsamen Erfolg.">You invest more than money - you put your money where your mouth is and help a solution succeed.</p>
-              </div>
-              <div class="force-impact">
-                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
-                <span class="force-impact-text" data-en="You increase the probability of success of each venture." data-de="Sie erhöhen die Erfolgswahrscheinlichkeit jedes Ventures.">You increase the probability of success of each venture.</span>
+        <section id="who">
+          <div class="who-section-content">
+            <div class="who-text-content">
+              <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
+              <p class="who-body" data-en="Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate. We pool capital from those who understand the industry to back those who will redefine it." data-de="Gegründet von Felix, ist INPUT Partners ein Deal-by-Deal-Investmentsyndikat. Wir bündeln Kapital von denen, die die Industrie verstehen, um jene zu unterstützen, die sie neu definieren werden.">
+                Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate. We pool capital from those who understand the industry to back those who will redefine it.
+              </p>
+              <div class="who-edge">
+                <p class="who-edge-text" data-en="We're united by one goal: building a smarter and more resilient construction industry for generations to come." data-de="Uns verbindet ein Ziel: eine klügere und widerstandsfähigere Bauindustrie für kommende Generationen aufzubauen.">
+                  We're united by one goal: building a smarter and more resilient construction industry for generations to come.
+                </p>
               </div>
             </div>
-            <div class="force-card">
-              <div class="force-number">02</div>
-              <div class="force-body">
-                <div class="force-title-row">
-                  <h3 class="force-name" data-en="The Financials" data-de="Die Finanziellen">The Financials</h3>
-                  <span class="force-role" data-en="Growth Multipliers" data-de="Wachstumsmultiplikatoren">Growth Multipliers</span>
-                </div>
-                <p class="force-bring" data-en="<strong>You bring</strong> Scalable Capital." data-de="<strong>Sie bringen</strong> skalierbares Kapital."><strong>You bring</strong> Scalable Capital.</p>
-                <p class="force-desc" data-en="You back the vision with the necessary firepower to reach global scale." data-de="Sie unterstützen die Vision mit der nötigen Schlagkraft, um globale Skalierung zu erreichen.">You back the vision with the necessary firepower to reach global scale.</p>
-              </div>
-              <div class="force-impact">
-                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
-                <span class="force-impact-text" data-en="You invest with maximum de-risking, guided by industrial expertise." data-de="Sie investieren mit maximaler Risikoreduzierung, geleitet von industrieller Expertise.">You invest with maximum de-risking, guided by industrial expertise.</span>
-              </div>
-            </div>
-            <div class="force-card">
-              <div class="force-number">03</div>
-              <div class="force-body">
-                <div class="force-title-row">
-                  <h3 class="force-name" data-en="The Founders" data-de="Die Gründer">The Founders</h3>
-                  <span class="force-role" data-en="The Architects" data-de="Die Architekten">The Architects</span>
-                </div>
-                <p class="force-bring" data-en="<strong>You bring</strong> Mandatory Molecules." data-de="<strong>Sie bringen</strong> unverzichtbare Moleküle."><strong>You bring</strong> Mandatory Molecules.</p>
-                <p class="force-desc" data-en="You build the essential systems the world can no longer ignore." data-de="Sie bauen die essenziellen Systeme, die die Welt nicht länger ignorieren kann.">You build the essential systems the world can no longer ignore.</p>
-              </div>
-              <div class="force-impact">
-                <span class="force-impact-label" data-en="Impact" data-de="Wirkung">Impact</span>
-                <span class="force-impact-text" data-en="You get a cap-table that opens supply chains, not just bank accounts." data-de="Sie erhalten eine Cap-Table, die Lieferketten öffnet – nicht nur Bankkonten.">You get a cap-table that opens supply chains, not just bank accounts.</span>
-              </div>
-            </div>
+            <img class="who-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=80" alt="Founders" />
           </div>
         </section>
 
+        <!-- WHO IT'S FOR -->
+        <section id="for-whom">
+          <div class="wif-eyebrow" data-en="Who it's for" data-de="Für wen">Who it's for</div>
+          <div class="wif-grid">
+            <div class="wif-card">
+              <div class="wif-tag" data-en="For Startups" data-de="Für Startups">For Startups</div>
+              <p class="wif-card-body" data-en="You build the essential systems the world can no longer ignore." data-de="Du baust die essenziellen Systeme, die die Welt nicht länger ignorieren kann.">You build the essential systems the world can no longer ignore.</p>
+              <hr class="wif-divider">
+              <p class="wif-arrow" data-en="You get a cap-table that opens value chains, not just bank accounts." data-de="Du erhältst eine Cap-Table, die Wertschöpfungsketten öffnet – nicht nur Bankkonten.">You get a cap-table that opens value chains, not just bank accounts.</p>
+              <a href="/cdn-cgi/l/email-protection#92faf7fefefdd2fbfce2e7e6bce4f1ade1e7f0f8f7f1e6afc1e7f0fffbe6b7a0a2cbfde7e0b7a0a2d1fdffe2f3fceb" class="btn btn-primary" data-en="Submit Your Pitch" data-de="Ihren Pitch einreichen">Submit Your Pitch</a>
+            </div>
+
+            <div class="wif-card">
+              <div class="wif-tag" data-en="For Strategists" data-de="Für Strategen">For Strategists</div>
+              <p class="wif-card-body" data-en="You are an SME and want to shape the technologies influencing your sector." data-de="Du bist ein Mittelständler und möchtest die Technologien mitgestalten, die deine Branche beeinflussen.">You are an SME and want to shape the technologies influencing your sector.</p>
+              <hr class="wif-divider">
+              <p class="wif-arrow" data-en="Your industry knowledge is your edge. We turn it into returns." data-de="Dein Branchenwissen ist dein Vorteil. Wir machen daraus Rendite.">Your industry knowledge is your edge. We turn it into returns.</p>
+              <a href="/cdn-cgi/l/email-protection#6d0b080104152d04031d1819431b0e521e180f07080e1950390c0106485f5d1902485f5d2b08010415" class="btn btn-secondary" data-en="Talk to Felix" data-de="Mit Felix sprechen">Talk to Felix</a>
+            </div>
+
+            <div class="wif-card">
+              <div class="wif-tag" data-en="For Investors" data-de="Für Investoren">For Investors</div>
+              <p class="wif-card-body" data-en="You back the vision with the necessary long-term mindset to reach scale." data-de="Du unterstützt die Vision mit dem nötigen langfristigen Mindset, um Skalierung zu erreichen.">You back the vision with the necessary long-term mindset to reach scale.</p>
+              <hr class="wif-divider">
+              <p class="wif-arrow" data-en="You invest with maximum de-risking, guided by industrial expertise." data-de="Du investierst mit maximaler Risikoreduzierung, geleitet von industrieller Expertise.">You invest with maximum de-risking, guided by industrial expertise.</p>
+              <a href="/cdn-cgi/l/email-protection#2b434e4747446b42455b5e5f055d4814585e49414e485f1662455d4e585f0e191b5c425f430e191b62657b7e7f" class="btn btn-secondary" data-en="Invest With Us" data-de="Mit uns investieren">Invest With Us</a>
+            </div>
+          </div>
+        </section>
         <section id="look">
           <div class="look-section-content">
             <img class="look-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80" alt="European industrial construction" />
@@ -336,27 +339,6 @@
           </div>
         </section>
 
-        <section id="who">
-          <div class="who-section-content">
-            <div class="who-text-content">
-              <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
-              <h2 class="section-title" data-en="Industrial Experience meets Radical Innovation." data-de="Industrielle Erfahrung trifft radikale Innovation.">
-                Industrial Experience meets Radical Innovation.
-              </h2>
-              <p class="who-body" data-en="Input isn't a faceless fund. It's built on decades of experience in Venture Capital, Company Building and Collaboration paired with a deep understanding of how the European Mittelstand breathes." data-de="INPUT ist kein gesichtsloser Fonds. Er basiert auf jahrzehntelanger Erfahrung in Venture Capital, Company Building und Zusammenarbeit – gepaart mit einem tiefen Verständnis dafür, wie der europäische Mittelstand atmet.">
-                Input isn't a faceless fund. It's built on decades of experience in Venture Capital, Company Building and Collaboration paired with a deep understanding of how the European Mittelstand breathes.
-              </p>
-              <div class="who-edge">
-                <div class="who-edge-label" data-en="The Edge" data-de="Der Vorteil">The Edge</div>
-                <p class="who-edge-text" data-en="I've seen the barriers from the inside. Now, I've built the platform to bypass them. By combining Industrial Trust with the Speed of Venture, we ensure that the most critical technologies of our time actually reach the market." data-de="Ich kenne die Barrieren von innen. Jetzt habe ich die Plattform gebaut, um sie zu umgehen. Durch die Verbindung von industriellem Vertrauen mit der Geschwindigkeit von Venture stellen wir sicher, dass die kritischsten Technologien unserer Zeit tatsächlich den Markt erreichen.">
-                  I've seen the barriers from the inside. Now, I've built the platform to bypass them. By combining Industrial Trust with the Speed of Venture, we ensure that the most critical technologies of our time actually reach the market.
-                </p>
-              </div>
-            </div>
-            <img class="who-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=80" alt="Founders Philipp and Felix" />
-          </div>
-        </section>
-
         <div class="join-section-wrapper">
           <section id="join">
             <div class="join-content">
@@ -367,9 +349,9 @@
                 We are currently building our next syndicate of industrial partners and visionary investors.
               </p>
               <div class="join-buttons">
-                <a href="/cdn-cgi/l/email-protection#3c54595050537c55524c4948124a5f034f495e56595f480175524a594f48190e0c4b554854190e0c75726c6968" class="btn btn-primary" data-en="Invest with us" data-de="Mit uns investieren">Invest with us</a>
-                <a href="/cdn-cgi/l/email-protection#48202d242427082126383d3c663e2b773b3d2a222d2b3c7518213c2b206d7a7825316d7a780527242d2b3d242d" class="btn btn-secondary" data-en="Pitch your Molecule" data-de="Ihr Molekül pitchen">Pitch your Molecule</a>
-                <a href="/cdn-cgi/l/email-protection#f197949d9889b1989f818485df8792ce8284939b949285ccb69485d4c3c1989fd4c3c1a59e849299" class="btn btn-secondary" data-en="Get in Touch with Felix" data-de="Felix kontaktieren">Get in Touch with Felix</a>
+                <a href="/cdn-cgi/l/email-protection#442c2128282b042d2a3431306a32277b3731262e21273079173126292d306176741d2b3136617674142d30272c" class="btn btn-primary" data-en="Submit Your Pitch" data-de="Ihren Pitch einreichen">Submit Your Pitch</a>
+                <a href="/cdn-cgi/l/email-protection#accac9c0c5d4ecc5c2dcd9d882dacf93dfd9cec6c9cfd891f8cdc0c7899e9cd8c3899e9ceac9c0c5d4" class="btn btn-secondary" data-en="Talk to Felix" data-de="Mit Felix sprechen">Talk to Felix</a>
+                <a href="/cdn-cgi/l/email-protection#8be3eee7e7e4cbe2e5fbfeffa5fde8b4f8fee9e1eee8ffb6c2e5fdeef8ffaeb9bbfce2ffe3aeb9bbc2c5dbdedf" class="btn btn-secondary" data-en="Invest With Us" data-de="Mit uns investieren">Invest With Us</a>
               </div>
             </div>
           </section>
@@ -382,29 +364,13 @@
       <div class="footer-inner">
         <span>&copy; <span id="year"></span> INPUT Partners</span>
         <div class="footer-links">
-          <a href="#privacy" data-en="Privacy" data-de="Datenschutz">Privacy</a>
-          <a href="#accessibility" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
-          <a href="#imprint" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="#" data-en="Accessibility" data-de="Barrierefreiheit">Accessibility</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
         </div>
       </div>
     </footer>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    function setLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.innerHTML = el.getAttribute('data-' + lang);
-      });
-      document.documentElement.lang = lang;
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-      localStorage.setItem('lang', lang);
-    }
-
-    const savedLang = localStorage.getItem('lang') || 'en';
-    if (savedLang === 'de') setLang('de');
-  </script>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    docume
