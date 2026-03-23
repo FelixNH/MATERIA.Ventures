@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --border-strong: #b3b3b5;
+      --radius-card: 20px;
+      --max-width: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+
+    .nav-back {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-back:hover { border-color: var(--fg); color: var(--fg); }
+
+    /* FORM AREA */
+    .form-section { padding-top: 80px; max-width: 42rem; }
+
+    .form-eyebrow {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--muted); margin-bottom: 12px;
+    }
+    .form-headline {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px;
+    }
+    .form-subline {
+      font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 48px;
+    }
+
+    /* FORM */
+    .form { display: flex; flex-direction: column; gap: 24px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .field { display: flex; flex-direction: column; gap: 8px; }
+
+    label {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      background: #ffffff;
+      color: var(--fg);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--fg);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 20px; background: #ffffff;
+      border: 1px solid var(--border-subtle); border-radius: 12px;
+    }
+
+    .disclaimer input[type="checkbox"] {
+      width: 18px; height: 18px; margin-top: 2px;
+      accent-color: var(--fg); flex-shrink: 0; cursor: pointer;
+    }
+
+    .disclaimer-text {
+      font-size: 0.85rem; line-height: 1.7; color: var(--muted);
+    }
+
+    /* SUBMIT */
+    .btn-submit {
+      padding: 14px 32px;
+      background: var(--fg); color: var(--bg);
+      border: 1px solid var(--fg); border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      cursor: pointer; transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .btn-submit:hover { background: transparent; color: var(--fg); }
+
+    /* SUCCESS */
+    .success-message {
+      display: none;
+      padding: 24px 28px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      margin-top: 24px;
+    }
+    .success-message p { font-size: 1rem; line-height: 1.7; color: var(--muted); }
+    .success-message strong { color: var(--fg); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span>
+              <span class="logo-sep">|</span>
+              <span>FINANCE</span>
+              <span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
+          </a>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          </div>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+        <div class="form-section">
+          <div class="form-eyebrow" data-en="Join INPUT Partners" data-de="INPUT Partners beitreten">Join INPUT Partners</div>
+          <h1 class="form-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h1>
+          <p class="form-subline" data-en="We are currently building our next syndicate of industrial partners and visionary investors. Tell us about yourself." data-de="Wir bauen unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf. Erzählen Sie uns von sich.">We are currently building our next syndicate of industrial partners and visionary investors. Tell us about yourself.</p>
+
+          <form class="form" id="contact-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New INPUT Partners Inquiry">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://YOUR_DOMAIN/invest.html?success=true">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-row">
+              <div class="field">
+                <label for="firstname" data-en="First Name *" data-de="Vorname *">First Name *</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Felix" />
+              </div>
+              <div class="field">
+                <label for="lastname" data-en="Last Name *" data-de="Nachname *">Last Name *</label>
+                <input type="text" id="lastname" name="lastname" required placeholder="Müller" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="felix@company.com" />
+            </div>
+
+            <div class="field">
+              <label for="company" data-en="Company" data-de="Unternehmen">Company</label>
+              <input type="text" id="company" name="company" placeholder="Your company name" />
+            </div>
+
+            <div class="field">
+              <label for="type" data-en="I am joining as *" data-de="Ich nehme teil als *">I am joining as *</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected data-en="Select an option" data-de="Bitte auswählen">Select an option</option>
+                <option value="strategic" data-en="Strategic Partner (SME / Industry Expert)" data-de="Strategischer Partner (Mittelstand / Industrieexperte)">Strategic Partner (SME / Industry Expert)</option>
+                <option value="investor" data-en="Financial Investor" data-de="Finanzieller Investor">Financial Investor</option>
+                <option value="both" data-en="Both" data-de="Beides">Both</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="motivation" data-en="Why do you want to join INPUT Partners? *" data-de="Warum möchten Sie INPUT Partners beitreten? *">Why do you want to join INPUT Partners? *</label>
+              <textarea id="motivation" name="motivation" required placeholder="Share your motivation..." data-placeholder-en="Share your motivation..." data-placeholder-de="Teilen Sie Ihre Motivation..."></textarea>
+            </div>
+
+            <div class="disclaimer">
+              <input type="checkbox" id="disclaimer" name="disclaimer" required />
+              <p class="disclaimer-text" data-en="By submitting this form, I confirm that this is not an offer to invest and no commitment is made at this stage. Any investment involves risks, including potential loss of capital. My information will be kept confidential and used only to assess my potential fit with INPUT Partners." data-de="Mit dem Absenden dieses Formulars bestätige ich, dass dies kein Investitionsangebot ist und in dieser Phase keine Verpflichtung eingegangen wird. Jede Investition ist mit Risiken verbunden, einschließlich des möglichen Kapitalverlusts. Meine Daten werden vertraulich behandelt und nur zur Beurteilung meiner Eignung für INPUT Partners verwendet.">
+                By submitting this form, I confirm that this is not an offer to invest and no commitment is made at this stage. Any investment involves risks, including potential loss of capital. My information will be kept confidential and used only to assess my potential fit with INPUT Partners.
+              </p>
+            </div>
+
+            <button type="submit" class="btn-submit" data-en="Submit" data-de="Absenden">Submit</button>
+          </form>
+
+          <div class="success-message" id="success-msg">
+            <p data-en="<strong>Thank you for your interest.</strong> We will be in touch shortly." data-de="<strong>Vielen Dank für Ihr Interesse.</strong> Wir melden uns in Kürze."><strong>Thank you for your interest.</strong> We will be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('[data-placeholder-en]').forEach(function(el) {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
+
+    // Show success message if redirected back with ?success=true
+    if (window.location.search.includes('success=true')) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
