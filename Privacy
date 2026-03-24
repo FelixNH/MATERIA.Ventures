@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Datenschutz - INPUT Partners</title>
   <style>
@@ -34,9 +35,22 @@
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
     .nav-left { display: flex; align-items: center; gap: 12px; }
-    .logo-text { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+
     .nav-cta {
       font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
       padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
@@ -78,9 +92,15 @@
     <header>
       <nav class="nav" role="navigation">
         <div class="nav-left">
-          <a href="index.html" class="logo-text">
-            <div class="logo-line-main">INPUT</div>
-            <div class="logo-line-sub">Partners</div>
+          <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span>
+              <span class="logo-sep">|</span>
+              <span>FINANCE</span>
+              <span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
           </a>
         </div>
         <a class="nav-cta" href="index.html">← Zurück</a>
@@ -94,30 +114,32 @@
 
           <h2>1. Verantwortlicher</h2>
           <p>[Vorname Nachname]</p>
-          <p>INPUT Partners</p>
+          <p>INPUT Partners (Projektname, kein eingetragenes Unternehmen)</p>
           <p>[Straße und Hausnummer]</p>
           <p>[PLZ] [Stadt]</p>
           <p>E-Mail: <a href="mailto:hello@input.vc">hello@input.vc</a></p>
 
-          <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-          <p>Beim Besuch dieser Website werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet-Service-Providers und ähnliches. Es handelt sich dabei ausschließlich um Informationen, welche keine Rückschlüsse auf Ihre Person zulassen.</p>
-          <p>Diese Daten werden ausschließlich zu statistischen Zwecken ausgewertet und nach der Sitzung gelöscht. Eine Weitergabe an Dritte erfolgt nicht.</p>
+          <h2>2. Hosting</h2>
+          <p>Diese Website wird bei einem externen Dienstleister gehostet (STRATO AG, Otto-Ostrowski-Straße 7, 10249 Berlin, Deutschland). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei handelt es sich v. a. um IP-Adressen und Metadaten (Server-Logfiles).</p>
+          <p>Der Einsatz des Hosters erfolgt zum Zwecke einer sicheren und schnellen Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Wir haben mit dem Anbieter einen Vertrag über Auftragsverarbeitung (AVV) geschlossen.</p>
 
-          <h2>3. Kontaktaufnahme per E-Mail</h2>
-          <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zum Zweck der Bearbeitung der Anfrage sowie für mögliche Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+          <h2>3. Erhebung von Server-Logfiles</h2>
+          <p>Beim Besuch dieser Website werden automatisch technische Informationen erfasst (Server-Logfiles), darunter die Art des Webbrowsers, das verwendete Betriebssystem sowie die IP-Adresse. Die IP-Adresse wird vom Hoster erfasst, jedoch nach Möglichkeit anonymisiert oder nur so lange gespeichert, wie es zur Bereitstellung der Dienste und zur Sicherheit (z. B. Abwehr von Hackerangriffen) erforderlich ist.</p>
 
-          <h2>4. Keine Cookies</h2>
+          <h2>4. Kontaktformular und Kontaktaufnahme</h2>
+          <p>Sofern Sie das auf dieser Website bereitgestellte Kontaktformular nutzen oder uns per E-Mail kontaktieren, werden die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Investoren-Profil) zum Zweck der individuellen Kommunikation, der Prüfung von Investitionsinteressen und der Koordination des Investment-Roundtables verarbeitet.</p>
+          <p>Rechtsgrundlage: Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+          <p>Weitergabe: Eine Weitergabe Ihrer Daten an Dritte (z. B. Startups oder andere Teilnehmer des Roundtables) erfolgt nur nach Ihrer vorherigen expliziten Rücksprache und Zustimmung.</p>
+
+          <h2>5. Keine Cookies</h2>
           <p>Diese Website verwendet keine Cookies und kein Tracking. Es werden keine Daten an Drittanbieter wie Google Analytics oder ähnliche Dienste übermittelt.</p>
 
-          <h2>5. Ihre Rechte</h2>
+          <h2>6. Ihre Rechte</h2>
           <p>Sie haben das Recht auf Auskunft über die bei uns gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung. Außerdem haben Sie das Recht auf Datenübertragbarkeit und das Recht, eine Einwilligung jederzeit zu widerrufen.</p>
           <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:hello@input.vc">hello@input.vc</a></p>
 
-          <h2>6. Beschwerderecht</h2>
+          <h2>7. Beschwerderecht</h2>
           <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Die zuständige Aufsichtsbehörde richtet sich nach Ihrem Wohnort.</p>
-
-          <h2>7. Aktualität dieser Datenschutzerklärung</h2>
-          <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung unserer Website kann eine Anpassung dieser Datenschutzerklärung notwendig werden.</p>
         </div>
       </div>
     </main>
@@ -135,6 +157,12 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
   </script>
 </body>
 </html>
