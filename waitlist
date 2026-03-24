@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the Waitlist - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --border-strong: #b3b3b5;
+      --radius-card: 20px;
+      --max-width: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 24px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+    .nav-back {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-back:hover { border-color: var(--fg); color: var(--fg); }
+
+    /* LANG TOGGLE */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+
+    /* CONTENT */
+    .content-section { padding-top: 100px; max-width: 38rem; }
+
+    .eyebrow {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--muted); margin-bottom: 16px;
+    }
+    .headline {
+      font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px;
+    }
+    .subline {
+      font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 48px;
+    }
+
+    /* NOTICE BOX */
+    .notice {
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px; padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .notice p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+
+    /* FORM */
+    .form { display: flex; flex-direction: column; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    label {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); font-weight: 500;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid var(--border-subtle); border-radius: 10px;
+      background: #ffffff; color: var(--fg);
+      font-family: inherit; font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    input:focus { outline: none; border-color: var(--fg); }
+
+    .btn-submit {
+      padding: 14px 32px;
+      background: var(--fg); color: var(--bg);
+      border: 1px solid var(--fg); border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      cursor: pointer; transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .btn-submit:hover { background: transparent; color: var(--fg); }
+
+    /* SUCCESS */
+    .success-message {
+      display: none; padding: 32px;
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card); margin-top: 24px;
+    }
+    .success-message p { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .success-message strong { color: var(--fg); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .content-section { padding-top: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="logo-text" id="logo-nav">
+          <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+          <div class="logo-tags" id="logo-nav-tags">
+            <span>BUILD</span>
+            <span class="logo-sep">|</span>
+            <span>FINANCE</span>
+            <span class="logo-sep">|</span>
+            <span>CONNECT</span>
+          </div>
+        </a>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          </div>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+        <div class="content-section">
+
+          <div class="eyebrow" data-en="Waitlist" data-de="Warteliste">Waitlist</div>
+          <h1 class="headline" data-en="Due to high demand, we are not evaluating additional opportunities at this time." data-de="Aufgrund der hohen Nachfrage nehmen wir derzeit keine neuen Anfragen an.">
+            Due to high demand, we are not evaluating additional opportunities at this time.
+          </h1>
+          <p class="subline" data-en="Due to high demand, we are not accepting new applications at this time. Register your interest below and we will reach out as soon as capacity opens up." data-de="Aufgrund der hohen Nachfrage nehmen wir derzeit keine neuen Anfragen an. Tragen Sie sich unten ein und wir melden uns, sobald wieder Kapazitäten frei sind.">
+            Due to high demand, we are not accepting new applications at this time. Register your interest below and we will reach out as soon as capacity opens up.
+          </p>
+
+          <div class="notice">
+            <p data-en="We carefully review every registration. By signing up, you are not committing to anything — we will contact you to explore whether there is a mutual fit." data-de="Wir prüfen jede Anmeldung sorgfältig. Mit der Eintragung gehen Sie keinerlei Verpflichtung ein – wir melden uns, um gemeinsam zu prüfen, ob es einen gegenseitigen Fit gibt.">
+              We carefully review every registration. By signing up, you are not committing to anything — we will contact you to explore whether there is a mutual fit.
+            </p>
+          </div>
+
+          <form class="form" id="waitlist-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+            <input type="hidden" name="_subject" value="New Waitlist Registration — INPUT Partners">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://input.partners/waitlist.html?success=true">
+            <input type="hidden" name="interest" id="interest-field" value="">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="field">
+              <label for="name" data-en="Full Name *" data-de="Vollständiger Name *">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Felix Müller" />
+            </div>
+
+            <div class="field">
+              <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="felix@company.com" />
+            </div>
+
+            <div class="field">
+              <label for="company" data-en="Company / Organisation" data-de="Unternehmen / Organisation">Company / Organisation</label>
+              <input type="text" id="company" name="company" placeholder="" />
+            </div>
+
+            <div class="field">
+              <label for="motivation" data-en="What is your interest? *" data-de="Was ist Ihr Interesse? *">What is your interest? *</label>
+              <textarea id="motivation" name="motivation" required style="width:100%;padding:12px 16px;border:1px solid var(--border-subtle);border-radius:10px;background:#ffffff;color:var(--fg);font-family:inherit;font-size:1rem;transition:border-color 0.2s ease;resize:vertical;min-height:100px;" placeholder="Tell us briefly what you are looking for..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" data-en="Register Interest" data-de="Interesse anmelden">Register Interest</button>
+          </form>
+
+          <div class="success-message" id="success-msg">
+            <p data-en="<strong>Thank you for your interest.</strong> We have noted your registration and will be in touch." data-de="<strong>Vielen Dank für Ihr Interesse.</strong> Wir haben Ihre Anmeldung notiert und melden uns bei Ihnen.">
+              <strong>Thank you for your interest.</strong> We have noted your registration and will be in touch.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
+
+    // Read interest param from URL and set hidden field
+    var params = new URLSearchParams(window.location.search);
+    var interest = params.get('interest') || 'general';
+    document.getElementById('interest-field').value = interest;
+
+    // Show success message
+    if (params.get('success') === 'true') {
+      document.getElementById('waitlist-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
+  </script>
+</body>
+</html>
