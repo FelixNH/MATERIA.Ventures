@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impressum - INPUT Partners</title>
   <style>
@@ -34,9 +35,22 @@
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
     .nav-left { display: flex; align-items: center; gap: 12px; }
-    .logo-text { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+
     .nav-cta {
       font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
       padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
@@ -78,9 +92,15 @@
     <header>
       <nav class="nav" role="navigation">
         <div class="nav-left">
-          <a href="index.html" class="logo-text">
-            <div class="logo-line-main">INPUT</div>
-            <div class="logo-line-sub">Partners</div>
+          <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span>
+              <span class="logo-sep">|</span>
+              <span>FINANCE</span>
+              <span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
           </a>
         </div>
         <a class="nav-cta" href="index.html">← Zurück</a>
@@ -92,23 +112,31 @@
         <div class="content">
           <h1>Impressum</h1>
 
-          <h2>Angaben gemäß § 5 TMG</h2>
+          <h2>Angaben gemäß § 5 DDG</h2>
           <p>[Vorname Nachname]</p>
-          <p>INPUT Partners</p>
+          <p>Einzelperson / Koordinator</p>
+          <p>INPUT Partners (Projektbezeichnung, kein eingetragenes Unternehmen)</p>
           <p>[Straße und Hausnummer]</p>
           <p>[PLZ] [Stadt]</p>
           <p>Deutschland</p>
 
           <h2>Kontakt</h2>
-          <p>E-Mail: <a href="mailto:hello@input.vc">hello@input.vc</a></p>
+          <p>E-Mail: <a href="/cdn-cgi/l/email-protection#f79f929b9b98b79e99878283d98194"><span class="__cf_email__" data-cfemail="bbd3ded7d7d4fbd2d5cbcecf95cdd8">[email&#160;protected]</span></a></p>
+          <p>Telefon: [Telefonnummer]</p>
 
-          <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
           <p>[Vorname Nachname]</p>
-          <p>[Adresse wie oben]</p>
+          <p>[Straße und Hausnummer]</p>
+          <p>[PLZ] [Stadt]</p>
 
-          <h2>Haftungsausschluss</h2>
-          <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
-          <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+          <h2>EU-Streitschlichtung</h2>
+          <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+          <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+          <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+          <h2>Haftung für Inhalte</h2>
+          <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
 
           <h2>Urheberrecht</h2>
           <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
@@ -129,6 +157,12 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
   </script>
 </body>
 </html>
