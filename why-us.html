@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Why INPUT Partners - Our approach to early-stage construction materials investing" />
   <title>Why Us - INPUT Partners</title>
@@ -35,9 +36,22 @@
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
     .nav-left { display: flex; align-items: center; gap: 12px; }
-    .logo-text { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+
     .nav-cta {
       font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
       padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
@@ -122,9 +136,15 @@
     <header>
       <nav class="nav" role="navigation">
         <div class="nav-left">
-          <a href="index.html" class="logo-text">
-            <div class="logo-line-main">INPUT</div>
-            <div class="logo-line-sub">Partners</div>
+          <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span>
+              <span class="logo-sep">|</span>
+              <span>FINANCE</span>
+              <span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
           </a>
         </div>
         <div class="nav-links">
@@ -139,7 +159,7 @@
           <span class="lang-divider">|</span>
           <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
-        <a class="nav-cta" href="/cdn-cgi/l/email-protection#6109040d0d0e21080f1114154f17025e1214030b0402155c260415445351080f445351350e140209" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
+        <a class="nav-cta" href="waitlist.html?interest=general" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
@@ -160,21 +180,21 @@
               <div class="why-block-number">01</div>
               <div class="why-block-body">
                 <h3 data-en="We invest patiently." data-de="Wir investieren mit Geduld.">We invest patiently.</h3>
-                <p data-en="Industrial adoption does not follow software timelines. It requires time, validation, and integration." data-de="Industrielle Integration folgt keinen Software-Zeitplänen. Sie erfordert Zeit, Validierung und Integration.">Industrial adoption does not follow software timelines. It requires time, validation, and integration.</p>
+                <p data-en="We know that industrial adoption does not follow software timelines. Which is why we do not invest to sell. We invest to partner." data-de="Wir wissen, dass industrielle Adoption keinen Software-Zeitplänen folgt. Deshalb investieren wir nicht um zu verkaufen. Wir investieren um zu partnern.">We know that industrial adoption does not follow software timelines. Which is why we do not invest to sell. We invest to partner.</p>
               </div>
             </div>
             <div class="why-block">
               <div class="why-block-number">02</div>
               <div class="why-block-body">
                 <h3 data-en="We provide strategic skin in the game." data-de="Wir bringen strategisches Skin in the Game.">We provide strategic skin in the game.</h3>
-                <p data-en="We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early." data-de="Wir bringen Industriepartner, die ein direktes Interesse daran haben, dass Technologien erfolgreich sind – und daher frühzeitig beim Testen, Validieren und Integrieren helfen.">We bring industrial partners who have a direct interest in seeing technologies succeed - and therefore help test, validate, and integrate them early.</p>
+                <p data-en="We give industrial partners a financial interest in seeing technologies succeed - and therefore an incentive to help test, validate, and integrate them early." data-de="Wir geben Industriepartnern ein finanzielles Interesse daran, dass Technologien erfolgreich sind – und damit einen Anreiz, frühzeitig beim Testen, Validieren und Integrieren zu helfen.">We give industrial partners a financial interest in seeing technologies succeed - and therefore an incentive to help test, validate, and integrate them early.</p>
               </div>
             </div>
             <div class="why-block">
               <div class="why-block-number">03</div>
               <div class="why-block-body">
                 <h3 data-en="We support early Product-Integration-Fit." data-de="Wir unterstützen frühen Product-Integration-Fit.">We support early Product-Integration-Fit.</h3>
-                <p data-en="Technologies must integrate into existing processes, standards, and systems. The earlier this happens, the more flexible are the interfaces." data-de="Technologien müssen sich in bestehende Prozesse, Standards und Systeme integrieren. Je früher dies passiert, desto flexibler lassen sich die Schnittstellen gestalten.">Technologies must integrate into existing processes, standards, and systems. The earlier this happens, the more flexible are the interfaces.</p>
+                <p data-en="If technologies must integrate into existing processes, standards, and systems, every pivot is a nightmare. The earlier you ask the right questions, the better it can scale later. Who is the market? Who will pay? How do I integrate?" data-de="Wenn Technologien in bestehende Prozesse, Standards und Systeme integriert werden müssen, ist jeder Pivot ein Albtraum. Je früher man die richtigen Fragen stellt, desto besser lässt sich später skalieren. Wer ist der Markt? Wer wird zahlen? Wie integriere ich mich?">If technologies must integrate into existing processes, standards, and systems, every pivot is a nightmare. The earlier you ask the right questions, the better it can scale later. Who is the market? Who will pay? How do I integrate?</p>
               </div>
             </div>
           </div>
@@ -182,7 +202,7 @@
 
         <section class="quote-section">
           <blockquote class="quote-block">
-            <p class="quote-text" data-en='"Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don&apos;t just back startups, we want to fundamentally increase their probability of success."' data-de='"Erfolg in dieser Industrie erfordert drei Dinge: Geduldiges Kapital, frühe industrielle Ausrichtung und echtes Engagement der etablierten Akteure. Indem wir alle drei liefern, unterstützen wir nicht nur Startups – wir wollen ihre Erfolgswahrscheinlichkeit grundlegend erhöhen."'>"Success in this industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we want to fundamentally increase their probability of success."</p>
+            <p class="quote-text" data-en='"Integrating new technologies into a structurally rather inflexible industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don&apos;t just back startups, we fundamentally increase their probability of success."' data-de='"Die Integration neuer Technologien in eine strukturell eher unflexible Branche erfordert drei Dinge: Geduldiges Kapital, frühe Ausrichtung an den Bedürfnissen der Industrie und echtes Engagement der etablierten Unternehmen. Indem wir alle drei miteinander verbinden, unterstützen wir nicht nur Startups, sondern erhöhen grundlegend ihre Erfolgswahrscheinlichkeiten."'>"Integrating new technologies into a structurally rather inflexible industry requires three things: Patient capital, early industrial alignment, and real skin in the game from incumbents. By providing all three, we don't just back startups, we fundamentally increase their probability of success."</p>
             <footer class="quote-attribution">— Felix, Co-Founder, INPUT Partners</footer>
           </blockquote>
         </section>
@@ -193,9 +213,8 @@
           <h2 class="cta-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h2>
           <p class="cta-text" data-en="We are currently building our next syndicate of industrial partners and visionary investors." data-de="Wir bauen gerade unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf.">We are currently building our next syndicate of industrial partners and visionary investors.</p>
           <div class="cta-buttons">
-            <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efc6c1dfdadb81d9cc90dcdacdc5caccdb92fcdacdc2c6db8a9d9ff6c0dadd8a9d9fffc6dbccc7" class="btn btn-primary" data-en="Submit Your Pitch" data-de="Ihren Pitch einreichen">Submit Your Pitch</a>
-            <a href="/cdn-cgi/l/email-protection#3355565f5a4b735a5d4346471d45500c404651595650470e67525f58160103475c16010375565f5a4b" class="btn btn-secondary" data-en="Talk to Felix" data-de="Mit Felix sprechen">Talk to Felix</a>
-            <a href="/cdn-cgi/l/email-protection#147c7178787b547d7a6461603a62772b6761767e717760295d7a62716760312624637d607c3126245d5a444140" class="btn btn-secondary" data-en="Invest With Us" data-de="Mit uns investieren">Invest With Us</a>
+            <a href="waitlist.html?interest=platform" class="btn btn-primary" data-en="Join Our Platform" data-de="Plattform beitreten">Join Our Platform</a>
+            <a href="waitlist.html?interest=startup" class="btn btn-secondary" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</a>
           </div>
         </div>
       </div>
@@ -214,6 +233,11 @@
   </div>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
 
     function setLang(lang) {
       document.querySelectorAll('[data-en]').forEach(function(el) {
