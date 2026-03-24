@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="INPUT Partners - Investing in materials reshaping how the world is built" />
   <title>INPUT Partners</title>
@@ -35,13 +36,26 @@
       border-bottom: 1px solid var(--border-subtle);
     }
     .nav {
-      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      max-width: var(--max-width); margin: 0 auto; padding: 24px 24px;
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
     .nav-left { display: flex; align-items: center; gap: 12px; }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-line-main { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-    .logo-line-sub { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+      margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+
     .nav-cta {
       font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
       padding: 8px 18px; border-radius: 999px; border: 1px solid var(--fg);
@@ -197,9 +211,15 @@
     <header>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-left">
-          <div class="logo-text">
-            <div class="logo-line-main">INPUT</div>
-            <div class="logo-line-sub">Partners</div>
+          <div class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span>
+              <span class="logo-sep">|</span>
+              <span>FINANCE</span>
+              <span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
           </div>
         </div>
         <div class="nav-links">
@@ -250,8 +270,8 @@
             <p data-en="Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption." data-de="Startups stehen vor einem strukturellen Dilemma: Potentielle Kunden früh einbinden und dafür langsamer wachsen – oder finanzierbar bleiben und die Integration verzögern.">
               Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption.
             </p>
-            <p data-en="<strong>The right capital solves for this adoption asymmetry.</strong>" data-de="<strong>Strategisches Frühphasenkapital kann diese Adoptionsasymmetrie aufheben.</strong>">
-              <strong>The right capital solves for this adoption asymmetry.</strong>
+            <p data-en="<strong>The right early-stage capital solves for this adoption asymmetry.</strong>" data-de="<strong>Strategisches Frühphasenkapital kann diese Adoptionsasymmetrie aufheben.</strong>">
+              <strong>The right early-stage capital solves for this adoption asymmetry.</strong>
             </p>
             <p data-en="This is why we are here." data-de="Deshalb sind wir hier.">
               This is why we are here.
@@ -373,6 +393,11 @@
   </div>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
 
     function setLang(lang) {
       document.querySelectorAll('[data-en]').forEach(function(el) {
