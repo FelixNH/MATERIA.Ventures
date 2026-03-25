@@ -16,7 +16,7 @@
       --border-subtle: #d2d2d4;
       --border-strong: #b3b3b5;
       --radius-card: 20px;
-      --max-width: 1100px;
+      --max-width: 1400px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -28,7 +28,7 @@
     }
     .page { min-height: 100vh; display: flex; flex-direction: column; }
     main { flex: 1; }
-    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 32px 120px; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 64px 140px; }
     header {
       position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(16px);
@@ -36,7 +36,7 @@
       border-bottom: 1px solid var(--border-subtle);
     }
     .nav {
-      max-width: var(--max-width); margin: 0 auto; padding: 24px 24px;
+      max-width: var(--max-width); margin: 0 auto; padding: 28px 64px;
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
     .nav-left { display: flex; align-items: center; gap: 12px; }
@@ -80,46 +80,46 @@
     }
     .lang-btn.active { background: var(--fg); color: var(--bg); }
     .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
-    .hero { padding-top: 120px; padding-bottom: 100px; text-align: center; }
+    .hero { padding-top: 140px; padding-bottom: 120px; text-align: center; }
     .hero-headline {
-      font-size: clamp(3.2rem, 5.5vw, 5rem); line-height: 1.1; max-width: 18ch;
+      font-size: clamp(3.8rem, 7vw, 7rem); line-height: 1.05; max-width: 16ch;
       letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
-    .hero-sub { font-size: 1.2rem; line-height: 1.65; color: var(--muted); max-width: 32rem; margin: 0 auto; }
-    .hero-cta { margin-top: 32px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .hero-sub { font-size: 1.25rem; line-height: 1.7; color: var(--muted); max-width: 36rem; margin: 0 auto; }
+    .hero-cta { margin-top: 40px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .full-image-section {
       width: 100vw; margin-left: calc(-50vw + 50%); height: 85vh; min-height: 600px;
       display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
     }
     .text-block { padding: 100px 0; text-align: center; }
     .text-block-title {
-      font-size: clamp(2.4rem, 4.5vw, 3.6rem); line-height: 1.2; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em;
+      font-size: clamp(2.8rem, 5vw, 4.4rem); line-height: 1.15; margin-bottom: 28px; font-weight: 500; letter-spacing: -0.01em;
     }
     .problem-text-centered { max-width: 42rem; margin: 64px auto; padding: 0 24px; }
-    .problem-text-centered p { font-size: 1.2rem; line-height: 1.9; color: var(--muted); margin-bottom: 24px; }
+    .problem-text-centered p { font-size: 1.3rem; line-height: 1.9; color: var(--muted); margin-bottom: 24px; }
     .problem-text-centered p:last-child { margin-bottom: 0; }
     .problem-text-centered strong { color: var(--fg); font-weight: 600; }
-    .statement-section { padding: 140px 24px; text-align: center; background: #ffffff; margin: 0 -24px; }
+    .statement-section { padding: 160px 64px; text-align: center; background: #ffffff; margin: 0 -24px; }
     .statement-headline {
-      font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.2; max-width: 24ch;
+      font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1.15; max-width: 26ch;
       letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
     .statement-text { font-size: 1.1rem; line-height: 1.65; color: var(--muted); max-width: 32rem; margin: 0 auto; }
-    section { padding: 100px 0; }
+    section { padding: 120px 0; }
     .section-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
-    .section-title { font-size: 2.4rem; line-height: 1.3; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
+    .section-title { font-size: 2.8rem; line-height: 1.3; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
     .wif-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 12px; }
-    .wif-headline { font-size: 2rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 40px; line-height: 1.3; }
+    .wif-headline { font-size: 2.6rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 40px; line-height: 1.3; }
     .wif-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
     .wif-card { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 48px 36px; display: flex; flex-direction: column; gap: 20px; }
     .wif-card .btn { margin-top: auto; }
     .wif-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--muted); padding: 4px 10px; border: 1px solid var(--border-subtle); border-radius: 4px; display: inline-block; }
-    .wif-card-body { font-size: 1rem; line-height: 1.8; color: var(--muted); min-height: 5.4rem; }
+    .wif-card-body { font-size: 1.1rem; line-height: 1.8; color: var(--muted); min-height: 5.4rem; }
     .wif-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 0; }
-    .wif-arrow { font-size: 0.95rem; color: var(--fg); font-weight: 500; line-height: 1.6; }
+    .wif-arrow { font-size: 1.05rem; color: var(--fg); font-weight: 500; line-height: 1.6; }
     .wif-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
     .believe-header { margin-bottom: 56px; }
-    .believe-subline { font-size: 1.15rem; line-height: 1.7; color: var(--muted); max-width: 38rem; margin-top: 16px; }
+    .believe-subline { font-size: 1.2rem; line-height: 1.7; color: var(--muted); max-width: 38rem; margin-top: 16px; }
     .forces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
     .force-card {
       border: 1px solid var(--border-subtle); border-radius: var(--radius-card);
@@ -130,10 +130,10 @@
     .force-number { font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: -0.02em; line-height: 1; }
     .force-body { display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .force-title-row { display: flex; flex-direction: column; gap: 4px; }
-    .force-name { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+    .force-name { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; }
     .force-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
-    .force-bring { font-size: 0.95rem; line-height: 1.6; color: var(--fg); padding-top: 4px; }
-    .force-desc { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    .force-bring { font-size: 1.05rem; line-height: 1.6; color: var(--fg); padding-top: 4px; }
+    .force-desc { font-size: 1.05rem; line-height: 1.75; color: var(--muted); }
     .force-impact { padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 4px; }
     .force-impact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
     .force-impact-text { font-size: 0.9rem; line-height: 1.6; color: var(--fg); font-weight: 500; }
@@ -145,26 +145,26 @@
     .look-grid { display: grid; gap: 40px; }
     .look-item { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 2px solid var(--border-subtle); }
     .look-item-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
-    .look-item p { font-size: 1rem; line-height: 1.75; color: var(--muted); }
+    .look-item p { font-size: 1.1rem; line-height: 1.75; color: var(--muted); }
     #look { position: sticky; top: 0; z-index: 1; }
     #who { z-index: 2; }
-    .who-section-content { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+    .who-section-content { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; }
     .who-text-content { display: flex; flex-direction: column; gap: 28px; }
-    .who-body { font-size: 1.15rem; line-height: 1.85; color: var(--muted); }
+    .who-body { font-size: 1.2rem; line-height: 1.85; color: var(--muted); }
     .who-edge { border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
     .who-edge-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 600; }
     .who-edge-text { font-size: 1rem; line-height: 1.8; color: var(--muted); }
-    .who-image { width: 300px; height: 380px; border-radius: 12px; object-fit: cover; object-position: top; flex-shrink: 0; }
+    .who-image { width: 380px; height: 480px; border-radius: 12px; object-fit: cover; object-position: top; flex-shrink: 0; }
     .join-section-wrapper {
       background: #ffffff; position: relative; z-index: 10;
       border-radius: 40px 40px 0 0; box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
     }
-    .join-content { text-align: center; padding: 100px 24px 80px; }
-    .join-headline { font-size: clamp(2.4rem, 4.5vw, 3.6rem); line-height: 1.2; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.01em; }
+    .join-content { text-align: center; padding: 120px 64px 100px; }
+    .join-headline { font-size: clamp(2.8rem, 5vw, 4.4rem); line-height: 1.15; margin-bottom: 28px; font-weight: 500; letter-spacing: -0.01em; }
     .join-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto 48px; }
     .join-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     .btn {
-      border-radius: 999px; padding: 12px 24px; font-size: 0.9rem; border: 1px solid transparent;
+      border-radius: 999px; padding: 14px 28px; font-size: 1rem; border: 1px solid transparent;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
       text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; transition: all 0.2s ease; font-family: inherit;
     }
@@ -241,11 +241,12 @@
     <main id="main-content">
       <div class="shell">
         <section class="hero">
-          <h1 class="hero-headline" data-en="Capital alone does not change what the world is built off. Adoption does." data-de="Kapital allein verändert nicht, woraus die Welt gebaut wird.<br>Adoption schon.">
-            Capital alone does not change what the world is built off. Adoption does.
+          <div class="section-eyebrow" style="margin-bottom: 20px;" data-en="Infrastructure &amp; Construction" data-de="Infrastruktur &amp; Bau">Infrastructure &amp; Construction</div>
+          <h1 class="hero-headline" data-en="Market first, technology second." data-de="Erst der Markt, dann die Technologie.">
+            Market first, technology second.
           </h1>
-          <p class="hero-sub" data-en="We structure early-stage capital to make it happen." data-de="Wir strukturieren Frühphasenkapital, damit es gelingt.">
-            We structure early-stage capital to make it happen.
+          <p class="hero-sub" data-en="We turn future customers into first investors." data-de="Wir machen zukünftige Kunden zu ersten Investoren.">
+            We turn future customers into first investors.
           </p>
           <div class="hero-cta">
             <a href="waitlist.html?interest=platform" class="btn btn-primary" data-en="Join Our Platform" data-de="Plattform beitreten">Join Our Platform</a>
@@ -260,21 +261,24 @@
 
       <div class="shell">
         <section class="text-block">
-          <h2 class="text-block-title" data-en="Innovation is abundant. Adoption is broken." data-de="Innovation ist vorhanden. Aber die Integration funktioniert nicht.">
-            Innovation is abundant. Adoption is broken.
+          <h2 class="text-block-title" data-en="Technology is not the problem." data-de="Technologie ist nicht das Problem.">
+            Technology is not the problem.
           </h2>
           <div class="problem-text-centered">
-            <p data-en="The European Construction Industry is not limited by innovation. Technologies with real potential fail to scale - because they struggle to integrate into existing industrial systems." data-de="Der europäischen Bauindustrie mangelt es nicht an Innovation. Technologien mit echtem Potenzial scheitern oft an der Skalierung - weil sie Schwierigkeiten haben, sich in bestehende industrielle Systeme zu integrieren.">
-              The European Construction Industry is not limited by innovation. Technologies with real potential fail to scale - because they struggle to integrate into existing industrial systems.
+            <p data-en="<strong>The European construction industry doesn't lack innovation.</strong> It lacks solutions customers commit to buying." data-de="<strong>Der europäischen Bauindustrie mangelt es nicht an Innovation.</strong> Es mangelt an Lösungen, zu denen sich Kunden verpflichten.">
+              <strong>The European construction industry doesn't lack innovation.</strong> It lacks solutions customers commit to buying.
             </p>
-            <p data-en="Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption." data-de="Startups stehen vor einem strukturellen Dilemma: Potentielle Kunden früh einbinden und dafür langsamer wachsen – oder finanzierbar bleiben und die Integration verzögern.">
-              Startups face a structural dilemma: Engage early and increase execution risk - or stay fundable and delay adoption.
+            <p data-en="Many startups build technology that works - but never becomes a real business. Not because the tech fails. But because the market doesn't care enough to pay." data-de="Viele Startups entwickeln Technologien, die funktionieren – aber nie zu einem echten Unternehmen werden. Nicht weil die Technologie scheitert. Sondern weil der Markt nicht genug interessiert ist zu zahlen.">
+              Many startups build technology that works - but never becomes a real business. Not because the tech fails. But because the market doesn't care enough to pay.
             </p>
-            <p data-en="<strong>The right early-stage capital solves for this adoption asymmetry.</strong>" data-de="<strong>Strategisches Frühphasenkapital kann diese Adoptionsasymmetrie aufheben.</strong>">
-              <strong>The right early-stage capital solves for this adoption asymmetry.</strong>
+            <p data-en="<strong>The missing piece isn't just more capital.</strong> It's capital backed by early commitment from the people who have the power to shape adoption and to actually buy." data-de="<strong>Das fehlende Puzzleteil ist nicht nur mehr Kapital.</strong> Es ist Kapital, das durch das frühe Commitment der Menschen gestützt wird, die die Macht haben, die Adoption zu gestalten – und tatsächlich zu kaufen.">
+              <strong>The missing piece isn't just more capital.</strong> It's capital backed by early commitment from the people who have the power to shape adoption and to actually buy.
             </p>
-            <p data-en="This is why we are here." data-de="Deshalb sind wir hier.">
-              This is why we are here.
+            <p data-en="Traditional investors can't close this gap. They don't operate the problem - they only finance it." data-de="Traditionelle Investoren können diese Lücke nicht schließen. Sie betreiben das Problem nicht – sie finanzieren es nur.">
+              Traditional investors can't close this gap. They don't operate the problem - they only finance it.
+            </p>
+            <p data-en="<strong>We do it differently.</strong>" data-de="<strong>Wir machen es anders.</strong>">
+              <strong>We do it differently.</strong>
             </p>
           </div>
         </section>
@@ -292,12 +296,12 @@
           <div class="who-section-content">
             <div class="who-text-content">
               <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
-              <p class="who-body" data-en="Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate. We pool capital from those who understand the industry to back those who will redefine it." data-de="Gegründet von Felix, ist INPUT Partners ein Deal-by-Deal-Investmentsyndikat. Wir bündeln Kapital von denen, die die Industrie verstehen, um jene zu unterstützen, die sie neu definieren werden.">
-                Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate. We pool capital from those who understand the industry to back those who will redefine it.
+              <p class="who-body" data-en="Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate." data-de="Gegründet von Felix, ist INPUT Partners ein Deal-by-Deal-Investmentsyndikat.">
+                Founded by Felix, INPUT Partners is a deal-by-deal investment syndicate.
               </p>
               <div class="who-edge">
-                <p class="who-edge-text" data-en="We're united by one goal: building a smarter and more resilient construction industry for generations to come." data-de="Uns verbindet ein Ziel: eine klügere und widerstandsfähigere Bauindustrie für kommende Generationen aufzubauen.">
-                  We're united by one goal: building a smarter and more resilient construction industry for generations to come.
+                <p class="who-edge-text" data-en="The principle: Investors from the industry don't just provide capital - they put &quot;skin in the game.&quot; They become design partners to validate market demand and actively help shape integration. This allows us to eliminate market risk while the technology is still being developed." data-de="Das Prinzip: Investoren aus der Industrie bringen nicht nur Kapital – sie haben echtes Skin in the Game. Sie werden zu Designpartnern, die die Marktnachfrage validieren und die Integration aktiv mitgestalten. So können wir das Marktrisiko eliminieren, während die Technologie noch entwickelt wird.">
+                  The principle: Investors from the industry don't just provide capital - they put "skin in the game." They become design partners to validate market demand and actively help shape integration. This allows us to eliminate market risk while the technology is still being developed.
                 </p>
               </div>
             </div>
