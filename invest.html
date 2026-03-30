@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Join INPUT Partners</title>
+  <title>Invest with us - INPUT Partners</title>
   <style>
     :root {
       --bg: #f2f2f3;
@@ -26,8 +26,6 @@
     .page { min-height: 100vh; display: flex; flex-direction: column; }
     main { flex: 1; }
     .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
-
-    /* HEADER */
     header {
       position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(16px);
@@ -35,10 +33,9 @@
       border-bottom: 1px solid var(--border-subtle);
     }
     .nav {
-      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px;
+      max-width: var(--max-width); margin: 0 auto; padding: 24px 24px;
       display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
-
     .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
     .logo-line-main {
       font-family: 'DM Sans', sans-serif;
@@ -53,7 +50,6 @@
       margin-top: 3px;
     }
     .logo-sep { opacity: 0.4; }
-
     .nav-back {
       font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
       padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
@@ -61,116 +57,6 @@
       transition: all 0.2s ease;
     }
     .nav-back:hover { border-color: var(--fg); color: var(--fg); }
-
-    /* FORM AREA */
-    .form-section { padding-top: 80px; max-width: 42rem; }
-
-    .form-eyebrow {
-      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em;
-      color: var(--muted); margin-bottom: 12px;
-    }
-    .form-headline {
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 500;
-      letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px;
-    }
-    .form-subline {
-      font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 48px;
-    }
-
-    /* FORM */
-    .form { display: flex; flex-direction: column; gap: 24px; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    .field { display: flex; flex-direction: column; gap: 8px; }
-
-    label {
-      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--muted); font-weight: 500;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      background: #ffffff;
-      color: var(--fg);
-      font-family: inherit;
-      font-size: 1rem;
-      transition: border-color 0.2s ease;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: var(--fg);
-    }
-
-    select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
-    }
-
-    textarea { resize: vertical; min-height: 100px; }
-
-    /* DISCLAIMER */
-    .disclaimer {
-      display: flex; gap: 12px; align-items: flex-start;
-      padding: 20px; background: #ffffff;
-      border: 1px solid var(--border-subtle); border-radius: 12px;
-    }
-
-    .disclaimer input[type="checkbox"] {
-      width: 18px; height: 18px; margin-top: 2px;
-      accent-color: var(--fg); flex-shrink: 0; cursor: pointer;
-    }
-
-    .disclaimer-text {
-      font-size: 0.85rem; line-height: 1.7; color: var(--muted);
-    }
-
-    /* SUBMIT */
-    .btn-submit {
-      padding: 14px 32px;
-      background: var(--fg); color: var(--bg);
-      border: 1px solid var(--fg); border-radius: 999px;
-      font-family: inherit; font-size: 0.9rem;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      cursor: pointer; transition: all 0.2s ease;
-      align-self: flex-start;
-    }
-    .btn-submit:hover { background: transparent; color: var(--fg); }
-
-    /* SUCCESS */
-    .success-message {
-      display: none;
-      padding: 24px 28px;
-      background: #ffffff;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-card);
-      margin-top: 24px;
-    }
-    .success-message p { font-size: 1rem; line-height: 1.7; color: var(--muted); }
-    .success-message strong { color: var(--fg); }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
-    .footer-inner {
-      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
-      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
-    }
-    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
-    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
-    .footer-links a:hover { color: var(--fg); }
-
     .lang-toggle {
       display: flex; align-items: center; gap: 4px;
       border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; flex-shrink: 0;
@@ -181,9 +67,76 @@
     }
     .lang-btn.active { background: var(--fg); color: var(--bg); }
     .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
-
+    .content-section { padding-top: 100px; max-width: 38rem; }
+    .eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+    .headline { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; }
+    .subline { font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 48px; }
+    .notice {
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 40px;
+    }
+    .notice p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    .form { display: flex; flex-direction: column; gap: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 500; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid var(--border-subtle); border-radius: 10px;
+      background: #ffffff; color: var(--fg);
+      font-family: inherit; font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--fg); }
+    select {
+      appearance: none; -webkit-appearance: none;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%23555%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');
+      background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+    }
+    .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+    .checkbox-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--fg); cursor: pointer; flex-shrink: 0; }
+    .checkbox-item span { font-size: 0.95rem; color: var(--fg); line-height: 1.5; }
+    .radio-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .radio-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .radio-item input[type="radio"] { width: 18px; height: 18px; accent-color: var(--fg); cursor: pointer; }
+    .radio-item span { font-size: 0.95rem; color: var(--fg); }
+    .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 8px 0; }
+    .disclaimer {
+      background: #ffffff; border: 1px solid var(--border-subtle); border-radius: 12px;
+      padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .disclaimer p { font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
+    .disclaimer ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .disclaimer li { font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+    .disclaimer .checkbox-item span { font-size: 0.85rem; color: var(--muted); }
+    .btn-submit {
+      padding: 14px 32px; background: var(--fg); color: var(--bg);
+      border: 1px solid var(--fg); border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      cursor: pointer; transition: all 0.2s ease; align-self: flex-start;
+    }
+    .btn-submit:hover { background: transparent; color: var(--fg); }
+    .success-message {
+      display: none; padding: 32px;
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card); margin-top: 24px;
+    }
+    .success-message p { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .success-message strong { color: var(--fg); }
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
     @media (max-width: 768px) {
       .shell { padding-inline: 20px; }
+      .content-section { padding-top: 60px; }
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -193,15 +146,13 @@
     <header>
       <nav class="nav">
         <a href="index.html" class="logo-text" id="logo-nav">
-            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
-            <div class="logo-tags" id="logo-nav-tags">
-              <span>BUILD</span>
-              <span class="logo-sep">|</span>
-              <span>FINANCE</span>
-              <span class="logo-sep">|</span>
-              <span>CONNECT</span>
-            </div>
-          </a>
+          <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+          <div class="logo-tags" id="logo-nav-tags">
+            <span>BUILD</span><span class="logo-sep">|</span>
+            <span>FINANCE</span><span class="logo-sep">|</span>
+            <span>CONNECT</span>
+          </div>
+        </a>
         <div style="display:flex;align-items:center;gap:12px;">
           <div class="lang-toggle">
             <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -215,16 +166,20 @@
 
     <main>
       <div class="shell">
-        <div class="form-section">
-          <div class="form-eyebrow" data-en="Join INPUT Partners" data-de="INPUT Partners beitreten">Join INPUT Partners</div>
-          <h1 class="form-headline" data-en="Take your seat at the table." data-de="Nehmen Sie Ihren Platz am Tisch ein.">Take your seat at the table.</h1>
-          <p class="form-subline" data-en="We are currently building our next syndicate of industrial partners and visionary investors. Tell us about yourself." data-de="Wir bauen unser nächstes Syndikat aus Industriepartnern und visionären Investoren auf. Erzählen Sie uns von sich.">We are currently building our next syndicate of industrial partners and visionary investors. Tell us about yourself.</p>
+        <div class="content-section">
 
-          <form class="form" id="contact-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-            <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="New INPUT Partners Inquiry">
+          <div class="eyebrow" data-en="For Investors" data-de="Für Investoren">For Investors</div>
+          <h1 class="headline" data-en="Request to join as an investor." data-de="Anfrage als Investor beitreten.">
+            Request to join as an investor.
+          </h1>
+          <p class="subline" data-en="We invest alongside industry partners who bring real-world commitment to the table. If you share a long-term perspective and want access to curated, high-conviction deals — we'd like to hear from you." data-de="Wir investieren gemeinsam mit Industriepartnern, die echtes Engagement mitbringen. Wenn Sie eine langfristige Perspektive teilen und Zugang zu kuratierten, überzeugenden Deals suchen – wir freuen uns von Ihnen zu hören.">
+            We invest alongside industry partners who bring real-world commitment to the table. If you share a long-term perspective and want access to curated, high-conviction deals — we'd like to hear from you.
+          </p>
+
+          <form class="form" id="investor-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+            <input type="hidden" name="_subject" value="New Investor Application — INPUT Partners">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://YOUR_DOMAIN/invest.html?success=true">
+            <input type="hidden" name="_next" value="https://input.partners/investor.html?success=true">
             <input type="text" name="_honey" style="display:none">
 
             <div class="form-row">
@@ -244,38 +199,85 @@
             </div>
 
             <div class="field">
-              <label for="company" data-en="Company" data-de="Unternehmen">Company</label>
-              <input type="text" id="company" name="company" placeholder="Your company name" />
+              <label for="phone" data-en="Phone (optional)" data-de="Telefon (optional)">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+49 123 456 789" />
             </div>
 
             <div class="field">
-              <label for="type" data-en="I am joining as *" data-de="Ich nehme teil als *">I am joining as *</label>
-              <select id="type" name="type" required>
-                <option value="" disabled selected data-en="Select an option" data-de="Bitte auswählen">Select an option</option>
-                <option value="strategic" data-en="Strategic Partner (SME / Industry Expert)" data-de="Strategischer Partner (Mittelstand / Industrieexperte)">Strategic Partner (SME / Industry Expert)</option>
-                <option value="investor" data-en="Financial Investor" data-de="Finanzieller Investor">Financial Investor</option>
-                <option value="both" data-en="Both" data-de="Beides">Both</option>
-              </select>
+              <label for="company" data-en="Company / Fund (optional)" data-de="Unternehmen / Fonds (optional)">Company / Fund (optional)</label>
+              <input type="text" id="company" name="company" placeholder="e.g. Müller Family Office" />
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="field">
+              <label data-en="I would like to join as *" data-de="Ich möchte beitreten als *">I would like to join as *</label>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="join_type" value="private_investor" required>
+                  <span data-en="Private Investor" data-de="Privatinvestor">Private Investor</span>
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="join_type" value="co_investor">
+                  <span data-en="Co-Investor / Family Office / VC" data-de="Co-Investor / Family Office / VC">Co-Investor / Family Office / VC</span>
+                </label>
+              </div>
             </div>
 
             <div class="field">
-              <label for="motivation" data-en="Why do you want to join INPUT Partners? *" data-de="Warum möchten Sie INPUT Partners beitreten? *">Why do you want to join INPUT Partners? *</label>
-              <textarea id="motivation" name="motivation" required placeholder="Share your motivation..." data-placeholder-en="Share your motivation..." data-placeholder-de="Teilen Sie Ihre Motivation..."></textarea>
+              <label data-en="I am... (select all that apply) *" data-de="Ich bin... (alle zutreffenden auswählen) *">I am... (select all that apply) *</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="angel"><span data-en="Business Angel / Angel Investor" data-de="Business Angel / Angel Investor">Business Angel / Angel Investor</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="entrepreneur"><span data-en="Entrepreneur / Operator" data-de="Unternehmer / Operator">Entrepreneur / Operator</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="industry_expert"><span data-en="Industry Expert (Construction / Materials)" data-de="Branchenexperte (Bau / Materialien)">Industry Expert (Construction / Materials)</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="vc"><span data-en="VC Professional" data-de="VC-Profi">VC Professional</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="other"><span data-en="Other" data-de="Andere">Other</span></label>
+              </div>
             </div>
+
+            <div class="field">
+              <label data-en="Are you prepared to invest at least EUR 10,000 per deal? *" data-de="Sind Sie bereit, mindestens EUR 10.000 pro Deal zu investieren? *">Are you prepared to invest at least EUR 10,000 per deal? *</label>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="ticket_size" value="yes" required>
+                  <span data-en="Yes" data-de="Ja">Yes</span>
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="ticket_size" value="no">
+                  <span data-en="No" data-de="Nein">No</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="motivation" data-en="What brings you to INPUT Partners? *" data-de="Was führt Sie zu INPUT Partners? *">What brings you to INPUT Partners? *</label>
+              <textarea id="motivation" name="motivation" required maxlength="500" style="min-height:100px;resize:vertical;" placeholder="Share your motivation to join..." data-placeholder-en="Share your motivation to join..." data-placeholder-de="Teilen Sie Ihre Motivation beizutreten..."></textarea>
+            </div>
+
+            <hr class="section-divider">
 
             <div class="disclaimer">
-              <input type="checkbox" id="disclaimer" name="disclaimer" required />
-              <p class="disclaimer-text" data-en="By submitting this form, I confirm that this is not an offer to invest and no commitment is made at this stage. Any investment involves risks, including potential loss of capital. My information will be kept confidential and used only to assess my potential fit with INPUT Partners." data-de="Mit dem Absenden dieses Formulars bestätige ich, dass dies kein Investitionsangebot ist und in dieser Phase keine Verpflichtung eingegangen wird. Jede Investition ist mit Risiken verbunden, einschließlich des möglichen Kapitalverlusts. Meine Daten werden vertraulich behandelt und nur zur Beurteilung meiner Eignung für INPUT Partners verwendet.">
-                By submitting this form, I confirm that this is not an offer to invest and no commitment is made at this stage. Any investment involves risks, including potential loss of capital. My information will be kept confidential and used only to assess my potential fit with INPUT Partners.
-              </p>
+              <p data-en="By submitting this form, you confirm that:" data-de="Mit der Einreichung dieses Formulars bestätigen Sie, dass:">By submitting this form, you confirm that:</p>
+              <ul>
+                <li data-en="This is not an offer to invest, and no commitment is made at this stage." data-de="Dies ist kein Investitionsangebot und es wird zu diesem Zeitpunkt keine Verpflichtung eingegangen.">This is not an offer to invest, and no commitment is made at this stage.</li>
+                <li data-en="Any investment involves risks, including potential loss of capital." data-de="Jede Investition ist mit Risiken verbunden, einschließlich eines möglichen Kapitalverlusts.">Any investment involves risks, including potential loss of capital.</li>
+                <li data-en="Your information will be kept confidential and used only to assess your potential fit." data-de="Ihre Daten werden vertraulich behandelt und nur zur Beurteilung Ihrer Eignung verwendet.">Your information will be kept confidential and used only to assess your potential fit.</li>
+              </ul>
+              <label class="checkbox-item">
+                <input type="checkbox" name="disclaimer" required>
+                <span data-en="I have read and understood the above. *" data-de="Ich habe das Obige gelesen und verstanden. *">I have read and understood the above. *</span>
+              </label>
             </div>
 
-            <a href="waitlist.html?interest=investor" class="btn-submit" data-en="Submit" data-de="Absenden">Submit</a>
+            <button type="submit" class="btn-submit" data-en="Submit Application" data-de="Bewerbung einreichen">Submit Application</button>
           </form>
 
           <div class="success-message" id="success-msg">
-            <p data-en="<strong>Thank you for your interest.</strong> We will be in touch shortly." data-de="<strong>Vielen Dank für Ihr Interesse.</strong> Wir melden uns in Kürze."><strong>Thank you for your interest.</strong> We will be in touch shortly.</p>
+            <p data-en="<strong>Thank you for your interest.</strong> We have received your application and will be in touch shortly." data-de="<strong>Vielen Dank für Ihr Interesse.</strong> Wir haben Ihre Bewerbung erhalten und melden uns in Kürze.">
+              <strong>Thank you for your interest.</strong> We have received your application and will be in touch shortly.
+            </p>
           </div>
+
         </div>
       </div>
     </main>
@@ -293,11 +295,18 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
     document.fonts.ready.then(function() {
       var main = document.getElementById('logo-nav-main');
       var tags = document.getElementById('logo-nav-tags');
       if (main && tags) tags.style.width = main.offsetWidth + 'px';
     });
+
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      document.getElementById('investor-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
 
     function setLang(lang) {
       document.querySelectorAll('[data-en]').forEach(function(el) {
@@ -316,12 +325,6 @@
       var savedLang = localStorage.getItem('lang') || 'en';
       if (savedLang === 'de') setLang('de');
     } catch(e) {}
-
-    // Show success message if redirected back with ?success=true
-    if (window.location.search.includes('success=true')) {
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
-    }
   </script>
 </body>
 </html>
