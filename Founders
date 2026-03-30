@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Your Pitch - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --border-strong: #b3b3b5;
+      --radius-card: 20px;
+      --max-width: 900px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px 100px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 24px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+    .nav-back {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-back:hover { border-color: var(--fg); color: var(--fg); }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+    .content-section { padding-top: 100px; max-width: 38rem; }
+    .eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+    .headline { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px; }
+    .subline { font-size: 1rem; line-height: 1.8; color: var(--muted); margin-bottom: 48px; }
+    .notice {
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 40px;
+    }
+    .notice p { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    .form { display: flex; flex-direction: column; gap: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 500; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea, select {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid var(--border-subtle); border-radius: 10px;
+      background: #ffffff; color: var(--fg);
+      font-family: inherit; font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: var(--fg); }
+    select {
+      appearance: none; -webkit-appearance: none;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%23555%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');
+      background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+    }
+    .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+    .checkbox-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--fg); cursor: pointer; flex-shrink: 0; }
+    .checkbox-item span { font-size: 0.95rem; color: var(--fg); line-height: 1.5; }
+    .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 8px 0; }
+    .btn-submit {
+      padding: 14px 32px; background: var(--fg); color: var(--bg);
+      border: 1px solid var(--fg); border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      cursor: pointer; transition: all 0.2s ease; align-self: flex-start;
+    }
+    .btn-submit:hover { background: transparent; color: var(--fg); }
+    .success-message {
+      display: none; padding: 32px;
+      background: #ffffff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card); margin-top: 24px;
+    }
+    .success-message p { font-size: 1rem; line-height: 1.8; color: var(--muted); }
+    .success-message strong { color: var(--fg); }
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .content-section { padding-top: 60px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="logo-text" id="logo-nav">
+          <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+          <div class="logo-tags" id="logo-nav-tags">
+            <span>BUILD</span><span class="logo-sep">|</span>
+            <span>FINANCE</span><span class="logo-sep">|</span>
+            <span>CONNECT</span>
+          </div>
+        </a>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          </div>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+        <div class="content-section">
+
+          <div class="eyebrow" data-en="For Founders" data-de="Für Gründer">For Founders</div>
+          <h1 class="headline" data-en="Submit your pitch." data-de="Reichen Sie Ihren Pitch ein.">
+            Submit your pitch.
+          </h1>
+          <p class="subline" data-en="We back teams building for the construction and materials industry. We don't just provide capital — we connect you with industry partners who will test, validate, and commit to your solution early." data-de="Wir unterstützen Teams, die für die Bau- und Materialindustrie bauen. Wir bringen nicht nur Kapital – wir verbinden Sie mit Industriepartnern, die Ihre Lösung früh testen, validieren und sich dazu bekennen.">
+            We back teams building for the construction and materials industry. We don't just provide capital — we connect you with industry partners who will test, validate, and commit to your solution early.
+          </p>
+
+          <div class="notice">
+            <p data-en="We review every submission carefully. Submitting a pitch does not create any obligation on either side — we will reach out if we see a potential fit." data-de="Wir prüfen jede Einreichung sorgfältig. Die Einreichung eines Pitches begründet keine Verpflichtung auf beiden Seiten – wir melden uns, wenn wir einen potenziellen Fit sehen.">
+              We review every submission carefully. Submitting a pitch does not create any obligation on either side — we will reach out if we see a potential fit.
+            </p>
+          </div>
+
+          <form class="form" id="founder-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+            <input type="hidden" name="_subject" value="New Founder Pitch — INPUT Partners">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://input.partners/founder.html?success=true">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-row">
+              <div class="field">
+                <label for="firstname" data-en="First Name *" data-de="Vorname *">First Name *</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Felix" />
+              </div>
+              <div class="field">
+                <label for="lastname" data-en="Last Name *" data-de="Nachname *">Last Name *</label>
+                <input type="text" id="lastname" name="lastname" required placeholder="Müller" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="felix@startup.com" />
+            </div>
+
+            <div class="field">
+              <label for="phone" data-en="Phone (optional)" data-de="Telefon (optional)">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+49 123 456 789" />
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="field">
+              <label for="company" data-en="Company Name *" data-de="Unternehmensname *">Company Name *</label>
+              <input type="text" id="company" name="company" required placeholder="e.g. BuildTech GmbH" />
+            </div>
+
+            <div class="field">
+              <label for="website" data-en="Company Website *" data-de="Unternehmenswebsite *">Company Website *</label>
+              <input type="url" id="website" name="website" required placeholder="https://yourstartup.com" />
+            </div>
+
+            <div class="field">
+              <label for="linkedin" data-en="Your LinkedIn Profile (optional)" data-de="Ihr LinkedIn-Profil (optional)">Your LinkedIn Profile (optional)</label>
+              <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname" />
+            </div>
+
+            <div class="field">
+              <label for="position" data-en="Your Position *" data-de="Ihre Position *">Your Position *</label>
+              <input type="text" id="position" name="position" required placeholder="e.g. CEO & Co-Founder" />
+            </div>
+
+            <div class="field">
+              <label for="location" data-en="Where is your company based? *" data-de="Wo ist Ihr Unternehmen ansässig? *">Where is your company based? *</label>
+              <input type="text" id="location" name="location" required placeholder="e.g. Berlin, Germany" />
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="field">
+              <label for="pitch_deck" data-en="Link to Pitch Deck *" data-de="Link zum Pitch Deck *">Link to Pitch Deck *</label>
+              <input type="url" id="pitch_deck" name="pitch_deck" required placeholder="https://drive.google.com/..." />
+            </div>
+
+            <div class="field">
+              <label for="stage" data-en="Current Funding Stage *" data-de="Aktuelle Finanzierungsphase *">Current Funding Stage *</label>
+              <select id="stage" name="stage" required>
+                <option value="" disabled selected data-en="Please select..." data-de="Bitte auswählen...">Please select...</option>
+                <option value="pre-seed" data-en="Pre-Seed" data-de="Pre-Seed">Pre-Seed</option>
+                <option value="seed" data-en="Seed" data-de="Seed">Seed</option>
+                <option value="series-a" data-en="Series A" data-de="Series A">Series A</option>
+                <option value="other" data-en="Other" data-de="Andere">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="raising" data-en="How much are you raising? (optional)" data-de="Wie viel möchten Sie einsammeln? (optional)">How much are you raising? (optional)</label>
+              <input type="text" id="raising" name="raising" placeholder="e.g. EUR 500k" />
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="field">
+              <label for="vision" data-en="What is the vision of your company? *" data-de="Was ist die Vision Ihres Unternehmens? *">What is the vision of your company? *</label>
+              <textarea id="vision" name="vision" required maxlength="500" style="min-height:100px;resize:vertical;" placeholder="Describe your mission and what you're building..." data-placeholder-en="Describe your mission and what you're building..." data-placeholder-de="Beschreiben Sie Ihre Mission und was Sie aufbauen..."></textarea>
+            </div>
+
+            <div class="field">
+              <label data-en="How can we help you scale? (select all that apply)" data-de="Wie können wir Ihnen beim Skalieren helfen? (alle zutreffenden auswählen)">How can we help you scale? (select all that apply)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="help[]" value="industry_access"><span data-en="Access to industry partners / potential customers" data-de="Zugang zu Industriepartnern / potenziellen Kunden">Access to industry partners / potential customers</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="help[]" value="validation"><span data-en="Early validation and pilot projects" data-de="Frühe Validierung und Pilotprojekte">Early validation and pilot projects</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="help[]" value="capital"><span data-en="Capital and co-investors" data-de="Kapital und Co-Investoren">Capital and co-investors</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="help[]" value="network"><span data-en="Strategic network and market entry" data-de="Strategisches Netzwerk und Markteintritt">Strategic network and market entry</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="help[]" value="other"><span data-en="Other" data-de="Andere">Other</span></label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</button>
+          </form>
+
+          <div class="success-message" id="success-msg">
+            <p data-en="<strong>Thank you for submitting your pitch.</strong> We review every submission carefully and will be in touch if we see a potential fit." data-de="<strong>Vielen Dank für die Einreichung Ihres Pitches.</strong> Wir prüfen jede Einreichung sorgfältig und melden uns, wenn wir einen potenziellen Fit sehen.">
+              <strong>Thank you for submitting your pitch.</strong> We review every submission carefully and will be in touch if we see a potential fit.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
+
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      document.getElementById('founder-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('[data-placeholder-en]').forEach(function(el) {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
+  </script>
+</body>
+</html>
