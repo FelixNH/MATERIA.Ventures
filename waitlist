@@ -204,22 +204,28 @@
             </div>
 
             <div class="field">
+              <label for="position" data-en="Position *" data-de="Position *">Position *</label>
+              <select id="position" name="position" required style="width:100%;padding:12px 16px;border:1px solid var(--border-subtle);border-radius:10px;background:#ffffff;color:var(--fg);font-family:inherit;font-size:1rem;transition:border-color 0.2s ease;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%23555%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;">
+                <option value="" disabled selected data-en="Please select..." data-de="Bitte auswählen...">Please select...</option>
+                <option value="owner" data-en="Owner / Inhaber" data-de="Inhaber">Owner / Inhaber</option>
+                <option value="ceo" data-en="CEO / Geschäftsführer" data-de="CEO / Geschäftsführer">CEO / Geschäftsführer</option>
+                <option value="head-innovation" data-en="Head of Innovation" data-de="Head of Innovation">Head of Innovation</option>
+                <option value="other" data-en="Other" data-de="Andere">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="company" data-en="Company & Industry Segment *" data-de="Unternehmen & Branchensegment *">Company & Industry Segment *</label>
+              <input type="text" id="company" name="company" required placeholder="e.g. Müller Bau GmbH — General Contractor" />
+            </div>
+
+            <div class="field">
               <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
               <input type="email" id="email" name="email" required placeholder="felix@company.com" />
             </div>
 
             <div class="field">
-              <label for="type" data-en="I am... *" data-de="Ich bin... *">I am... *</label>
-              <select id="type" name="type" required style="width:100%;padding:12px 16px;border:1px solid var(--border-subtle);border-radius:10px;background:#ffffff;color:var(--fg);font-family:inherit;font-size:1rem;transition:border-color 0.2s ease;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%23555%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;">
-                <option value="" disabled selected data-en="Please select..." data-de="Bitte auswählen...">Please select...</option>
-                <option value="investor" data-en="Capital Provider / Business Angel" data-de="Kapitalgeber / Business Angel">Capital Provider / Business Angel</option>
-                <option value="startup" data-en="Founder / Startup Team" data-de="Gründer / Startup-Team">Founder / Startup Team</option>
-                <option value="strategist" data-en="Strategic Partner / Industry Expert" data-de="Strategischer Partner / Industrie-Experte">Strategic Partner / Industry Expert</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="message" data-en="Short message (optional)" data-de="Kurze Nachricht (optional)">Short message (optional)</label>
+              <label for="message" data-en="What brings you to us? (optional)" data-de="Was führt Sie zu uns? (optional)">What brings you to us? (optional)</label>
               <textarea id="message" name="message" maxlength="280" style="width:100%;padding:12px 16px;border:1px solid var(--border-subtle);border-radius:10px;background:#ffffff;color:var(--fg);font-family:inherit;font-size:1rem;transition:border-color 0.2s ease;resize:vertical;min-height:90px;" placeholder="What brings you to us?" data-placeholder-en="What brings you to us?" data-placeholder-de="Was führt Sie zu uns?"></textarea>
               <span style="font-size:0.75rem;color:var(--muted);text-align:right;" id="char-count">0 / 280</span>
             </div>
@@ -257,7 +263,6 @@
       if (main && tags) tags.style.width = main.offsetWidth + 'px';
     });
 
-    // Character counter
     var msg = document.getElementById('message');
     var counter = document.getElementById('char-count');
     if (msg && counter) {
@@ -266,12 +271,10 @@
       });
     }
 
-    // Read interest param from URL and set hidden field
     var params = new URLSearchParams(window.location.search);
     var interest = params.get('interest') || 'general';
     document.getElementById('interest-field').value = interest;
 
-    // Show success message
     if (params.get('success') === 'true') {
       document.getElementById('waitlist-form').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
