@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="For Investors - INPUT Partners" />
+  <title>For Investors - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --border-strong: #b3b3b5;
+      --radius-card: 20px;
+      --max-width: 1400px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 64px 140px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 28px 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+    .nav-back {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-back:hover { border-color: var(--fg); color: var(--fg); }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+
+    section { padding: 120px 0; }
+    .section-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+
+    /* HERO */
+    .hero { padding-top: 140px; padding-bottom: 120px; }
+    .hero-headline {
+      font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; max-width: 18ch;
+      letter-spacing: -0.02em; font-weight: 500; margin-bottom: 28px;
+    }
+    .hero-sub { font-size: 1.2rem; line-height: 1.75; color: var(--muted); max-width: 38rem; margin-bottom: 40px; }
+
+    /* PROBLEM */
+    .problem-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 28px; max-width: 40rem; }
+    .problem-body { font-size: 1.1rem; line-height: 1.85; color: var(--muted); max-width: 40rem; margin-bottom: 36px; }
+    .problem-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); max-width: 36rem; }
+    .problem-list li { font-size: 1.05rem; line-height: 1.6; color: var(--fg); padding: 14px 0 14px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .problem-list li:last-child { border-bottom: none; }
+
+    /* OUR APPROACH */
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px; }
+    .approach-text { display: flex; flex-direction: column; gap: 20px; }
+    .approach-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; }
+    .approach-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); }
+    .approach-list li { font-size: 1rem; line-height: 1.6; color: var(--fg); padding: 14px 0 14px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .approach-list li:last-child { border-bottom: none; }
+
+    /* HOW WE DIFFER - dark section */
+    .differ-section { background: var(--fg); width: 100vw; margin-left: calc(-50vw + 50%); padding: 100px 64px; }
+    .differ-inner { max-width: var(--max-width); margin: 0 auto; }
+    .differ-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 16px; }
+    .differ-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; color: #ffffff; margin-bottom: 56px; }
+    .differ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .differ-col-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; margin-bottom: 20px; }
+    .differ-col-label.traditional { color: rgba(255,255,255,0.4); }
+    .differ-col-label.input { color: var(--accent); }
+    .differ-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+    .differ-list.traditional { border-left: 2px solid rgba(255,255,255,0.15); }
+    .differ-list.input { border-left: 2px solid var(--accent); }
+    .differ-list li { font-size: 1rem; line-height: 1.6; padding: 14px 0 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .differ-list li:last-child { border-bottom: none; }
+    .differ-list.traditional li { color: rgba(255,255,255,0.5); }
+    .differ-list.input li { color: rgba(255,255,255,0.85); }
+
+    /* WHAT YOU GET */
+    .get-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 40px; max-width: 40rem; }
+    .get-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); max-width: 40rem; }
+    .get-list li { font-size: 1.1rem; line-height: 1.6; color: var(--fg); padding: 20px 0 20px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .get-list li:last-child { border-bottom: none; }
+
+    /* BUTTONS */
+    .btn {
+      border-radius: 999px; padding: 14px 28px; font-size: 1rem; border: 1px solid transparent;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; transition: all 0.2s ease; font-family: inherit;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .btn-primary:hover { background: transparent; color: var(--fg); }
+    .btn-secondary { border-color: var(--border-strong); color: var(--fg); background: transparent; }
+    .btn-secondary:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+
+    /* BOTTOM CTA */
+    .bottom-cta-wrapper {
+      background: #ffffff;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
+      transform: translateY(40px);
+      transition: transform 0.5s ease;
+    }
+    .bottom-cta-wrapper.visible { transform: translateY(0); }
+    .bottom-cta-content { text-align: center; padding: 160px 64px 64px; }
+    .bottom-cta-headline { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .bottom-cta-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 32rem; margin: 0 auto 40px; }
+
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .nav { padding: 16px 20px; }
+      .hero { padding-top: 60px; padding-bottom: 60px; }
+      .hero-headline { font-size: 2.2rem; }
+      section { padding: 60px 0; }
+      .approach-grid { grid-template-columns: 1fr; gap: 32px; }
+      .differ-grid { grid-template-columns: 1fr; }
+      .differ-section { padding: 60px 20px; }
+      .bottom-cta-content { padding: 100px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span><span class="logo-sep">|</span>
+              <span>FINANCE</span><span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
+          </a>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          </div>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+
+        <!-- HERO -->
+        <section class="hero">
+          <div class="section-eyebrow" data-en="For Investors" data-de="Für Investoren">For Investors</div>
+          <h1 class="hero-headline" data-en="Invest alongside real market signals." data-de="Investiere gemeinsam mit echten Marktsignalen.">
+            Invest alongside real market signals.
+          </h1>
+          <p class="hero-sub" data-en="We invest early in industrial technologies - informed by real-world context and early demand." data-de="Wir investieren früh in Industrietechnologien - informiert durch realen Kontext und frühe Nachfrage.">
+            We invest early in industrial technologies - informed by real-world context and early demand.
+          </p>
+          <a href="investor.html" class="btn btn-primary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
+        </section>
+
+        <!-- THE PROBLEM -->
+        <section id="problem">
+          <div class="section-eyebrow" data-en="The problem" data-de="Das Problem">The problem</div>
+          <h2 class="problem-headline" data-en="Most early-stage investing in industrial tech happens with limited market clarity." data-de="Die meisten Frühphasen-Investitionen in Industrietechnologien erfolgen mit begrenzter Marktklarheit.">
+            Most early-stage investing in industrial tech happens with limited market clarity.
+          </h2>
+          <ul class="problem-list">
+            <li data-en="Long timelines" data-de="Lange Zeitrahmen">Long timelines</li>
+            <li data-en="High capital intensity" data-de="Hohe Kapitalintensität">High capital intensity</li>
+            <li data-en="Unclear adoption" data-de="Unklare Adoption">Unclear adoption</li>
+          </ul>
+        </section>
+
+        <!-- OUR APPROACH -->
+        <section id="approach">
+          <div class="approach-grid">
+            <div class="approach-text">
+              <div class="section-eyebrow" data-en="Our approach" data-de="Unser Ansatz">Our approach</div>
+              <h2 class="approach-headline" data-en="We combine capital with early industry insight." data-de="Wir verbinden Kapital mit frühen Industrieeinblicken.">We combine capital with early industry insight.</h2>
+            </div>
+            <ul class="approach-list">
+              <li data-en="SMEs provide operational context" data-de="KMUs liefern operativen Kontext">SMEs provide operational context</li>
+              <li data-en="Early engagement improves signal quality" data-de="Frühes Engagement verbessert die Signalqualität">Early engagement improves signal quality</li>
+              <li data-en="Investment decisions are grounded in real-world relevance" data-de="Investitionsentscheidungen basieren auf realer Relevanz">Investment decisions are grounded in real-world relevance</li>
+            </ul>
+          </div>
+        </section>
+
+      </div><!-- end shell -->
+
+      <!-- HOW WE DIFFER - dark section -->
+      <div class="differ-section">
+        <div class="differ-inner">
+          <div class="differ-eyebrow" data-en="How we differ" data-de="Was uns unterscheidet">How we differ</div>
+          <h2 class="differ-headline" data-en="Fewer bets. Higher conviction." data-de="Weniger Wetten. Höhere Überzeugung.">Fewer bets. Higher conviction.</h2>
+          <div class="differ-grid">
+            <div>
+              <div class="differ-col-label traditional" data-en="Traditional VC" data-de="Traditionelles VC">Traditional VC</div>
+              <ul class="differ-list traditional">
+                <li data-en="Broad portfolios" data-de="Breite Portfolios">Broad portfolios</li>
+                <li data-en="Market risk addressed later" data-de="Marktrisiko wird später adressiert">Market risk addressed later</li>
+              </ul>
+            </div>
+            <div>
+              <div class="differ-col-label input" data-en="INPUT Partners" data-de="INPUT Partners">INPUT Partners</div>
+              <ul class="differ-list input">
+                <li data-en="Focused investments" data-de="Fokussierte Investitionen">Focused investments</li>
+                <li data-en="Early signal from industry context" data-de="Frühes Signal aus dem Industriekontext">Early signal from industry context</li>
+                <li data-en="Fewer bets, higher conviction" data-de="Weniger Wetten, höhere Überzeugung">Fewer bets, higher conviction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell">
+
+        <!-- WHAT YOU GET -->
+        <section id="what-you-get">
+          <div class="section-eyebrow" data-en="What you get" data-de="Was Sie bekommen">What you get</div>
+          <h2 class="get-headline" data-en="Access, validation, and aligned capital." data-de="Zugang, Validierung und ausgerichtetes Kapital.">Access, validation, and aligned capital.</h2>
+          <ul class="get-list">
+            <li data-en="Access to curated opportunities" data-de="Zugang zu kuratierten Möglichkeiten">Access to curated opportunities</li>
+            <li data-en="Additional layer of validation" data-de="Zusätzliche Validierungsebene">Additional layer of validation</li>
+            <li data-en="Co-investment with aligned capital" data-de="Co-Investment mit ausgerichtetem Kapital">Co-investment with aligned capital</li>
+          </ul>
+        </section>
+
+      </div><!-- end shell -->
+
+      <!-- BOTTOM CTA -->
+    </main>
+
+    <div class="bottom-cta-wrapper">
+      <div class="bottom-cta-content">
+        <h2 class="bottom-cta-headline" data-en="We invest selectively." data-de="Wir investieren selektiv.">
+          We invest selectively.
+        </h2>
+        <p class="bottom-cta-text" data-en="If this approach resonates:" data-de="Wenn dieser Ansatz Sie anspricht:">
+          If this approach resonates:
+        </p>
+        <a href="investor.html" class="btn btn-primary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
+
+    const cta = document.querySelector('.bottom-cta-wrapper');
+    if (cta) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) cta.classList.add('visible');
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 300px 0px' });
+      observer.observe(cta);
+    }
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
+  </script>
+</body>
+</html>
