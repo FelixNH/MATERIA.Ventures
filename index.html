@@ -137,17 +137,16 @@
     .skip-link { position: absolute; top: -40px; left: 0; background: var(--fg); color: var(--bg); padding: 8px 16px; text-decoration: none; z-index: 100; }
     .skip-link:focus { top: 0; }
     .text-block { padding: 100px 0; }
-    /* ── Why it matters ── */
-    .wim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
-    .wim-headline { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 24px; }
-    .wim-sub { font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
-    .wim-benefits { display: flex; flex-direction: column; }
-    .wim-benefit { display: flex; align-items: center; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--border-subtle); }
-    .wim-benefit:first-child { border-top: 1px solid var(--border-subtle); }
-    .wim-benefit-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .wim-benefit p { font-size: 1.1rem; color: var(--fg); font-weight: 500; }
-    .wim-closing { font-size: 1rem; line-height: 1.8; color: var(--muted); font-style: italic; margin-top: 32px; }
-    @media (max-width: 768px) { .wim-grid { grid-template-columns: 1fr; gap: 40px; } }
+    /* ── Why it matters - stack ── */
+    .wim-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+    .wim-stack-card { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 40px 40px; display: flex; flex-direction: column; gap: 24px; transition: border-color 0.2s ease; }
+    .wim-stack-card:hover { border-color: var(--accent); }
+    .wim-stack-card--primary { border-left: 3px solid var(--accent); }
+    .wim-stack-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .wim-stack-text { display: flex; flex-direction: column; gap: 16px; }
+    .wim-stack-list { margin-top: 8px; }
+    .wim-stack-edge { margin-top: 8px; }
+    @media (max-width: 768px) { .wim-stack-inner { grid-template-columns: 1fr; gap: 24px; } }
 
     /* ── How it works ── */
     .hiw-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 12px; max-width: 48rem; }
@@ -348,8 +347,8 @@
           </p>
           <div class="hero-cta">
             <a href="waitlist.html?interest=industry" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Become an Industry Partner</a>
-            <a href="waitlist.html?interest=startup" class="btn btn-secondary" data-en="For Startups" data-de="Für Startups">For Startups</a>
-            <a href="waitlist.html?interest=investor" class="btn btn-secondary" data-en="For Investors" data-de="Für Investoren">For Investors</a>
+            <a href="for-founders.html" class="btn btn-secondary" data-en="For Startups" data-de="Für Startups">For Startups</a>
+            <a href="for-investors.html" class="btn btn-secondary" data-en="For Investors" data-de="Für Investoren">For Investors</a>
           </div>
         </section>
       </div>
@@ -451,74 +450,56 @@
           <p class="felix-quote-attr">- Felix, Founder, INPUT Partners</p>
         </section>
 
-        <!-- WHO IT'S FOR - unified block -->
+        <!-- WHO IT'S FOR - vertical stack -->
         <section id="who-its-for-block">
           <div class="section-eyebrow" data-en="Why it matters" data-de="Warum es wichtig ist">Why it matters</div>
 
-          <!-- SME - primary, full width -->
-          <div class="wif-sme">
-            <div class="audience-tag" data-en="Industry Partners (SMEs)" data-de="Industriepartner (KMUs)">Industry Partners (SMEs)</div>
-            <h3 class="audience-headline" data-en="Best innovation isn't found. It's co-developed." data-de="Die beste Innovation wird nicht gefunden. Sie wird gemeinsam entwickelt.">Best innovation isn't found. It's co-developed.</h3>
-            <p class="audience-body" data-en="We move beyond passive scouting to give you a decisive role in the technology that will define your future operations." data-de="Wir gehen über passives Scouting hinaus und geben dir eine entscheidende Rolle bei der Technologie, die deine zukünftigen Operationen definieren wird.">We move beyond passive scouting to give you a decisive role in the technology that will define your future operations.</p>
-            <ul class="audience-list">
-              <li data-en="See what's coming early" data-de="Früh sehen, was kommt">See what's coming early</li>
-              <li data-en="Influence how it gets built" data-de="Beeinflussen, wie es gebaut wird">Influence how it gets built</li>
-              <li data-en="Reduce risk through shared commitment" data-de="Risiko durch gemeinsames Commitment reduzieren">Reduce risk through shared commitment</li>
-            </ul>
-            <a href="waitlist.html?interest=industry" class="btn btn-primary" style="align-self: flex-start;" data-en="Apply as Industry Partner" data-de="Als Industriepartner bewerben">Apply as Industry Partner</a>
-          </div>
+          <div class="wim-stack">
+            <!-- SME - primary -->
+            <div class="wim-stack-card wim-stack-card--primary">
+              <div class="audience-tag" data-en="Industry Partners (SMEs)" data-de="Industriepartner (KMUs)">Industry Partners (SMEs)</div>
+              <div class="wim-stack-inner">
+                <div class="wim-stack-text">
+                  <h3 class="audience-headline" data-en="Best innovation isn't found. It's co-developed." data-de="Die beste Innovation wird nicht gefunden. Sie wird gemeinsam entwickelt.">Best innovation isn't found. It's co-developed.</h3>
+                  <p class="audience-body" data-en="We move beyond passive scouting to give you a decisive role in the technology that will define your future operations." data-de="Wir gehen über passives Scouting hinaus und geben dir eine entscheidende Rolle bei der Technologie, die deine zukünftigen Operationen definieren wird.">We move beyond passive scouting to give you a decisive role in the technology that will define your future operations.</p>
+                  <a href="waitlist.html?interest=industry" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Become an Industry Partner</a>
+                </div>
+                <ul class="audience-list wim-stack-list">
+                  <li data-en="See what's coming early" data-de="Früh sehen, was kommt">See what's coming early</li>
+                  <li data-en="Influence how it gets built" data-de="Beeinflussen, wie es gebaut wird">Influence how it gets built</li>
+                  <li data-en="Reduce risk through shared commitment" data-de="Risiko durch gemeinsames Commitment reduzieren">Reduce risk through shared commitment</li>
+                </ul>
+              </div>
+            </div>
 
-          <!-- Startups & Investors - secondary -->
-          <div class="audience-grid">
-            <div class="audience-card">
+            <!-- Founders -->
+            <div class="wim-stack-card">
               <div class="audience-tag" data-en="Founders" data-de="Gründer">Founders</div>
-              <h3 class="audience-headline" data-en="Build with real input, not assumptions." data-de="Baue mit echtem Input, nicht mit Annahmen.">Build with real input, not assumptions.</h3>
-              <p class="audience-body" data-en="We work with a select group of industry partners who actively shape, test, and commit to solutions early." data-de="Wir arbeiten mit einer ausgewählten Gruppe von Industriepartnern, die Lösungen früh aktiv mitgestalten, testen und sich zu ihnen bekennen.">We work with a select group of industry partners who actively shape, test, and commit to solutions early.</p>
-              <div class="who-edge">
-                <p class="who-edge-text" data-en="Get investors that open value chains, not just bank accounts." data-de="Bekomme Investoren, die Wertschöpfungsketten öffnen - nicht nur Bankkonten.">Get investors that open value chains, not just bank accounts.</p>
+              <div class="wim-stack-inner">
+                <div class="wim-stack-text">
+                  <h3 class="audience-headline" data-en="Build with real input, not assumptions." data-de="Baue mit echtem Input, nicht mit Annahmen.">Build with real input, not assumptions.</h3>
+                  <p class="audience-body" data-en="We work with a select group of industry partners who actively shape, test, and commit to solutions early." data-de="Wir arbeiten mit einer ausgewählten Gruppe von Industriepartnern, die Lösungen früh aktiv mitgestalten, testen und sich zu ihnen bekennen.">We work with a select group of industry partners who actively shape, test, and commit to solutions early.</p>
+                  <a href="for-founders.html" class="btn btn-secondary" data-en="Work with us" data-de="Mit uns arbeiten">Work with us</a>
+                </div>
+                <div class="who-edge wim-stack-edge">
+                  <p class="who-edge-text" data-en="Get investors that open value chains, not just bank accounts." data-de="Bekomme Investoren, die Wertschöpfungsketten öffnen - nicht nur Bankkonten.">Get investors that open value chains, not just bank accounts.</p>
+                </div>
               </div>
-              <a href="founder.html" class="btn btn-secondary" data-en="Work with us" data-de="Mit uns arbeiten">Work with us</a>
             </div>
-            <div class="audience-card">
+
+            <!-- Investors -->
+            <div class="wim-stack-card">
               <div class="audience-tag" data-en="Investors" data-de="Investoren">Investors</div>
-              <h3 class="audience-headline" data-en="Invest alongside real market signals." data-de="Investiere gemeinsam mit echten Marktsignalen.">Invest alongside real market signals.</h3>
-              <p class="audience-body" data-en="We co-invest alongside industry players who don't just fund - but actively drive adoption." data-de="Wir co-investieren gemeinsam mit Industrieakteuren, die nicht nur finanzieren - sondern aktiv die Adoption vorantreiben.">We co-invest alongside industry players who don't just fund - but actively drive adoption.</p>
-              <div class="who-edge">
-                <p class="who-edge-text" data-en="Get access to deals with an increased probability of success." data-de="Erhalte Zugang zu Deals mit einer erhöhten Erfolgswahrscheinlichkeit.">Get access to deals with an increased probability of success.</p>
+              <div class="wim-stack-inner">
+                <div class="wim-stack-text">
+                  <h3 class="audience-headline" data-en="Invest alongside real market signals." data-de="Investiere gemeinsam mit echten Marktsignalen.">Invest alongside real market signals.</h3>
+                  <p class="audience-body" data-en="We co-invest alongside industry players who don't just fund - but actively drive adoption." data-de="Wir co-investieren gemeinsam mit Industrieakteuren, die nicht nur finanzieren - sondern aktiv die Adoption vorantreiben.">We co-invest alongside industry players who don't just fund - but actively drive adoption.</p>
+                  <a href="for-investors.html" class="btn btn-secondary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
+                </div>
+                <div class="who-edge wim-stack-edge">
+                  <p class="who-edge-text" data-en="Get access to deals with an increased probability of success." data-de="Erhalte Zugang zu Deals mit einer erhöhten Erfolgswahrscheinlichkeit.">Get access to deals with an increased probability of success.</p>
+                </div>
               </div>
-              <a href="investor.html" class="btn btn-secondary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- TRUST / PROOF -->
-        <section id="trust">
-          <div class="section-eyebrow" data-en="Built with the industry" data-de="Mit der Industrie gebaut">Built with the industry - not for it</div>
-
-          <div class="trust-grid">
-            <div class="trust-block">
-              <p class="trust-body" data-en="We are working with a small group of construction and infrastructure operators to define how early-stage collaboration and investment should actually work. Not as observers - but as active participants." data-de="Wir arbeiten mit einer kleinen Gruppe von Bau- und Infrastrukturbetreibern zusammen, um zu definieren, wie Frühphasen-Zusammenarbeit und Investment tatsächlich funktionieren sollten. Nicht als Beobachter - sondern als aktive Teilnehmer.">We are working with a small group of construction and infrastructure operators to define how early-stage collaboration and investment should actually work. Not as observers - but as active participants.</p>
-            </div>
-
-            <div class="trust-card">
-              <div class="trust-card-label" data-en="A structured approach, before capital is deployed" data-de="Ein strukturierter Ansatz, bevor Kapital eingesetzt wird">A structured approach, before capital is deployed</div>
-              <p class="trust-card-sub" data-en="Every opportunity is evaluated based on:" data-de="Jede Gelegenheit wird bewertet anhand von:">Every opportunity is evaluated based on:</p>
-              <ul class="trust-list">
-                <li data-en="Real operational relevance" data-de="Echte operative Relevanz">Real operational relevance</li>
-                <li data-en="Clear economic impact" data-de="Klarer wirtschaftlicher Nutzen">Clear economic impact</li>
-                <li data-en="Early commitment signals from industry partners" data-de="Frühe Commitment-Signale von Industriepartnern">Early commitment signals from industry partners</li>
-              </ul>
-              <p class="trust-card-note" data-en="No trend-driven investing. No startup noise." data-de="Kein trendgetriebenes Investieren. Kein Startup-Rauschen.">No trend-driven investing. No startup noise.</p>
-            </div>
-
-            <div class="trust-card">
-              <div class="trust-card-label" data-en="Limited, committed group" data-de="Begrenzte, engagierte Gruppe">Limited, committed group</div>
-              <p class="trust-body" data-en="We are not building a large network. We are building a small group of companies willing to engage early, share insight, and move beyond observation." data-de="Wir bauen kein großes Netzwerk auf. Wir bauen eine kleine Gruppe von Unternehmen, die bereit sind, früh zu engagieren, Einblicke zu teilen und über die bloße Beobachtung hinauszugehen.">We are not building a large network. We are building a small group of companies willing to engage early, share insight, and move beyond observation.</p>
-            </div>
-
-            <div class="trust-card">
-              <div class="trust-card-label" data-en="At the beginning - by design" data-de="Am Anfang - by design">At the beginning - by design</div>
-              <p class="trust-body" data-en="There is no legacy portfolio. This is an opportunity to shape how this model works - from the problems we focus on to the companies we back." data-de="Es gibt kein Legacy-Portfolio. Dies ist eine Chance, mitzugestalten, wie dieses Modell funktioniert - von den Problemen, auf die wir uns konzentrieren, bis hin zu den Unternehmen, die wir unterstützen.">There is no legacy portfolio. This is an opportunity to shape how this model works - from the problems we focus on to the companies we back.</p>
             </div>
           </div>
         </section>
