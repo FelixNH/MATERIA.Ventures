@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="For Founders - INPUT Partners" />
+  <title>For Founders - INPUT Partners</title>
+  <style>
+    :root {
+      --bg: #f2f2f3;
+      --fg: #111111;
+      --muted: #555555;
+      --accent: #b28b30;
+      --border-subtle: #d2d2d4;
+      --border-strong: #b3b3b5;
+      --radius-card: 20px;
+      --max-width: 1400px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: var(--bg); color: var(--fg);
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .shell { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 64px 140px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(242, 242, 243, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max-width); margin: 0 auto; padding: 28px 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 12px; }
+    .logo-text { display: inline-flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .logo-line-main {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; line-height: 1; color: var(--fg);
+    }
+    .logo-tags {
+      display: flex; justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.48rem; font-weight: 300; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-top: 3px;
+    }
+    .logo-sep { opacity: 0.4; }
+    .nav-back {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 8px 18px; border-radius: 999px; border: 1px solid var(--border-subtle);
+      background: transparent; color: var(--muted); text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-back:hover { border-color: var(--fg); color: var(--fg); }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: transparent; color: var(--muted); border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .lang-btn.active { background: var(--fg); color: var(--bg); }
+    .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
+
+    /* SECTIONS */
+    section { padding: 120px 0; }
+    .section-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); margin-bottom: 16px; }
+
+    /* HERO */
+    .hero { padding-top: 140px; padding-bottom: 120px; }
+    .hero-headline {
+      font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; max-width: 18ch;
+      letter-spacing: -0.02em; font-weight: 500; margin-bottom: 28px;
+    }
+    .hero-sub { font-size: 1.2rem; line-height: 1.75; color: var(--muted); max-width: 38rem; margin-bottom: 40px; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* PROBLEM */
+    .problem-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 28px; max-width: 40rem; }
+    .problem-body { font-size: 1.1rem; line-height: 1.85; color: var(--muted); max-width: 40rem; margin-bottom: 36px; }
+    .problem-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); max-width: 36rem; }
+    .problem-list li { font-size: 1.05rem; line-height: 1.6; color: var(--fg); padding: 14px 0 14px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .problem-list li:last-child { border-bottom: none; }
+
+    /* WHAT WE OFFER */
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px; }
+    .offer-text { display: flex; flex-direction: column; gap: 20px; }
+    .offer-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; }
+    .offer-body { font-size: 1.1rem; line-height: 1.85; color: var(--muted); }
+    .offer-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); }
+    .offer-list li { font-size: 1rem; line-height: 1.6; color: var(--fg); padding: 14px 0 14px 24px; border-bottom: 1px solid var(--border-subtle); }
+    .offer-list li:last-child { border-bottom: none; }
+
+    /* WHAT WE LOOK FOR */
+    .look-for-section { background: var(--fg); width: 100vw; margin-left: calc(-50vw + 50%); padding: 100px 64px; }
+    .look-for-inner { max-width: var(--max-width); margin: 0 auto; }
+    .look-for-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 16px; }
+    .look-for-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; color: #ffffff; margin-bottom: 16px; }
+    .look-for-sub { font-size: 1.05rem; color: rgba(255,255,255,0.6); margin-bottom: 56px; }
+    .look-for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .look-for-col-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
+    .look-for-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid rgba(255,255,255,0.15); }
+    .look-for-list li { font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,0.8); padding: 14px 0 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .look-for-list li:last-child { border-bottom: none; }
+    .look-for-list.no-fit li { color: rgba(255,255,255,0.5); }
+
+    /* HOW WE WORK */
+    .how-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 40px; max-width: 40rem; }
+    .how-steps { display: flex; flex-direction: column; gap: 0; max-width: 48rem; }
+    .how-step { display: grid; grid-template-columns: 48px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border-subtle); align-items: start; }
+    .how-step:first-child { border-top: 1px solid var(--border-subtle); }
+    .how-step-number { font-size: 1rem; font-weight: 600; color: var(--accent); line-height: 1.6; }
+    .how-step-text { font-size: 1.05rem; line-height: 1.7; color: var(--muted); }
+
+    /* BOTTOM CTA */
+    .bottom-cta-wrapper {
+      background: #ffffff;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 10;
+      transform: translateY(40px);
+      transition: transform 0.5s ease;
+    }
+    .bottom-cta-wrapper.visible { transform: translateY(0); }
+    .bottom-cta-content { text-align: center; padding: 160px 64px 64px; }
+    .bottom-cta-headline { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .bottom-cta-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 32rem; margin: 0 auto 40px; }
+
+    /* BUTTONS */
+    .btn {
+      border-radius: 999px; padding: 14px 28px; font-size: 1rem; border: 1px solid transparent;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap; transition: all 0.2s ease; font-family: inherit;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .btn-primary:hover { background: transparent; color: var(--fg); }
+    .btn-secondary { border-color: var(--border-strong); color: var(--fg); background: transparent; }
+    .btn-secondary:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+
+    footer { border-top: 1px solid var(--border-subtle); padding: 24px 0; font-size: 0.85rem; color: var(--muted); }
+    .footer-inner {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--fg); }
+
+    @media (max-width: 768px) {
+      .shell { padding-inline: 20px; }
+      .nav { padding: 16px 20px; }
+      .hero { padding-top: 60px; padding-bottom: 60px; }
+      .hero-headline { font-size: 2.2rem; }
+      section { padding: 60px 0; }
+      .offer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .look-for-grid { grid-template-columns: 1fr; }
+      .look-for-section { padding: 60px 20px; }
+      .bottom-cta-content { padding: 60px 20px 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="index.html" class="logo-text" id="logo-nav">
+            <div class="logo-line-main" id="logo-nav-main">INPUT.PARTNERS</div>
+            <div class="logo-tags" id="logo-nav-tags">
+              <span>BUILD</span><span class="logo-sep">|</span>
+              <span>FINANCE</span><span class="logo-sep">|</span>
+              <span>CONNECT</span>
+            </div>
+          </a>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="lang-divider">|</span>
+            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          </div>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell">
+
+        <!-- HERO -->
+        <section class="hero">
+          <div class="section-eyebrow" data-en="For Founders" data-de="Für Gründer">For Founders</div>
+          <h1 class="hero-headline" data-en="Build with real industry input — not assumptions." data-de="Baue mit echtem Industrie-Input - nicht mit Annahmen.">
+            Build with real industry input - not assumptions.
+          </h1>
+          <p class="hero-sub" data-en="We invest early in industrial technologies and connect you with the context needed to make them work in practice." data-de="Wir investieren früh in Industrietechnologien und verbinden Sie mit dem Kontext, der nötig ist, um sie in der Praxis zum Funktionieren zu bringen.">
+            We invest early in industrial technologies and connect you with the context needed to make them work in practice.
+          </p>
+          <div class="hero-cta">
+            <a href="founder.html" class="btn btn-primary" data-en="Submit your company" data-de="Unternehmen einreichen">Submit your company</a>
+          </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section id="problem">
+          <div class="section-eyebrow" data-en="The problem" data-de="Das Problem">The problem</div>
+          <h2 class="problem-headline" data-en="Most industrial startups don't fail because the technology doesn't work." data-de="Die meisten Industrie-Startups scheitern nicht, weil die Technologie nicht funktioniert.">
+            Most industrial startups don't fail because the technology doesn't work.
+          </h2>
+          <p class="problem-body" data-en="They fail because it doesn't hold up in real-world conditions." data-de="Sie scheitern, weil sie unter realen Bedingungen nicht standhält.">
+            They fail because it doesn't hold up in real-world conditions.
+          </p>
+          <ul class="problem-list">
+            <li data-en="Wrong use case" data-de="Falscher Anwendungsfall">Wrong use case</li>
+            <li data-en="Wrong assumptions" data-de="Falsche Annahmen">Wrong assumptions</li>
+            <li data-en="No path to adoption" data-de="Kein Weg zur Adoption">No path to adoption</li>
+          </ul>
+        </section>
+
+        <!-- WHAT WE OFFER -->
+        <section id="offer">
+          <div class="offer-grid">
+            <div class="offer-text">
+              <div class="section-eyebrow" data-en="What we offer" data-de="Was wir bieten">What we offer</div>
+              <h2 class="offer-headline" data-en="We combine capital with early real-world insight." data-de="Wir verbinden Kapital mit frühen Praxiseinblicken.">We combine capital with early real-world insight.</h2>
+            </div>
+            <ul class="offer-list">
+              <li data-en="Access to construction companies as early input providers" data-de="Zugang zu Bauunternehmen als frühe Inputgeber">Access to construction companies as early input providers</li>
+              <li data-en="Feedback on real operational constraints" data-de="Feedback zu realen operativen Einschränkungen">Feedback on real operational constraints</li>
+              <li data-en="Earlier validation of use cases" data-de="Frühere Validierung von Anwendungsfällen">Earlier validation of use cases</li>
+              <li data-en="Better understanding of where your solution actually fits" data-de="Besseres Verständnis, wo Ihre Lösung tatsächlich passt">Better understanding of where your solution actually fits</li>
+            </ul>
+          </div>
+        </section>
+
+      </div><!-- end shell -->
+
+      <!-- WHAT WE LOOK FOR - dark section -->
+      <div class="look-for-section">
+        <div class="look-for-inner">
+          <div class="look-for-eyebrow" data-en="What we look for" data-de="Was wir suchen">What we look for</div>
+          <h2 class="look-for-headline" data-en="We back a small number of teams." data-de="Wir unterstützen eine kleine Anzahl von Teams.">We back a small number of teams.</h2>
+          <div class="look-for-grid">
+            <div>
+              <div class="look-for-col-label" data-en="This is a fit if..." data-de="Das passt wenn...">This is a fit if...</div>
+              <ul class="look-for-list">
+                <li data-en="Clear relevance to a real industrial problem" data-de="Klare Relevanz für ein echtes Industrieproblem">Clear relevance to a real industrial problem</li>
+                <li data-en="Technical depth — not surface-level innovation" data-de="Technische Tiefe - keine oberflächliche Innovation">Technical depth - not surface-level innovation</li>
+                <li data-en="Teams that can operate in industrial environments (long cycles, constraints, complexity)" data-de="Teams, die in industriellen Umgebungen arbeiten können (lange Zyklen, Einschränkungen, Komplexität)">Teams that can operate in industrial environments (long cycles, constraints, complexity)</li>
+              </ul>
+            </div>
+            <div>
+              <div class="look-for-col-label" style="color: rgba(255,255,255,0.4);" data-en="This is not a fit if..." data-de="Das passt nicht wenn...">This is not a fit if...</div>
+              <ul class="look-for-list no-fit">
+                <li data-en="You are still exploring use cases" data-de="Sie erkunden noch Anwendungsfälle">You are still exploring use cases</li>
+                <li data-en="You need fast iteration cycles" data-de="Sie benötigen schnelle Iterationszyklen">You need fast iteration cycles</li>
+                <li data-en="Your solution depends on ideal conditions" data-de="Ihre Lösung hängt von idealen Bedingungen ab">Your solution depends on ideal conditions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell">
+
+        <!-- HOW WE WORK -->
+        <section id="how">
+          <div class="section-eyebrow" data-en="How we work" data-de="Wie wir arbeiten">How we work</div>
+          <h2 class="how-headline" data-en="A structured process — not a broad funnel." data-de="Ein strukturierter Prozess - kein breiter Funnel.">A structured process - not a broad funnel.</h2>
+          <div class="how-steps">
+            <div class="how-step">
+              <div class="how-step-number">1</div>
+              <p class="how-step-text" data-en="We focus on specific problem areas" data-de="Wir konzentrieren uns auf spezifische Problembereiche">We focus on specific problem areas</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-number">2</div>
+              <p class="how-step-text" data-en="We evaluate solutions based on real demand" data-de="Wir evaluieren Lösungen anhand echter Nachfrage">We evaluate solutions based on real demand</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-number">3</div>
+              <p class="how-step-text" data-en="We engage early with industry context" data-de="Wir engagieren uns früh mit industriellem Kontext">We engage early with industry context</p>
+            </div>
+            <div class="how-step">
+              <div class="how-step-number">4</div>
+              <p class="how-step-text" data-en="We invest selectively" data-de="Wir investieren selektiv">We invest selectively</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- end shell -->
+
+    </main>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta-wrapper">
+        <div class="bottom-cta-content">
+          <h2 class="bottom-cta-headline" data-en="We don't run a broad funnel." data-de="Wir betreiben keinen breiten Funnel.">
+            We don't run a broad funnel.
+          </h2>
+          <p class="bottom-cta-text" data-en="We work with a small number of companies." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen.">
+            We work with a small number of companies.
+          </p>
+          <a href="founder.html" class="btn btn-primary" data-en="Submit your company" data-de="Unternehmen einreichen">Submit your company</a>
+        </div>
+      </div>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> INPUT Partners</span>
+        <div class="footer-links">
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const cta = document.querySelector('.bottom-cta-wrapper');
+    if (cta) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) cta.classList.add('visible');
+        });
+      }, { threshold: 0, rootMargin: '0px 0px 300px 0px' });
+      observer.observe(cta);
+    }
+    document.fonts.ready.then(function() {
+      var main = document.getElementById('logo-nav-main');
+      var tags = document.getElementById('logo-nav-tags');
+      if (main && tags) tags.style.width = main.offsetWidth + 'px';
+    });
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'en';
+      if (savedLang === 'de') setLang('de');
+    } catch(e) {}
+  </script>
+</body>
+</html>
