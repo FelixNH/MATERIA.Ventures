@@ -105,11 +105,10 @@
     .problem-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); }
     .problem-bullets li { font-size: 1.1rem; line-height: 1.6; color: var(--fg); font-weight: 400; padding: 14px 0 14px 24px; }
 
-    /* ── Statement ── */
     .statement-section {
-      padding: 100px 64px; text-align: center;
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
+      padding: 64px 64px; text-align: center;
+      border-top: 1px solid var(--border-strong);
+      border-bottom: 1px solid var(--border-strong);
     }
     .statement-headline {
       font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.2; max-width: 24ch;
@@ -151,7 +150,7 @@
     @media (max-width: 768px) { .wim-grid { grid-template-columns: 1fr; gap: 40px; } }
 
     /* ── How it works ── */
-    .hiw-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 12px; max-width: 28rem; }
+    .hiw-headline { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 12px; max-width: 48rem; }
     .hiw-sub { font-size: 1.15rem; color: var(--muted); margin-bottom: 56px; }
     .hiw-steps { display: flex; flex-direction: column; gap: 0; max-width: 48rem; }
     .hiw-step { display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 36px 0; border-bottom: 1px solid var(--border-subtle); }
@@ -192,14 +191,28 @@
     .look-item-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
     .look-item p { font-size: 1.1rem; line-height: 1.75; color: var(--muted); }
     #who { z-index: 2; }
+    .who-section-content { display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: center; }
     .who-text-content { display: flex; flex-direction: column; gap: 28px; max-width: 48rem; }
     .who-body { font-size: 1.2rem; line-height: 1.85; color: var(--muted); }
     .who-edge { border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
     .who-edge-text { font-size: 1rem; line-height: 1.8; color: var(--muted); }
-    /* ── Felix quote ── */
-    .quote-felix-section { padding: 100px 64px; text-align: center; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
-    .felix-quote-text { font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.3; color: var(--fg); font-style: italic; font-weight: 400; letter-spacing: -0.01em; max-width: 28ch; margin: 0 auto 24px; }
-    .felix-quote-attr { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
+    .who-image { width: 320px; height: 400px; border-radius: 12px; object-fit: cover; object-position: top; flex-shrink: 0; }
+    /* ── Trust ── */
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .trust-block { grid-column: 1 / -1; }
+    .trust-body { font-size: 1.1rem; line-height: 1.85; color: var(--muted); }
+    .trust-card { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column; gap: 16px; }
+    .trust-card-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
+    .trust-card-sub { font-size: 0.95rem; color: var(--muted); }
+    .trust-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--accent); }
+    .trust-list li { font-size: 0.95rem; line-height: 1.6; color: var(--fg); padding: 10px 0 10px 20px; border-bottom: 1px solid var(--border-subtle); }
+    .trust-list li:last-child { border-bottom: none; }
+    .trust-card-note { font-size: 0.9rem; color: var(--fg); font-weight: 500; font-style: italic; }
+    @media (max-width: 768px) { .trust-grid { grid-template-columns: 1fr; } } */
+    #quote-felix { padding: 0; }
+    .quote-felix-section { padding: 48px 64px; text-align: center; border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); width: 100vw; margin-left: calc(-50vw + 50%); }
+    .felix-quote-text { font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.3; color: var(--fg); font-style: italic; font-weight: 400; letter-spacing: -0.01em; max-width: 28ch; margin: 0 auto 12px; }
+    .felix-quote-attr { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; text-align: center; display: block; }
 
     /* ── Who it's for (unified) ── */
     .wif-sme { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 36px 32px; margin-top: 40px; display: flex; flex-direction: column; gap: 16px; transition: border-color 0.2s ease; }
@@ -243,7 +256,7 @@
       transition: transform 0.4s ease;
     }
     .join-section-wrapper.visible { transform: translateY(0); }
-    .join-content { text-align: center; padding: 64px 64px 60px; }
+    .join-content { text-align: center; padding: 48px 64px 44px; }
     .join-headline { font-size: clamp(2.8rem, 5vw, 4.4rem); line-height: 1.15; margin-bottom: 28px; font-weight: 500; letter-spacing: -0.01em; }
     .join-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto 48px; }
     .join-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -327,12 +340,11 @@
     <main id="main-content">
       <div class="shell">
         <section class="hero">
-          <div class="section-eyebrow" style="margin-bottom: 20px;" data-en="Infrastructure &amp; Construction" data-de="Infrastruktur &amp; Bau">Infrastructure &amp; Construction</div>
-          <h1 class="hero-headline" data-en="We invest early. Alongside the companies that will become future customers." data-de="Wir investieren früh. Gemeinsam mit den Unternehmen, die zukünftige Kunden werden.">
-            We invest early. Alongside the companies that will become future customers.
+          <h1 class="hero-headline" data-en="If you don't engage early, you'll adopt too late." data-de="Wer sich nicht früh einbringt, adoptiert zu spät.">
+            If you don't engage early, you'll adopt too late.
           </h1>
-          <p class="hero-sub" data-en="In construction, the best solutions emerge through early real-world input — not late adoption." data-de="Im Bauwesen entstehen die besten Lösungen durch frühzeitigen Praxisbezug – nicht durch späte Adoption.">
-            In construction, the best solutions emerge through early real-world input — not late adoption.
+          <p class="hero-sub" data-en="We invest early in construction technologies - alongside the companies who will use them." data-de="Wir investieren früh in Bautechnologien - gemeinsam mit den Unternehmen, die sie einsetzen werden.">
+            We invest early in construction technologies - alongside the companies who will use them.
           </p>
           <div class="hero-cta">
             <a href="waitlist.html?interest=industry" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Become an Industry Partner</a>
@@ -352,20 +364,20 @@
             Technology is not the problem. Adoption is.
           </h2>
           <div class="problem-text-centered">
-            <p data-en="The European construction industry doesn't lack technological innovation. It lacks early integration with the operational realities of the customers that use them." data-de="Der europäischen Bauindustrie fehlt es nicht an technologischer Innovation. Es fehlt die frühe Integration mit den operativen Realitäten der Kunden, die sie nutzen.">
-              The European construction industry doesn't lack technological innovation. It lacks early integration with the operational realities of the customers that use them.
+            <p data-en="The construction industry doesn't lack innovation. It lacks solutions that hold up in real-world conditions." data-de="Der Bauindustrie fehlt es nicht an Innovation. Es fehlen Lösungen, die unter realen Bedingungen standhalten.">
+              The construction industry doesn't lack innovation. It lacks solutions that hold up in real-world conditions.
             </p>
-            <p data-en="Within the fragmented value chain most companies are too small to shape how new technologies are developed. So they wait - and try to adopt later." data-de="Innerhalb der fragmentierten Wertschöpfungskette sind die meisten Unternehmen zu klein, um zu beeinflussen, wie neue Technologien entwickelt werden. Also warten sie – und versuchen später zu adoptieren.">
-              Within the fragmented value chain most companies are too small to shape how new technologies are developed. So they wait - and try to adopt later.
+            <p data-en="Most companies don't shape what gets built - they wait, and try to adopt later." data-de="Die meisten Unternehmen gestalten nicht, was gebaut wird - sie warten und versuchen später zu adoptieren.">
+              Most companies don't shape what gets built - they wait, and try to adopt later.
             </p>
-            <p data-en="Startups move in isolation, building for a market they don't fully understand. By the time both find each other, it is too late." data-de="Startups agieren isoliert und bauen für einen Markt, den sie nicht vollständig verstehen. Wenn beide sich finden, ist es zu spät.">
-              Startups move in isolation, building for a market they don't fully understand. By the time both find each other, it is too late.
+            <p data-en="Startups, in turn, build without enough real-world input. They optimize for technology - not for how it actually gets used." data-de="Startups wiederum bauen ohne ausreichenden Praxisbezug. Sie optimieren für Technologie - nicht dafür, wie sie tatsächlich eingesetzt wird.">
+              Startups, in turn, build without enough real-world input. They optimize for technology - not for how it actually gets used.
             </p>
-            <p data-en="Not because the technology fails — but because it doesn't survive the reality of a job site." data-de="Nicht weil die Technologie scheitert – sondern weil sie die Realität einer Baustelle nicht überlebt.">
-              Not because the technology fails — but because it doesn't survive the reality of a job site.
+            <p data-en="By the time both meet, it's too late. Not because the technology doesn't work - but because it doesn't survive the reality of a job site." data-de="Wenn beide aufeinandertreffen, ist es zu spät. Nicht weil die Technologie nicht funktioniert - sondern weil sie die Realität einer Baustelle nicht überlebt.">
+              By the time both meet, it's too late. Not because the technology doesn't work - but because it doesn't survive the reality of a job site.
             </p>
-            <p data-en="What's missing isn't more innovation. It's early commitment - shared among the companies that will actually use it." data-de="Was fehlt, ist nicht mehr Innovation. Es ist frühes Commitment – geteilt unter den Unternehmen, die es tatsächlich nutzen werden.">
-              What's missing isn't more innovation. It's early commitment - shared among the companies that will actually use it.
+            <p data-en="What's missing isn't more innovation. It's earlier engagement, grounded in real demand." data-de="Was fehlt, ist nicht mehr Innovation. Es ist früheres Engagement, verankert in echter Nachfrage.">
+              What's missing isn't more innovation. It's earlier engagement, grounded in real demand.
             </p>
             <p data-en="<strong>This is why we are here.</strong>" data-de="<strong>Deshalb sind wir hier.</strong>">
               <strong>This is why we are here.</strong>
@@ -374,22 +386,25 @@
         </section>
 
         <section class="statement-section">
-          <h2 class="statement-headline" data-en="We don't just fund technology, we fund <em>early integration.</em>" data-de="Wir finanzieren nicht nur Technologie — wir finanzieren <em>frühe Integration.</em>">
+          <h2 class="statement-headline" data-en="We don't just fund technology, we fund <em>early integration.</em>" data-de="Wir finanzieren nicht nur Technologie - wir finanzieren <em>frühe Integration.</em>">
             We don't just fund technology, we fund <em>early integration.</em>
           </h2>
         </section>
 
         <section id="who">
-          <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
-          <div class="who-text-content">
-            <h2 class="hiw-headline" data-en="INPUT Partners is a deal-by-deal investment syndicate focused on industrial adoption." data-de="INPUT Partners ist ein Deal-by-Deal-Investmentsyndikat mit Fokus auf industrielle Adoption.">
-              INPUT Partners is a deal-by-deal investment syndicate focused on industrial adoption.
-            </h2>
-            <div class="who-edge">
-              <p class="who-edge-text" data-en="We bring together long-term investors and construction SMEs. Not just to fund technology, but to commit early and shape what gets built. Our members don't observe innovation. They participate in it, with capital, real-world input, and early integration." data-de="Wir bringen langfristige Investoren und Bau-KMUs zusammen. Nicht nur um Technologie zu finanzieren, sondern um frühzeitig zu committen und mitzugestalten, was gebaut wird. Unsere Mitglieder beobachten Innovation nicht. Sie nehmen daran teil – mit Kapital, praxisnahem Input und früher Integration.">
-                We bring together long-term investors and construction SMEs. Not just to fund technology, but to commit early and shape what gets built. Our members don't observe innovation. They participate in it, with capital, real-world input, and early integration.
-              </p>
+          <div class="who-section-content">
+            <div class="who-text-content">
+              <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
+              <h2 class="hiw-headline" data-en="INPUT Partners is a deal-by-deal investment syndicate focused on industrial technologies." data-de="INPUT Partners ist ein Deal-by-Deal-Investmentsyndikat mit Fokus auf Industrietechnologien.">
+                INPUT Partners is a deal-by-deal investment syndicate focused on industrial technologies.
+              </h2>
+              <div class="who-edge">
+                <p class="who-edge-text" data-en="We invest alongside construction companies - bringing capital together with early real-world insight. Our members don't just observe opportunities. They invest early and contribute operational perspective where it matters." data-de="Wir investieren gemeinsam mit Bauunternehmen - und bringen Kapital zusammen mit frühen Praxiseinblicken. Unsere Mitglieder beobachten Chancen nicht nur. Sie investieren früh und bringen operative Perspektive ein, wo es darauf ankommt.">
+                  We invest alongside construction companies - bringing capital together with early real-world insight. Our members don't just observe opportunities. They invest early and contribute operational perspective where it matters.
+                </p>
+              </div>
             </div>
+            <img class="who-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=80" alt="Felix, Founder INPUT Partners" />
           </div>
         </section>
 
@@ -423,7 +438,7 @@
               <div class="hiw-step-number">4</div>
               <div class="hiw-step-body">
                 <h3 class="hiw-step-title" data-en="Focused commitment" data-de="Fokussiertes Commitment">Focused commitment</h3>
-                <p class="hiw-step-text" data-en="We don't spread attention across many bets. If our industry partners commit, they really commit." data-de="Wir verteilen unsere Aufmerksamkeit nicht auf viele Wetten. Wenn unsere Industriepartner sich committen, meinen sie es ernst.">We don't spread attention across many bets. If our industry partners commit, they really commit.</p>
+                <p class="hiw-step-text" data-en='We don&apos;t believe in "testing everything." We believe in identifying the few solutions that truly matter and then backing them with everything we&apos;ve got.' data-de='Wir glauben nicht daran, "alles zu testen." Wir glauben daran, die wenigen Lösungen zu identifizieren, die wirklich wichtig sind, und sie dann mit allem zu unterstützen, was wir haben.'>We don't believe in "testing everything." We believe in identifying the few solutions that truly matter and then backing them with everything we've got.</p>
               </div>
             </div>
           </div>
@@ -433,14 +448,14 @@
         <!-- QUOTE -->
         <section id="quote-felix" class="quote-felix-section">
           <p class="felix-quote-text" data-en='"This is not about seeing more deals. It\'s about standing behind the right ones."' data-de='"Es geht nicht darum, mehr Deals zu sehen. Es geht darum, hinter den richtigen zu stehen."'>"This is not about seeing more deals. It's about standing behind the right ones."</p>
-          <p class="felix-quote-attr">— Felix, Founder, INPUT Partners</p>
+          <p class="felix-quote-attr">- Felix, Founder, INPUT Partners</p>
         </section>
 
-        <!-- WHO IT'S FOR — unified block -->
+        <!-- WHO IT'S FOR - unified block -->
         <section id="who-its-for-block">
           <div class="section-eyebrow" data-en="Why it matters" data-de="Warum es wichtig ist">Why it matters</div>
 
-          <!-- SME — primary, full width -->
+          <!-- SME - primary, full width -->
           <div class="wif-sme">
             <div class="audience-tag" data-en="Industry Partners (SMEs)" data-de="Industriepartner (KMUs)">Industry Partners (SMEs)</div>
             <h3 class="audience-headline" data-en="Best innovation isn't found. It's co-developed." data-de="Die beste Innovation wird nicht gefunden. Sie wird gemeinsam entwickelt.">Best innovation isn't found. It's co-developed.</h3>
@@ -453,25 +468,57 @@
             <a href="waitlist.html?interest=industry" class="btn btn-primary" style="align-self: flex-start;" data-en="Apply as Industry Partner" data-de="Als Industriepartner bewerben">Apply as Industry Partner</a>
           </div>
 
-          <!-- Startups & Investors — secondary -->
+          <!-- Startups & Investors - secondary -->
           <div class="audience-grid">
             <div class="audience-card">
               <div class="audience-tag" data-en="Founders" data-de="Gründer">Founders</div>
               <h3 class="audience-headline" data-en="Build with real input, not assumptions." data-de="Baue mit echtem Input, nicht mit Annahmen.">Build with real input, not assumptions.</h3>
               <p class="audience-body" data-en="We work with a select group of industry partners who actively shape, test, and commit to solutions early." data-de="Wir arbeiten mit einer ausgewählten Gruppe von Industriepartnern, die Lösungen früh aktiv mitgestalten, testen und sich zu ihnen bekennen.">We work with a select group of industry partners who actively shape, test, and commit to solutions early.</p>
               <div class="who-edge">
-                <p class="who-edge-text" data-en="Get investors that open value chains, not just bank accounts." data-de="Bekomme Investoren, die Wertschöpfungsketten öffnen – nicht nur Bankkonten.">Get investors that open value chains, not just bank accounts.</p>
+                <p class="who-edge-text" data-en="Get investors that open value chains, not just bank accounts." data-de="Bekomme Investoren, die Wertschöpfungsketten öffnen - nicht nur Bankkonten.">Get investors that open value chains, not just bank accounts.</p>
               </div>
               <a href="founder.html" class="btn btn-secondary" data-en="Work with us" data-de="Mit uns arbeiten">Work with us</a>
             </div>
             <div class="audience-card">
               <div class="audience-tag" data-en="Investors" data-de="Investoren">Investors</div>
               <h3 class="audience-headline" data-en="Invest alongside real market signals." data-de="Investiere gemeinsam mit echten Marktsignalen.">Invest alongside real market signals.</h3>
-              <p class="audience-body" data-en="We co-invest alongside industry players who don't just fund — but actively drive adoption." data-de="Wir co-investieren gemeinsam mit Industrieakteuren, die nicht nur finanzieren – sondern aktiv die Adoption vorantreiben.">We co-invest alongside industry players who don't just fund — but actively drive adoption.</p>
+              <p class="audience-body" data-en="We co-invest alongside industry players who don't just fund - but actively drive adoption." data-de="Wir co-investieren gemeinsam mit Industrieakteuren, die nicht nur finanzieren - sondern aktiv die Adoption vorantreiben.">We co-invest alongside industry players who don't just fund - but actively drive adoption.</p>
               <div class="who-edge">
                 <p class="who-edge-text" data-en="Get access to deals with an increased probability of success." data-de="Erhalte Zugang zu Deals mit einer erhöhten Erfolgswahrscheinlichkeit.">Get access to deals with an increased probability of success.</p>
               </div>
               <a href="investor.html" class="btn btn-secondary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- TRUST / PROOF -->
+        <section id="trust">
+          <div class="section-eyebrow" data-en="Built with the industry" data-de="Mit der Industrie gebaut">Built with the industry - not for it</div>
+
+          <div class="trust-grid">
+            <div class="trust-block">
+              <p class="trust-body" data-en="We are working with a small group of construction and infrastructure operators to define how early-stage collaboration and investment should actually work. Not as observers - but as active participants." data-de="Wir arbeiten mit einer kleinen Gruppe von Bau- und Infrastrukturbetreibern zusammen, um zu definieren, wie Frühphasen-Zusammenarbeit und Investment tatsächlich funktionieren sollten. Nicht als Beobachter - sondern als aktive Teilnehmer.">We are working with a small group of construction and infrastructure operators to define how early-stage collaboration and investment should actually work. Not as observers - but as active participants.</p>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-card-label" data-en="A structured approach, before capital is deployed" data-de="Ein strukturierter Ansatz, bevor Kapital eingesetzt wird">A structured approach, before capital is deployed</div>
+              <p class="trust-card-sub" data-en="Every opportunity is evaluated based on:" data-de="Jede Gelegenheit wird bewertet anhand von:">Every opportunity is evaluated based on:</p>
+              <ul class="trust-list">
+                <li data-en="Real operational relevance" data-de="Echte operative Relevanz">Real operational relevance</li>
+                <li data-en="Clear economic impact" data-de="Klarer wirtschaftlicher Nutzen">Clear economic impact</li>
+                <li data-en="Early commitment signals from industry partners" data-de="Frühe Commitment-Signale von Industriepartnern">Early commitment signals from industry partners</li>
+              </ul>
+              <p class="trust-card-note" data-en="No trend-driven investing. No startup noise." data-de="Kein trendgetriebenes Investieren. Kein Startup-Rauschen.">No trend-driven investing. No startup noise.</p>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-card-label" data-en="Limited, committed group" data-de="Begrenzte, engagierte Gruppe">Limited, committed group</div>
+              <p class="trust-body" data-en="We are not building a large network. We are building a small group of companies willing to engage early, share insight, and move beyond observation." data-de="Wir bauen kein großes Netzwerk auf. Wir bauen eine kleine Gruppe von Unternehmen, die bereit sind, früh zu engagieren, Einblicke zu teilen und über die bloße Beobachtung hinauszugehen.">We are not building a large network. We are building a small group of companies willing to engage early, share insight, and move beyond observation.</p>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-card-label" data-en="At the beginning - by design" data-de="Am Anfang - by design">At the beginning - by design</div>
+              <p class="trust-body" data-en="There is no legacy portfolio. This is an opportunity to shape how this model works - from the problems we focus on to the companies we back." data-de="Es gibt kein Legacy-Portfolio. Dies ist eine Chance, mitzugestalten, wie dieses Modell funktioniert - von den Problemen, auf die wir uns konzentrieren, bis hin zu den Unternehmen, die wir unterstützen.">There is no legacy portfolio. This is an opportunity to shape how this model works - from the problems we focus on to the companies we back.</p>
             </div>
           </div>
         </section>
