@@ -197,11 +197,11 @@
         <!-- HERO -->
         <section class="hero">
           <div class="section-eyebrow" data-en="For Investors" data-de="Für Investoren">For Investors</div>
-          <h1 class="hero-headline" data-en="Invest alongside real market signals." data-de="Investiere gemeinsam mit echten Marktsignalen.">
-            Invest alongside real market signals.
+          <h1 class="hero-headline" data-en="Fewer bets. Higher conviction." data-de="Weniger Wetten. Höhere Überzeugung.">
+            Fewer bets. Higher conviction.
           </h1>
-          <p class="hero-sub" data-en="We invest early in industrial technologies - informed by real-world context and early demand." data-de="Wir investieren früh in Industrietechnologien - informiert durch realen Kontext und frühe Nachfrage.">
-            We invest early in industrial technologies - informed by real-world context and early demand.
+          <p class="hero-sub" data-en="We invest alongside real market signals - aligning strategic SME mandates with the long-term horizons of the construction industry." data-de="Wir investieren gemeinsam mit echten Marktsignalen - und verbinden strategische KMU-Mandate mit den langfristigen Horizonten der Bauindustrie.">
+            We invest alongside real market signals - aligning strategic SME mandates with the long-term horizons of the construction industry.
           </p>
           <a href="investor.html" class="btn btn-primary" data-en="Partner with us" data-de="Mit uns partnern">Partner with us</a>
         </section>
@@ -245,16 +245,35 @@
             <div>
               <div class="differ-col-label traditional" data-en="Traditional VC" data-de="Traditionelles VC">Traditional VC</div>
               <ul class="differ-list traditional">
-                <li data-en="Broad portfolios" data-de="Breite Portfolios">Broad portfolios</li>
-                <li data-en="Market risk addressed later" data-de="Marktrisiko wird später adressiert">Market risk addressed later</li>
+                <li>
+                  <strong style="color:rgba(255,255,255,0.5);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Exit-Driven" data-de="Exit-Getrieben">Exit-Driven</strong>
+                  <span data-en="Pressure for rapid growth and early liquidity." data-de="Druck zu schnellem Wachstum und frühzeitiger Liquidität.">Pressure for rapid growth and early liquidity.</span>
+                </li>
+                <li>
+                  <strong style="color:rgba(255,255,255,0.5);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Fixed Fund Cycles" data-de="Feste Fondszyklen">Fixed Fund Cycles</strong>
+                  <span data-en="Forced exits regardless of market maturity." data-de="Erzwungene Exits unabhängig von der Marktreife.">Forced exits regardless of market maturity.</span>
+                </li>
+                <li>
+                  <strong style="color:rgba(255,255,255,0.5);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Capital as a Commodity" data-de="Kapital als Ware">Capital as a Commodity</strong>
+                  <span data-en="Success depends on the next funding round." data-de="Erfolg hängt von der nächsten Finanzierungsrunde ab.">Success depends on the next funding round.</span>
+                </li>
               </ul>
             </div>
             <div>
               <div class="differ-col-label input" data-en="INPUT Partners" data-de="INPUT Partners">INPUT Partners</div>
               <ul class="differ-list input">
-                <li data-en="Focused investments" data-de="Fokussierte Investitionen">Focused investments</li>
-                <li data-en="Early signal from industry context" data-de="Frühes Signal aus dem Industriekontext">Early signal from industry context</li>
-                <li data-en="Fewer bets, higher conviction" data-de="Weniger Wetten, höhere Überzeugung">Fewer bets, higher conviction</li>
+                <li>
+                  <strong style="color:var(--accent);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Value-Driven" data-de="Wertgetrieben">Value-Driven</strong>
+                  <span data-en="Focused on long-term adoption and industrial fit." data-de="Fokussiert auf langfristige Adoption und industrielle Passung.">Focused on long-term adoption and industrial fit.</span>
+                </li>
+                <li>
+                  <strong style="color:var(--accent);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Strategic Mandate" data-de="Strategisches Mandat">Strategic Mandate</strong>
+                  <span data-en="Flexible horizons aligned with industry cycles." data-de="Flexible Horizonte, abgestimmt auf Industriezyklen.">Flexible horizons aligned with industry cycles.</span>
+                </li>
+                <li>
+                  <strong style="color:var(--accent);display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;" data-en="Capital as a Catalyst" data-de="Kapital als Katalysator">Capital as a Catalyst</strong>
+                  <span data-en="Success depends on real-world integration." data-de="Erfolg hängt von der realen Integration ab.">Success depends on real-world integration.</span>
+                </li>
               </ul>
             </div>
           </div>
