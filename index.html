@@ -170,12 +170,22 @@
     .look-item-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); font-weight: 600; }
     .look-item p { font-size: 1.1rem; line-height: 1.75; color: var(--muted); }
     #who { z-index: 2; }
-    .who-section-content { display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: center; }
-    .who-text-content { display: flex; flex-direction: column; gap: 28px; max-width: 48rem; }
-    .who-body { font-size: 1.2rem; line-height: 1.85; color: var(--muted); }
-    .who-edge { border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
-    .who-edge-text { font-size: 1rem; line-height: 1.8; color: var(--muted); }
-    .who-image { width: 320px; height: 400px; border-radius: 12px; object-fit: cover; object-position: top; flex-shrink: 0; }
+    /* ── Who we are (Gota-style) ── */
+    .who-label-row { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: start; padding-bottom: 56px; border-bottom: 1px solid var(--border-subtle); }
+    .who-label { font-size: clamp(2.8rem, 5vw, 4.4rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; color: var(--fg); }
+    .who-label-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+    .who-label-desc { font-size: 1.25rem; line-height: 1.7; color: var(--muted); max-width: 36rem; }
+    .who-label-desc strong { color: var(--fg); font-weight: 600; }
+    .who-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .who-tile { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s ease; }
+    .who-tile:hover { border-color: var(--accent); }
+    .who-tile-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; color: var(--accent); }
+    .who-tile-title { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; }
+    .who-tile-body { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
+    @media (max-width: 768px) {
+      .who-label-row { grid-template-columns: 1fr; gap: 24px; }
+      .who-tiles { grid-template-columns: 1fr; }
+    }
     /* ── Trust ── */
     .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
     .trust-block { grid-column: 1 / -1; }
@@ -302,7 +312,7 @@
         <div class="nav-links">
           <a class="nav-link" href="#" data-en="Home" data-de="Start">Home</a>
           <a class="nav-link" href="#who" data-en="Who we are" data-de="Über uns">Who we are</a>
-          <a class="nav-link" href="#how-it-works" data-en="How it works" data-de="Wie es funktioniert">How it works</a>
+          <a class="nav-link" href="#how-it-works" data-en="How we invest" data-de="Wie wir investieren">Wie wir investieren</a>
           <a class="nav-link" href="#who-its-for-block" data-en="How to get involved" data-de="Wie sie einsteigen können">Why it matters</a>
           <a class="nav-link" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
@@ -318,10 +328,10 @@
     <main id="main-content">
       <div class="shell">
         <section class="hero">
-          <h1 class="hero-headline" data-en="If you don't engage early, you'll adopt too late." data-de="Materialien bestimmen, was morgen möglich ist.">
+          <h1 class="hero-headline" data-en="Materials determine what is possible tomorrow." data-de="Materialien bestimmen, was morgen möglich ist.">
             If you don't engage early, you'll adopt too late.
           </h1>
-          <p class="hero-sub" data-en="We invest early in construction technologies - alongside the companies who will use them." data-de="Wir investieren früh - gemeinsam mit den Unternehmen, die sie einsetzen.">
+          <p class="hero-sub" data-en="We invest in the future of infrastructure — alongside the companies that shape it." data-de="Wir investieren in die Zukunft der Infrastruktur - gemeinsam mit den Unternehmen, die sie gestalten.">
             We invest early in construction technologies - alongside the companies who will use them.
           </p>
           <div class="hero-cta">
@@ -339,19 +349,19 @@
             Technology is not the problem. Adoption is.
           </h2>
           <div class="problem-text-centered">
-            <p data-en="The construction industry doesn't lack innovation. It lacks solutions that hold up in real-world conditions." data-de="Die industrielle Wertschöpfung rund um Materialien und Infrastruktur steht vor ihrer größten Transformation.">
+            <p data-en="Industrial value creation around materials and infrastructure is facing its greatest transformation." data-de="Die industrielle Wertschöpfung rund um Materialien und Infrastruktur steht vor ihrer größten Transformation.">
               The construction industry doesn't lack innovation. It lacks solutions that hold up in real-world conditions.
             </p>
-            <p data-en="Most companies don't shape what gets built - they wait, and try to adopt later." data-de="Neue Materialien, steigende Anforderungen an CO₂-Reduktion und regulatorischer Druck verändern bereits heute, was möglich ist - und wer morgen wettbewerbsfähig bleibt.">
+            <p data-en="AI-assisted material development, rising CO₂ reduction requirements and regulatory pressure are already shaping what is possible — and who stays competitive tomorrow." data-de="KI-unterstützte Materialentwicklung, steigende Anforderungen an CO₂-Reduktion und regulatorischer Druck beeinflussen bereits heute, was möglich ist - und wer morgen wettbewerbsfähig bleibt.">
               Most companies don't shape what gets built - they wait, and try to adopt later.
             </p>
-            <p data-en="Startups, in turn, build without enough real-world input. They optimize for technology - not for how it actually gets used." data-de="Das Problem ist nicht fehlende Technologie. Das Problem ist, dass die meisten Unternehmen warten — und neue Technologien erst integrieren, wenn sie bereits etabliert sind.">
+            <p data-en="It is not a lack of technological innovation. The problem is that most companies wait — and only integrate new technologies once they are already established." data-de="Es fehlt nicht an technologischer Innovation. Das Problem ist, dass die meisten Unternehmen warten - und neue Technologien erst integrieren, wenn sie bereits etabliert sind.">
               Startups, in turn, build without enough real-world input. They optimize for technology - not for how it actually gets used.
             </p>
-            <p data-en="By the time both meet, it's too late. Not because the technology doesn't work - but because it doesn't survive the reality of a job site." data-de="Startups entwickeln Technologien daher oft ohne ausreichenden Bezug zur industriellen Realität. Wenn beide dann aufeinandertreffen, wird die Zusammenarbeit schwierig. Nicht weil die Technologie nicht funktioniert — sondern weil sie sich unter realen Bedingungen nicht durchsetzt.">
+            <p data-en="Startups therefore often develop technologies without sufficient grounding in industrial reality. When the two finally meet, collaboration becomes difficult. Not because the technology doesn't work — but because it fails under real conditions." data-de="Startups entwickeln Technologien daher oft ohne ausreichenden Bezug zur industriellen Realität. Wenn beide dann aufeinandertreffen, wird die Zusammenarbeit schwierig. Nicht weil die Technologie nicht funktioniert — sondern weil sie sich unter realen Bedingungen nicht durchsetzt.">
               By the time both meet, it's too late. Not because the technology doesn't work - but because it doesn't survive the reality of a job site.
             </p>
-            <p data-en="What's missing isn't more innovation. It's earlier engagement, grounded in real demand." data-de="Was fehlt, ist Kapital, das früh genug gebündelt wird — dort, wo es tatsächlich einen Unterschied macht.">
+            <p data-en="We pool long-term oriented capital — where it determines whether technologies can be integrated later." data-de="Wir bündeln langfristig orientiertes Kapital - dort, wo sich entscheidet, ob Technologien später integrierbar sind.">
               What's missing isn't more innovation. It's earlier engagement, grounded in real demand.
             </p>
             <p data-en="&lt;strong&gt;This is why we are here.&lt;/strong&gt;" data-de="&lt;strong&gt;Deshalb investieren wir früh.&lt;/strong&gt;">
@@ -371,19 +381,21 @@
       <div class="shell" style="padding-top:0;"><!-- resume shell -->
 
         <section id="who">
-          <div class="who-section-content">
-            <div class="who-text-content">
-              <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
-              <h2 class="hiw-headline" data-en="INPUT Partners is a deal-by-deal investment syndicate focused on industrial technologies." data-de="INPUT Partners ist ein Deal-by-Deal-Investmentsyndikat für industrielle Technologien rund um Materialien und Infrastruktur.">
-                INPUT Partners is a deal-by-deal investment syndicate focused on industrial technologies.
-              </h2>
-              <div class="who-edge">
-                <p class="who-edge-text" data-en="We invest alongside construction companies - bringing capital together with early real-world insight. Our members don't just observe opportunities. They invest early and contribute operational perspective where it matters." data-de="Wir investieren gemeinsam mit Unternehmen aus der Industrie - nicht nur mit Kapital, sondern mit der Perspektive, die entscheidet, ob Technologien in der Praxis bestehen.">
-                  We invest alongside construction companies - bringing capital together with early real-world insight. Our members don't just observe opportunities. They invest early and contribute operational perspective where it matters.
-                </p>
-              </div>
+          <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Who we are</div>
+          <!-- Tiles: 3 equal columns -->
+          <div class="who-tiles" style="margin-top:40px;">
+            <div class="who-tile">
+              <div class="who-tile-title" data-en="A focused investment setup." data-de="Ein fokussiertes Investment-Setup">Ein fokussiertes Investment-Setup</div>
+              <p class="who-tile-body" data-en="We invest deal-by-deal in industrial technologies around materials and infrastructure." data-de="Wir investieren deal-by-deal in industrielle Technologien rund um Materialien und Infrastruktur.">Wir investieren deal-by-deal in industrielle Technologien rund um Materialien und Infrastruktur.</p>
             </div>
-            <img class="who-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=80" alt="Felix, Founder INPUT Partners" />
+            <div class="who-tile">
+              <div class="who-tile-title" data-en="Driven by industry." data-de="Getragen von der Industrie">Getragen von der Industrie</div>
+              <p class="who-tile-body" data-en="At the core are companies that will deploy these technologies — contributing capital and perspective early." data-de="Im Zentrum stehen Unternehmen, die diese Technologien später einsetzen - und sich früh mit Kapital und Perspektive einbringen.">Im Zentrum stehen Unternehmen, die diese Technologien später einsetzen - und sich früh mit Kapital und Perspektive einbringen.</p>
+            </div>
+            <div class="who-tile">
+              <div class="who-tile-title" data-en="Complemented by long-term capital." data-de="Ergänzt durch langfristiges Kapital">Ergänzt durch langfristiges Kapital</div>
+              <p class="who-tile-body" data-en="Long-term oriented investors complement the setup and enable focused, sustainable investments." data-de="Langfristig orientierte Investoren ergänzen das Setup und ermöglichen fokussierte, nachhaltige Investments.">Langfristig orientierte Investoren ergänzen das Setup und ermöglichen fokussierte, nachhaltige Investments.</p>
+            </div>
           </div>
           <div style="margin-top:40px;">
             <a href="Industriepartner.html" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
@@ -392,35 +404,42 @@
 
         <!-- HOW IT WORKS -->
         <section id="how-it-works">
-          <div class="section-eyebrow" data-en="How it works" data-de="Wie es funktioniert">How it works</div>
-          <h2 class="hiw-headline" data-en="We don't invest in many things. We invest where success can be built." data-de="Wir investieren nicht breit. Wir investieren dort, wo sich entscheidet, was langfristig relevant wird.">We don't invest in many things. We invest where success can be built.</h2>
+          <div class="section-eyebrow" data-en="How we invest" data-de="Wie wir investieren">Wie wir investieren</div>
+          <h2 class="hiw-headline" data-en="Few themes. Clear conviction. No broad funnel." data-de="Wenige Themen. Klare Überzeugung. Kein breiter Funnel.">Wenige Themen. Klare Überzeugung. Kein breiter Funnel.</h2>
           <div class="hiw-steps">
             <div class="hiw-step">
               <div class="hiw-step-number">1</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Focused problem areas" data-de="Fokussierte strategische Herausforderungen">Focused problem areas</h3>
-                <p class="hiw-step-text" data-en="We identify core strategic challenges based on real industry needs. Together with our industry partners." data-de="Wir konzentrieren uns auf Themen, die die Zukunft der Branche prägen. Nicht auf inkrementelle Verbesserungen bestehender Prozesse.">We identify core strategic challenges based on real industry needs. Together with our industry partners.</p>
+                <h3 class="hiw-step-title" data-en="Focus on structural challenges." data-de="Fokus auf strukturelle Herausforderungen">Fokus auf strukturelle Herausforderungen</h3>
+                <p class="hiw-step-text" data-en="We don't invest in individual solutions — but in themes that structurally transform the industry." data-de="Wir investieren nicht in Einzellösungen - sondern in Themen, die die Industrie strukturell verändern.">Wir investieren nicht in Einzellösungen - sondern in Themen, die die Industrie strukturell verändern.</p>
               </div>
             </div>
             <div class="hiw-step">
               <div class="hiw-step-number">2</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Solutions matched to real demand" data-de="Lösungen mit realer Nachfrage">Solutions matched to real demand</h3>
-                <p class="hiw-step-text" data-en="We curate a dealflow of startups that directly address those core strategic challenges." data-de="Wir kuratieren einen Dealflow von Startups, die diese zentralen strategischen Herausforderungen direkt adressieren.">We curate a dealflow of startups that directly address those core strategic challenges.</p>
+                <h3 class="hiw-step-title" data-en="Thinking in value chains." data-de="Denken in Wertschöpfungsketten">Denken in Wertschöpfungsketten</h3>
+                <p class="hiw-step-text" data-en="The industry is fragmented and implementation lies with many. We bring them to the table." data-de="Die Industrie ist fragmentiert und die Umsetzung liegt bei vielen. Wir holen sie mit an den Tisch.">Die Industrie ist fragmentiert und die Umsetzung liegt bei vielen. Wir holen sie mit an den Tisch.</p>
               </div>
             </div>
             <div class="hiw-step">
               <div class="hiw-step-number">3</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Teams built for the industry" data-de="Teams, die für die Industrie gebaut sind">Teams built for the industry</h3>
-                <p class="hiw-step-text" data-en="We back teams that can operate in real industrial environments. Not just technically strong, but experienced enough to navigate long cycles, constraints, and complexity." data-de="Wir unterstützen Teams, die in echten industriellen Umgebungen arbeiten können. Nicht nur technisch stark, sondern erfahren genug, um lange Zyklen, Einschränkungen und Komplexität zu bewältigen.">We back teams that can operate in real industrial environments. Not just technically strong, but experienced enough to navigate long cycles, constraints, and complexity.</p>
+                <h3 class="hiw-step-title" data-en="Relevance over theory." data-de="Relevanz vor Theorie">Relevanz vor Theorie</h3>
+                <p class="hiw-step-text" data-en="We curate a dealflow of startups that directly address these core structural challenges." data-de="Wir kuratieren einen Dealflow von Startups, die diese zentralen strukturellen Herausforderungen direkt adressieren.">Wir kuratieren einen Dealflow von Startups, die diese zentralen strukturellen Herausforderungen direkt adressieren.</p>
               </div>
             </div>
             <div class="hiw-step">
               <div class="hiw-step-number">4</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Focused commitment" data-de="Fokussiertes Commitment">Focused commitment</h3>
-                <p class="hiw-step-text" data-en='We don&apos;t believe in "testing everything." We believe in identifying the few solutions that truly matter and then backing them with everything we&apos;ve got.' data-de="Wir glauben nicht daran, alles zu testen. Wir identifizieren die wenigen Lösungen, die wirklich relevant sind — und stehen dann konsequent dahinter. Weniger Entscheidungen. Mehr Überzeugung.">We don't believe in "testing everything." We believe in identifying the few solutions that truly matter and then backing them with everything we've got.</p>
+                <h3 class="hiw-step-title" data-en="Teams built for industry." data-de="Teams, die für die Industrie gebaut sind">Teams built for the industry</h3>
+                <p class="hiw-step-text" data-en="We invest in teams that understand industrial complexity — not just technology." data-de="Wir investieren in Teams, die industrielle Komplexität verstehen — nicht nur Technologie.">Wir investieren in Teams, die industrielle Komplexität verstehen — nicht nur Technologie.</p>
+              </div>
+            </div>
+            <div class="hiw-step">
+              <div class="hiw-step-number">5</div>
+              <div class="hiw-step-body">
+                <h3 class="hiw-step-title" data-en="Few investments, clear commitment." data-de="Wenige Investments, klares Commitment">Wenige Investments, klares Commitment</h3>
+                <p class="hiw-step-text" data-en="We don't build a broad pipeline. We focus on few themes — and stand behind them together." data-de="Wir machen keine breite Pipeline. Wir konzentrieren uns auf wenige Themen - und stehen gemeinsam dahinter.">Wir machen keine breite Pipeline. Wir konzentrieren uns auf wenige Themen - und stehen gemeinsam dahinter.</p>
               </div>
             </div>
           </div>
