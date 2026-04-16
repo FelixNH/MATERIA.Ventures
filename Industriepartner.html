@@ -524,7 +524,6 @@
                 <path d="M2 7h10M7 2l5 5-5 5"/>
               </svg>
             </button>
-            <p class="form-note" data-en="We will get back to you within 48 hours." data-de="Wir melden uns innerhalb von 48 Stunden.">Wir melden uns innerhalb von 48 Stunden.</p>
           </div>
         </div>
         <div class="form-success" id="form-success">
@@ -575,9 +574,7 @@
         return;
       }
 
-      document.getElementById('form-body').style.display = 'none';
-      document.getElementById('form-success').classList.add('visible');
-      document.getElementById('form-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.open('https://zeeg.me/felixnh', '_blank');
     }
 
     function setLang(lang) {
