@@ -97,6 +97,9 @@
     .checkbox-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
     .checkbox-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--fg); cursor: pointer; flex-shrink: 0; }
     .checkbox-item span { font-size: 0.95rem; color: var(--fg); line-height: 1.5; }
+    .radio-group { display: flex; flex-direction: column; gap: 10px; }
+    .radio-item { display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 0.95rem; color: var(--fg); }
+    .radio-item input[type="radio"] { width: 18px; height: 18px; accent-color: var(--fg); cursor: pointer; flex-shrink: 0; }
     .section-divider { border: none; border-top: 1px solid var(--border-subtle); margin: 8px 0; }
     .btn-submit {
       padding: 14px 32px; background: var(--fg); color: var(--bg);
@@ -155,13 +158,12 @@
       <div class="shell">
         <div class="content-section">
 
-          <div class="eyebrow" data-en="For Founders" data-de="Für Gründer">For Founders</div>
-          <h1 class="headline" data-en="Submit your pitch." data-de="Reichen Sie Ihren Pitch ein.">
-            Submit your pitch.
+          <div class="eyebrow" data-en="For Founders" data-de="Für Gründer">Für Gründer</div>
+          <h1 class="headline" data-en="Does this fit us?" data-de="Passt das für uns?">
+            Passt das für uns?
           </h1>
-          <p class="subline" data-en="We back teams building for the construction and materials industry. We don't just provide capital — we connect you with industry partners who will test, validate, and commit to your solution early." data-de="Wir arbeiten nur mit einer kleinen Anzahl von Teams -
-in einer Phase, in der Technologie funktioniert und Integration entscheidet. Bevor wir sprechen, möchten wir verstehen, ob es inhaltlich passt.">
-            We back teams building for the construction and materials industry. We don't just provide capital — we connect you with industry partners who will test, validate, and commit to your solution early.
+          <p class="subline" data-en="We only work with a small number of teams — at a stage where technology works and integration decides. Before we talk, we want to understand if there's a content fit." data-de="Wir arbeiten nur mit einer kleinen Anzahl von Teams - in einer Phase, in der Technologie funktioniert und Integration entscheidet. Bevor wir sprechen, möchten wir verstehen, ob es inhaltlich passt.">
+            Wir arbeiten nur mit einer kleinen Anzahl von Teams - in einer Phase, in der Technologie funktioniert und Integration entscheidet. Bevor wir sprechen, möchten wir verstehen, ob es inhaltlich passt.
           </p>
 
           <div class="notice">
@@ -170,107 +172,91 @@ in einer Phase, in der Technologie funktioniert und Integration entscheidet. Bev
             </p>
           </div>
 
-          <form class="form" id="founder-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-            <input type="hidden" name="_subject" value="New Founder Pitch — INPUT Partners">
+          <form class="form" id="founder-form" action="https://formsubmit.co/felix@hagemeier.com" method="POST">
+            <input type="hidden" name="_subject" value="Neue Relevanzprüfung — INPUT Partners">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://input.partners/founder.html?success=true">
             <input type="text" name="_honey" style="display:none">
+
+            <!-- Frage 1: Technologie-Reife -->
+            <div class="field">
+              <label data-en="1. Technology Maturity — Is your technology technically validated?" data-de="1. Technologie-Reife — Ist Eure Technologie technisch validiert?">1. Technologie-Reife — Ist Eure Technologie technisch validiert?</label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="tech_maturity" value="real_world" required><span data-en="Yes, in real environments" data-de="Ja, in realen Umgebungen">Ja, in realen Umgebungen</span></label>
+                <label class="radio-item"><input type="radio" name="tech_maturity" value="lab_pilot"><span data-en="Yes, in lab / pilot" data-de="Ja, im Labor / Pilot">Ja, im Labor / Pilot</span></label>
+                <label class="radio-item"><input type="radio" name="tech_maturity" value="no"><span data-en="No" data-de="Nein">Nein</span></label>
+              </div>
+            </div>
+
+            <!-- Frage 2: Phase -->
+            <div class="field">
+              <label data-en="2. Stage — Where are you currently?" data-de="2. Phase — Wo steht Ihr aktuell?">2. Phase — Wo steht Ihr aktuell?</label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="stage" value="commercial" required><span data-en="First commercial applications" data-de="Erste kommerzielle Anwendungen">Erste kommerzielle Anwendungen</span></label>
+                <label class="radio-item"><input type="radio" name="stage" value="pilot"><span data-en="Pilot projects with industry" data-de="Pilotprojekte mit Industrie">Pilotprojekte mit Industrie</span></label>
+                <label class="radio-item"><input type="radio" name="stage" value="development"><span data-en="Still in development" data-de="Noch in Entwicklung">Noch in Entwicklung</span></label>
+              </div>
+            </div>
+
+            <!-- Frage 3: Integration -->
+            <div class="field">
+              <label for="integration" data-en="3. Integration — Where do you see the biggest challenge for integrating your solution?" data-de="3. Integration — Wo seht Ihr die größte Herausforderung für die Integration Eurer Lösung?">3. Integration — Wo seht Ihr die größte Herausforderung für die Integration Eurer Lösung?</label>
+              <textarea id="integration" name="integration" required style="min-height:90px;resize:vertical;" data-placeholder-en="Describe the main integration challenge..." data-placeholder-de="Beschreibt die größte Herausforderung bei der Integration..." placeholder="Beschreibt die größte Herausforderung bei der Integration..."></textarea>
+            </div>
+
+            <!-- Frage 4: Markt / Anwendung -->
+            <div class="field">
+              <label for="market" data-en="4. Market / Application — In which area of materials / infrastructure are you working?" data-de="4. Markt / Anwendung — In welchem Bereich von Materialien / Infrastruktur arbeitet Ihr?">4. Markt / Anwendung — In welchem Bereich von Materialien / Infrastruktur arbeitet Ihr?</label>
+              <textarea id="market" name="market" required style="min-height:90px;resize:vertical;" data-placeholder-en="e.g. sustainable concrete, insulation materials, digital construction..." data-placeholder-de="z.B. nachhaltiger Beton, Dämmstoffe, digitales Bauen..." placeholder="z.B. nachhaltiger Beton, Dämmstoffe, digitales Bauen..."></textarea>
+            </div>
+
+            <!-- Frage 5: Intent -->
+            <div class="field">
+              <label for="intent" data-en="5. Intent — Why do you want to talk to us?" data-de="5. Intent — Warum möchtet Ihr mit uns sprechen?">5. Intent — Warum möchtet Ihr mit uns sprechen?</label>
+              <textarea id="intent" name="intent" required style="min-height:110px;resize:vertical;" data-placeholder-en="What are you looking for — and why INPUT Partners specifically?" data-placeholder-de="Was sucht Ihr — und warum INPUT Partners?" placeholder="Was sucht Ihr — und warum INPUT Partners?"></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Über Sie -->
+            <div class="field-group-label" data-en="About you" data-de="Über Euch" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;color:var(--accent);margin-bottom:4px;">Über Euch</div>
 
             <div class="form-row">
               <div class="field">
-                <label for="firstname" data-en="First Name *" data-de="Vorname *">First Name *</label>
-                <input type="text" id="firstname" name="firstname" required placeholder="Felix" />
+                <label for="name" data-en="Name *" data-de="Name *">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Felix Müller" />
               </div>
               <div class="field">
-                <label for="lastname" data-en="Last Name *" data-de="Nachname *">Last Name *</label>
-                <input type="text" id="lastname" name="lastname" required placeholder="Müller" />
+                <label for="position" data-en="Position *" data-de="Position *">Position *</label>
+                <input type="text" id="position" name="position" required placeholder="CEO & Co-Founder" />
               </div>
             </div>
 
-            <div class="field">
-              <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="felix@startup.com" />
-            </div>
-
-            <div class="field">
-              <label for="phone" data-en="Phone (optional)" data-de="Telefon (optional)">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+49 123 456 789" />
-            </div>
-
-            <hr class="section-divider">
-
-            <div class="field">
-              <label for="company" data-en="Company Name *" data-de="Unternehmensname *">Company Name *</label>
-              <input type="text" id="company" name="company" required placeholder="e.g. BuildTech GmbH" />
-            </div>
-
-            <div class="field">
-              <label for="website" data-en="Company Website *" data-de="Unternehmenswebsite *">Company Website *</label>
-              <input type="url" id="website" name="website" required placeholder="https://yourstartup.com" />
-            </div>
-
-            <div class="field">
-              <label for="linkedin" data-en="Your LinkedIn Profile (optional)" data-de="Ihr LinkedIn-Profil (optional)">Your LinkedIn Profile (optional)</label>
-              <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname" />
-            </div>
-
-            <div class="field">
-              <label for="position" data-en="Your Position *" data-de="Ihre Position *">Your Position *</label>
-              <input type="text" id="position" name="position" required placeholder="e.g. CEO & Co-Founder" />
-            </div>
-
-            <div class="field">
-              <label for="location" data-en="Where is your company based? *" data-de="Wo ist Ihr Unternehmen ansässig? *">Where is your company based? *</label>
-              <input type="text" id="location" name="location" required placeholder="e.g. Berlin, Germany" />
-            </div>
-
-            <hr class="section-divider">
-
-            <div class="field">
-              <label for="pitch_deck" data-en="Link to Pitch Deck *" data-de="Link zum Pitch Deck *">Link to Pitch Deck *</label>
-              <input type="url" id="pitch_deck" name="pitch_deck" required placeholder="https://drive.google.com/..." />
-            </div>
-
-            <div class="field">
-              <label for="stage" data-en="Current Funding Stage *" data-de="Aktuelle Finanzierungsphase *">Current Funding Stage *</label>
-              <select id="stage" name="stage" required>
-                <option value="" disabled selected data-en="Please select..." data-de="Bitte auswählen...">Please select...</option>
-                <option value="pre-seed" data-en="Pre-Seed" data-de="Pre-Seed">Pre-Seed</option>
-                <option value="seed" data-en="Seed" data-de="Seed">Seed</option>
-                <option value="series-a" data-en="Series A" data-de="Series A">Series A</option>
-                <option value="other" data-en="Other" data-de="Andere">Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="raising" data-en="How much are you raising? (optional)" data-de="Wie viel möchten Sie einsammeln? (optional)">How much are you raising? (optional)</label>
-              <input type="text" id="raising" name="raising" placeholder="e.g. EUR 500k" />
-            </div>
-
-            <hr class="section-divider">
-
-            <div class="field">
-              <label for="vision" data-en="What is the vision of your company? *" data-de="Was ist die Vision Ihres Unternehmens? *">What is the vision of your company? *</label>
-              <textarea id="vision" name="vision" required maxlength="500" style="min-height:100px;resize:vertical;" placeholder="Describe your mission and what you're building..." data-placeholder-en="Describe your mission and what you're building..." data-placeholder-de="Beschreiben Sie Ihre Mission und was Sie aufbauen..."></textarea>
-            </div>
-
-            <div class="field">
-              <label data-en="How can we help you scale? (select all that apply)" data-de="Wie können wir Ihnen beim Skalieren helfen? (alle zutreffenden auswählen)">How can we help you scale? (select all that apply)</label>
-              <div class="checkbox-group">
-                <label class="checkbox-item"><input type="checkbox" name="help[]" value="industry_access"><span data-en="Access to industry partners / potential customers" data-de="Zugang zu Industriepartnern / potenziellen Kunden">Access to industry partners / potential customers</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="help[]" value="validation"><span data-en="Early validation and pilot projects" data-de="Frühe Validierung und Pilotprojekte">Early validation and pilot projects</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="help[]" value="capital"><span data-en="Capital and co-investors" data-de="Kapital und Co-Investoren">Capital and co-investors</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="help[]" value="network"><span data-en="Strategic network and market entry" data-de="Strategisches Netzwerk und Markteintritt">Strategic network and market entry</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="help[]" value="other"><span data-en="Other" data-de="Andere">Other</span></label>
+            <div class="form-row">
+              <div class="field">
+                <label for="company" data-en="Company *" data-de="Firma *">Firma *</label>
+                <input type="text" id="company" name="company" required placeholder="BuildTech GmbH" />
+              </div>
+              <div class="field">
+                <label for="email" data-en="Email *" data-de="E-Mail *">E-Mail *</label>
+                <input type="email" id="email" name="email" required placeholder="felix@startup.com" />
               </div>
             </div>
 
-            <button type="submit" class="btn-submit" data-en="Submit Pitch" data-de="Pitch einreichen">Submit Pitch</button>
+            <hr class="section-divider">
+
+            <!-- Optional: Unterlagen -->
+            <div class="field">
+              <label for="materials" data-en="Anything we should look at in advance? (optional)" data-de="Gibt es etwas, das wir uns vorab ansehen sollten? (optional)">Gibt es etwas, das wir uns vorab ansehen sollten? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+              <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;" data-en="Link to pitch deck, website or brief materials" data-de="Link zum Pitch Deck, Website oder kurze Unterlagen">Link zum Pitch Deck, Website oder kurze Unterlagen</p>
+              <input type="text" id="materials" name="materials" placeholder="https://..." />
+            </div>
+
+            <button type="submit" class="btn-submit" data-en="Submit request" data-de="Anfrage absenden">Anfrage absenden</button>
           </form>
 
           <div class="success-message" id="success-msg">
-            <p data-en="<strong>Thank you for submitting your pitch.</strong> We review every submission carefully and will be in touch if we see a potential fit." data-de="<strong>Vielen Dank für die Einreichung Ihres Pitches.</strong> Wir prüfen jede Einreichung sorgfältig und melden uns, wenn wir einen potenziellen Fit sehen.">
-              <strong>Thank you for submitting your pitch.</strong> We review every submission carefully and will be in touch if we see a potential fit.
+            <p data-en="Thank you for your request. We'll be in touch if we see a content match." data-de="Danke für Eure Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.">
+              Danke für Eure Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.
             </p>
           </div>
 
