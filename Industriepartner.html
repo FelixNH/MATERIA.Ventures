@@ -267,6 +267,7 @@
     }
     .radio-option:hover { border-color: var(--accent); background: var(--accent-soft); }
     .radio-option input[type="radio"] { display: none; }
+    .radio-option input[type="checkbox"] { display: none; }
     .radio-option.selected { border-color: var(--accent); background: var(--accent-soft); }
     .radio-dot {
       width: 16px; height: 16px; border-radius: 50%;
@@ -385,14 +386,16 @@
         <div class="hero-left">
           <div class="hero-eyebrow" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</div>
           <h1 class="hero-headline" data-en="Understand early<br>what <em>truly</em><br>becomes relevant." data-de="Früh beteiligt sein -<br>nicht später<br>adaptieren.">Früh beteiligt sein -<br>nicht später<br>adaptieren.</h1>
-          <p class="hero-sub" data-en="Invest where it emerges — not where it's already established." data-de="Gezielt dort investieren, wo neue Materialien und Infrastrukturlösungen entstehen - nicht erst, wenn sie sich im Markt durchgesetzt haben.">Gezielt dort investieren, wo neue Materialien und Infrastrukturlösungen entstehen - nicht erst, wenn sie sich im Markt durchgesetzt haben.</p>
+          <p class="hero-sub" data-en="Invest where it emerges — not where it's already established." data-de="Gezielt dort investieren, wo neue Technologien die zukünftigen Wertschöpfungsketten verändern werden - nicht erst, wenn sie es tatsächlich tun.">Gezielt dort investieren, wo neue Technologien die zukünftigen Wertschöpfungsketten verändern werden - nicht erst, wenn sie es tatsächlich tun.</p>
         </div>
         <div class="hero-right">
           <div class="hero-context">
             <div class="context-label" data-en="Context" data-de="Einordnung">Einordnung</div>
-            <p class="context-text" data-en="Strategic investors from industry invest alongside long-term capital — early in the process, because that is where the foundations for later success are laid." data-de="In einer fragmentierten Industrie entscheidet niemand allein, was sich durchsetzt.">In einer fragmentierten Industrie entscheidet niemand allein, was sich durchsetzt.</p>
-            <p class="context-text" data-en="That is why we bring together relevant companies along the value chain of materials and infrastructure early — as investors. Together with long-term oriented capital, we invest in the technologies that truly matter. This creates not just innovation — but the foundation for it to prevail in practice." data-de="Wir bringen relevante Unternehmen entlang der Wertschöpfung von Materialien und Infrastruktur früh zusammen - als Investoren. Gemeinsam mit langfristig orientiertem Kapital investieren wir in die Technologien, die wirklich zählen. So entsteht nicht nur Innovation - sondern die Grundlage dafür, dass sie sich in der Praxis durchsetzt.">Wir bringen relevante Unternehmen entlang der Wertschöpfung von Materialien und Infrastruktur früh zusammen - als Investoren. Gemeinsam mit langfristig orientiertem Kapital investieren wir in die Technologien, die wirklich zählen. So entsteht nicht nur Innovation - sondern die Grundlage dafür, dass sie sich in der Praxis durchsetzt.</p>
-            <p class="context-text" data-en="<strong>Entry is not through a program — but through a conversation at eye level.</strong>" data-de="<strong>Der Einstieg erfolgt nicht über ein Programm — sondern über ein Gespräch auf Augenhöhe.</strong>"><strong>Der Einstieg erfolgt nicht über ein Programm — sondern über ein Gespräch auf Augenhöhe.</strong></p>
+            <p class="context-text" data-en="The conditions for many companies in the extractive industry are challenging. Capital-intensive production facilities, processes established over decades, and a clear focus on stability - not on uncertain future bets." data-de="Die Rahmenbedingungen vieler Unternehmen in der Gewinnungsindustrie sind herausfordernd. Kapitalintensive Produktionsanlagen, über Jahrzehnte etablierte Prozesse und ein klarer Fokus auf Stabilität und nicht auf unsichere Zukunftswetten.">Die Rahmenbedingungen vieler Unternehmen in der Gewinnungsindustrie sind herausfordernd. Kapitalintensive Produktionsanlagen, über Jahrzehnte etablierte Prozesse und ein klarer Fokus auf Stabilität und nicht auf unsichere Zukunftswetten.</p>
+            <p class="context-text" data-en="At the same time, pressure to change is increasing and many companies are caught in a dilemma: keep the core business stable while shaping the future at the same time." data-de="Gleichzeitig steigt der Veränderungsdruck und viele Unternehmen stecken in einem Dilemma. Kerngeschäft stabil halten und gleichzeitig Zukunft gestalten.">Gleichzeitig steigt der Veränderungsdruck und viele Unternehmen stecken in einem Dilemma. Kerngeschäft stabil halten und gleichzeitig Zukunft gestalten.</p>
+            <p class="context-text" data-en="This often only works through external innovation. But externally developed technologies are hard to integrate when developed without reference to industrial reality - and integration costs may then exceed the benefit for the individual company." data-de="Das funktioniert häufig nur über externe Innovation. Aber extern entwickelte Technologien sind schwer in bestehende Strukturen integrierbar, wenn sie ohne Bezug zur industriellen Realität entwickelt werden.">Das funktioniert häufig nur über externe Innovation. Aber extern entwickelte Technologien sind schwer in bestehende Strukturen integrierbar, wenn sie ohne Bezug zur industriellen Realität entwickelt werden.</p>
+            <p class="context-text" data-en="That is why industry partners are at the centre of our work - to actively shape and to participate in the success." data-de="Deshalb stehen Industriepartner im Zentrum unserer Arbeit - um aktiv zu gestalten und am Erfolg zu partizipieren.">Deshalb stehen Industriepartner im Zentrum unserer Arbeit - um aktiv zu gestalten und am Erfolg zu partizipieren.</p>
+            <p class="context-text" data-en="<strong>Entry is not through a program - but through a conversation at eye level.</strong>" data-de="<strong>Der Einstieg erfolgt nicht über ein Programm - sondern über ein Gespräch auf Augenhöhe.</strong>"><strong>Der Einstieg erfolgt nicht über ein Programm - sondern über ein Gespräch auf Augenhöhe.</strong></p>
           </div>
         </div>
       </div>
@@ -400,28 +403,30 @@
       <!-- CONTENT GRID -->
       <div class="content">
 
-        <!-- Was es konkret bedeutet -->
+        <!-- Was Industriepartner bekommen -->
         <div class="block block--accent">
-          <div class="block-label" data-en="What it means in practice" data-de="Worum es konkret geht">Worum es konkret geht</div>
-          <h2 class="block-headline" data-en="As an industry partner:" data-de="Als Industriepartner:">Als Industriepartner:</h2>
+          <div class="block-label" data-en="What you get as an industry partner" data-de="Was Sie als Industriepartner bekommen">Was Sie als Industriepartner bekommen</div>
           <ul class="check-list">
-            <li data-en="you invest selectively in early technologies" data-de="investieren Sie selektiv in frühe Technologien">investieren Sie selektiv in frühe Technologien</li>
-            <li data-en="you gain insight where it's decided what prevails" data-de="gewinnen Sie Einblick, wo sich entscheidet, was sich durchsetzt">gewinnen Sie Einblick, wo sich entscheidet, was sich durchsetzt</li>
-            <li data-en="you contribute your perspective where it is truly relevant" data-de="bringen Sie Ihre Perspektive dort ein, wo sie tatsächlich relevant ist">bringen Sie Ihre Perspektive dort ein, wo sie tatsächlich relevant ist</li>
+            <li data-en="Transparency in technological development" data-de="Transparenz in der technologischen Entwicklung">Transparenz in der technologischen Entwicklung</li>
+            <li data-en="Direct influence on integration pathways" data-de="Direkter Einfluss auf Integrationspfade">Direkter Einfluss auf Integrationspfade</li>
+            <li data-en="Access to pilot cooperations and test environments" data-de="Zugang zu Pilotkooperationen und Testumgebungen">Zugang zu Pilotkooperationen und Testumgebungen</li>
+            <li data-en="The ability to influence the outcome" data-de="Möglichkeit, den Erfolg zu beeinflussen">Möglichkeit, den Erfolg zu beeinflussen</li>
+            <li data-en="Entry at still low company valuations" data-de="Einstieg bei noch geringen Unternehmensbewertungen">Einstieg bei noch geringen Unternehmensbewertungen</li>
           </ul>
-          <p class="block-text" data-en="Not as an observer. But with direct relevance to investment and implementation decisions." data-de="Nicht als Beobachter. Sondern mit direktem Bezug zu Investitions- und Umsetzungsentscheidungen.">Nicht als Beobachter. Sondern mit direktem Bezug zu Investitions- und Umsetzungsentscheidungen.</p>
         </div>
 
-        <!-- Für wen -->
+        <!-- Wen wir suchen -->
         <div class="block">
-          <div class="block-label" data-en="Who this is for" data-de="Für wen das sinnvoll ist">Für wen das sinnvoll ist</div>
-          <h2 class="block-headline" data-en="People with direct decision-making responsibility." data-de="Personen mit direkter Entscheidungsverantwortung.">Personen mit direkter Entscheidungsverantwortung.</h2>
+          <div class="block-label" data-en="Who we are looking for" data-de="Wen wir suchen">Wen wir suchen</div>
+          <h2 class="block-headline" data-en="We work with a small number of companies — and select actively." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.">Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.</h2>
+          <p class="block-text" data-en="What we require:" data-de="Was wir voraussetzen:">Was wir voraussetzen:</p>
           <ul class="check-list">
-            <li data-en="Direct responsibility for strategic decisions" data-de="Direkte Verantwortung für strategische Entscheidungen">Direkte Verantwortung für strategische Entscheidungen</li>
-            <li data-en="Influence over capital allocation and operational implementation" data-de="Einfluss auf Kapitalallokation und operative Umsetzung">Einfluss auf Kapitalallokation und operative Umsetzung</li>
-            <li data-en="Ability to actively drive topics, not just evaluate them" data-de="Themen nicht nur bewerten, sondern aktiv vorantreiben">Themen nicht nur bewerten, sondern aktiv vorantreiben</li>
+            <li data-en="Companies that think in generations" data-de="Unternehmen, die in Generationen denken">Unternehmen, die in Generationen denken</li>
+            <li data-en="Decision-makers with direct responsibility for strategic investments" data-de="Entscheidungsträger mit direkter Verantwortung für strategische Investitionen">Entscheidungsträger mit direkter Verantwortung für strategische Investitionen</li>
+            <li data-en="Willingness to invest capital at a very early stage" data-de="Bereitschaft, Kapital in einer sehr frühen Phase zu investieren">Bereitschaft, Kapital in einer sehr frühen Phase zu investieren</li>
+            <li data-en="Genuine interest in change and the will to shape it" data-de="Echtes Interesse an Veränderung und Gestaltungswillen">Echtes Interesse an Veränderung und Gestaltungswillen</li>
+            <li data-en="Internal resources and clear responsibilities for implementation" data-de="Interne Ressourcen und klare Verantwortlichkeiten für Umsetzung">Interne Ressourcen und klare Verantwortlichkeiten für Umsetzung</li>
           </ul>
-          <p class="block-text" data-en="Typically: managing directors, owners, or comparable roles." data-de="Typischerweise: Geschäftsführung, Eigentümer oder vergleichbare Rollen.">Typischerweise: Geschäftsführung, Eigentümer oder vergleichbare Rollen.</p>
         </div>
 
         <!-- Wie es abläuft -->
@@ -453,13 +458,7 @@
           </div>
         </div>
 
-        <!-- Hinweis -->
-        <div class="content-full">
-          <div class="hinweis">
-            <div class="hinweis-label" data-en="Important note" data-de="Wichtiger Hinweis">Wichtiger Hinweis</div>
-            <p class="hinweis-text" data-en="We work with a small number of companies. What matters is not the number of conversations, but the quality of the collaboration." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen. Entscheidend ist nicht die Anzahl der Gespräche, sondern die Qualität der Zusammenarbeit.">Wir arbeiten mit einer kleinen Anzahl von Unternehmen. Entscheidend ist nicht die Anzahl der Gespräche, sondern die Qualität der Zusammenarbeit.</p>
-          </div>
-        </div>
+
 
       </div><!-- end content grid -->
 
@@ -490,27 +489,32 @@
             <input type="email" id="email" name="email" placeholder="ihre@email.de" data-placeholder-en="your@email.com" data-placeholder-de="ihre@email.de" />
           </div>
           <div class="field">
-            <label data-en="What is your role in strategic investment decisions?" data-de="Wie ist Ihre Rolle in strategischen Investitionsentscheidungen?">Wie ist Ihre Rolle in strategischen Investitionsentscheidungen?</label>
+            <label data-en="How can we help?" data-de="Wobei können wir helfen?">Wobei können wir helfen?</label>
             <div class="radio-group" id="role-group">
-              <label class="radio-option" data-value="decide">
-                <input type="radio" name="role" value="decide" />
+              <label class="radio-option" data-value="vision">
+                <input type="checkbox" name="help" value="vision" />
                 <span class="radio-dot"></span>
-                <span data-en="I decide directly" data-de="Ich entscheide direkt">Ich entscheide direkt</span>
+                <span data-en="Develop a vision for the future — where do we actually want to go?" data-de="Zukunftsbild entwickeln — wo wollen wir eigentlich hin?">Zukunftsbild entwickeln — wo wollen wir eigentlich hin?</span>
               </label>
-              <label class="radio-option" data-value="involved">
-                <input type="radio" name="role" value="involved" />
+              <label class="radio-option" data-value="strategy">
+                <input type="checkbox" name="help" value="strategy" />
                 <span class="radio-dot"></span>
-                <span data-en="I am significantly involved" data-de="Ich bin maßgeblich beteiligt">Ich bin maßgeblich beteiligt</span>
+                <span data-en="Develop an innovation strategy — how do we get there?" data-de="Innovations-Strategie entwickeln — wie kommen wir dahin?">Innovations-Strategie entwickeln — wie kommen wir dahin?</span>
               </label>
-              <label class="radio-option" data-value="propose">
-                <input type="radio" name="role" value="propose" />
+              <label class="radio-option" data-value="radar">
+                <input type="checkbox" name="help" value="radar" />
                 <span class="radio-dot"></span>
-                <span data-en="I bring topics to the table" data-de="Ich bringe Themen ein">Ich bringe Themen ein</span>
+                <span data-en="Build a technology radar — what do we need to keep an eye on?" data-de="Technologie-Radar aufbauen — was müssen wir im Blick behalten?">Technologie-Radar aufbauen — was müssen wir im Blick behalten?</span>
               </label>
-              <label class="radio-option" data-value="observe">
-                <input type="radio" name="role" value="observe" />
+              <label class="radio-option" data-value="invest">
+                <input type="checkbox" name="help" value="invest" />
                 <span class="radio-dot"></span>
-                <span data-en="I observe / inform" data-de="Ich beobachte / informiere">Ich beobachte / informiere</span>
+                <span data-en="Invest early in relevant startups — how does that actually work?" data-de="Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?">Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?</span>
+              </label>
+              <label class="radio-option" data-value="network">
+                <input type="checkbox" name="help" value="network" />
+                <span class="radio-dot"></span>
+                <span data-en="Build a network with like-minded companies — can we be stronger together?" data-de="Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?">Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?</span>
               </label>
             </div>
           </div>
@@ -550,12 +554,18 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Radio selection
+    // Checkbox/Radio selection
     document.querySelectorAll('.radio-option').forEach(option => {
       option.addEventListener('click', () => {
-        document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
-        option.classList.add('selected');
-        option.querySelector('input[type="radio"]').checked = true;
+        const input = option.querySelector('input[type="checkbox"], input[type="radio"]');
+        if (input && input.type === 'radio') {
+          document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+          option.classList.add('selected');
+          input.checked = true;
+        } else if (input && input.type === 'checkbox') {
+          option.classList.toggle('selected');
+          input.checked = !input.checked;
+        }
       });
     });
 
