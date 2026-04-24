@@ -62,6 +62,582 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
+      align-items: start;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-left { display: flex; flex-direction: column; gap: 24px; }
+    .hero-eyebrow {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 600;
+    }
+    .hero-headline {
+      
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.1rem; line-height: 1.8; color: var(--muted);
+      max-width: 38ch;
+    }
+    .hero-right {
+      padding-bottom: 8px;
+    }
+    .hero-context {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .context-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--accent); font-weight: 700;
+    }
+    .context-text {
+      font-size: 1rem; line-height: 1.8; color: var(--muted);
+    }
+    .context-text strong { color: var(--fg); font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    .content { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 64px 0; }
+    .content-full { grid-column: 1 / -1; }
+
+    .block {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .block--accent { border-left: 3px solid var(--accent); }
+    .block--dark {
+      background: var(--fg); color: var(--white);
+      border-color: var(--fg);
+    }
+    .block--dark .block-label { color: rgba(178,139,48,1); }
+    .block--dark .block-text { color: rgba(255,255,255,0.65); }
+    .block--dark li { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.12); }
+    .block--dark li::before { color: var(--accent); }
+
+    .block-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 700;
+    }
+    .block-headline {
+      
+      font-size: 1.5rem; line-height: 1.25; font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .block-text {
+      font-size: 0.95rem; line-height: 1.8; color: var(--muted);
+    }
+
+    /* Lists */
+    .check-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+    .check-list li {
+      font-size: 0.95rem; line-height: 1.6; color: var(--fg);
+      padding: 12px 0 12px 20px; border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .check-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .check-list li::before {
+      content: "→";
+      position: absolute; left: 0;
+      color: var(--accent); font-size: 0.85rem;
+    }
+
+    .cross-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+    .cross-list li {
+      font-size: 0.95rem; line-height: 1.6; color: var(--muted);
+      padding: 12px 0 12px 20px; border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .cross-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .cross-list li::before {
+      content: "–";
+      position: absolute; left: 0;
+      color: var(--border-strong);
+    }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid; grid-template-columns: 48px 1fr; gap: 20px;
+      padding: 28px 0; border-bottom: 1px solid var(--border-subtle);
+      align-items: start;
+    }
+    .step:first-child { padding-top: 0; }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-num {
+      
+      font-size: 1.4rem; color: var(--accent); line-height: 1.3; font-weight: 400;
+    }
+    .step-body { display: flex; flex-direction: column; gap: 6px; }
+    .step-title { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+    .step-text { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+
+    /* ── DIVIDER ── */
+    .divider-line {
+      border: none; border-top: 1px solid var(--border-subtle); margin: 0;
+    }
+
+    /* ── HINWEIS ── */
+    .hinweis {
+      background: var(--accent-soft);
+      border: 1px solid rgba(178,139,48,0.25);
+      border-radius: var(--radius);
+      padding: 32px 40px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .hinweis-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 700;
+    }
+    .hinweis-text { font-size: 1rem; line-height: 1.8; color: var(--fg); }
+
+    /* ── TRANSITION ── */
+    .transition-block {
+      text-align: center;
+      padding: 64px 0 48px;
+      display: flex; flex-direction: column; gap: 16px; align-items: center;
+    }
+    .transition-text {
+      
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400; line-height: 1.3;
+      max-width: 36ch; color: var(--fg);
+      font-style: italic;
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .form-header {
+      padding: 40px 48px 32px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .form-header-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--accent); font-weight: 700; margin-bottom: 10px;
+    }
+    .form-header-title {
+      
+      font-size: 1.6rem; font-weight: 400; line-height: 1.2;
+    }
+    .form-body { padding: 40px 48px 48px; display: flex; flex-direction: column; gap: 28px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); font-weight: 600;
+    }
+    .field input, .field textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; color: var(--fg);
+      background: var(--bg); border: 1px solid var(--border-subtle);
+      border-radius: 10px; padding: 14px 18px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none; width: 100%; resize: vertical;
+    }
+    .field input:focus, .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(178,139,48,0.12);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--border-strong); }
+
+    /* Radio group */
+    .radio-group { display: flex; flex-direction: column; gap: 10px; }
+    .radio-option {
+      display: flex; align-items: center; gap: 12px;
+      cursor: pointer; padding: 14px 18px;
+      border: 1px solid var(--border-subtle); border-radius: 10px;
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.95rem; color: var(--fg);
+    }
+    .radio-option:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .radio-option input[type="radio"] { display: none; }
+    .radio-option input[type="checkbox"] { display: none; }
+    .radio-option.selected { border-color: var(--accent); background: var(--accent-soft); }
+    .radio-dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid var(--border-strong);
+      flex-shrink: 0; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .radio-option.selected .radio-dot {
+      border-color: var(--accent); background: var(--accent);
+    }
+    .radio-option.selected .radio-dot::after {
+      content: ''; width: 6px; height: 6px;
+      background: white; border-radius: 50;
+    }
+
+    /* Submit */
+    .form-footer {
+      display: flex; align-items: center; gap: 16px;
+      padding-top: 8px;
+    }
+    .btn-submit {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.14em;
+      padding: 16px 36px; border-radius: 999px;
+      background: var(--fg); color: var(--bg);
+      border: 1px solid var(--fg); cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-submit:hover { background: transparent; color: var(--fg); }
+    .btn-submit svg { width: 14px; height: 14px; }
+    .form-note { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 60px 48px;
+      flex-direction: column; align-items: center; gap: 16px;
+    }
+    .form-success.visible { display: flex; }
+    .success-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--accent-soft); border: 1px solid rgba(178,139,48,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.2rem;
+    }
+    .success-title {
+      
+      font-size: 1.4rem; font-weight: 400;
+    }
+    .success-text { font-size: 0.95rem; color: var(--muted); max-width: 32ch; line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 24px 0; font-size: 0.8rem; color: var(--muted);
+    }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 48px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--fg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .shell { padding: 0 20px 80px; }
+      .nav { padding: 16px 20px; }
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 0 48px; }
+      .content { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-header, .form-body { padding: 28px 24px; }
+      .footer-inner { padding: 0 20px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-left > * {
+      animation: fadeUp 0.5s ease both;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.12s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.2s; }
+    .hero-right { animation: fadeUp 0.5s 0.25s ease both; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a href="index.html" class="logo">INPUT.PARTNERS</a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="display:flex;align-items:center;gap:4px;border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden;">
+          <button style="padding:6px 10px;background:transparent;color:var(--muted);border:none;cursor:pointer;font-family:inherit;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s ease;" id="btn-en" onclick="setLang('en')">EN</button>
+          <span style="color:var(--border-subtle);font-size:0.7rem;">|</span>
+          <button style="padding:6px 10px;background:transparent;color:var(--muted);border:none;cursor:pointer;font-family:inherit;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s ease;" id="btn-de" onclick="setLang('de')">DE</button>
+        </div>
+        <a href="index.html" class="nav-back" data-en="Back" data-de="Zurück">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 2L4 7l5 5"/>
+          </svg>
+          Zurück
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="shell">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-left">
+          <div class="hero-eyebrow" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</div>
+          <h1 class="hero-headline" data-en="Understand early<br>what <em>truly</em><br>becomes relevant." data-de="Früh beteiligt sein -<br>nicht später<br>adaptieren.">Früh beteiligt sein -<br>nicht später<br>adaptieren.</h1>
+          <p class="hero-sub" data-en="Invest where it emerges — not where it's already established." data-de="Investieren Sie gemeinsam mit uns dort, wo neue Technologien die zukünftigen Wertschöpfungsketten verändern werden.">Investieren Sie gemeinsam mit uns dort, wo neue Technologien die zukünftigen Wertschöpfungsketten verändern werden.</p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-context">
+            <div class="context-label" data-en="Context" data-de="Einordnung">Einordnung</div>
+            <p class="context-text" data-en="The conditions for many companies in the extractive industry are challenging. Capital-intensive production facilities, processes established over decades, and a clear focus on stability - not on uncertain future bets." data-de="Die Rahmenbedingungen vieler Unternehmen in der Gewinnungsindustrie sind herausfordernd. Kapitalintensive Produktionsanlagen, über Jahrzehnte etablierte Prozesse und ein klarer Fokus auf Stabilität und nicht auf unsichere Zukunftswetten.">Die Rahmenbedingungen vieler Unternehmen in der Gewinnungsindustrie sind herausfordernd. Kapitalintensive Produktionsanlagen, über Jahrzehnte etablierte Prozesse und ein klarer Fokus auf Stabilität und nicht auf unsichere Zukunftswetten.</p>
+            <p class="context-text" data-en="At the same time, pressure to change is increasing and many companies are caught in a dilemma: keep the core business stable while shaping the future at the same time." data-de="Gleichzeitig steigt der Veränderungsdruck und viele Unternehmen stecken in einem Dilemma. Kerngeschäft stabil halten und gleichzeitig Zukunft gestalten.">Gleichzeitig steigt der Veränderungsdruck und viele Unternehmen stecken in einem Dilemma. Kerngeschäft stabil halten und gleichzeitig Zukunft gestalten.</p>
+            <p class="context-text" data-en="This often only works through external innovation. But externally developed technologies are hard to integrate when developed without reference to industrial reality - and integration costs may then exceed the benefit for the individual company." data-de="Das funktioniert häufig nur über externe Innovation. Aber extern entwickelte Technologien sind schwer in bestehende Strukturen integrierbar, wenn sie ohne Bezug zur industriellen Realität entwickelt werden.">Das funktioniert häufig nur über externe Innovation. Aber extern entwickelte Technologien sind schwer in bestehende Strukturen integrierbar, wenn sie ohne Bezug zur industriellen Realität entwickelt werden.</p>
+            <p class="context-text" data-en="That is why industry partners are at the centre of our work - to actively shape and to participate in the success." data-de="Deshalb stehen Industriepartner im Zentrum unserer Arbeit - um aktiv zu gestalten und am Erfolg zu partizipieren.">Deshalb stehen Industriepartner im Zentrum unserer Arbeit - um aktiv zu gestalten und am Erfolg zu partizipieren.</p>
+            <p class="context-text" data-en="<strong>Entry is not through a program - but through a conversation at eye level.</strong>" data-de="<strong>Der Einstieg erfolgt nicht über ein Programm - sondern über ein Gespräch auf Augenhöhe.</strong>"><strong>Der Einstieg erfolgt nicht über ein Programm - sondern über ein Gespräch auf Augenhöhe.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT GRID -->
+      <div class="content">
+
+        <!-- Was Industriepartner bekommen -->
+        <div class="block block--accent">
+          <div class="block-label" data-en="What you get as an industry partner" data-de="Was Sie als Industriepartner bekommen">Was Sie als Industriepartner bekommen</div>
+          <ul class="check-list">
+            <li data-en="Transparency in technological development" data-de="Transparenz in der technologischen Entwicklung">Transparenz in der technologischen Entwicklung</li>
+            <li data-en="Direct influence on integration pathways" data-de="Direkter Einfluss auf Integrationspfade">Direkter Einfluss auf Integrationspfade</li>
+            <li data-en="Access to pilot cooperations and test environments" data-de="Zugang zu Pilotkooperationen und Testumgebungen">Zugang zu Pilotkooperationen und Testumgebungen</li>
+            <li data-en="The ability to influence the outcome" data-de="Möglichkeit, den Erfolg zu beeinflussen">Möglichkeit, den Erfolg zu beeinflussen</li>
+            <li data-en="Entry at still low company valuations" data-de="Einstieg bei noch geringen Unternehmensbewertungen">Einstieg bei noch geringen Unternehmensbewertungen</li>
+          </ul>
+        </div>
+
+        <!-- Wen wir suchen -->
+        <div class="block">
+          <div class="block-label" data-en="Who we are looking for" data-de="Wen wir suchen">Wen wir suchen</div>
+          <h2 class="block-headline" data-en="We work with a small number of companies — and select actively." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.">Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.</h2>
+          <p class="block-text" data-en="What we require:" data-de="Was wir voraussetzen:">Was wir voraussetzen:</p>
+          <ul class="check-list">
+            <li data-en="Companies that think in generations" data-de="Unternehmen, die in Generationen denken">Unternehmen, die in Generationen denken</li>
+            <li data-en="Decision-makers with direct responsibility for strategic investments" data-de="Entscheidungsträger mit direkter Verantwortung für strategische Investitionen">Entscheidungsträger mit direkter Verantwortung für strategische Investitionen</li>
+            <li data-en="Willingness to invest capital at a very early stage" data-de="Bereitschaft, Kapital in einer sehr frühen Phase zu investieren">Bereitschaft, Kapital in einer sehr frühen Phase zu investieren</li>
+            <li data-en="Genuine interest in change and the will to shape it" data-de="Echtes Interesse an Veränderung und Gestaltungswillen">Echtes Interesse an Veränderung und Gestaltungswillen</li>
+            <li data-en="Internal resources and clear responsibilities for implementation" data-de="Interne Ressourcen und klare Verantwortlichkeiten für Umsetzung">Interne Ressourcen und klare Verantwortlichkeiten für Umsetzung</li>
+          </ul>
+        </div>
+
+        <!-- Wie es abläuft -->
+        <div class="block">
+          <div class="block-label" data-en="How it works" data-de="Wie der Einstieg abläuft">Wie der Einstieg abläuft</div>
+          <h2 class="block-headline" data-en="Deliberately simple and focused." data-de="Bewusst einfach und fokussiert.">Bewusst einfach und fokussiert.</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <div class="step-title" data-en="First conversation (30–45 min.)" data-de="Erstes Gespräch (30–45 Min.)">Erstes Gespräch (30–45 Min.)</div>
+                <div class="step-text" data-en="Exchange about your business, current topics, and our approach." data-de="Austausch zu Ihrem Geschäft, aktuellen Themen und unserem Ansatz.">Austausch zu Ihrem Geschäft, aktuellen Themen und unserem Ansatz.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <div class="step-title" data-en="Shared assessment" data-de="Gemeinsame Einschätzung">Gemeinsame Einschätzung</div>
+                <div class="step-text" data-en="Whether and where a collaboration makes sense." data-de="Ob und wo eine Zusammenarbeit sinnvoll ist.">Ob und wo eine Zusammenarbeit sinnvoll ist.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <div class="step-title" data-en="Next steps" data-de="Nächste Schritte">Nächste Schritte</div>
+                <div class="step-text" data-en="Access to concrete topics and investment opportunities — if there is a good fit." data-de="Zugang zu konkreten Themen und Beteiligungsmöglichkeiten — wenn es inhaltlich passt.">Zugang zu konkreten Themen und Beteiligungsmöglichkeiten — wenn es inhaltlich passt.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div><!-- end content grid -->
+
+      <!-- TRANSITION -->
+      <div class="transition-block">
+        <p class="transition-text" data-en="If you recognise yourself in this description, let's talk." data-de="Wenn Sie sich in dieser Beschreibung wiederfinden, lassen Sie uns sprechen.">Wenn Sie sich in dieser Beschreibung wiederfinden, lassen Sie uns sprechen.</p>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-section" id="form-section">
+        <div class="form-header">
+          <div class="form-header-label" data-en="Preparation for the conversation" data-de="Vorbereitung für das Gespräch">Vorbereitung für das Gespräch</div>
+          <h2 class="form-header-title" data-en="Request a conversation" data-de="Gespräch anfragen">Gespräch anfragen</h2>
+        </div>
+        <div class="form-body" id="form-body">
+          <div class="form-row">
+            <div class="field">
+              <label for="company" data-en="Company" data-de="Unternehmen">Unternehmen</label>
+              <input type="text" id="company" name="company" placeholder="Name Ihres Unternehmens" data-placeholder-en="Your company name" data-placeholder-de="Name Ihres Unternehmens" />
+            </div>
+            <div class="field">
+              <label for="name" data-en="Name & Role" data-de="Name & Rolle">Name & Rolle</label>
+              <input type="text" id="name" name="name" placeholder="z.B. Max Muster, Geschäftsführer" data-placeholder-en="e.g. Max Muster, CEO" data-placeholder-de="z.B. Max Muster, Geschäftsführer" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" data-en="Email" data-de="E-Mail">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="ihre@email.de" data-placeholder-en="your@email.com" data-placeholder-de="ihre@email.de" />
+          </div>
+          <div class="field">
+            <label data-en="How can we help?" data-de="Wobei können wir helfen?">Wobei können wir helfen?</label>
+            <div class="radio-group" id="role-group">
+              <label class="radio-option" data-value="vision">
+                <input type="checkbox" name="help" value="vision" />
+                <span class="radio-dot"></span>
+                <span data-en="Develop a vision for the future — where do we actually want to go?" data-de="Zukunftsbild entwickeln — wo wollen wir eigentlich hin?">Zukunftsbild entwickeln — wo wollen wir eigentlich hin?</span>
+              </label>
+              <label class="radio-option" data-value="strategy">
+                <input type="checkbox" name="help" value="strategy" />
+                <span class="radio-dot"></span>
+                <span data-en="Develop an innovation strategy — how do we get there?" data-de="Innovations-Strategie entwickeln — wie kommen wir dahin?">Innovations-Strategie entwickeln — wie kommen wir dahin?</span>
+              </label>
+              <label class="radio-option" data-value="radar">
+                <input type="checkbox" name="help" value="radar" />
+                <span class="radio-dot"></span>
+                <span data-en="Build a technology radar — what do we need to keep an eye on?" data-de="Technologie-Radar aufbauen — was müssen wir im Blick behalten?">Technologie-Radar aufbauen — was müssen wir im Blick behalten?</span>
+              </label>
+              <label class="radio-option" data-value="invest">
+                <input type="checkbox" name="help" value="invest" />
+                <span class="radio-dot"></span>
+                <span data-en="Invest early in relevant startups — how does that actually work?" data-de="Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?">Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?</span>
+              </label>
+              <label class="radio-option" data-value="network">
+                <input type="checkbox" name="help" value="network" />
+                <span class="radio-dot"></span>
+                <span data-en="Build a network with like-minded companies — can we be stronger together?" data-de="Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?">Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="topics" data-en="What are the most important strategic topics for your company right now? (optional)" data-de="Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? (optional)">Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? <span style="color:var(--border-strong);font-weight:400">(optional)</span></label>
+            <textarea id="topics" name="topics" rows="4" placeholder="Kurze Beschreibung..." data-placeholder-en="Brief description..." data-placeholder-de="Kurze Beschreibung..."></textarea>
+          </div>
+          <div class="form-footer">
+            <button class="btn-submit" onclick="handleSubmit()">
+              <span data-en="Request a conversation" data-de="Gespräch anfragen">Gespräch anfragen</span>
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2 7h10M7 2l5 5-5 5"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="success-icon">✓</div>
+          <div class="success-title" data-en="Request received." data-de="Anfrage eingegangen.">Anfrage eingegangen.</div>
+          <p class="success-text" data-en="We will be in touch within 48 hours for a first conversation." data-de="Wir melden uns innerhalb von 48 Stunden für ein erstes Gespräch.">Wir melden uns innerhalb von 48 Stunden für ein erstes Gespräch.</p>
+        </div>
+      </div>
+
+    </div><!-- end shell -->
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; <span id="year"></span> INPUT Partners</span>
+      <div class="footer-links">
+        <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Datenschutz</a>
+        <a href="imprint.html" data-en="Imprint" data-de="Impressum">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Checkbox/Radio selection
+    document.querySelectorAll('.radio-option').forEach(option => {
+      option.addEventListener('click', () => {
+        const input = option.querySelector('input[type="checkbox"], input[type="radio"]');
+        if (input && input.type === 'radio') {
+          document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+          option.classList.add('selected');
+          input.checked = true;
+        } else if (input && input.type === 'checkbox') {
+          option.classList.toggle('selected');
+          input.checked = !input.checked;
+        }
+      });
+    });
+
+    // Form submit
+    function handleSubmit() {
+      const company = document.getElementById('company').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const lang = document.documentElement.lang || 'de';
+
+      if (!company || !name || !email) {
+        const missing = [];
+        if (!company) missing.push(lang === 'en' ? 'Company' : 'Unternehmen');
+        if (!name) missing.push(lang === 'en' ? 'Name & Role' : 'Name & Rolle');
+        if (!email) missing.push('E-Mail');
+        alert((lang === 'en' ? 'Please fill in: ' : 'Bitte füllen Sie folgende Felder aus: ') + missing.join(', '));
+        return;
+      }
+
+      window.open('https://zeeg.me/felixnh', '_blank');
+    }
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('[data-placeholder-en]').forEach(function(el) {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-en').style.background = lang === 'en' ? 'var(--fg)' : 'transparent';
+      document.getElementById('btn-en').style.color = lang === 'en' ? 'var(--bg)' : 'var(--muted)';
+      document.getElementById('btn-de').style.background = lang === 'de' ? 'var(--fg)' : 'transparent';
+      document.getElementById('btn-de').style.color = lang === 'de' ? 'var(--bg)' : 'var(--muted)';
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+
+    try {
+      var savedLang = localStorage.getItem('lang') || 'de';
+      setLang(savedLang);
+    } catch(e) {}
+  </script>
+
+</body>
+</html>      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav {
+      max-width: var(--max); margin: 0 auto; padding: 24px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 300; text-decoration: none; color: var(--fg);
+    }
+    .nav-back {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--fg); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    /* ── SHELL ── */
+    .shell { max-width: var(--max); margin: 0 auto; padding: 0 48px 120px; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 0 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: end;
       border-bottom: 1px solid var(--border-subtle);
     }
