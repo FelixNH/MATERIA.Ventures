@@ -82,10 +82,10 @@
     .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
     .hero { padding-top: 140px; padding-bottom: 120px; text-align: center; }
     .hero-headline {
-      font-size: clamp(3.8rem, 7vw, 7rem); line-height: 1.05; max-width: 16ch;
+      font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; max-width: 16ch;
       letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
-    .hero-sub { font-size: 1.25rem; line-height: 1.7; color: var(--muted); max-width: 36rem; margin: 0 auto; }
+    .hero-sub { font-size: 1.5rem; line-height: 1.7; color: var(--muted); max-width: 36rem; margin: 0 auto; }
     .hero-cta { margin-top: 40px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .full-image-section {
       width: 100vw; margin-left: calc(-50vw + 50%); height: 85vh; min-height: 600px;
@@ -314,14 +314,12 @@
           <a class="nav-link" href="#who" data-en="Who we are" data-de="Über uns">Who we are</a>
           <a class="nav-link" href="#how-it-works" data-en="How we invest" data-de="Wie wir investieren">Wie wir investieren</a>
           <a class="nav-link" href="#who-its-for-block" data-en="How to get involved" data-de="Wie sie einsteigen können">Why it matters</a>
-          <a class="nav-link" href="why-us.html" data-en="Why us" data-de="Warum wir">Why us</a>
         </div>
         <div class="lang-toggle">
           <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
           <span class="lang-divider">|</span>
           <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
-        <a class="nav-cta" href="#join" data-en="Get in touch" data-de="Kontakt">Get in touch</a>
       </nav>
     </header>
 
@@ -401,6 +399,17 @@
             <a href="Industriepartner.html" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
           </div>
         </section>
+
+      </div><!-- end shell for mission banner -->
+
+      <!-- MISSION BANNER -->
+      <section class="statement-section">
+        <h2 class="statement-headline" data-en="Our mission is to invest early in companies changing how materials are developed, distributed and used &mdash; and help them scale with purpose." data-de="Unsere Mission ist es, früh in Unternehmen zu investieren, die verändern, wie Materialien entwickelt, verteilt und eingesetzt werden - und ihnen zu helfen, nachhaltig zu wachsen.">
+          Our mission is to invest early in companies changing how materials are developed, distributed and used — and help them scale with purpose.
+        </h2>
+      </section>
+
+      <div class="shell" style="padding-top:0;"><!-- resume shell -->
 
         <!-- HOW IT WORKS -->
         <section id="how-it-works">
