@@ -4,7 +4,28 @@
   <meta charset="UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Industriepartner werden — INPUT Partners</title>
+  <meta name="description" content="Industriepartner werden bei INPUT Partners - früh in relevante Technologien einsteigen, Integrationspfade mitgestalten und am Erfolg partizipieren." />
+  <title>Industriepartner werden - INPUT Partners</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://input.partners/Industriepartner.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://input.partners/Industriepartner.html" />
+  <meta property="og:title" content="Industriepartner werden - INPUT Partners" />
+  <meta property="og:description" content="Früh in relevante Technologien einsteigen, Integrationspfade mitgestalten und am Erfolg partizipieren." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Industriepartner werden - INPUT Partners" />
+  <meta name="twitter:description" content="Früh in relevante Technologien einsteigen, Integrationspfade mitgestalten und am Erfolg partizipieren." />
   <style>
     :root {
       --bg: #f2f2f3;
@@ -21,6 +42,8 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--fg); color: var(--bg); padding: 8px 16px; text-decoration: none; z-index: 100; }
+    .skip-link:focus { top: 0; }
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -71,7 +94,6 @@
       color: var(--accent); font-weight: 600;
     }
     .hero-headline {
-      
       font-size: clamp(2.8rem, 5vw, 4.2rem);
       line-height: 1.1;
       letter-spacing: -0.01em;
@@ -130,7 +152,6 @@
       color: var(--accent); font-weight: 700;
     }
     .block-headline {
-      
       font-size: 1.5rem; line-height: 1.25; font-weight: 400;
       letter-spacing: -0.01em;
     }
@@ -160,7 +181,7 @@
     }
     .cross-list li:last-child { border-bottom: none; padding-bottom: 0; }
     .cross-list li::before {
-      content: "–";
+      content: "-";
       position: absolute; left: 0;
       color: var(--border-strong);
     }
@@ -175,7 +196,6 @@
     .step:first-child { padding-top: 0; }
     .step:last-child { border-bottom: none; padding-bottom: 0; }
     .step-num {
-      
       font-size: 1.4rem; color: var(--accent); line-height: 1.3; font-weight: 400;
     }
     .step-body { display: flex; flex-direction: column; gap: 6px; }
@@ -208,7 +228,6 @@
       display: flex; flex-direction: column; gap: 16px; align-items: center;
     }
     .transition-text {
-      
       font-size: clamp(1.4rem, 2.5vw, 2rem);
       font-weight: 400; line-height: 1.3;
       max-width: 36ch; color: var(--fg);
@@ -231,7 +250,6 @@
       color: var(--accent); font-weight: 700; margin-bottom: 10px;
     }
     .form-header-title {
-      
       font-size: 1.6rem; font-weight: 400; line-height: 1.2;
     }
     .form-body { padding: 40px 48px 48px; display: flex; flex-direction: column; gap: 28px; }
@@ -280,7 +298,7 @@
     }
     .radio-option.selected .radio-dot::after {
       content: ''; width: 6px; height: 6px;
-      background: white; border-radius: 50;
+      background: white; border-radius: 50%;
     }
 
     /* Submit */
@@ -314,7 +332,6 @@
       color: var(--accent); font-size: 1.2rem;
     }
     .success-title {
-      
       font-size: 1.4rem; font-weight: 400;
     }
     .success-text { font-size: 0.95rem; color: var(--muted); max-width: 32ch; line-height: 1.7; }
@@ -358,6 +375,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" data-en="Skip to main content" data-de="Zum Hauptinhalt springen">Zum Hauptinhalt springen</a>
 
   <header>
     <nav class="nav">
@@ -368,17 +386,17 @@
           <span style="color:var(--border-subtle);font-size:0.7rem;">|</span>
           <button style="padding:6px 10px;background:transparent;color:var(--muted);border:none;cursor:pointer;font-family:inherit;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s ease;" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
-        <a href="index.html" class="nav-back" data-en="Back" data-de="Zurück">
+        <a href="index.html" class="nav-back">
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M9 2L4 7l5 5"/>
           </svg>
-          Zurück
+          <span data-en="Back" data-de="Zurück">Zurück</span>
         </a>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="shell">
 
       <!-- HERO -->
@@ -418,7 +436,7 @@
         <!-- Wen wir suchen -->
         <div class="block">
           <div class="block-label" data-en="Who we are looking for" data-de="Wen wir suchen">Wen wir suchen</div>
-          <h2 class="block-headline" data-en="We work with a small number of companies — and select actively." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.">Wir arbeiten mit einer kleinen Anzahl von Unternehmen — und selektieren aktiv.</h2>
+          <h2 class="block-headline" data-en="We work with a small number of companies - and select actively." data-de="Wir arbeiten mit einer kleinen Anzahl von Unternehmen - und selektieren aktiv.">Wir arbeiten mit einer kleinen Anzahl von Unternehmen - und selektieren aktiv.</h2>
           <p class="block-text" data-en="What we require:" data-de="Was wir voraussetzen:">Was wir voraussetzen:</p>
           <ul class="check-list">
             <li data-en="Companies that think in generations" data-de="Unternehmen, die in Generationen denken">Unternehmen, die in Generationen denken</li>
@@ -437,7 +455,7 @@
             <div class="step">
               <div class="step-num">1</div>
               <div class="step-body">
-                <div class="step-title" data-en="First conversation (30–45 min.)" data-de="Erstes Gespräch (30–45 Min.)">Erstes Gespräch (30–45 Min.)</div>
+                <div class="step-title" data-en="First conversation (30-45 min.)" data-de="Erstes Gespräch (30-45 Min.)">Erstes Gespräch (30-45 Min.)</div>
                 <div class="step-text" data-en="Exchange about your business, current topics, and our approach." data-de="Austausch zu Ihrem Geschäft, aktuellen Themen und unserem Ansatz.">Austausch zu Ihrem Geschäft, aktuellen Themen und unserem Ansatz.</div>
               </div>
             </div>
@@ -452,7 +470,7 @@
               <div class="step-num">3</div>
               <div class="step-body">
                 <div class="step-title" data-en="Next steps" data-de="Nächste Schritte">Nächste Schritte</div>
-                <div class="step-text" data-en="Access to concrete topics and investment opportunities — if there is a good fit." data-de="Zugang zu konkreten Themen und Beteiligungsmöglichkeiten — wenn es inhaltlich passt.">Zugang zu konkreten Themen und Beteiligungsmöglichkeiten — wenn es inhaltlich passt.</div>
+                <div class="step-text" data-en="Access to concrete topics and investment opportunities - if there is a good fit." data-de="Zugang zu konkreten Themen und Beteiligungsmöglichkeiten - wenn es inhaltlich passt.">Zugang zu konkreten Themen und Beteiligungsmöglichkeiten - wenn es inhaltlich passt.</div>
               </div>
             </div>
           </div>
@@ -494,32 +512,32 @@
               <label class="radio-option" data-value="vision">
                 <input type="checkbox" name="help" value="vision" />
                 <span class="radio-dot"></span>
-                <span data-en="Develop a vision for the future — where do we actually want to go?" data-de="Zukunftsbild entwickeln — wo wollen wir eigentlich hin?">Zukunftsbild entwickeln — wo wollen wir eigentlich hin?</span>
+                <span data-en="Develop a vision for the future - where do we actually want to go?" data-de="Zukunftsbild entwickeln - wo wollen wir eigentlich hin?">Zukunftsbild entwickeln - wo wollen wir eigentlich hin?</span>
               </label>
               <label class="radio-option" data-value="strategy">
                 <input type="checkbox" name="help" value="strategy" />
                 <span class="radio-dot"></span>
-                <span data-en="Develop an innovation strategy — how do we get there?" data-de="Innovations-Strategie entwickeln — wie kommen wir dahin?">Innovations-Strategie entwickeln — wie kommen wir dahin?</span>
+                <span data-en="Develop an innovation strategy - how do we get there?" data-de="Innovations-Strategie entwickeln - wie kommen wir dahin?">Innovations-Strategie entwickeln - wie kommen wir dahin?</span>
               </label>
               <label class="radio-option" data-value="radar">
                 <input type="checkbox" name="help" value="radar" />
                 <span class="radio-dot"></span>
-                <span data-en="Build a technology radar — what do we need to keep an eye on?" data-de="Technologie-Radar aufbauen — was müssen wir im Blick behalten?">Technologie-Radar aufbauen — was müssen wir im Blick behalten?</span>
+                <span data-en="Build a technology radar - what do we need to keep an eye on?" data-de="Technologie-Radar aufbauen - was müssen wir im Blick behalten?">Technologie-Radar aufbauen - was müssen wir im Blick behalten?</span>
               </label>
               <label class="radio-option" data-value="invest">
                 <input type="checkbox" name="help" value="invest" />
                 <span class="radio-dot"></span>
-                <span data-en="Invest early in relevant startups — how does that actually work?" data-de="Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?">Frühzeitig in relevante Startups investieren — wie funktioniert das eigentlich?</span>
+                <span data-en="Invest early in relevant startups - how does that actually work?" data-de="Frühzeitig in relevante Startups investieren - wie funktioniert das eigentlich?">Frühzeitig in relevante Startups investieren - wie funktioniert das eigentlich?</span>
               </label>
               <label class="radio-option" data-value="network">
                 <input type="checkbox" name="help" value="network" />
                 <span class="radio-dot"></span>
-                <span data-en="Build a network with like-minded companies — can we be stronger together?" data-de="Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?">Netzwerk mit gleichgesinnten Unternehmen aufbauen — können wir gemeinsam stärker sein?</span>
+                <span data-en="Build a network with like-minded companies - can we be stronger together?" data-de="Netzwerk mit gleichgesinnten Unternehmen aufbauen - können wir gemeinsam stärker sein?">Netzwerk mit gleichgesinnten Unternehmen aufbauen - können wir gemeinsam stärker sein?</span>
               </label>
             </div>
           </div>
           <div class="field">
-            <label for="topics" data-en="What are the most important strategic topics for your company right now? (optional)" data-de="Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? (optional)">Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? <span style="color:var(--border-strong);font-weight:400">(optional)</span></label>
+            <label for="topics" data-en="What are the most important strategic topics for your company right now? <span style=&quot;color:var(--border-strong);font-weight:400&quot;>(optional)</span>" data-de="Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? <span style=&quot;color:var(--border-strong);font-weight:400&quot;>(optional)</span>">Was sind aktuell die wichtigsten strategischen Themen für Ihr Unternehmen? <span style="color:var(--border-strong);font-weight:400">(optional)</span></label>
             <textarea id="topics" name="topics" rows="4" placeholder="Kurze Beschreibung..." data-placeholder-en="Brief description..." data-placeholder-de="Kurze Beschreibung..."></textarea>
           </div>
           <div class="form-footer">
