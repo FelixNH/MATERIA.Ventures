@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -316,9 +316,9 @@
           <a class="nav-link" href="#who-its-for-block" data-en="How to get involved" data-de="Wie sie einsteigen können">Why it matters</a>
         </div>
         <div class="lang-toggle">
-          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
           <span class="lang-divider">|</span>
-          <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+          <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
         </div>
       </nav>
     </header>
@@ -566,9 +566,11 @@
     }
 
     try {
-      var savedLang = localStorage.getItem('lang') || 'en';
-      if (savedLang === 'de') setLang('de');
-    } catch(e) {}
+      var savedLang = localStorage.getItem('lang') || 'de';
+      setLang(savedLang);
+    } catch(e) {
+      setLang('de');
+    }
   </script>
 </body>
 </html>
