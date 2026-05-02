@@ -265,6 +265,11 @@
     .join-headline { font-size: clamp(2.8rem, 5vw, 4.4rem); line-height: 1.15; margin-bottom: 28px; font-weight: 500; letter-spacing: -0.01em; }
     .join-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 36rem; margin: 0 auto 48px; }
     .join-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .join-secondary-links { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
+    .join-secondary-link { font-size: 0.9rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: color 0.2s ease, border-color 0.2s ease; }
+    .join-secondary-link:hover { color: var(--fg); border-bottom-color: var(--fg); }
+    .join-secondary-link::after { content: ' ↗'; opacity: 0.6; }
+    @media (max-width: 600px) { .join-secondary-links { gap: 16px; flex-direction: column; align-items: center; } }
     .btn {
       border-radius: 999px; padding: 14px 28px; font-size: 1rem; border: 1px solid transparent;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
@@ -454,13 +459,13 @@
               <div class="audience-tag" data-en="Industry Partners" data-de="Industriepartner">Industriepartner</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="The technologies emerging today will define value creation for the next decades." data-de="Die Technologien, die heute entstehen, werden die Wertschöpfung der nächsten Jahrzehnte bestimmen.">Die Technologien, die heute entstehen, werden die Wertschöpfung der nächsten Jahrzehnte bestimmen.</h3>
-                  <p class="audience-body" data-en="The question is not whether they're coming - but who is part of it early enough." data-de="Die Frage ist nicht, ob sie kommen - sondern wer früh genug Teil davon ist.">Die Frage ist nicht, ob sie kommen - sondern wer früh genug Teil davon ist.</p>
+                  <h3 class="audience-headline" data-en="Secure influence before others set the standards." data-de="Sichere dir Einfluss, bevor andere die Standards setzen.">Sichere dir Einfluss, bevor andere die Standards setzen.</h3>
+                  <p class="audience-body" data-en="Materials are changing - and with them, who sets the standards of tomorrow. Those who engage early shape what the next generation looks like." data-de="Materialien verändern sich - und mit ihnen, wer morgen Standards setzt. Wer früh dabei ist, prägt mit, wie die nächste Generation aussieht.">Materialien verändern sich - und mit ihnen, wer morgen Standards setzt. Wer früh dabei ist, prägt mit, wie die nächste Generation aussieht.</p>
                 </div>
                 <ul class="audience-list wim-stack-list">
-                  <li data-en="Get a seat at the table early - when valuations are still low." data-de="Früh beteiligt sein - wenn Bewertungen noch niedrig sind.">Früh beteiligt sein - wenn Bewertungen noch niedrig sind.</li>
-                  <li data-en="Bring real requirements - before integration becomes too complex." data-de="Reale Anforderungen einbringen - bevor Integration zu komplex wird.">Reale Anforderungen einbringen - bevor Integration zu komplex wird.</li>
-                  <li data-en="Shape the future - before being overtaken by it." data-de="Die Zukunft mitgestalten - bevor man von ihr überholt wird.">Die Zukunft mitgestalten - bevor man von ihr überholt wird.</li>
+                  <li data-en="Secure early access to relevant technologies" data-de="Frühen Zugang zu relevanten Technologien sichern">Frühen Zugang zu relevanten Technologien sichern</li>
+                  <li data-en="Bring real requirements in before interfaces are fixed" data-de="Reale Anforderungen einbringen, bevor Schnittstellen festgeschrieben sind">Reale Anforderungen einbringen, bevor Schnittstellen festgeschrieben sind</li>
+                  <li data-en="Help shape what prevails in the market" data-de="Mitgestalten, was sich am Markt durchsetzt">Mitgestalten, was sich am Markt durchsetzt</li>
                 </ul>
               </div>
               <a href="Industriepartner.html" class="btn btn-primary" style="align-self:flex-start;" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
@@ -471,12 +476,14 @@
               <div class="audience-tag" data-en="Founders" data-de="Gründer">Gründer</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="Build not for assumptions - build for reality." data-de="Baue nicht für Annahmen - baue für die Realität.">Baue nicht für Annahmen - baue für die Realität.</h3>
-                  <p class="audience-body" data-en="We invest early and bring technologies to where they must prove themselves: real industrial applications.<br><br>Work with investors who don't just provide capital - but bring access to industry and future customers along with it." data-de="Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.<br><br>Arbeite mit Investoren, die nicht nur Kapital liefern - sondern den Zugang zur Industrie und zukünftige Kunden gleich mit.">Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.<br><br>Arbeite mit Investoren, die nicht nur Kapital liefern - sondern den Zugang zur Industrie und zukünftige Kunden gleich mit.</p>
+                  <h3 class="audience-headline" data-en="Build with real industry input - not assumptions." data-de="Baue mit echtem Industrie-Input, nicht mit Annahmen.">Baue mit echtem Industrie-Input, nicht mit Annahmen.</h3>
+                  <p class="audience-body" data-en="We invest early and bring technologies to where they must prove themselves: real industrial applications." data-de="Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.">Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.</p>
                 </div>
-                <div class="who-edge wim-stack-edge" style="display:none">
-                  <p class="who-edge-text"></p>
-                </div>
+                <ul class="audience-list wim-stack-list">
+                  <li data-en="Investors with deep industry knowledge" data-de="Investoren mit Tiefenkenntnis der Industrie">Investoren mit Tiefenkenntnis der Industrie</li>
+                  <li data-en="Direct access to future users and customers" data-de="Direkter Zugang zu späteren Anwendern und Kunden">Direkter Zugang zu späteren Anwendern und Kunden</li>
+                  <li data-en="Validation in real plants, not just in the lab" data-de="Validierung in echten Anlagen statt im Labor">Validierung in echten Anlagen statt im Labor</li>
+                </ul>
               </div>
               <a href="Founders_Sub.html" class="btn btn-secondary" style="align-self:flex-start;" data-en="Check relevance" data-de="Relevanz prüfen">Relevanz prüfen</a>
             </div>
@@ -486,12 +493,14 @@
               <div class="audience-tag" data-en="Investors" data-de="Investoren">Investoren</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="Invest where it shows earlier what prevails." data-de="Investiere dort, wo sich früher zeigt, was sich durchsetzt.">Investiere dort, wo sich früher zeigt, was sich durchsetzt.</h3>
-                  <p class="audience-body" data-en="We invest alongside strategic industry partners who don't just bring capital, but real requirements and early deployability." data-de="Wir investieren gemeinsam mit strategischen Industriepartnern, die nicht nur Kapital bringen, sondern reale Anforderungen und frühe Einsetzbarkeit.">Wir investieren gemeinsam mit strategischen Industriepartnern, die nicht nur Kapital bringen, sondern reale Anforderungen und frühe Einsetzbarkeit.</p>
+                  <h3 class="audience-headline" data-en="Invest where it shows early what prevails." data-de="Investiere dort, wo sich früh zeigt, was sich durchsetzt.">Investiere dort, wo sich früh zeigt, was sich durchsetzt.</h3>
+                  <p class="audience-body" data-en="Together with industry partners who know what can be integrated - and with long-term capital that follows industrial cycles, not exit pressure." data-de="Gemeinsam mit Industriepartnern, die wissen, was integrierbar ist - und mit langfristigem Kapital, das industriellen Zyklen folgt, nicht Exit-Druck.">Gemeinsam mit Industriepartnern, die wissen, was integrierbar ist - und mit langfristigem Kapital, das industriellen Zyklen folgt, nicht Exit-Druck.</p>
                 </div>
-                <div class="who-edge wim-stack-edge">
-                  <p class="who-edge-text" data-en="This creates signals that only become visible in the market much later." data-de="So entstehen Signale, die im Markt oft erst deutlich später sichtbar werden.">So entstehen Signale, die im Markt oft erst deutlich später sichtbar werden.</p>
-                </div>
+                <ul class="audience-list wim-stack-list">
+                  <li data-en="Co-investment with operationally relevant industry partners" data-de="Co-Investment mit operativ relevanten Industriepartnern">Co-Investment mit operativ relevanten Industriepartnern</li>
+                  <li data-en="Investment logic guided by adoption, not hype" data-de="Investment-Logik, die sich an Adoption orientiert, nicht an Hype">Investment-Logik, die sich an Adoption orientiert, nicht an Hype</li>
+                  <li data-en="Access to deals that otherwise run through B2B back-channels" data-de="Zugang zu Deals, die sonst im B2B-Backchannel laufen">Zugang zu Deals, die sonst im B2B-Backchannel laufen</li>
+                </ul>
               </div>
               <a href="Investors_Sub.html" class="btn btn-secondary" style="align-self:flex-start;" data-en="Start a conversation" data-de="Austausch starten">Austausch starten</a>
             </div>
@@ -505,8 +514,12 @@
     <div class="join-section-wrapper">
       <section id="join">
         <div class="join-content">
-          <p style="font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.5;color:var(--fg);font-weight:500;letter-spacing:-0.01em;max-width:32ch;margin:0 auto 40px;" data-en="What gets built tomorrow is decided today. The question is who is involved early enough." data-de="Die Zukunft der gebauten Umwelt entsteht gemeinsam. Die Frage ist, wer früh genug dabei ist.">Die Zukunft der gebauten Umwelt entsteht gemeinsam. Die Frage ist, wer früh genug dabei ist.</p>
+          <p style="font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.5;color:var(--fg);font-weight:500;letter-spacing:-0.01em;max-width:38ch;margin:0 auto 40px;" data-en="Whoever sources, processes or deploys substance stands at the beginning of the value chain. That is where it is decided what shapes the building of tomorrow." data-de="Wer Substanz gewinnt, verarbeitet oder einsetzt, steht am Anfang der Wertschöpfung. Genau dort entscheidet sich, was das Bauen von morgen prägt.">Wer Substanz gewinnt, verarbeitet oder einsetzt, steht am Anfang der Wertschöpfung. Genau dort entscheidet sich, was das Bauen von morgen prägt.</p>
           <a href="Industriepartner.html" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
+          <div class="join-secondary-links">
+            <a href="Founders_Sub.html" class="join-secondary-link" data-en="Are you a founder? Check relevance" data-de="Du bist Gründer? Hier prüfen">Du bist Gründer? Hier prüfen</a>
+            <a href="Investors_Sub.html" class="join-secondary-link" data-en="Investing privately? Start a conversation" data-de="Du investierst privat? Austausch starten">Du investierst privat? Austausch starten</a>
+          </div>
         </div>
       </section>
     </div>
