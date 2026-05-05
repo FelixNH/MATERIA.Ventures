@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Submit Your Pitch - INPUT Partners</title>
+  <meta name="description" content="Relevanz prüfen bei INPUT Partners - für Gründer im Bereich Materialien und industrielle Anwendungen." />
+  <title>Relevanz prüfen - INPUT Partners</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://input.partners/Founders_Template.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://input.partners/Founders_Template.html" />
+  <meta property="og:title" content="Relevanz prüfen - INPUT Partners" />
+  <meta property="og:description" content="Für Gründer im Bereich Materialien und industrielle Anwendungen - Relevanz prüfen." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Relevanz prüfen - INPUT Partners" />
+  <meta name="twitter:description" content="Für Gründer im Bereich Materialien und industrielle Anwendungen - Relevanz prüfen." />
   <style>
     :root {
       --bg: #f2f2f3;
@@ -145,11 +166,11 @@
         </a>
         <div style="display:flex;align-items:center;gap:12px;">
           <div class="lang-toggle">
-            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
             <span class="lang-divider">|</span>
-            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+            <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
           </div>
-          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+          <a href="index.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Zurück</a>
         </div>
       </nav>
     </header>
@@ -167,19 +188,19 @@
           </p>
 
           <div class="notice">
-            <p data-en="We review every request carefully. There is no obligation on either side - we'll be in touch if we see a match." data-de="Wir prüfen jede Einreichung sorgfältig. Die Einreichung begründet keine Verpflichtung auf beiden Seiten – wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.">
-              We review every request carefully. There is no obligation on either side — we'll be in touch if we see a content match.
+            <p data-en="We review every request carefully. There is no obligation on either side - we'll be in touch if we see a content match." data-de="Wir prüfen jede Einreichung sorgfältig. Die Einreichung begründet keine Verpflichtung auf beiden Seiten - wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.">
+              Wir prüfen jede Einreichung sorgfältig. Die Einreichung begründet keine Verpflichtung auf beiden Seiten - wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.
             </p>
           </div>
 
           <form class="form" id="founder-form" action="https://formsubmit.co/felix@hagemeier.com" method="POST">
-            <input type="hidden" name="_subject" value="Neue Relevanzprüfung — INPUT Partners">
+            <input type="hidden" name="_subject" value="Neue Relevanzprüfung - INPUT Partners">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="_honey" style="display:none">
 
             <!-- Frage 1: Technologie-Reife -->
             <div class="field">
-              <label data-en="1. Technology Maturity — Is your technology technically validated?" data-de="1. Technologie-Reife — Ist Eure Technologie technisch validiert?">1. Technologie-Reife — Ist Eure Technologie technisch validiert?</label>
+              <label data-en="1. Technology Maturity - Is your technology technically validated?" data-de="1. Technologie-Reife - Ist deine Technologie technisch validiert?">1. Technologie-Reife - Ist deine Technologie technisch validiert?</label>
               <div class="radio-group">
                 <label class="radio-item"><input type="radio" name="tech_maturity" value="real_world" required><span data-en="Yes, in real environments" data-de="Ja, in realen Umgebungen">Ja, in realen Umgebungen</span></label>
                 <label class="radio-item"><input type="radio" name="tech_maturity" value="lab_pilot"><span data-en="Yes, in lab / pilot" data-de="Ja, im Labor / Pilot">Ja, im Labor / Pilot</span></label>
@@ -189,7 +210,7 @@
 
             <!-- Frage 2: Phase -->
             <div class="field">
-              <label data-en="2. Stage — Where are you currently?" data-de="2. Phase — Wo steht Ihr aktuell?">2. Phase — Wo steht Ihr aktuell?</label>
+              <label data-en="2. Stage - Where are you currently?" data-de="2. Phase - Wo stehst du aktuell?">2. Phase - Wo stehst du aktuell?</label>
               <div class="radio-group">
                 <label class="radio-item"><input type="radio" name="stage" value="commercial" required><span data-en="First commercial applications" data-de="Erste kommerzielle Anwendungen">Erste kommerzielle Anwendungen</span></label>
                 <label class="radio-item"><input type="radio" name="stage" value="pilot"><span data-en="Pilot projects with industry" data-de="Pilotprojekte mit Industrie">Pilotprojekte mit Industrie</span></label>
@@ -199,26 +220,26 @@
 
             <!-- Frage 3: Integration -->
             <div class="field">
-              <label for="integration" data-en="3. Integration — Where do you see the biggest challenge for integrating your solution?" data-de="3. Integration — Wo seht Ihr die größte Herausforderung für die Integration Eurer Lösung?">3. Integration — Wo seht Ihr die größte Herausforderung für die Integration Eurer Lösung?</label>
-              <textarea id="integration" name="integration" required style="min-height:90px;resize:vertical;" data-placeholder-en="Describe the main integration challenge..." data-placeholder-de="Beschreibt die größte Herausforderung bei der Integration..." placeholder="Beschreibt die größte Herausforderung bei der Integration..."></textarea>
+              <label for="integration" data-en="3. Integration - Where do you see the biggest challenge for integrating your solution?" data-de="3. Integration - Wo siehst du die größte Herausforderung für die Integration deiner Lösung?">3. Integration - Wo siehst du die größte Herausforderung für die Integration deiner Lösung?</label>
+              <textarea id="integration" name="integration" required style="min-height:90px;resize:vertical;" data-placeholder-en="Describe the main integration challenge..." data-placeholder-de="Beschreibe die größte Herausforderung bei der Integration..." placeholder="Beschreibe die größte Herausforderung bei der Integration..."></textarea>
             </div>
 
             <!-- Frage 4: Markt / Anwendung -->
             <div class="field">
-              <label for="market" data-en="4. Market / Application — In which area of materials / infrastructure are you working?" data-de="4. Markt / Anwendung — In welchem Bereich von Materialien / Infrastruktur arbeitet Ihr?">4. Markt / Anwendung — In welchem Bereich von Materialien / Infrastruktur arbeitet Ihr?</label>
-              <textarea id="market" name="market" required style="min-height:90px;resize:vertical;" data-placeholder-en="e.g. sustainable concrete, insulation materials, digital construction..." data-placeholder-de="z.B. nachhaltiger Beton, Dämmstoffe, digitales Bauen..." placeholder="z.B. nachhaltiger Beton, Dämmstoffe, digitales Bauen..."></textarea>
+              <label for="market" data-en="4. Market / Application - In which area of materials are you working?" data-de="4. Markt / Anwendung - In welchem Bereich von Materialien arbeitest du?">4. Markt / Anwendung - In welchem Bereich von Materialien arbeitest du?</label>
+              <textarea id="market" name="market" required style="min-height:90px;resize:vertical;" data-placeholder-en="e.g. sustainable concrete, alternative binders, recycled materials, AI-supported formulations..." data-placeholder-de="z.B. nachhaltiger Beton, alternative Bindemittel, recycelte Materialien, KI-gestützte Rezepturen..." placeholder="z.B. nachhaltiger Beton, alternative Bindemittel, recycelte Materialien, KI-gestützte Rezepturen..."></textarea>
             </div>
 
             <!-- Frage 5: Intent -->
             <div class="field">
-              <label for="intent" data-en="5. Intent — Why do you want to talk to us?" data-de="5. Intent — Warum möchtet Ihr mit uns sprechen?">5. Intent — Warum möchtet Ihr mit uns sprechen?</label>
-              <textarea id="intent" name="intent" required style="min-height:110px;resize:vertical;" data-placeholder-en="What are you looking for — and why INPUT Partners specifically?" data-placeholder-de="Was sucht Ihr — und warum INPUT Partners?" placeholder="Was sucht Ihr — und warum INPUT Partners?"></textarea>
+              <label for="intent" data-en="5. Intent - Why do you want to talk to us?" data-de="5. Intent - Warum möchtest du mit uns sprechen?">5. Intent - Warum möchtest du mit uns sprechen?</label>
+              <textarea id="intent" name="intent" required style="min-height:110px;resize:vertical;" data-placeholder-en="What are you looking for - and why INPUT Partners specifically?" data-placeholder-de="Was suchst du - und warum INPUT Partners?" placeholder="Was suchst du - und warum INPUT Partners?"></textarea>
             </div>
 
             <hr class="section-divider">
 
             <!-- Über Sie -->
-            <div class="field-group-label" data-en="About you" data-de="Über Euch" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;color:var(--accent);margin-bottom:4px;">Über Euch</div>
+            <div class="field-group-label" data-en="About you" data-de="Über dich" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;font-weight:600;color:var(--accent);margin-bottom:4px;">Über dich</div>
 
             <div class="form-row">
               <div class="field">
@@ -246,7 +267,7 @@
 
             <!-- Optional: Unterlagen -->
             <div class="field">
-              <label for="materials" data-en="Anything we should look at in advance? (optional)" data-de="Gibt es etwas, das wir uns vorab ansehen sollten? (optional)">Gibt es etwas, das wir uns vorab ansehen sollten? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+              <label for="materials" data-en="Anything we should look at in advance? <span style=&quot;color:var(--muted);font-weight:400;&quot;>(optional)</span>" data-de="Gibt es etwas, das wir uns vorab ansehen sollten? <span style=&quot;color:var(--muted);font-weight:400;&quot;>(optional)</span>">Gibt es etwas, das wir uns vorab ansehen sollten? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
               <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;" data-en="Link to pitch deck, website or brief materials" data-de="Link zum Pitch Deck, Website oder kurze Unterlagen">Link zum Pitch Deck, Website oder kurze Unterlagen</p>
               <input type="text" id="materials" name="materials" placeholder="https://..." />
             </div>
@@ -255,8 +276,8 @@
           </form>
 
           <div class="success-message" id="success-msg">
-            <p data-en="Thank you for your request. We'll be in touch if we see a content match." data-de="Danke für Eure Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.">
-              Danke für Eure Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.
+            <p data-en="Thank you for your request. We'll be in touch if we see a content match." data-de="Danke für deine Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.">
+              Danke für deine Anfrage. Wir melden uns, wenn wir eine inhaltliche Übereinstimmung sehen.
             </p>
           </div>
 
@@ -268,8 +289,8 @@
       <div class="footer-inner">
         <span>&copy; <span id="year"></span> INPUT Partners</span>
         <div class="footer-links">
-          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
-          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Datenschutz</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Impressum</a>
         </div>
       </div>
     </footer>
@@ -304,9 +325,11 @@
     }
 
     try {
-      var savedLang = localStorage.getItem('lang') || 'en';
-      if (savedLang === 'de') setLang('de');
-    } catch(e) {}
+      var savedLang = localStorage.getItem('lang') || 'de';
+      setLang(savedLang);
+    } catch(e) {
+      setLang('de');
+    }
   </script>
 </body>
 </html>
