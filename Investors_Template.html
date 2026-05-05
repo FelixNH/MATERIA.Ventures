@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invest with us - INPUT Partners</title>
+  <meta name="description" content="Als Investor bei INPUT Partners beitreten - Co-Investment in Materialien, die das Bauen verändern." />
+  <title>Als Investor beitreten - INPUT Partners</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://input.partners/Investors_Template.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://input.partners/Investors_Template.html" />
+  <meta property="og:title" content="Als Investor beitreten - INPUT Partners" />
+  <meta property="og:description" content="Co-Investment in Materialien, die das Bauen verändern - gemeinsam mit Industriepartnern." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Als Investor beitreten - INPUT Partners" />
+  <meta name="twitter:description" content="Co-Investment in Materialien, die das Bauen verändern - gemeinsam mit Industriepartnern." />
   <style>
     :root {
       --bg: #f2f2f3;
@@ -155,11 +176,11 @@
         </a>
         <div style="display:flex;align-items:center;gap:12px;">
           <div class="lang-toggle">
-            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
             <span class="lang-divider">|</span>
-            <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+            <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
           </div>
-          <a href="Investors_Sub.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Back</a>
+          <a href="Investors_Sub.html" class="nav-back" data-en="← Back" data-de="← Zurück">← Zurück</a>
         </div>
       </nav>
     </header>
@@ -168,54 +189,54 @@
       <div class="shell">
         <div class="content-section">
 
-          <div class="eyebrow" data-en="For Investors" data-de="Für Investoren">For Investors</div>
+          <div class="eyebrow" data-en="For Investors" data-de="Für Investoren">Für Investoren</div>
           <h1 class="headline" data-en="Request to join as an investor." data-de="Als Investor beitreten.">
-            Request to join as an investor.
+            Als Investor beitreten.
           </h1>
-          <p class="subline" data-en="We invest alongside industry partners who bring real-world commitment to the table. If you share a long-term perspective and want access to curated, high-conviction deals — we'd like to hear from you." data-de="Wir investieren gemeinsam mit Industriepartnern, die sich aktiv engagieren. Wenn Du daran interessiert bist, langfristig und flexibel zu investieren und Zugang zu kuratierten, überzeugenden Investment-Opportunitäten suchst, freuen wir uns von Dir zu hören.">
-            We invest alongside industry partners who bring real-world commitment to the table. If you share a long-term perspective and want access to curated, high-conviction deals — we'd like to hear from you.
+          <p class="subline" data-en="We invest alongside industry partners who bring real-world commitment to the table. If you share a long-term perspective and want access to curated, high-conviction deals - we'd like to hear from you." data-de="Wir investieren gemeinsam mit Industriepartnern, die sich aktiv engagieren. Wenn Sie daran interessiert sind, langfristig und flexibel zu investieren und Zugang zu kuratierten, überzeugenden Investment-Opportunitäten suchen, freuen wir uns von Ihnen zu hören.">
+            Wir investieren gemeinsam mit Industriepartnern, die sich aktiv engagieren. Wenn Sie daran interessiert sind, langfristig und flexibel zu investieren und Zugang zu kuratierten, überzeugenden Investment-Opportunitäten suchen, freuen wir uns von Ihnen zu hören.
           </p>
 
-          <form class="form" id="investor-form" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
-            <input type="hidden" name="_subject" value="New Investor Application — INPUT Partners">
+          <form class="form" id="investor-form" action="https://formsubmit.co/felix@hagemeier.com" method="POST">
+            <input type="hidden" name="_subject" value="Neue Investoren-Anfrage - INPUT Partners">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://input.partners/investor.html?success=true">
+            <input type="hidden" name="_next" value="https://input.partners/Investors_Template.html?success=true">
             <input type="text" name="_honey" style="display:none">
 
             <div class="form-row">
               <div class="field">
-                <label for="firstname" data-en="First Name *" data-de="Vorname *">First Name *</label>
+                <label for="firstname" data-en="First Name *" data-de="Vorname *">Vorname *</label>
                 <input type="text" id="firstname" name="firstname" required placeholder="Felix" />
               </div>
               <div class="field">
-                <label for="lastname" data-en="Last Name *" data-de="Nachname *">Last Name *</label>
+                <label for="lastname" data-en="Last Name *" data-de="Nachname *">Nachname *</label>
                 <input type="text" id="lastname" name="lastname" required placeholder="Müller" />
               </div>
             </div>
 
             <div class="field">
-              <label for="email" data-en="Email *" data-de="E-Mail *">Email *</label>
+              <label for="email" data-en="Email *" data-de="E-Mail *">E-Mail *</label>
               <input type="email" id="email" name="email" required placeholder="felix@company.com" />
             </div>
 
             <div class="field">
-              <label for="phone" data-en="Phone (optional)" data-de="Telefon (optional)">Phone (optional)</label>
+              <label for="phone" data-en="Phone (optional)" data-de="Telefon (optional)">Telefon (optional)</label>
               <input type="tel" id="phone" name="phone" placeholder="+49 123 456 789" />
             </div>
 
             <div class="field">
-              <label for="company" data-en="Company / Fund (optional)" data-de="Unternehmen / Fonds (optional)">Company / Fund (optional)</label>
+              <label for="company" data-en="Company / Fund (optional)" data-de="Unternehmen / Fonds (optional)">Unternehmen / Fonds (optional)</label>
               <input type="text" id="company" name="company" placeholder="z.B. Müller Family Office" />
             </div>
 
             <hr class="section-divider">
 
             <div class="field">
-              <label data-en="I would like to join as *" data-de="Ich möchte beitreten als *">I would like to join as *</label>
+              <label data-en="I would like to join as *" data-de="Ich möchte beitreten als *">Ich möchte beitreten als *</label>
               <div class="radio-group">
                 <label class="radio-item">
                   <input type="radio" name="join_type" value="private_investor" required>
-                  <span data-en="Private Investor" data-de="Privatinvestor">Private Investor</span>
+                  <span data-en="Private Investor" data-de="Privatinvestor">Privatinvestor</span>
                 </label>
                 <label class="radio-item">
                   <input type="radio" name="join_type" value="co_investor">
@@ -225,56 +246,56 @@
             </div>
 
             <div class="field">
-              <label data-en="I am... (select all that apply) *" data-de="Ich bin... (alle zutreffenden auswählen) *">I am... (select all that apply) *</label>
+              <label data-en="I am... (select all that apply) *" data-de="Ich bin... (alle zutreffenden auswählen) *">Ich bin... (alle zutreffenden auswählen) *</label>
               <div class="checkbox-group">
                 <label class="checkbox-item"><input type="checkbox" name="profile[]" value="angel"><span data-en="Business Angel / Angel Investor" data-de="Business Angel / Angel Investor">Business Angel / Angel Investor</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="entrepreneur"><span data-en="Entrepreneur / Operator" data-de="Unternehmer / Operator">Entrepreneur / Operator</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="industry_expert"><span data-en="Industry Expert (Construction / Materials)" data-de="Branchenexperte (Bau / Materialien)">Industry Expert (Construction / Materials)</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="vc"><span data-en="VC Professional" data-de="VC-Profi">VC Professional</span></label>
-                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="other"><span data-en="Other" data-de="Andere">Other</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="entrepreneur"><span data-en="Entrepreneur / Operator" data-de="Unternehmer / Operator">Unternehmer / Operator</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="industry_expert"><span data-en="Industry Expert (Construction / Materials)" data-de="Branchenexperte (Bau / Materialien)">Branchenexperte (Bau / Materialien)</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="vc"><span data-en="VC Professional" data-de="VC-Profi">VC-Profi</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="profile[]" value="other"><span data-en="Other" data-de="Andere">Andere</span></label>
               </div>
             </div>
 
             <div class="field">
-              <label data-en="Are you prepared to invest at least EUR 10,000 per deal? *" data-de="Bist Du bereit, mindestens EUR 10.000 pro Deal zu investieren? *">Are you prepared to invest at least EUR 10,000 per deal? *</label>
+              <label data-en="Are you prepared to invest at least EUR 10,000 per deal? *" data-de="Sind Sie bereit, mindestens EUR 10.000 pro Deal zu investieren? *">Sind Sie bereit, mindestens EUR 10.000 pro Deal zu investieren? *</label>
               <div class="radio-group">
                 <label class="radio-item">
                   <input type="radio" name="ticket_size" value="yes" required>
-                  <span data-en="Yes" data-de="Ja">Yes</span>
+                  <span data-en="Yes" data-de="Ja">Ja</span>
                 </label>
                 <label class="radio-item">
                   <input type="radio" name="ticket_size" value="no">
-                  <span data-en="No" data-de="Nein">No</span>
+                  <span data-en="No" data-de="Nein">Nein</span>
                 </label>
               </div>
             </div>
 
             <div class="field">
-              <label for="motivation" data-en="What brings you to INPUT Partners? *" data-de="Was führt Dich zu INPUT Partners? *">What brings you to INPUT Partners? *</label>
-              <textarea id="motivation" name="motivation" required maxlength="500" style="min-height:100px;resize:vertical;" placeholder="Share your motivation to join..." data-placeholder-en="Share your motivation to join..." data-placeholder-de="Beschreibe kurz Deine Motivation..."></textarea>
+              <label for="motivation" data-en="What brings you to INPUT Partners? *" data-de="Was führt Sie zu INPUT Partners? *">Was führt Sie zu INPUT Partners? *</label>
+              <textarea id="motivation" name="motivation" required maxlength="500" style="min-height:100px;resize:vertical;" placeholder="Beschreiben Sie kurz Ihre Motivation..." data-placeholder-en="Share your motivation to join..." data-placeholder-de="Beschreiben Sie kurz Ihre Motivation..."></textarea>
             </div>
 
             <hr class="section-divider">
 
             <div class="disclaimer">
-              <p data-en="By submitting this form, you confirm that:" data-de="Mit dem Absenden dieses Formulars bestätigst Du:">By submitting this form, you confirm that:</p>
+              <p data-en="By submitting this form, you confirm that:" data-de="Mit dem Absenden dieses Formulars bestätigen Sie:">Mit dem Absenden dieses Formulars bestätigen Sie:</p>
               <ul>
-                <li data-en="This is not an offer to invest, and no commitment is made at this stage." data-de="Dies ist kein Investitionsangebot und es wird keine verbindliche Zusage gemacht.">This is not an offer to invest, and no commitment is made at this stage.</li>
-                <li data-en="Any investment involves risks, including potential loss of capital." data-de="Jedes Investment ist mit Risiken verbunden, einschließlich des möglichen Kapitalverlusts.">Any investment involves risks, including potential loss of capital.</li>
-                <li data-en="Your information will be kept confidential and used only to assess your potential fit." data-de="Deine Angaben werden vertraulich behandelt und ausschließlich zur Prüfung einer möglichen Zusammenarbeit genutzt.">Your information will be kept confidential and used only to assess your potential fit.</li>
+                <li data-en="This is not an offer to invest, and no commitment is made at this stage." data-de="Dies ist kein Investitionsangebot und es wird keine verbindliche Zusage gemacht.">Dies ist kein Investitionsangebot und es wird keine verbindliche Zusage gemacht.</li>
+                <li data-en="Any investment involves risks, including potential loss of capital." data-de="Jedes Investment ist mit Risiken verbunden, einschließlich des möglichen Kapitalverlusts.">Jedes Investment ist mit Risiken verbunden, einschließlich des möglichen Kapitalverlusts.</li>
+                <li data-en="Your information will be kept confidential and used only to assess your potential fit." data-de="Ihre Angaben werden vertraulich behandelt und ausschließlich zur Prüfung einer möglichen Zusammenarbeit genutzt.">Ihre Angaben werden vertraulich behandelt und ausschließlich zur Prüfung einer möglichen Zusammenarbeit genutzt.</li>
               </ul>
               <label class="checkbox-item">
                 <input type="checkbox" name="disclaimer" required>
-                <span data-en="I have read and understood the above. *" data-de="Ich habe die obigen Hinweise gelesen und verstanden. *">I have read and understood the above. *</span>
+                <span data-en="I have read and understood the above. *" data-de="Ich habe die obigen Hinweise gelesen und verstanden. *">Ich habe die obigen Hinweise gelesen und verstanden. *</span>
               </label>
             </div>
 
-            <button type="submit" class="btn-submit" data-en="Submit Application" data-de="Anfrage absenden">Submit Application</button>
+            <button type="submit" class="btn-submit" data-en="Submit Application" data-de="Anfrage absenden">Anfrage absenden</button>
           </form>
 
           <div class="success-message" id="success-msg">
-            <p data-en="<strong>Thank you for your interest.</strong> We have received your application and will be in touch shortly." data-de="<strong>Vielen Dank für Dein Interesse.</strong> Wir haben Deine Anfrage erhalten und melden uns in Kürze.">
-              <strong>Thank you for your interest.</strong> We have received your application and will be in touch shortly.
+            <p data-en="<strong>Thank you for your interest.</strong> We have received your application and will be in touch shortly." data-de="<strong>Vielen Dank für Ihr Interesse.</strong> Wir haben Ihre Anfrage erhalten und melden uns in Kürze.">
+              <strong>Vielen Dank für Ihr Interesse.</strong> Wir haben Ihre Anfrage erhalten und melden uns in Kürze.
             </p>
           </div>
 
@@ -286,8 +307,8 @@
       <div class="footer-inner">
         <span>&copy; <span id="year"></span> INPUT Partners</span>
         <div class="footer-links">
-          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Privacy</a>
-          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="privacy.html" data-en="Privacy" data-de="Datenschutz">Datenschutz</a>
+          <a href="imprint.html" data-en="Imprint" data-de="Impressum">Impressum</a>
         </div>
       </div>
     </footer>
@@ -322,9 +343,11 @@
     }
 
     try {
-      var savedLang = localStorage.getItem('lang') || 'en';
-      if (savedLang === 'de') setLang('de');
-    } catch(e) {}
+      var savedLang = localStorage.getItem('lang') || 'de';
+      setLang(savedLang);
+    } catch(e) {
+      setLang('de');
+    }
   </script>
 </body>
 </html>
