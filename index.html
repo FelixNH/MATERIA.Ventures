@@ -103,10 +103,18 @@
     .lang-divider { color: var(--border-subtle); font-size: 0.7rem; }
     .hero { padding-top: 140px; padding-bottom: 120px; text-align: center; }
     .hero-headline {
-      font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; max-width: 16ch;
+      font-size: clamp(3rem, 5vw, 5rem); line-height: 1.05; max-width: 22ch;
       letter-spacing: -0.02em; font-weight: 500; margin: 0 auto 28px;
     }
-    .hero-sub { font-size: 1.5rem; line-height: 1.7; color: var(--muted); max-width: 36rem; margin: 0 auto; }
+    .hero-sub { font-size: 1.35rem; line-height: 1.65; color: var(--muted); max-width: 44rem; margin: 0 auto; }
+    .hero-audiences {
+      display: flex; justify-content: center; gap: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em;
+      color: var(--muted); font-weight: 400;
+      margin-bottom: 36px;
+    }
+    .hero-audiences span.sep { opacity: 0.4; }
     .hero-cta { margin-top: 40px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .full-image-section {
       width: 100vw; margin-left: calc(-50vw + 50%); height: 85vh; min-height: 600px;
@@ -195,6 +203,26 @@
     .who-label-desc { font-size: 1.25rem; line-height: 1.7; color: var(--muted); max-width: 36rem; }
     .who-label-desc strong { color: var(--fg); font-weight: 600; }
     .who-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+    .who-intro { font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; max-width: 52rem; margin-top: 32px; margin-bottom: 8px; color: var(--fg); }
+    .who-intro strong { font-weight: 600; }
+
+    /* ── Team & Now ── */
+    .founder-row { display: grid; grid-template-columns: 160px 1fr; gap: 48px; align-items: start; margin-top: 40px; }
+    .founder-photo { width: 160px; height: 160px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; font-weight: 500; color: var(--accent); letter-spacing: -0.02em; flex-shrink: 0; overflow: hidden; }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .founder-name { font-size: 1.6rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 4px; }
+    .founder-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+    .founder-bio { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 44rem; }
+    .team-summary { font-size: 1.15rem; line-height: 1.85; color: var(--muted); max-width: 48rem; margin-top: 32px; }
+    .now-block { margin-top: 64px; padding: 48px; background: #ffffff; border-radius: var(--radius-card); border-left: 3px solid var(--accent); max-width: 48rem; }
+    .now-headline { font-size: clamp(1.4rem, 2.2vw, 1.7rem); font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; margin-bottom: 20px; color: var(--fg); }
+    .now-text { font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+    .now-text:last-child { margin-bottom: 0; }
+    @media (max-width: 768px) {
+      .founder-row { grid-template-columns: 1fr; gap: 24px; justify-items: start; }
+      .founder-photo { width: 120px; height: 120px; font-size: 1.8rem; }
+      .now-block { padding: 32px 24px; }
+    }
     .who-tile { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: 36px 32px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s ease; }
     .who-tile:hover { border-color: var(--accent); }
     .who-tile-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; color: var(--accent); }
@@ -232,8 +260,9 @@
     .audience-headline { font-size: 1.15rem; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; }
     .audience-body { font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
     .audience-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; border-left: 2px solid var(--border-subtle); }
-    .audience-list li { font-size: 0.9rem; line-height: 1.6; color: var(--fg); padding: 8px 0 8px 16px; border-bottom: 1px solid var(--border-subtle); }
+    .audience-list li { font-size: 0.95rem; line-height: 1.55; color: var(--fg); padding: 10px 0 10px 16px; border-bottom: 1px solid var(--border-subtle); }
     .audience-list li:last-child { border-bottom: none; }
+    .audience-list-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--accent); font-weight: 600; margin-bottom: 10px; margin-top: 4px; }
     .audience-card .btn { align-self: flex-start; margin-top: auto; }
     @media (max-width: 768px) { .audience-grid { grid-template-columns: 1fr; } .wif-sme { padding: 36px 24px; } }
 
@@ -335,7 +364,7 @@
           <a class="nav-link" href="index.html" data-en="Home" data-de="Start">Start</a>
           <a class="nav-link" href="#who" data-en="Who we are" data-de="Über uns">Über uns</a>
           <a class="nav-link" href="#how-it-works" data-en="How we invest" data-de="Wie wir investieren">Wie wir investieren</a>
-          <a class="nav-link" href="#who-its-for-block" data-en="How to get involved" data-de="Wie sie einsteigen können">Wie sie einsteigen können</a>
+          <a class="nav-link" href="#who-its-for-block" data-en="How to get involved" data-de="Wie Sie einsteigen können">Wie Sie einsteigen können</a>
         </div>
         <div class="lang-toggle">
           <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
@@ -348,14 +377,19 @@
     <main id="main-content">
       <div class="shell">
         <section class="hero">
-          <h1 class="hero-headline" data-en="We invest in the materials that change how we build." data-de="Wir investieren in die Materialien, die das Bauen verändern.">
-            Wir investieren in die Materialien, die das Bauen verändern.
-          </h1>
-          <p class="hero-sub" data-en="Alongside the industry that puts them to work." data-de="Gemeinsam mit der Industrie, die sie einsetzt.">
-            Gemeinsam mit der Industrie, die sie einsetzt.
-          </p>
-          <div class="hero-cta">
+          <div class="hero-audiences" aria-hidden="true">
+            <span data-en="Industry Partners" data-de="Industriepartner">Industriepartner</span>
+            <span class="sep">·</span>
+            <span data-en="Founders" data-de="Gründer">Gründer</span>
+            <span class="sep">·</span>
+            <span data-en="Investors" data-de="Investoren">Investoren</span>
           </div>
+          <h1 class="hero-headline" data-en="Materials are changing. Mid-sized industry shouldn't be watching from the sidelines." data-de="Materialien verändern sich. Der Mittelstand sollte dabei nicht zuschauen.">
+            Materialien verändern sich. Der Mittelstand sollte dabei nicht zuschauen.
+          </h1>
+          <p class="hero-sub" data-en="We invest early in new technologies for materials and infrastructure - alongside industry partners and long-term capital." data-de="Wir investieren früh in neue Technologien rund um Materialien und Infrastruktur - gemeinsam mit Industriepartnern und langfristig orientiertem Kapital.">
+            Wir investieren früh in neue Technologien rund um Materialien und Infrastruktur - gemeinsam mit Industriepartnern und langfristig orientiertem Kapital.
+          </p>
         </section>
       </div>
 
@@ -365,16 +399,16 @@
 
       <!-- MISSION BANNER -->
       <section class="statement-section">
-        <h2 class="statement-headline" data-en="Our mission is to invest early in companies that change how materials are developed, integrated into the value chain, and put into use." data-de="Unsere Mission ist es, frühzeitig in Unternehmen zu investieren, die die Art und Weise verändern, wie Materialien entwickelt, in die Wertschöpfungskette integriert und erlebt werden.">
-          Unsere Mission ist es, frühzeitig in Unternehmen zu investieren, die die Art und Weise verändern, wie Materialien entwickelt, in die Wertschöpfungskette integriert und erlebt werden.
+        <h2 class="statement-headline" data-en="We invest early - where it is decided how materials are developed, processed and put to use tomorrow." data-de="Wir investieren früh - dort, wo sich entscheidet, wie Materialien morgen entwickelt, verarbeitet und eingesetzt werden.">
+          Wir investieren früh - dort, wo sich entscheidet, wie Materialien morgen entwickelt, verarbeitet und eingesetzt werden.
         </h2>
       </section>
 
       <div class="shell">
         <section class="text-block">
           <div class="problem-text-centered">
-            <p data-en="The way we build is under pressure - opening a rare window for technologies that reinvent materials, and the systems that establish them in the market." data-de="Wie wir bauen, gerät unter Druck - und das öffnet ein seltenes Zeitfenster: für Technologien, die Materialien neu denken, und die Systeme, die sie im Markt etablieren.">
-              Wie wir bauen, gerät unter Druck - und das öffnet ein seltenes Zeitfenster: für Technologien, die Materialien neu denken, und die Systeme, die sie im Markt etablieren.
+            <p data-en="The way we build is under pressure. CO2 requirements for building materials, new procurement criteria, scarcity of primary raw materials and rising recycling quotas are shifting the rules of the game. That opens a rare window for technologies that reinvent materials - and for the systems that establish them in the market." data-de="Wie wir bauen, gerät unter Druck. CO2-Vorgaben für Baustoffe, neue Vergabekriterien, Knappheit primärer Rohstoffe und steigende Recyclingquoten verschieben die Spielregeln. Das öffnet ein seltenes Zeitfenster für Technologien, die Materialien neu denken - und für die Systeme, die sie im Markt etablieren.">
+              Wie wir bauen, gerät unter Druck. CO2-Vorgaben für Baustoffe, neue Vergabekriterien, Knappheit primärer Rohstoffe und steigende Recyclingquoten verschieben die Spielregeln. Das öffnet ein seltenes Zeitfenster für Technologien, die Materialien neu denken - und für die Systeme, die sie im Markt etablieren.
             </p>
             <p data-en="Large players are systematically securing advantages: through their own venture arms, structured scouting and targeted capital allocation." data-de="Große Akteure sichern sich systematisch Vorteile: über eigene Venture-Arme, strukturiertes Scouting und gezielte Kapitalallokation.">
               Große Akteure sichern sich systematisch Vorteile: über eigene Venture-Arme, strukturiertes Scouting und gezielte Kapitalallokation.
@@ -385,8 +419,8 @@
             <p data-en="Startups, in turn, often develop without reference to the industrial reality of these mid-sized businesses. When the two meet, collaboration becomes difficult - not because the technology doesn't work, but because it doesn't hold up under real conditions." data-de="Startups entwickeln entsprechend oft an der industriellen Realität der mittelständischen Betriebe vorbei. Wenn beide aufeinandertreffen, wird die Zusammenarbeit schwierig - nicht weil die Technologie nicht funktioniert, sondern weil sie unter realen Bedingungen nicht besteht.">
               Startups entwickeln entsprechend oft an der industriellen Realität der mittelständischen Betriebe vorbei. Wenn beide aufeinandertreffen, wird die Zusammenarbeit schwierig - nicht weil die Technologie nicht funktioniert, sondern weil sie unter realen Bedingungen nicht besteht.
             </p>
-            <p data-en="<strong>That is why we are here.</strong>" data-de="<strong>Deshalb sind wir hier.</strong>">
-              <strong>Deshalb sind wir hier.</strong>
+            <p data-en="<strong>This is where we step in.</strong>" data-de="<strong>Genau hier setzen wir an.</strong>">
+              <strong>Genau hier setzen wir an.</strong>
             </p>
           </div>
         </section>
@@ -398,19 +432,20 @@
         <!-- WHO WE ARE -->
         <section id="who">
           <div class="section-eyebrow" data-en="Who we are" data-de="Über uns">Über uns</div>
-          <!-- Tiles: 3 equal columns -->
+          <p class="who-intro" data-en="INPUT Partners is a deal-by-deal investment setup for materials and infrastructure. It works because three actors come together." data-de="INPUT Partners ist ein Deal-by-Deal-Investment-Setup für Materialien und Infrastruktur. Es funktioniert, weil drei Akteure zusammenkommen.">INPUT Partners ist ein Deal-by-Deal-Investment-Setup für Materialien und Infrastruktur. Es funktioniert, weil drei Akteure zusammenkommen.</p>
+          <!-- Tiles: 3 actors -->
           <div class="who-tiles" style="margin-top:40px;">
             <div class="who-tile">
-              <div class="who-tile-title" data-en="A focused investment setup." data-de="Ein fokussiertes Investment-Setup">Ein fokussiertes Investment-Setup</div>
-              <p class="who-tile-body" data-en="INPUT Partners is a deal-by-deal investment setup for technologies around materials and infrastructure - with the goal of investing early where it is decided what prevails." data-de="INPUT Partners ist ein Deal-by-Deal-Investment-Setup für Technologien rund um Materialien und Infrastruktur - mit dem Ziel, früh dort zu investieren, wo sich entscheidet, was sich durchsetzt.">INPUT Partners ist ein Deal-by-Deal-Investment-Setup für Technologien rund um Materialien und Infrastruktur - mit dem Ziel, früh dort zu investieren, wo sich entscheidet, was sich durchsetzt.</p>
+              <div class="who-tile-title" data-en="Industry partners" data-de="Industriepartner">Industriepartner</div>
+              <p class="who-tile-body" data-en="Companies that source, process or deploy materials. They co-invest, bring plants, requirements and market access - and secure early influence on what prevails." data-de="Unternehmen, die Materialien gewinnen, verarbeiten oder einsetzen. Sie investieren mit, bringen Anlagen, Anforderungen und Marktzugang ein - und sichern sich früh Einfluss auf das, was sich durchsetzt.">Unternehmen, die Materialien gewinnen, verarbeiten oder einsetzen. Sie investieren mit, bringen Anlagen, Anforderungen und Marktzugang ein - und sichern sich früh Einfluss auf das, was sich durchsetzt.</p>
             </div>
             <div class="who-tile">
-              <div class="who-tile-title" data-en="Co-Invest with industry" data-de="Co-Invest mit der Industrie">Co-Invest mit der Industrie</div>
-              <p class="who-tile-body" data-en="Materials don't prevail in the lab, but through integration into the value chain. At the core are industry partners who source, process or deploy materials - and who can integrate new technologies into their plants, processes and markets." data-de="Materialien setzen sich nicht im Labor durch, sondern durch Integration in die Wertschöpfung. Im Zentrum stehen deshalb Industriepartner, die Materialien gewinnen, verarbeiten oder einsetzen - und neue Technologien in ihre Anlagen, Prozesse und Märkte integrieren können.">Materialien setzen sich nicht im Labor durch, sondern durch Integration in die Wertschöpfung. Im Zentrum stehen deshalb Industriepartner, die Materialien gewinnen, verarbeiten oder einsetzen - und neue Technologien in ihre Anlagen, Prozesse und Märkte integrieren können.</p>
+              <div class="who-tile-title" data-en="Founder teams at home in industry" data-de="Gründerteams in der industriellen Realität">Gründerteams in der industriellen Realität</div>
+              <p class="who-tile-body" data-en="Teams who understand materials, plants and value chains - not just the technology behind their solution. This is what we invest in." data-de="Teams, die Materialien, Anlagen und Wertschöpfung verstehen - nicht nur die Technologie hinter ihrer Lösung. In sie investieren wir.">Teams, die Materialien, Anlagen und Wertschöpfung verstehen - nicht nur die Technologie hinter ihrer Lösung. In sie investieren wir.</p>
             </div>
             <div class="who-tile">
-              <div class="who-tile-title" data-en="Complemented by long-term capital." data-de="Ergänzt durch langfristiges Kapital">Ergänzt durch langfristiges Kapital</div>
-              <p class="who-tile-body" data-en="Long-term oriented investors complement the setup - enabling investments aligned with industrial cycles, not short-term exits." data-de="Langfristig orientierte Investoren ergänzen das Setup - und ermöglichen Investments, die sich an industriellen Zyklen orientieren, nicht an kurzfristigen Exits.">Langfristig orientierte Investoren ergänzen das Setup - und ermöglichen Investments, die sich an industriellen Zyklen orientieren, nicht an kurzfristigen Exits.</p>
+              <div class="who-tile-title" data-en="Long-term oriented investors" data-de="Langfristig orientierte Investoren">Langfristig orientierte Investoren</div>
+              <p class="who-tile-body" data-en="Investors who think in industrial cycles, not exit windows. They complement the tickets, enable larger rounds and carry investments through real adoption." data-de="Investoren, die in industriellen Zyklen denken statt in Exit-Fenstern. Sie ergänzen die Tickets, machen größere Runden möglich und tragen Investments durch reale Adoption.">Investoren, die in industriellen Zyklen denken statt in Exit-Fenstern. Sie ergänzen die Tickets, machen größere Runden möglich und tragen Investments durch reale Adoption.</p>
             </div>
           </div>
         </section>
@@ -418,31 +453,69 @@
         <!-- HOW IT WORKS -->
         <section id="how-it-works">
           <div class="section-eyebrow" data-en="How we invest" data-de="Wie wir investieren">Wie wir investieren</div>
-          <h2 class="hiw-headline" data-en="Few themes. Clear conviction. No broad funnel." data-de="Wenige Themen. Klare Überzeugung. Kein breiter Funnel.">Wenige Themen. Klare Überzeugung. Kein breiter Funnel.</h2>
+          <h2 class="hiw-headline" data-en="Three questions decide every investment." data-de="Drei Fragen entscheiden über jede Investition.">Drei Fragen entscheiden über jede Investition.</h2>
           <div class="hiw-steps">
             <div class="hiw-step">
               <div class="hiw-step-number">1</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Materials that change how we build." data-de="Materialien, die das Bauen verändern.">Materialien, die das Bauen verändern.</h3>
-                <p class="hiw-step-text" data-en="We invest along the value chain of new materials - from their substance, through the processes by which they are produced and processed, to their path into the market." data-de="Wir investieren entlang der Wertschöpfung neuer Materialien - von ihrer Substanz über die Verfahren, mit denen sie hergestellt und verarbeitet werden, bis zu ihrem Weg in den Markt.">Wir investieren entlang der Wertschöpfung neuer Materialien - von ihrer Substanz über die Verfahren, mit denen sie hergestellt und verarbeitet werden, bis zu ihrem Weg in den Markt.</p>
+                <h3 class="hiw-step-title" data-en="Is adoption the bottleneck, not invention?" data-de="Ist Adoption der Engpass, nicht Erfindung?">Ist Adoption der Engpass, nicht Erfindung?</h3>
+                <p class="hiw-step-text" data-en="We invest in solutions that are missing in real industrial processes, not in technical brilliance no one can integrate. Invention is the easy part. Adoption is the bottleneck." data-de="Wir investieren in Lösungen, die im realen Industrieprozess fehlen, nicht in technologische Höchstleistung, die niemand integrieren kann. Erfindung ist der einfache Teil. Adoption ist der Engpass.">Wir investieren in Lösungen, die im realen Industrieprozess fehlen, nicht in technologische Höchstleistung, die niemand integrieren kann. Erfindung ist der einfache Teil. Adoption ist der Engpass.</p>
               </div>
             </div>
             <div class="hiw-step">
               <div class="hiw-step-number">2</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Early entry, while integration is still shapeable." data-de="Früher Einstieg, solange Integration noch gestaltbar ist.">Früher Einstieg, solange Integration noch gestaltbar ist.</h3>
-                <p class="hiw-step-text" data-en="We invest before interfaces are fixed - at the point where technical and operational requirements can still be defined together." data-de="Wir investieren, bevor Schnittstellen festgeschrieben sind - an dem Punkt, an dem technische und operative Anforderungen noch gemeinsam definiert werden können.">Wir investieren, bevor Schnittstellen festgeschrieben sind - an dem Punkt, an dem technische und operative Anforderungen noch gemeinsam definiert werden können.</p>
+                <h3 class="hiw-step-title" data-en="Are interfaces still shapeable?" data-de="Sind die Schnittstellen noch gestaltbar?">Sind die Schnittstellen noch gestaltbar?</h3>
+                <p class="hiw-step-text" data-en="We invest early, before technical and operational requirements are fixed. Those who aren't there end up adopting what others have defined." data-de="Wir investieren früh, bevor technische und operative Anforderungen festgeschrieben sind. Wer dann nicht dabei ist, übernimmt später, was andere definiert haben.">Wir investieren früh, bevor technische und operative Anforderungen festgeschrieben sind. Wer dann nicht dabei ist, übernimmt später, was andere definiert haben.</p>
               </div>
             </div>
             <div class="hiw-step">
               <div class="hiw-step-number">3</div>
               <div class="hiw-step-body">
-                <h3 class="hiw-step-title" data-en="Teams at home in industry." data-de="Teams, die in der Industrie zu Hause sind.">Teams, die in der Industrie zu Hause sind.</h3>
-                <p class="hiw-step-text" data-en="We invest in founders who understand industrial reality - plants, materials, value chains - not only the technology behind their solution." data-de="Wir investieren in Gründer, die industrielle Realität verstehen - Anlagen, Materialien, Wertschöpfung - und nicht nur die Technologie hinter ihrer Lösung.">Wir investieren in Gründer, die industrielle Realität verstehen - Anlagen, Materialien, Wertschöpfung - und nicht nur die Technologie hinter ihrer Lösung.</p>
+                <h3 class="hiw-step-title" data-en="Do founders understand industrial reality?" data-de="Verstehen die Gründer industrielle Realität?">Verstehen die Gründer industrielle Realität?</h3>
+                <p class="hiw-step-text" data-en="Plants, materials, value chains. Not just the technology behind their solution. Innovation is built with industry, not against it." data-de="Anlagen, Materialien, Wertschöpfung. Nicht nur die Technologie hinter der Lösung. Innovation entsteht mit der Industrie, nicht gegen sie.">Anlagen, Materialien, Wertschöpfung. Nicht nur die Technologie hinter der Lösung. Innovation entsteht mit der Industrie, nicht gegen sie.</p>
               </div>
             </div>
           </div>
-          <a href="Industriepartner.html" class="btn btn-primary" style="margin-top: 48px;" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
+        </section>
+
+        <!-- WHAT WE FUND -->
+        <section id="what-we-fund">
+          <div class="section-eyebrow" data-en="Where we invest" data-de="Wo wir investieren">Wo wir investieren</div>
+          <h2 class="hiw-headline" data-en="Three fields. One shared bottleneck." data-de="Drei Felder. Ein gemeinsamer Engpass.">Drei Felder. Ein gemeinsamer Engpass.</h2>
+          <p class="hiw-sub" data-en="We invest where adoption, not invention, is the bottleneck. Three fields where exactly that is decided." data-de="Wir investieren, wo Adoption der Engpass ist, nicht Erfindung. Drei Felder, in denen sich genau das entscheidet.">Wir investieren, wo Adoption der Engpass ist, nicht Erfindung. Drei Felder, in denen sich genau das entscheidet.</p>
+
+          <div class="who-tiles" style="margin-top:40px;">
+            <div class="who-tile">
+              <div class="who-tile-tag">CORE INPUTS</div>
+              <div class="who-tile-title" data-en="Materials themselves" data-de="Materialien selbst">Materialien selbst</div>
+              <p class="who-tile-body" data-en="Technologies that optimize material properties or make new raw materials usable. Examples: alternative binders, low-carbon substitutes, advanced additives, AI-supported mixture optimization." data-de="Technologien, die Materialeigenschaften optimieren oder neue Rohstoffe nutzbar machen. Beispiele: alternative Bindemittel, CO2-arme Substitute, neue Additive, KI-gestützte Mischungsoptimierung.">Technologien, die Materialeigenschaften optimieren oder neue Rohstoffe nutzbar machen. Beispiele: alternative Bindemittel, CO2-arme Substitute, neue Additive, KI-gestützte Mischungsoptimierung.</p>
+            </div>
+            <div class="who-tile">
+              <div class="who-tile-tag">ENABLING INFRASTRUCTURE</div>
+              <div class="who-tile-title" data-en="Processing in existing systems" data-de="Verarbeitung in bestehenden Systemen">Verarbeitung in bestehenden Systemen</div>
+              <p class="who-tile-body" data-en="Technologies that enable the processing of (new) materials within existing industrial production systems. Examples: new mixing processes, activation technologies, efficient process control, alternative combustion or curing methods." data-de="Technologien, die die Verarbeitung neuer Materialien in bestehenden industriellen Produktionssystemen ermöglichen. Beispiele: neue Mischverfahren, Aktivierungstechnologien, effiziente Prozessführung, alternative Brenn- oder Härtungsverfahren.">Technologien, die die Verarbeitung neuer Materialien in bestehenden industriellen Produktionssystemen ermöglichen. Beispiele: neue Mischverfahren, Aktivierungstechnologien, effiziente Prozessführung, alternative Brenn- oder Härtungsverfahren.</p>
+            </div>
+            <div class="who-tile">
+              <div class="who-tile-tag">ADOPTION-CRITICAL APPLICATIONS</div>
+              <div class="who-tile-title" data-en="Validation and standards" data-de="Validierung und Standards">Validierung und Standards</div>
+              <p class="who-tile-body" data-en="Highly selective: technologies that accelerate industrial validation, certification or regulatory market acceptance. Examples: EPD/CO2 compliance, material validation, standardization tools." data-de="Sehr selektiv: Technologien, die industrielle Validierung, Zertifizierung oder regulatorische Marktakzeptanz beschleunigen. Beispiele: EPD/CO2-Compliance, Materialvalidierung, Standardisierungs-Tools.">Sehr selektiv: Technologien, die industrielle Validierung, Zertifizierung oder regulatorische Marktakzeptanz beschleunigen. Beispiele: EPD/CO2-Compliance, Materialvalidierung, Standardisierungs-Tools.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TEAM & NOW -->
+        <section id="team-and-now">
+          <div class="section-eyebrow" data-en="Behind INPUT Partners" data-de="Hinter INPUT Partners">Hinter INPUT Partners</div>
+          <h2 class="hiw-headline" data-en="Industry experience. Investment experience." data-de="Erfahrung in Industrie und Investment.">Erfahrung in Industrie und Investment.</h2>
+
+          <p class="team-summary" data-en="Behind INPUT Partners is an experienced founding team with many years of experience in construction/infrastructure, venture capital, M&amp;A and corporate innovation. Names and details we share in personal conversation." data-de="Hinter INPUT Partners steht ein erfahrenes Gründerteam mit vielen Jahren Erfahrung im Bereich Bau/Infrastruktur, Venture Capital, M&amp;A und Corporate Innovation. Wer im Detail dahintersteht, besprechen wir im persönlichen Gespräch.">Hinter INPUT Partners steht ein erfahrenes Gründerteam mit vielen Jahren Erfahrung im Bereich Bau/Infrastruktur, Venture Capital, M&amp;A und Corporate Innovation. Wer im Detail dahintersteht, besprechen wir im persönlichen Gespräch.</p>
+
+          <div class="now-block">
+            <h3 class="now-headline" data-en="Shape it, before standards are set." data-de="Mitgestalten, bevor Standards feststehen.">Mitgestalten, bevor Standards feststehen.</h3>
+            <p class="now-text" data-en="Right now, we are deciding which fields INPUT Partners deepens, which industry partners come on board, how we structure co-investments." data-de="Jetzt wird entschieden, welche Themen INPUT Partners vertieft, welche Industriepartner an Bord kommen, wie wir Co-Investments strukturieren.">Jetzt wird entschieden, welche Themen INPUT Partners vertieft, welche Industriepartner an Bord kommen, wie wir Co-Investments strukturieren.</p>
+            <p class="now-text" data-en="Those who join in this phase shape it. Those who arrive later adopt what others have set." data-de="Wer in dieser Phase einsteigt, gestaltet mit. Wer später dazukommt, übernimmt, was andere festgelegt haben.">Wer in dieser Phase einsteigt, gestaltet mit. Wer später dazukommt, übernimmt, was andere festgelegt haben.</p>
+          </div>
         </section>
 
       </div><!-- end shell temporarily for quote -->
@@ -451,7 +524,7 @@
 
         <!-- WHO IT'S FOR - vertical stack -->
         <section id="who-its-for-block">
-          <div class="section-eyebrow" data-en="How to get involved" data-de="Wie sie einsteigen können">Wie sie einsteigen können</div>
+          <div class="section-eyebrow" data-en="How to get involved" data-de="Wie Sie einsteigen können">Wie Sie einsteigen können</div>
 
           <div class="wim-stack">
             <!-- SME - primary -->
@@ -459,16 +532,17 @@
               <div class="audience-tag" data-en="Industry Partners" data-de="Industriepartner">Industriepartner</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="Secure influence before others set the standards." data-de="Sichere dir Einfluss, bevor andere die Standards setzen.">Sichere dir Einfluss, bevor andere die Standards setzen.</h3>
-                  <p class="audience-body" data-en="Materials are changing - and with them, who sets the standards of tomorrow. Those who engage early shape what the next generation looks like." data-de="Materialien verändern sich - und mit ihnen, wer morgen Standards setzt. Wer früh dabei ist, prägt mit, wie die nächste Generation aussieht.">Materialien verändern sich - und mit ihnen, wer morgen Standards setzt. Wer früh dabei ist, prägt mit, wie die nächste Generation aussieht.</p>
+                  <h3 class="audience-headline" data-en="Standards are shifting. Reacting alone is a balancing act." data-de="Standards verschieben sich. Allein zu reagieren ist ein Spagat.">Standards verschieben sich. Allein zu reagieren ist ein Spagat.</h3>
+                  <p class="audience-body" data-en="Materials and value chains are changing. Keeping the core business stable while shaping the future in parallel is hard to manage as a single company." data-de="Materialien und Wertschöpfungsketten verändern sich. Kerngeschäft stabil halten und parallel Zukunft gestalten ist als einzelnes Unternehmen schwer zu leisten.">Materialien und Wertschöpfungsketten verändern sich. Kerngeschäft stabil halten und parallel Zukunft gestalten ist als einzelnes Unternehmen schwer zu leisten.</p>
                 </div>
+                <div class="audience-list-label" data-en="What industry partners get:" data-de="Was Industriepartner bekommen:">Was Industriepartner bekommen:</div>
                 <ul class="audience-list wim-stack-list">
-                  <li data-en="Secure early access to relevant technologies" data-de="Frühen Zugang zu relevanten Technologien sichern">Frühen Zugang zu relevanten Technologien sichern</li>
-                  <li data-en="Bring real requirements in before interfaces are fixed" data-de="Reale Anforderungen einbringen, bevor Schnittstellen festgeschrieben sind">Reale Anforderungen einbringen, bevor Schnittstellen festgeschrieben sind</li>
-                  <li data-en="Help shape what prevails in the market" data-de="Mitgestalten, was sich am Markt durchsetzt">Mitgestalten, was sich am Markt durchsetzt</li>
+                  <li data-en="Transparency in technological development" data-de="Transparenz in der technologischen Entwicklung">Transparenz in der technologischen Entwicklung</li>
+                  <li data-en="Direct influence on integration pathways" data-de="Direkter Einfluss auf Integrationspfade">Direkter Einfluss auf Integrationspfade</li>
+                  <li data-en="Access to pilot cooperations and test environments" data-de="Zugang zu Pilotkooperationen und Testumgebungen">Zugang zu Pilotkooperationen und Testumgebungen</li>
                 </ul>
               </div>
-              <a href="Industriepartner.html" class="btn btn-primary" style="align-self:flex-start;" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
+              <a href="Industriepartner.html" class="btn btn-primary" style="align-self:flex-start;" data-en="Request a conversation" data-de="Gespräch anfragen">Gespräch anfragen</a>
             </div>
 
             <!-- Founders -->
@@ -476,13 +550,14 @@
               <div class="audience-tag" data-en="Founders" data-de="Gründer">Gründer</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="Build with real industry input - not assumptions." data-de="Baue mit echtem Industrie-Input, nicht mit Annahmen.">Baue mit echtem Industrie-Input, nicht mit Annahmen.</h3>
-                  <p class="audience-body" data-en="We invest early and bring technologies to where they must prove themselves: real industrial applications." data-de="Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.">Wir investieren früh und bringen Technologien dorthin, wo sie bestehen müssen: in reale industrielle Anwendungen.</p>
+                  <h3 class="audience-headline" data-en="Convincing in the lab isn't the problem. Standing the test in a real plant is." data-de="Im Labor zu überzeugen ist nicht das Problem. Im echten Werk zu bestehen schon.">Im Labor zu überzeugen ist nicht das Problem. Im echten Werk zu bestehen schon.</h3>
+                  <p class="audience-body" data-en="Industrial users have different requirements than classical early-stage investors. Material approvals, plant integration, validation under live production." data-de="Industrielle Anwender stellen andere Anforderungen als klassische Frühphasen-Investoren. Materialfreigaben, Anlageneinbindung, Validierung in laufender Produktion.">Industrielle Anwender stellen andere Anforderungen als klassische Frühphasen-Investoren. Materialfreigaben, Anlageneinbindung, Validierung in laufender Produktion.</p>
                 </div>
+                <div class="audience-list-label" data-en="What founders get:" data-de="Was Gründer bekommen:">Was Gründer bekommen:</div>
                 <ul class="audience-list wim-stack-list">
                   <li data-en="Investors with deep industry knowledge" data-de="Investoren mit Tiefenkenntnis der Industrie">Investoren mit Tiefenkenntnis der Industrie</li>
                   <li data-en="Direct access to future users and customers" data-de="Direkter Zugang zu späteren Anwendern und Kunden">Direkter Zugang zu späteren Anwendern und Kunden</li>
-                  <li data-en="Validation in real plants, not just in the lab" data-de="Validierung in echten Anlagen statt im Labor">Validierung in echten Anlagen statt im Labor</li>
+                  <li data-en="Validation in real plants, not just in the lab" data-de="Validierung in echten Anlagen, nicht nur im Labor">Validierung in echten Anlagen, nicht nur im Labor</li>
                 </ul>
               </div>
               <a href="Founders_Sub.html" class="btn btn-secondary" style="align-self:flex-start;" data-en="Check relevance" data-de="Relevanz prüfen">Relevanz prüfen</a>
@@ -493,11 +568,12 @@
               <div class="audience-tag" data-en="Investors" data-de="Investoren">Investoren</div>
               <div class="wim-stack-inner">
                 <div class="wim-stack-text">
-                  <h3 class="audience-headline" data-en="Invest where it shows early what prevails." data-de="Investiere dort, wo sich früh zeigt, was sich durchsetzt.">Investiere dort, wo sich früh zeigt, was sich durchsetzt.</h3>
-                  <p class="audience-body" data-en="Together with industry partners who know what can be integrated - and with long-term capital that follows industrial cycles, not exit pressure." data-de="Gemeinsam mit Industriepartnern, die wissen, was integrierbar ist - und mit langfristigem Kapital, das industriellen Zyklen folgt, nicht Exit-Druck.">Gemeinsam mit Industriepartnern, die wissen, was integrierbar ist - und mit langfristigem Kapital, das industriellen Zyklen folgt, nicht Exit-Druck.</p>
+                  <h3 class="audience-headline" data-en="Early-stage investments live on adoption, not hype." data-de="Frühphasen-Investments leben von Adoption, nicht von Hype.">Frühphasen-Investments leben von Adoption, nicht von Hype.</h3>
+                  <p class="audience-body" data-en="Co-investing alongside industry partners shows earlier what integrates and what doesn't. Substance instead of the next hype cycle." data-de="Wer mit Industriepartnern co-investiert, sieht früher, was integrierbar ist und was nicht. Substanz statt nächster Hype-Zyklus.">Wer mit Industriepartnern co-investiert, sieht früher, was integrierbar ist und was nicht. Substanz statt nächster Hype-Zyklus.</p>
                 </div>
+                <div class="audience-list-label" data-en="What investors get:" data-de="Was Investoren bekommen:">Was Investoren bekommen:</div>
                 <ul class="audience-list wim-stack-list">
-                  <li data-en="Co-investment with operationally relevant industry partners" data-de="Co-Investment mit operativ relevanten Industriepartnern">Co-Investment mit operativ relevanten Industriepartnern</li>
+                  <li data-en="Co-investments alongside operationally relevant industry partners" data-de="Co-Investments mit operativ relevanten Industriepartnern">Co-Investments mit operativ relevanten Industriepartnern</li>
                   <li data-en="Investment logic guided by adoption, not hype" data-de="Investment-Logik, die sich an Adoption orientiert, nicht an Hype">Investment-Logik, die sich an Adoption orientiert, nicht an Hype</li>
                   <li data-en="Access to deals that otherwise run through B2B back-channels" data-de="Zugang zu Deals, die sonst im B2B-Backchannel laufen">Zugang zu Deals, die sonst im B2B-Backchannel laufen</li>
                 </ul>
@@ -515,10 +591,10 @@
       <section id="join">
         <div class="join-content">
           <p style="font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.5;color:var(--fg);font-weight:500;letter-spacing:-0.01em;max-width:38ch;margin:0 auto 40px;" data-en="Whoever sources, processes or deploys substance stands at the beginning of the value chain. That is where it is decided what shapes the building of tomorrow." data-de="Wer Substanz gewinnt, verarbeitet oder einsetzt, steht am Anfang der Wertschöpfung. Genau dort entscheidet sich, was das Bauen von morgen prägt.">Wer Substanz gewinnt, verarbeitet oder einsetzt, steht am Anfang der Wertschöpfung. Genau dort entscheidet sich, was das Bauen von morgen prägt.</p>
-          <a href="Industriepartner.html" class="btn btn-primary" data-en="Become an Industry Partner" data-de="Industriepartner werden">Industriepartner werden</a>
+          <a href="Industriepartner.html" class="btn btn-primary" data-en="Request a conversation" data-de="Gespräch anfragen">Gespräch anfragen</a>
           <div class="join-secondary-links">
-            <a href="Founders_Sub.html" class="join-secondary-link" data-en="Are you a founder? Check relevance" data-de="Du bist Gründer? Hier prüfen">Du bist Gründer? Hier prüfen</a>
-            <a href="Investors_Sub.html" class="join-secondary-link" data-en="Investing privately? Start a conversation" data-de="Du investierst privat? Austausch starten">Du investierst privat? Austausch starten</a>
+            <a href="Founders_Sub.html" class="join-secondary-link" data-en="Founders: Check relevance" data-de="Gründer: Relevanz prüfen">Gründer: Relevanz prüfen</a>
+            <a href="Investors_Sub.html" class="join-secondary-link" data-en="Investors: Start a conversation" data-de="Investoren: Austausch starten">Investoren: Austausch starten</a>
           </div>
         </div>
       </section>
